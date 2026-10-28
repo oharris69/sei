@@ -1,0 +1,110 @@
+/* the section holding a teaser bleeds edge to edge */
+main > .section.teaser-container > .teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.teaser .teaser-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32px var(--content-padding) 32px;
+}
+
+.teaser .teaser-content :is(h2, h3) {
+  margin: 0;
+  color: inherit;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.teaser .teaser-content p {
+  margin: 12px 0 0;
+}
+
+.teaser .teaser-content .teaser-subline {
+  color: var(--color-cyan);
+  font-size: var(--heading-font-size-xs);
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.teaser .teaser-content p.teaser-cta {
+  margin-top: 32px;
+}
+
+.teaser .teaser-content a:any-link:not(.button) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.teaser .teaser-content a.button {
+  padding: 8px 16px;
+}
+
+.teaser .teaser-media {
+  line-height: 0;
+}
+
+.teaser .teaser-media picture,
+.teaser .teaser-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.teaser .teaser-media img {
+  aspect-ratio: 640 / 309;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (width >= 900px) {
+  .teaser {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 309px;
+  }
+
+  .teaser .teaser-content {
+    order: 0;
+    padding: 38px 16px 22px 54px;
+  }
+
+  .teaser .teaser-content :is(h2, h3) {
+    line-height: 40px;
+  }
+
+  .teaser .teaser-content .teaser-subline {
+    margin-top: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .teaser .teaser-content p.teaser-cta {
+    margin-top: auto;
+    padding-top: 32px;
+  }
+
+  .teaser .teaser-media {
+    order: 1;
+    position: relative;
+  }
+
+  .teaser .teaser-media picture {
+    position: absolute;
+    inset: 0;
+  }
+
+  .teaser .teaser-media img {
+    aspect-ratio: auto;
+  }
+}

@@ -8,8 +8,11 @@
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .cards .cards-card-body {
@@ -24,4 +27,187 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* promo: art fills the card, copy and CTA sit on top */
+.cards.promo > ul {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards.promo > ul > li {
+  display: flex;
+  flex-direction: column;
+  min-height: 433px;
+  border: 0;
+  color: var(--color-ink);
+}
+
+.cards.promo .cards-card-image {
+  position: absolute;
+  inset: 0;
+}
+
+.cards.promo .cards-card-image picture,
+.cards.promo > ul > li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+.cards.promo .cards-card-body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  padding: 40px 24px 24px;
+}
+
+.cards.promo .cards-card-body :is(h2, h3) {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.cards.promo .cards-card-body p {
+  margin: 16px 0 0;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* a short line straight after the title reads as a subtitle */
+.cards.promo .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+  font-size: var(--body-font-size-xs);
+}
+
+.cards.promo .cards-card-body p strong {
+  font-weight: 900;
+}
+
+.cards.promo .cards-card-body p:has(> strong:only-child):not(.button-wrapper) {
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.2;
+}
+
+.cards.promo .cards-card-body p.button-wrapper {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.cards.promo .cards-card-inverse {
+  color: var(--color-white);
+}
+
+@media (width >= 600px) {
+  .cards.promo > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards.promo > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 27px;
+  }
+
+  .cards.promo .cards-card-body :is(h2, h3) {
+    font-size: 34px;
+  }
+
+  .cards.promo .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* leadership: portrait with name overlay, cyan topic panel below */
+.cards.leadership > ul {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px 34px;
+}
+
+.cards.leadership > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  background-color: var(--color-cyan);
+  color: var(--color-ink);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards.leadership .cards-card-image {
+  overflow: hidden;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  background-color: var(--color-gray-300);
+}
+
+.cards.leadership > ul > li img {
+  aspect-ratio: 282 / 312;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.cards.leadership .cards-card-person {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 112px;
+  padding: 20px 16px;
+}
+
+.cards.leadership .cards-card-person > :first-child {
+  margin: 0;
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.cards.leadership .cards-card-person p {
+  margin: 8px 0 0;
+  font-size: var(--body-font-size-s);
+  line-height: 16px;
+}
+
+.cards.leadership .cards-card-body {
+  flex: 1;
+  margin: 0;
+  padding: 16px 16px 20px;
+}
+
+.cards.leadership .cards-card-body :is(h3, h4) {
+  margin: 0;
+  color: var(--color-white);
+  font-size: var(--heading-font-size-s);
+  line-height: 32px;
+  letter-spacing: -0.01em;
+}
+
+.cards.leadership .cards-card-body p {
+  margin: 6px 0 0;
+  line-height: 24px;
+}
+
+.cards.leadership .cards-card-body a:any-link {
+  color: inherit;
+}
+
+.cards.leadership .cards-card-linked .cards-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards.leadership .cards-card-linked:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgb(16 24 40 / 18%);
+}
+
+@media (width >= 900px) {
+  .cards.leadership > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

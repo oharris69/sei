@@ -1,0 +1,112 @@
+.spotlight {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.spotlight .spotlight-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background-color: var(--color-ink-soft);
+  aspect-ratio: 582 / 327;
+}
+
+.spotlight .spotlight-media picture,
+.spotlight .spotlight-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spotlight .spotlight-media::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: linear-gradient(0deg, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 0%) 100%);
+  pointer-events: none;
+}
+
+.spotlight .spotlight-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+.spotlight .spotlight-play::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-ink);
+  mask: url('../../icons/play.svg') 56% center / 28px no-repeat;
+}
+
+.spotlight a.spotlight-play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.spotlight .spotlight-body > :first-child {
+  margin-top: 0;
+}
+
+.spotlight .spotlight-body :is(h2, h3, h4) {
+  margin: 0;
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.spotlight .spotlight-quote {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-l);
+  font-style: italic;
+  line-height: 1.33;
+}
+
+.spotlight .spotlight-quote em {
+  font-style: inherit;
+}
+
+.spotlight .spotlight-name {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.spotlight .spotlight-role {
+  margin: 4px 0 0;
+  font-size: var(--body-font-size-xs);
+  line-height: 16px;
+}
+
+@media (width >= 900px) {
+  .spotlight {
+    grid-template-columns: minmax(0, 582px) minmax(0, 457px);
+    gap: 58px;
+  }
+
+  .spotlight .spotlight-body {
+    padding-top: 12px;
+  }
+
+  .spotlight .spotlight-body :is(h2, h3, h4) {
+    font-size: var(--heading-font-size-m);
+  }
+
+  .spotlight .spotlight-quote {
+    font-size: var(--heading-font-size-s);
+  }
+}

@@ -10,6 +10,7 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  getMetadata,
 } from './aem.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
@@ -113,8 +114,8 @@ function decorateButtons(main) {
     const p = a.closest('p');
     const text = a.textContent.trim();
 
-    // quick structural checks
-    if (a.querySelector('img') || p.textContent.trim() !== text) return;
+    // quick structural checks (icons inside a link are allowed)
+    if (a.querySelector('img:not(.icon img)') || p.textContent.trim() !== text) return;
 
     // skip URL display links
     try {
@@ -124,7 +125,11 @@ function decorateButtons(main) {
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
-    if (!strong && !em) return;
+    if (!strong && !em) {
+      // a lone, unformatted link in default content becomes a text link with an arrow
+      if (p.parentElement.classList.contains('default-content-wrapper')) a.classList.add('arrow-link');
+      return;
+    }
 
     p.className = 'button-wrapper';
     a.className = 'button';
@@ -143,6 +148,33 @@ function decorateButtons(main) {
 }
 
 /**
+ * Marks short all-caps paragraphs that introduce a heading as eyebrows.
+ * @param {HTMLElement} main The main container element
+ */
+function decorateEyebrows(main) {
+  main.querySelectorAll('p + :is(h1, h2, h3)').forEach((heading) => {
+    const p = heading.previousElementSibling;
+    const text = p.textContent.trim();
+    if (text && text.length <= 60 && /[A-Z]/.test(text) && text === text.toUpperCase() && !p.querySelector('a, picture')) {
+      p.classList.add('eyebrow');
+    }
+  });
+}
+
+/**
+ * Adds the floating "SEI Assistant" launcher unless the page opts out.
+ * @param {Document} doc The document
+ */
+function buildAssistantLauncher(doc) {
+  if (getMetadata('assistant') === 'off' || doc.querySelector('.assistant-launcher')) return;
+  const link = doc.createElement('a');
+  link.className = 'assistant-launcher';
+  link.href = '#assistant';
+  link.textContent = 'SEI Assistant — Ask a question';
+  doc.body.append(link);
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -153,6 +185,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
+  decorateEyebrows(main);
 }
 
 /**
@@ -194,6 +227,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   loadFooter(doc.querySelector('body > footer'));
+  buildAssistantLauncher(doc);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();

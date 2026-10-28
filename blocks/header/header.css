@@ -1,8 +1,9 @@
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
+  border-bottom: 1px solid var(--color-gray-200);
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   position: fixed;
 }
 
@@ -15,10 +16,11 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
+  max-width: var(--content-max-width);
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 var(--content-padding);
   font-family: var(--body-font-family);
+  color: var(--color-slate);
 }
 
 header nav[aria-expanded='true'] {
@@ -38,9 +40,7 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    gap: 0 42px;
   }
 }
 
@@ -137,15 +137,18 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+  flex: 0 0 44px;
+  line-height: 0;
+}
+
+header nav .nav-brand a {
+  display: inline-block;
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  display: block;
+  width: 44px;
+  height: 40px;
 }
 
 /* sections */
@@ -166,6 +169,7 @@ header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
   font-size: var(--body-font-size-s);
+  line-height: 20px;
 }
 
 header nav .nav-sections ul > li {
@@ -174,29 +178,23 @@ header nav .nav-sections ul > li {
 
 header nav .nav-sections .nav-drop > button {
   all: unset;
-  display: inline-block;
-  position: relative;
-  padding-right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
 }
 
 header nav .nav-sections .nav-drop > button::after {
   content: '';
-  position: absolute;
-  top: 0.5em;
-  right: 2px;
-  transform: rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid currentcolor;
-  border-radius: 0 1px 0 0;
-  border-width: 2px 2px 0 0;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-gray-400);
+  mask: url('../../icons/chevron-down.svg') center / contain no-repeat;
+  transition: transform 0.2s;
 }
 
 header nav .nav-sections .nav-drop > button[aria-expanded='true']::after {
-  top: unset;
-  bottom: 0.5em;
-  transform: rotate(315deg);
+  transform: rotate(180deg);
 }
 
 header nav .nav-sections .nav-drop > button:focus-visible {
@@ -225,7 +223,7 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 40px;
     margin: 0;
   }
 
@@ -243,10 +241,12 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
+    width: 220px;
+    top: calc(100% + 26px);
+    padding: 12px 24px;
+    border: 1px solid var(--color-gray-200);
+    background-color: var(--background-color);
+    box-shadow: 0 10px 30px rgb(16 24 40 / 10%);
     white-space: initial;
   }
 
@@ -259,7 +259,7 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--color-gray-200);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -270,4 +270,41 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header nav .nav-tools p {
+  margin: 0;
+}
+
+header nav .nav-tools a.button:any-link {
+  padding: 8px 14px;
+  line-height: 20px;
+  color: var(--color-slate);
+}
+
+header nav .nav-tools a:has(.icon) {
+  display: inline-flex;
+  padding: 8px;
+}
+
+header nav .nav-tools .icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+@media (width < 900px) {
+  header nav .nav-tools a.button:any-link {
+    display: none;
+  }
+
+  header nav[aria-expanded='true'] .nav-tools a.button:any-link {
+    display: inline-flex;
+  }
 }

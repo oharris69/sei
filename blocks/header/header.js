@@ -109,11 +109,14 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
-  }
+  navBrand.querySelectorAll('a').forEach((link) => {
+    link.className = '';
+    link.closest('.button-wrapper')?.classList.remove('button-wrapper');
+  });
+  nav.querySelectorAll('.nav-sections a.arrow-link, .nav-tools a.arrow-link').forEach((link) => link.classList.remove('arrow-link'));
+  nav.querySelectorAll('.nav-tools a:has(.icon)').forEach((link) => {
+    if (!link.getAttribute('aria-label')) link.setAttribute('aria-label', link.title || 'Search');
+  });
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {

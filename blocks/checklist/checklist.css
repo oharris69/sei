@@ -1,0 +1,109 @@
+.checklist {
+  padding: 28px 20px 36px;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  background-color: var(--color-white);
+}
+
+.checklist .checklist-intro > * {
+  margin: 0;
+}
+
+.checklist .checklist-intro :is(h2, h3) {
+  font-size: var(--heading-font-size-s);
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.checklist .checklist-intro p {
+  margin-top: 5px;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+.checklist .checklist-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.checklist .checklist-intro:empty + .checklist-columns,
+.checklist .checklist-columns:first-child {
+  margin-top: 0;
+}
+
+.checklist .checklist-column > * {
+  margin: 0;
+}
+
+.checklist .checklist-icon,
+.checklist .checklist-icon picture {
+  display: block;
+  line-height: 0;
+}
+
+.checklist .checklist-icon img {
+  width: auto;
+  height: 40px;
+}
+
+.checklist .checklist-column :is(h3, h4) {
+  margin-top: 12px;
+  color: #0a0a0a;
+  font-size: var(--heading-font-size-xs);
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
+
+.checklist .checklist-column :is(ul, ol) {
+  margin-top: 7px;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist .checklist-column li {
+  position: relative;
+  padding-left: 15px;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.checklist .checklist-column li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 1px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-ink);
+}
+
+.checklist .checklist-column p:not(.checklist-icon) {
+  margin-top: 7px;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+@media (width >= 900px) {
+  main > .section.checklist-container {
+    margin-top: 40px;
+    margin-bottom: 48px;
+  }
+
+  .checklist {
+    padding: 38px 27px 64px;
+  }
+
+  .checklist .checklist-columns {
+    grid-template-columns: repeat(var(--checklist-cols, 3), minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 33px;
+  }
+
+  .checklist .checklist-column {
+    max-width: 365px;
+  }
+}

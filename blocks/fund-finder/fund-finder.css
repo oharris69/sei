@@ -1,0 +1,221 @@
+/* grey band holding the heading, the finder form and the aside */
+main > .section.fund-finder-container {
+  margin: 0;
+  padding: 24px 0 32px;
+  background-color: #f6f6f6;
+}
+
+main > .section.fund-finder-container > .default-content-wrapper h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: -0.64px;
+}
+
+.fund-finder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+.fund-finder .fund-finder-form {
+  margin: 0;
+}
+
+.fund-finder .fund-finder-label {
+  display: block;
+  margin: 0 0 6px;
+  color: var(--color-ink);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 17px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.fund-finder .fund-finder-field {
+  display: flex;
+  max-width: 571px;
+}
+
+.fund-finder input {
+  display: block;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 46px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid #d1d5dc;
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.fund-finder input::placeholder {
+  color: var(--color-gray-400);
+  font-size: 13px;
+}
+
+.fund-finder input:focus-visible,
+.fund-finder select:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 1px;
+}
+
+.fund-finder .fund-finder-submit {
+  position: relative;
+  flex: 0 0 44px;
+  height: 46px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--color-red);
+  cursor: pointer;
+}
+
+.fund-finder .fund-finder-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-white);
+  mask: url('../../icons/search.svg') center / contain no-repeat;
+}
+
+.fund-finder .fund-finder-submit:hover,
+.fund-finder .fund-finder-submit:focus-visible {
+  background-color: var(--color-red-dark);
+}
+
+.fund-finder .fund-finder-filters {
+  margin-top: 24px;
+}
+
+.fund-finder .fund-finder-filters .fund-finder-label {
+  margin-bottom: 8px;
+}
+
+.fund-finder .fund-finder-dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fund-finder .fund-finder-select {
+  position: relative;
+}
+
+.fund-finder .fund-finder-select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  background-color: #be0000;
+  mask: url('../../icons/chevron-down.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+
+.fund-finder select {
+  display: block;
+  box-sizing: border-box;
+  height: 46px;
+  margin: 0;
+  padding: 0 44px 0 17px;
+  border: 1px solid #d1d5dc;
+  border-radius: 4px;
+  background-color: var(--color-white);
+  color: #000;
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+  line-height: 23px;
+  letter-spacing: -0.01em;
+  appearance: none;
+  cursor: pointer;
+}
+
+.fund-finder .fund-finder-select.is-active select {
+  border-color: var(--color-ink);
+}
+
+/* aside: orange-ruled promo */
+.fund-finder .fund-finder-aside {
+  align-self: center;
+  max-width: 400px;
+  padding: 0 0 2px 25px;
+  border-left: 1px solid #faa519;
+}
+
+.fund-finder .fund-finder-aside > * {
+  margin: 0;
+}
+
+.fund-finder .fund-finder-aside .fund-finder-aside-title {
+  color: #faa519;
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+  line-height: 17px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.fund-finder .fund-finder-aside p {
+  margin-top: 12px;
+  font-size: var(--body-font-size-s);
+  line-height: 23px;
+}
+
+.fund-finder .fund-finder-aside p:has(> a:only-child) {
+  margin-top: 24px;
+}
+
+.fund-finder a.fund-finder-aside-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink);
+  font-size: var(--body-font-size-s);
+  font-weight: 900;
+  line-height: 20px;
+}
+
+.fund-finder a.fund-finder-aside-link::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: #faa519;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+}
+
+.fund-finder a.fund-finder-aside-link:hover {
+  color: var(--color-red);
+}
+
+@media (width >= 900px) {
+  main > .section.fund-finder-container {
+    padding: 22px 0 31px;
+  }
+
+  main > .section.fund-finder-container > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-s);
+    line-height: 48px;
+  }
+
+  main > .section.fund-finder-container > .default-content-wrapper + .fund-finder-wrapper {
+    margin-top: 23px;
+  }
+
+  .fund-finder {
+    grid-template-columns: minmax(0, 571px) minmax(0, 400px);
+    column-gap: clamp(40px, 17vw, 218px);
+  }
+}

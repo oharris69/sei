@@ -1,0 +1,227 @@
+.specialist {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+}
+
+.specialist .specialist-person {
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.specialist .specialist-profile {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+}
+
+.specialist .specialist-photo img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.specialist .specialist-details p {
+  margin: 0;
+}
+
+.specialist .specialist-name {
+  color: #1a1a1a;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+.specialist .specialist-role {
+  font-size: var(--body-font-size-xs);
+  line-height: 17px;
+}
+
+.specialist .specialist-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  color: var(--color-gray-500);
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.specialist .specialist-location::before {
+  content: '';
+  flex: 0 0 10px;
+  height: 10px;
+  background-color: currentcolor;
+  mask: url('../../icons/pin.svg') center / contain no-repeat;
+}
+
+.specialist .specialist-availability {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-gray-300);
+  background-color: #fffbf0;
+}
+
+.specialist .specialist-next {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  line-height: 18px;
+}
+
+.specialist .specialist-next::before {
+  content: '';
+  flex: 0 0 12px;
+  height: 12px;
+  background-color: var(--color-red);
+  mask: url('../../icons/clock.svg') center / contain no-repeat;
+}
+
+.specialist .specialist-next strong {
+  font-weight: 900;
+}
+
+.specialist a.specialist-book:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-red);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 17px;
+  letter-spacing: 0.275px;
+  text-transform: uppercase;
+}
+
+.specialist a.specialist-book::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+}
+
+.specialist .specialist-reasons {
+  padding: 24px;
+}
+
+.specialist .specialist-reasons > * {
+  margin: 0;
+}
+
+.specialist .specialist-label {
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.specialist .specialist-reasons ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.specialist .specialist-reasons li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--body-font-size-xs);
+  line-height: 18px;
+}
+
+.specialist .specialist-reasons li::before {
+  content: '';
+  flex: 0 0 12px;
+  height: 12px;
+  background-color: var(--color-red);
+  mask: url('../../icons/check.svg') center / contain no-repeat;
+}
+
+.specialist .specialist-cta {
+  padding: 0 24px 24px;
+}
+
+.specialist .specialist-cta p {
+  margin: 0;
+}
+
+.specialist .specialist-cta a.button {
+  min-width: 276px;
+  min-height: 48px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* muted: grey person panel without dividers (results pages) */
+.specialist.muted {
+  border-color: var(--color-gray-200);
+}
+
+.specialist.muted .specialist-person {
+  border: 0;
+}
+
+.specialist.muted .specialist-profile {
+  border: 1px solid var(--color-gray-100);
+  border-radius: 4px;
+  background-color: var(--color-gray-50);
+}
+
+.specialist.muted .specialist-label,
+.specialist.muted .specialist-location {
+  color: var(--color-gray-400);
+}
+
+.specialist.muted .specialist-reasons li,
+.specialist.muted .specialist-role {
+  color: var(--color-gray-600);
+}
+
+@media (width >= 900px) {
+  .specialist {
+    grid-template-columns: auto auto 1fr;
+    align-items: stretch;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .specialist .specialist-person {
+    border-bottom: 0;
+    border-right: 1px solid var(--color-gray-300);
+  }
+
+  .specialist .specialist-profile {
+    min-width: 308px;
+  }
+
+  .specialist .specialist-cta {
+    align-self: center;
+    padding: 24px 40px 24px 64px;
+  }
+
+  .specialist.muted {
+    width: auto;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  .specialist.muted .specialist-person {
+    border: 0;
+  }
+
+  .specialist.muted .specialist-reasons {
+    min-width: 343px;
+  }
+}

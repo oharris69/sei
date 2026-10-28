@@ -1,0 +1,115 @@
+/* the intro (h1 + lead + "Performance Leaders:") shares the section with the cards */
+main > .section.fund-cards-container {
+  margin-bottom: 27px;
+}
+
+main > .section.fund-cards-container > .default-content-wrapper {
+  padding-top: 40px;
+}
+
+main > .section.fund-cards-container > .default-content-wrapper h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.033em;
+}
+
+main > .section.fund-cards-container > .default-content-wrapper h1 + p {
+  max-width: 1050px;
+  margin: 9px 0 0;
+  font-size: var(--body-font-size-l);
+  line-height: 1.5;
+}
+
+main > .section.fund-cards-container > .default-content-wrapper h2 {
+  margin: 32px 0 0;
+  color: var(--color-ink-soft);
+  font-size: 22px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+main > .section.fund-cards-container > .default-content-wrapper + .fund-cards-wrapper {
+  margin-top: 22px;
+}
+
+.fund-cards ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fund-cards .fund-cards-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 216px;
+  padding: 6px 26px 25px;
+  border: 1px solid var(--color-gray-400);
+  border-radius: 10px;
+  background-color: var(--color-white);
+}
+
+.fund-cards .fund-cards-ticker {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: -0.74px;
+}
+
+.fund-cards p {
+  margin: 0;
+}
+
+.fund-cards .fund-cards-name {
+  margin-top: 2px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+}
+
+.fund-cards .fund-cards-description {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.fund-cards .fund-cards-name + .fund-cards-description ~ .fund-cards-description {
+  margin-top: 8px;
+}
+
+.fund-cards p.button-wrapper {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+@media (width >= 900px) {
+  main > .section.fund-cards-container > .default-content-wrapper {
+    padding-top: 72px;
+  }
+
+  main > .section.fund-cards-container > .default-content-wrapper h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  main > .section.fund-cards-container > .default-content-wrapper h1 + p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  main > .section.fund-cards-container > .default-content-wrapper h2 {
+    margin-top: 41px;
+    font-size: var(--heading-font-size-s);
+  }
+
+  .fund-cards ul {
+    grid-template-columns: repeat(3, minmax(0, 346px));
+    gap: 44px;
+  }
+}
