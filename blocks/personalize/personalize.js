@@ -59,7 +59,7 @@ export default function decorate(block) {
     option.textContent = row.textContent.trim();
     if (link) option.href = link.href;
     else option.type = 'button';
-    if (row.querySelector('strong')) option.classList.add('selected');
+    if (row.querySelector('strong, a.button.primary')) option.classList.add('selected');
     option.addEventListener('click', () => {
       options.querySelectorAll('.personalize-option').forEach((o) => o.classList.remove('selected'));
       option.classList.add('selected');

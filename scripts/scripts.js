@@ -163,13 +163,16 @@ function decorateEyebrows(main) {
 
 /**
  * Adds the floating "SEI Assistant" launcher unless the page opts out.
+ * The `assistant` page metadata picks the chat fragment (default /modals/assistant).
  * @param {Document} doc The document
  */
 function buildAssistantLauncher(doc) {
-  if (getMetadata('assistant') === 'off' || doc.querySelector('.assistant-launcher')) return;
+  const assistant = getMetadata('assistant');
+  if (assistant === 'off' || doc.querySelector('.assistant-launcher')) return;
   const link = doc.createElement('a');
   link.className = 'assistant-launcher';
-  link.href = '#assistant';
+  link.href = assistant && assistant.includes('/modals/') ? assistant : '/modals/assistant';
+  link.setAttribute('aria-haspopup', 'dialog');
   link.textContent = 'SEI Assistant — Ask a question';
   doc.body.append(link);
 }
@@ -228,6 +231,14 @@ async function loadLazy(doc) {
 
   loadFooter(doc.querySelector('body > footer'));
   buildAssistantLauncher(doc);
+
+  // pop-ups: /modals/ links open dialogs; `modal` + `modal-delay` metadata auto-open one
+  // eslint-disable-next-line import/no-cycle
+  import('../blocks/modal/modal.js').then(({ autolinkModals, scheduleModal }) => {
+    autolinkModals(doc);
+    const autoModal = getMetadata('modal');
+    if (autoModal) scheduleModal(autoModal, Number(getMetadata('modal-delay')) || 8);
+  });
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();

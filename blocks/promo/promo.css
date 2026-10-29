@@ -1,0 +1,70 @@
+.promo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: var(--color-ink-soft);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.promo .promo-media {
+  position: absolute;
+  inset: 0;
+}
+
+.promo .promo-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(16 24 40 / 85%) 0%, rgb(16 24 40 / 25%) 55%, rgb(16 24 40 / 0%) 100%);
+}
+
+.promo .promo-media picture,
+.promo .promo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo .promo-content {
+  position: relative;
+  max-width: 320px;
+  padding: 64px 24px;
+}
+
+.promo .promo-content :is(h2, h3) {
+  margin: 0;
+  color: inherit;
+  font-size: 48px;
+  line-height: 1.2;
+  text-shadow: 0 2px 16px rgb(0 0 0 / 25%);
+}
+
+.promo .promo-content p {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-l);
+  line-height: 1.25;
+}
+
+.promo .promo-content p.button-wrapper {
+  margin-top: 32px;
+}
+
+.promo .promo-content a.button:any-link {
+  min-width: 146px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.promo .promo-content a.button:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-ink);
+}
