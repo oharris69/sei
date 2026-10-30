@@ -1,0 +1,16 @@
+{
+  "_provenance": { "writtenBy": "stardust:deploy", "writtenAt": "2026-10-30T00:20:00Z", "readArtifacts": ["scripts/scripts.js", "scripts/aem.js", "styles/styles.css"], "stardustVersion": "0.32.1" },
+  "runtime": "vanilla-eds",
+  "blockWrapperClass": "block",
+  "buttonClasses": "a.button.primary (strong) / a.button.secondary (em, ink) / a.button.accent (strong+em, outlined), in p.button-wrapper",
+  "buttonization": "formatted-only (a lone unformatted link in default content gets a.arrow-link)",
+  "eyebrows": "decorateEyebrows: short ALL-CAPS <p> directly before h1-h3 gets .eyebrow (main-wide, blocks included)",
+  "headingHighlights": "global :is(h1,h2,h3) em = green, strong = cyan (styles.css) — sd-* blocks override inside their scope",
+  "sectionScaffold": "main > .section { margin: var(--section-spacing) 0 }; main > .section > div { max-width: 1280px; padding: 0 var(--content-padding) }",
+  "wrapTextNodes": true,
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": false,
+  "assistantLauncher": "added globally by scripts.js buildAssistantLauncher",
+  "foundationEditable": false,
+  "foundationNote": "User constraint: styles.css, fonts.css, scripts.js, head.html, header/footer are frozen; page tokens live in sd-* block scopes."
+}

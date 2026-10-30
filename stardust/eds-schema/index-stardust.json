@@ -1,0 +1,524 @@
+{
+ "source": "http://localhost:8791/stardust/prototypes/index-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "Financial value is created"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "between the lines."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "One partner. One connected wealth enterprise."
+    }
+   ],
+   "imgCount": 0,
+   "editableTexts": 2,
+   "repeats": []
+  },
+  {
+   "section": "promos",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Data Cloud webcast"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Learn how your team can spend less time managing data and more time using it to drive growth."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Thursday, October 1 11 am ET"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Register now",
+     "href": "/insights/events/data-cloud-webcast"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "SEI Marketplace"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Explore our ETFs and funds."
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Invest today",
+     "href": "/etfs"
+    },
+    {
+     "role": "heading",
+     "order": 7,
+     "text": "$12B in market cap"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "SEI’s momentum makes its mark."
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read Q2 press release",
+     "href": "/about/newsroom/q2-results"
+    }
+   ],
+   "imgCount": 3,
+   "editableTexts": 1,
+   "repeats": [
+    {
+     "unitSelector": "LI.promo",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 2,
+      "textRuns": 4
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "connective-tissue",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "The of modern finance"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "connective tissue"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "."
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof."
+    }
+   ],
+   "imgCount": 1,
+   "editableTexts": 2,
+   "repeats": []
+  },
+  {
+   "section": "proof",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Proof in practice."
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "See the stories—and the numbers—that show what’s possible with SEI as your trusted strategic partner."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Summit Wealth Group partnered with SEI to launch an integrated wealth platform allowing the firm to scale efficiently while maintaining flexibility and a high-touch client experience."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Read the full case study",
+     "href": "/insights/case-studies/summit-wealth-group"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "$2B+"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Asset migration"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Multi-custodian access"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "Built around client needs"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "FFT Wealth Management partnered with SEI to launch an integrated wealth platform allowing the firm to scale efficiently while maintaining flexibility and a high-touch client experience."
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read the full case study",
+     "href": "/insights/case-studies/fft-wealth-management"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "$2B+"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "Assets under management"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "Scalable growth"
+    },
+    {
+     "role": "body",
+     "order": 13,
+     "text": "Built for generations"
+    },
+    {
+     "role": "body",
+     "order": 14,
+     "text": "TCW partnered with SEI to support its expanding investment platform, enabling the firm to bring new strategies to market while simplifying operations across public and private markets."
+    },
+    {
+     "role": "cta",
+     "order": 15,
+     "text": "Read the full case study",
+     "href": "/insights/case-studies/tcw"
+    },
+    {
+     "role": "body",
+     "order": 16,
+     "text": "$206B+"
+    },
+    {
+     "role": "body",
+     "order": 17,
+     "text": "Assets under management"
+    },
+    {
+     "role": "body",
+     "order": 18,
+     "text": "Alternative investing"
+    },
+    {
+     "role": "body",
+     "order": 19,
+     "text": "Expanding market access"
+    },
+    {
+     "role": "body",
+     "order": 20,
+     "text": "Kent State partnered with SEI for OCIO services, helping the university align investment strategy with institutional priorities while supporting long-term planning and financial resilience."
+    },
+    {
+     "role": "cta",
+     "order": 21,
+     "text": "Read the full case study",
+     "href": "/insights/case-studies/kent-state-university"
+    },
+    {
+     "role": "body",
+     "order": 22,
+     "text": "8+ years"
+    },
+    {
+     "role": "body",
+     "order": 23,
+     "text": "Trusted OCIO partnership"
+    },
+    {
+     "role": "body",
+     "order": 24,
+     "text": "Strategic stewardship"
+    },
+    {
+     "role": "body",
+     "order": 25,
+     "text": "Funding campus priorities"
+    }
+   ],
+   "imgCount": 8,
+   "editableTexts": 22,
+   "repeats": [
+    {
+     "unitSelector": "LABEL.",
+     "count": 4,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 2,
+      "textRuns": 0
+     },
+     "uniform": true
+    },
+    {
+     "unitSelector": "DIV.panel",
+     "count": 4,
+     "unit": {
+      "headings": 0,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 6
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "reach",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Depth you can feel. Reach you can measure."
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "End-to-end capability, global coverage across platforms, products, and time zones."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "58"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "years of institutional service"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "15"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "countries served"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "2,000+"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "industry experts worldwide"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "$1.9T"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Assets Under Management & Administration"
+    }
+   ],
+   "imgCount": 1,
+   "editableTexts": 5,
+   "repeats": [
+    {
+     "unitSelector": "LI.",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "perspectives",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Perspectives from SEI Leadership."
+    },
+    {
+     "role": "cta",
+     "order": 1,
+     "text": "View all insights",
+     "href": "/insights/thought-leadership"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Defining RAG models and agentic AI.",
+     "href": "/insights/defining-rag-models-and-agentic-ai"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Separating AI buzzwords from the capabilities driving measurable business value."
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "Zach Womack"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Chief Technology Officer"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "The business behind the business.",
+     "href": "/insights/the-business-behind-the-business"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "Big shifts are transforming financial services. Here’s how SEI sees the road ahead."
+    },
+    {
+     "role": "heading",
+     "order": 8,
+     "text": "Ryan Hicke"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Chief Executive Officer"
+    },
+    {
+     "role": "cta",
+     "order": 10,
+     "text": "Modernizing wealth at scale.",
+     "href": "/insights/modernizing-wealth-at-scale"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "What it takes to modernize client experience while transaction volumes and expectations rise."
+    },
+    {
+     "role": "heading",
+     "order": 12,
+     "text": "Jeff Benfield"
+    },
+    {
+     "role": "body",
+     "order": 13,
+     "text": "Chief Product Officer"
+    },
+    {
+     "role": "cta",
+     "order": 14,
+     "text": "Building the next wave of AI.",
+     "href": "/insights/building-the-next-wave-of-ai"
+    },
+    {
+     "role": "body",
+     "order": 15,
+     "text": "How AI, tokenization, and innovation drive new wealth tech business models."
+    },
+    {
+     "role": "heading",
+     "order": 16,
+     "text": "Sneha Shah"
+    },
+    {
+     "role": "body",
+     "order": 17,
+     "text": "Executive Vice President, Chief AI Strategist"
+    }
+   ],
+   "imgCount": 4,
+   "editableTexts": 2,
+   "repeats": [
+    {
+     "unitSelector": "LI.lead",
+     "count": 4,
+     "unit": {
+      "headings": 2,
+      "ctas": 1,
+      "imgs": 2,
+      "textRuns": 4
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "newsletter",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "STAY CONNECTED"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "What’s New at SEI"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Subscribe for timely insights on product innovation, platform enhancements, real-world use cases, expert conversations, and upcoming learning opportunities across the wealth ecosystem."
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Business Email"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Subscribe to SEI Insights"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "By subscribing, you agree to receive marketing emails from SEI. Unsubscribe at any time."
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Thanks for subscribing. Look out for the next issue of SEI Insights."
+    }
+   ],
+   "imgCount": 0,
+   "editableTexts": 5,
+   "repeats": []
+  }
+ ]
+}

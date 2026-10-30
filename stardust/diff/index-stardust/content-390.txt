@@ -1,0 +1,67 @@
+
+Content diff @ 390px (profile "eds", roots: main, header, footer)
+root "main"
+  proto: 78 text nodes — 12 headings, 1 eyebrows, 12 CTAs, 53 body; 17 img
+  EDS: 77 text nodes — 12 headings, 1 eyebrows, 12 CTAs, 52 body; 17 img
+  editable texts (outermost h*/p/ul/ol): proto 39 / EDS 44
+  attributes (placeholder/aria-label/title): proto 6 / EDS 14; icons: proto 0 / EDS 0
+root "header"
+  proto: 6 text nodes — 0 headings, 0 eyebrows, 6 CTAs, 0 body; 1 img
+  EDS: 23 text nodes — 0 headings, 0 eyebrows, 19 CTAs, 4 body; 2 img
+  editable texts (outermost h*/p/ul/ol): proto 1 / EDS 3
+  attributes (placeholder/aria-label/title): proto 3 / EDS 5; icons: proto 7 / EDS 3
+root "footer"
+  proto: 31 text nodes — 4 headings, 0 eyebrows, 26 CTAs, 1 body; 1 img
+  EDS: 31 text nodes — 4 headings, 0 eyebrows, 26 CTAs, 1 body; 4 img
+  editable texts (outermost h*/p/ul/ol): proto 11 / EDS 11
+  attributes (placeholder/aria-label/title): proto 0 / EDS 6; icons: proto 1 / EDS 4
+
+Findings: 48 (7 structural 🔴)
+  🔴 ROLE SWAP [header]: "Solutions" is a cta in the proto but a body in EDS — Mis-classified slot (the #76 class: body painted as eyebrow, eyebrow folded into a teaser). Fix the block node segmentation.
+  🔴 ROLE SWAP [header]: "Who We Serve" is a cta in the proto but a body in EDS — Mis-classified slot (the #76 class: body painted as eyebrow, eyebrow folded into a teaser). Fix the block node segmentation.
+  🔴 ROLE SWAP [header]: "Our Insights" is a cta in the proto but a body in EDS — Mis-classified slot (the #76 class: body painted as eyebrow, eyebrow folded into a teaser). Fix the block node segmentation.
+  🔴 MISSING ICON [header]: proto inline svg #i-chev (0×0) at "solutions" has no EDS icon there. A source icon with no build icon at the same anchor — an empty icon box or a dropped glyph; lift the same glyph, file or svg.
+  🔴 MISSING ICON [header]: proto inline svg #i-chev (0×0) at "who we serve" has no EDS icon there. A source icon with no build icon at the same anchor — an empty icon box or a dropped glyph; lift the same glyph, file or svg.
+  🔴 MISSING ICON [header]: proto inline svg #i-chev (0×0) at "our insights" has no EDS icon there. A source icon with no build icon at the same anchor — an empty icon box or a dropped glyph; lift the same glyph, file or svg.
+  🔴 MISSING ICON [header]: proto inline svg #i-chev (0×0) at "about sei" has no EDS icon there. A source icon with no build icon at the same anchor — an empty icon box or a dropped glyph; lift the same glyph, file or svg.
+  🟠 EXTRA [header]: EDS cta "Technology" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Custody" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Advisor services" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "SEI ETFs" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Portfolio Evaluator" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Asset managers" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Financial advisors" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Enterprise RIAs" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Banks and wealth managers" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Institutional investors" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Thought leadership" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Events" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "SEI Growth Lab" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "SEI Pathfinder" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Newsroom" has no proto source — Unexpected node with no proto source.
+  🟠 EXTRA [header]: EDS cta "Careers" has no proto source — Unexpected node with no proto source.
+  🟡 MISSING BODY [main]: proto body "Thanks for subscribing. Look out for the next is"… not found in EDS. Often fine (a prototype placeholder rewritten to real copy) — confirm it is not dropped prose.
+  🟡 EXTRA TITLE [main]: EDS <a> title="Register now" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Invest today" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Read Q2 press release" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Read the full case study" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Read the full case study" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Read the full case study" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="Read the full case study" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [main]: EDS <a> title="View all insights" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA [header]: EDS body "About SEI" has no proto source — Invented / placeholder-filled copy; confirm it is intended.
+  🟡 MISSING ARIA-LABEL [header]: proto <nav> aria-label="Main" has no EDS <nav> with that aria-label. Authored text a user or assistive tech reads, dropped by the build — carry it over verbatim.
+  🟡 EXTRA TITLE [header]: EDS <a> title="Search" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [header]: EDS <a> title="Client Login" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [header]: EDS <a> title="Contact Us" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 ICON KIND [header]: proto inline svg 0 0 24 24 / 1 shape(s) (22×22) vs EDS empty icon box (20×2) at "open navigation". Same anchor, different technique (icon-font glyph vs inline svg vs image) — the pixel probe judges equivalence; confirm, never assume.
+  🟡 ICON KIND [header]: proto inline svg 0 0 24 24 / 1 shape(s) (0×0) vs EDS image search.svg (20×20) at "search". Same anchor, different technique (icon-font glyph vs inline svg vs image) — the pixel probe judges equivalence; confirm, never assume.
+  🟡 EXTRA ARIA-LABEL [footer]: EDS <a> aria-label="Facebook" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [footer]: EDS <a> title="Facebook" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA ARIA-LABEL [footer]: EDS <a> aria-label="Instagram" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [footer]: EDS <a> title="Instagram" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA ARIA-LABEL [footer]: EDS <a> aria-label="LinkedIn" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA TITLE [footer]: EDS <a> title="LinkedIn" has no proto source. Build-only attribute — confirm it is intended (an unregistered change is a fidelity bug).
+  🟡 EXTRA ICON [footer]: EDS image facebook.svg (16×16) at "facebook" has no proto source. Build-only icon — confirm it is intended.
+  🟡 EXTRA ICON [footer]: EDS image instagram.svg (16×16) at "instagram" has no proto source. Build-only icon — confirm it is intended.
+  🟡 EXTRA ICON [footer]: EDS image linkedin.svg (16×16) at "linkedin" has no proto source. Build-only icon — confirm it is intended.

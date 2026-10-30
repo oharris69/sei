@@ -1,0 +1,115 @@
+/* sd-hero — stardust redesign hero. Page tokens are scoped to the section container. */
+main > .section.sd-hero-container {
+  --sd-deep-current: #086c8a;
+  --sd-edge: max(var(--content-padding), calc((100vw - 1280px) / 2 + var(--content-padding)));
+  --sd-fs-display: clamp(2.625rem, 1.4rem + 3.4vw, 4.125rem);
+  --sd-fs-lede: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 48px 0 128px;
+  background: var(--color-white);
+}
+
+.sd-hero,
+.sd-hero *,
+.sd-hero *::before,
+.sd-hero *::after {
+  box-sizing: border-box;
+}
+
+
+.sd-hero-field,
+.sd-hero-strip {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+}
+
+.sd-hero-field {
+  top: 0;
+  width: 86%;
+  height: 150px;
+  background: var(--gradient-brand);
+}
+
+.sd-hero-strip {
+  bottom: 0;
+  left: 18%;
+  height: 120px;
+  border-top: 2px solid var(--color-cyan);
+  background: linear-gradient(90deg, var(--color-cyan) 0%, #6dcf7a 100%);
+}
+
+.sd-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sd-hero-headline :is(h1, h2) {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--sd-fs-display);
+  font-weight: 1000;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.sd-hero-line {
+  display: block;
+  width: fit-content;
+  max-width: calc(100% + var(--sd-edge));
+  margin-left: calc(-1 * var(--sd-edge));
+  padding: 18px 24px 20px var(--sd-edge);
+  border-top: 2px solid var(--color-cyan);
+  background: var(--color-white);
+}
+
+.sd-hero-line + .sd-hero-line {
+  border-bottom: 2px solid var(--color-cyan);
+  color: var(--sd-deep-current);
+}
+
+.sd-hero-lede p {
+  margin: 32px 0 0;
+  font-size: var(--sd-fs-lede);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (width >= 600px) {
+  main > .section.sd-hero-container {
+    padding: 72px 0 152px;
+  }
+
+  .sd-hero-field {
+    width: 72%;
+    height: 220px;
+  }
+
+  .sd-hero-line {
+    padding: 18px clamp(32px, 6vw, 96px) 20px var(--sd-edge);
+  }
+
+  .sd-hero-lede p {
+    margin-top: 28px;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.sd-hero-container {
+    padding: 72px 0 176px;
+  }
+
+  .sd-hero-field {
+    width: 58%;
+    height: 440px;
+  }
+
+  .sd-hero-strip {
+    left: 31.25%;
+    height: 152px;
+  }
+}

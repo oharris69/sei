@@ -1,0 +1,54 @@
+{"ts":"2026-10-29T23:26:17Z","skill":"stardust:stardust","phase":"setup","event":"start","detail":"hands-off single-page redesign of home to index-stardust"}
+{"ts":"2026-10-29T23:26:17Z","skill":"stardust:stardust","phase":"setup","event":"end","detail":"impeccable present; no root PRODUCT/DESIGN; hygiene ok"}
+{"ts":"2026-10-29T23:26:57Z","skill":"stardust:extract","phase":"discovery","event":"start","detail":"single page: home"}
+{"ts":"2026-10-29T23:26:57Z","skill":"stardust:extract","phase":"discovery","event":"end","detail":"explicit pages list: /"}
+{"ts":"2026-10-29T23:26:57Z","skill":"stardust:extract","phase":"per-page-extraction","event":"start"}
+{"ts":"2026-10-29T23:27:06Z","skill":"stardust:extract","phase":"per-page-extraction","event":"end","detail":"1/1 captured, headless, medium 2500ms, 200"}
+{"ts":"2026-10-29T23:27:06Z","skill":"stardust:extract","phase":"brand-surface-extraction","event":"start","detail":"style-census 1440 + 390"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"brand-surface-extraction","event":"end","detail":"census 1440+390, cap-probe 1280 module cap, brand-extraction written"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"vision-verification","event":"start"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"vision-verification","event":"end","detail":"index ok"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"seed","event":"start"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"seed","event":"end","artifact":"stardust/current/DESIGN.md"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"brand-review","event":"start"}
+{"ts":"2026-10-29T23:33:21Z","skill":"stardust:extract","phase":"brand-review","event":"end","detail":"validated 1440/768/390 clean","artifact":"stardust/current/brand-review.html"}
+{"ts":"2026-10-29T23:33:22Z","skill":"stardust:extract","phase":"state-and-report","event":"start"}
+{"ts":"2026-10-29T23:33:22Z","skill":"stardust:stardust","phase":"hands-off","event":"start","detail":"handsOff stamped in state.json"}
+{"ts":"2026-10-29T23:33:22Z","skill":"stardust:stardust","phase":"hands-off","event":"end"}
+{"ts":"2026-10-29T23:33:44Z","skill":"stardust:extract","phase":"state-and-report","event":"end","detail":"1/1 live; vision ok 1; uncaptured first-level targets: none (no locale root captured)","next":"stardust:direct"}
+{"ts":"2026-10-29T23:40:23Z","skill":"stardust:stardust","phase":"intent","event":"start","detail":"direct hands-off"}
+{"ts":"2026-10-29T23:40:23Z","skill":"stardust:stardust","phase":"intent","event":"end","detail":"Mode A+B, ia verbatim, density balanced (floor), static motion","artifact":"stardust/direction.md","next":"stardust:prototype index"}
+{"ts":"2026-10-29T23:41:02Z","skill":"stardust:prototype","phase":"plan","event":"start","detail":"index shape brief"}
+{"ts":"2026-10-29T23:43:15Z","skill":"stardust:prototype","phase":"plan","event":"end","detail":"brief validated: lineage 10/10, antiTemplate 7, surprise low, substrate 2 exceptions, voice 10/10, 0 unsourced","artifact":"stardust/prototypes/index-shape.md"}
+{"ts":"2026-10-29T23:43:15Z","skill":"stardust:prototype","phase":"render","event":"start"}
+{"ts":"2026-10-29T23:59:15Z","skill":"stardust:prototype","phase":"render","event":"end","detail":"craft via impeccable new-work (established world); finish review 2 rounds: 4 resolved, 1 partial, 1 ack, 1 new at 768","artifact":"stardust/prototypes/index-proposed.html"}
+{"ts":"2026-10-29T23:59:29Z","skill":"stardust:prototype","phase":"critique","event":"start"}
+{"ts":"2026-10-29T23:59:29Z","skill":"stardust:prototype","phase":"audit","event":"start"}
+{"ts":"2026-10-30T00:06:27Z","skill":"stardust:prototype","phase":"critique","event":"end","detail":"A+B isolated subagents; P1x2 fixed (dark-tile focus ring, newsletter status via :target); P2 fixed 7; brand-faithful dismissals 4"}
+{"ts":"2026-10-30T00:06:27Z","skill":"stardust:prototype","phase":"audit","event":"end","detail":"15/20 Good; 0 P0/P1; P2 fixed: signup ring, tab semantics, 390 tabs, :has fallback; perf P2 deferred to EDS createOptimizedPicture"}
+{"ts":"2026-10-30T00:06:28Z","skill":"stardust:prototype","phase":"adapt","event":"start"}
+{"ts":"2026-10-30T00:07:44Z","skill":"stardust:prototype","phase":"adapt","event":"end","detail":"7 viewports clean; mobile-nav audit clean at 360; 3 max-width media rules"}
+{"ts":"2026-10-30T00:08:06Z","skill":"stardust:prototype","phase":"approval","event":"start","detail":"hands-off: all gates clear"}
+{"ts":"2026-10-30T00:08:06Z","skill":"stardust:prototype","phase":"approval","event":"end","detail":"approvedBy hands-off","next":"stardust:deploy"}
+{"ts":"2026-10-30T00:10:18Z","skill":"stardust:deploy","phase":"runtime-probe","event":"start"}
+{"ts":"2026-10-30T00:10:18Z","skill":"stardust:deploy","phase":"runtime-probe","event":"end","artifact":"stardust/runtime-contract.json"}
+{"ts":"2026-10-30T00:10:28Z","skill":"stardust:deploy","phase":"1-audit","event":"start"}
+{"ts":"2026-10-30T00:12:17Z","skill":"stardust:deploy","phase":"1-audit","event":"end","detail":"7 sections, schema + fingerprint"}
+{"ts":"2026-10-30T00:12:17Z","skill":"stardust:deploy","phase":"2-decide","event":"start"}
+{"ts":"2026-10-30T00:12:17Z","skill":"stardust:deploy","phase":"2-decide","event":"end","detail":"7 sd-* blocks locked","artifact":"stardust/eds-conversion-log.md"}
+{"ts":"2026-10-30T00:12:17Z","skill":"stardust:deploy","phase":"2b-section","event":"start"}
+{"ts":"2026-10-30T00:12:17Z","skill":"stardust:deploy","phase":"2b-section","event":"end","artifact":"stardust/eds-schema/index-stardust.json"}
+{"ts":"2026-10-30T00:12:18Z","skill":"stardust:deploy","phase":"3-foundation","event":"start","detail":"SKIPPED: foundation frozen by user; tokens scoped per block"}
+{"ts":"2026-10-30T00:12:18Z","skill":"stardust:deploy","phase":"3-foundation","event":"end","detail":"skipped (named deviation)"}
+{"ts":"2026-10-30T00:12:18Z","skill":"stardust:deploy","phase":"7-blocks","event":"start"}
+{"ts":"2026-10-30T00:19:03Z","skill":"stardust:deploy","phase":"7-blocks","event":"end","detail":"7 sd-* blocks written; eslint+stylelint clean"}
+{"ts":"2026-10-30T00:19:03Z","skill":"stardust:deploy","phase":"local-qa","event":"start"}
+{"ts":"2026-10-30T00:23:38Z","skill":"stardust:deploy","phase":"local-qa","event":"end","detail":"roundtrip 0 red, EW 73/78 dead 0, qa-gate PASS 25/2warn/0fail, lint clean"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"9-content","event":"start"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"9-content","event":"end","detail":"verbatim content, 7 sections, 23 local images","artifact":"content/index-stardust.plain.html"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"6-chrome","event":"start","detail":"SKIPPED: existing global header/footer kept by user decision"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"6-chrome","event":"end","detail":"skipped (named deviation)"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"10-reconcile","event":"start","detail":"stardust:diff eds profile, prototype vs local EDS page"}
+{"ts":"2026-10-30T00:34:27Z","skill":"stardust:deploy","phase":"10-reconcile","event":"end","detail":"content-diff main 0 red at 1440/768/390; visual mainH delta 0.2/-0.5/0.1 pct; stretched flags shared+justified; header reds = out-of-scope chrome stand-in","artifact":"stardust/diff/index-stardust"}
+{"ts":"2026-10-30T00:36:04Z","skill":"stardust:stardust","phase":"validation","event":"start"}
+{"ts":"2026-10-30T00:36:04Z","skill":"stardust:stardust","phase":"validation","event":"end","detail":"local EDS page 1440/768/390: 0 console errors, 0 broken imgs (23), no overflow; diff main 0 red; delivery deferred","next":"user approval for DA delivery"}

@@ -8,3 +8,5 @@ test/*
 sync-block-collection.sh
 reference/*
 migration-work/*
+stardust/
+DESIGN.json

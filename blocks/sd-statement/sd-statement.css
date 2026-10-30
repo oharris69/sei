@@ -1,0 +1,111 @@
+/* sd-statement — stardust redesign positioning statement. Tokens scoped to the section container. */
+main > .section.sd-statement-container {
+  --sd-deep-current: #086c8a;
+  --sd-fs-headline: clamp(2rem, 1.5rem + 1.4vw, 2.625rem);
+  --sd-fs-lede: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --sd-grad-rule: linear-gradient(90deg, var(--color-green) 0%, var(--color-cyan) 100%);
+
+  margin: 0;
+  padding: 32px 0;
+}
+
+.sd-statement,
+.sd-statement *,
+.sd-statement *::before,
+.sd-statement *::after {
+  box-sizing: border-box;
+}
+
+
+.sd-statement-text {
+  padding-top: 40px;
+}
+
+.sd-statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+.sd-statement-text :is(h1, h2, h3) {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--sd-fs-headline);
+  font-weight: 1000;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* emphasis stays ink with a brand rule beneath (green/cyan text on white fails AA) */
+.sd-statement-text :is(h1, h2, h3) em {
+  padding-bottom: 0.04em;
+  color: inherit;
+  font-style: normal;
+  background: var(--sd-grad-rule) left 94% / 100% 0.16em no-repeat;
+}
+
+.sd-statement-text :is(h1, h2, h3) strong {
+  color: var(--sd-deep-current);
+  font-weight: inherit;
+}
+
+.sd-statement-text p {
+  max-width: 52ch;
+  margin: 16px 0 0;
+  font-size: var(--sd-fs-lede);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.sd-statement-media {
+  width: 100%;
+  max-width: 360px;
+  margin: 32px auto 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.sd-statement-media picture,
+.sd-statement-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sd-statement-media img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.25);
+}
+
+@media (width >= 600px) {
+  main > .section.sd-statement-container {
+    padding: 48px 0;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.sd-statement-container {
+    padding: 64px 0;
+  }
+
+  .sd-statement {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .sd-statement-text {
+    grid-column: 1 / span 6;
+  }
+
+  .sd-statement-media {
+    grid-column: 8 / span 5;
+    justify-self: end;
+    width: min(100%, 400px);
+    max-width: none;
+    margin: 0;
+  }
+}

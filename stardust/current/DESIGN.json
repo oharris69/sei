@@ -1,0 +1,272 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-10-29T23:32:00Z",
+    "readArtifacts": [
+      "stardust/current/_computed-styles.json",
+      "stardust/current/_brand-extraction.json",
+      "styles/styles.css"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.32.1"
+  },
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T23:32:00Z",
+  "title": "Design System: SEI (current)",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "SEI Red"
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "SEI Cyan"
+      },
+      "green": {
+        "role": "tertiary",
+        "displayName": "SEI Green"
+      }
+    },
+    "shadows": [
+      {
+        "name": "launcher",
+        "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
+        "purpose": "Floating SEI Assistant launcher."
+      }
+    ],
+    "gradients": [
+      {
+        "name": "brand",
+        "value": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)",
+        "purpose": "Hero field, Proof in practice band."
+      },
+      {
+        "name": "newsletter",
+        "value": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
+        "purpose": "Newsletter band."
+      }
+    ],
+    "motion": [],
+    "componentStyle": {
+      "buttonPrimary": {
+        "background": "#d82b2a",
+        "hover": "#b82322",
+        "color": "#ffffff"
+      },
+      "cardRadius": "15px",
+      "tabRadius": "15px 15px 0 0"
+    },
+    "motifs": [
+      "offset white heading bars over gradient",
+      "green-to-cyan gradient bands",
+      "cyan featured-stat disc",
+      "folder-tab case-study switcher",
+      "dotted world map on ink"
+    ],
+    "voice": [
+      "bold-direct",
+      "headlines end in a period",
+      "confident numbers"
+    ],
+    "breakpoints": {
+      "containerMaxWidth": "1280px",
+      "probeWidth": 2560,
+      "shellMaxWidth": null,
+      "caps": [
+        {
+          "kind": "module",
+          "px": 1280,
+          "via": "max-width",
+          "selector": "body.appear > main > div.section.cards-container > div.cards-wrapper",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 920,
+          "via": "max-width",
+          "selector": "main > div.display.section > div.default-content-wrapper > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 816,
+          "via": "max-width",
+          "selector": "div.hero-wrapper > div.hero.home > div.hero-content > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 775,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > ul.stats-list",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 642,
+          "via": "fixed",
+          "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > div.newsletter-content",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 565,
+          "via": "fixed",
+          "selector": "#tabpanel-1-0 > div.tabs-panel-col",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 510,
+          "via": "fixed",
+          "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > form.newsletter-form",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 417,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > div.stats-featured",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 393,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li.cards-card-inverse",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 340,
+          "via": "fixed",
+          "selector": "li.cards-card-inverse > div.cards-card-body > p > strong",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 308,
+          "via": "fixed",
+          "selector": "#tab-1-0",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 281,
+          "via": "fixed",
+          "selector": "#tabpanel-1-0 > div.tabs-panel-col > p > a",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 253,
+          "via": "fixed",
+          "selector": "div.stats.block > ul.stats-list > li.stats-item > p.stats-value",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 0,
+          "selector": "body.appear > main > div.section.hero-container",
+          "px": 816
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 1,
+          "selector": "body.appear > main > div.section.cards-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 2,
+          "selector": "body.appear > main > div.display.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 3,
+          "selector": "body.appear > main > div.gradient.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 4,
+          "selector": "body.appear > main > div.section.stats-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 5,
+          "selector": "body.appear > main > div.heading-link.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 6,
+          "selector": "body.appear > main > div.section.newsletter-container",
+          "px": 1280
+        }
+      ],
+      "capRegister": [],
+      "capProvenance": {
+        "writtenBy": "skills/replica/scripts/cap-probe.mjs",
+        "writtenAt": "2026-10-29T23:30:30.253Z",
+        "baseWidth": 1440,
+        "urls": [
+          "https://main--sei--oharris69.aem.live/"
+        ]
+      }
+    }
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "The Connective Field",
+    "keyCharacteristics": [
+      "Heavy, tightly-tracked sans headlines ending in a period.",
+      "Green→cyan 225° gradient as the brand field.",
+      "Red square-ish CTAs reserved for actions.",
+      "15 px card radius; tabs with 15 px top corners.",
+      "Ink-dark stats band with a dotted world map and a cyan featured disc."
+    ],
+    "dos": [
+      "Do reserve red for actions.",
+      "Do use the green→cyan gradient as the signature field."
+    ],
+    "donts": [
+      "Don't set body copy below 14px."
+    ]
+  }
+}

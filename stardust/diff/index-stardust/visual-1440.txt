@@ -1,0 +1,627 @@
+
+Visual diff @ 1440px (profile "eds") — screenshots in stardust/.work/diff/visual-1440/
+
+EDS red flags (advisory): 
+  • STRETCHED IMAGE: card-data-cloud.png natural 790x866 → rendered 395x400. Add 'height: auto' to the img reset / block CSS (#36) — unless justified (#45: object-fit:cover full-bleed, or the proto shares the same stretch).
+  • STRETCHED IMAGE: card-marketplace.png natural 790x866 → rendered 395x400. Add 'height: auto' to the img reset / block CSS (#36) — unless justified (#45: object-fit:cover full-bleed, or the proto shares the same stretch).
+  • STRETCHED IMAGE: card-market-cap.png natural 790x866 → rendered 395x400. Add 'height: auto' to the img reset / block CSS (#36) — unless justified (#45: object-fit:cover full-bleed, or the proto shares the same stretch).
+  • STRETCHED IMAGE: connective-tissue.png natural 2394x1220 → rendered 500x500. Add 'height: auto' to the img reset / block CSS (#36) — unless justified (#45: object-fit:cover full-bleed, or the proto shares the same stretch).
+
+Full metrics JSON (compare proto vs EDS: heading colors, eyebrow colors, image dims, full-bleed):
+{
+ "proto": {
+  "viewport": 1440,
+  "blankRender": false,
+  "mainHeight": 3936,
+  "textLen": 2288,
+  "images": [
+   {
+    "src": "sei-logo.png",
+    "natural": "88x80",
+    "rendered": "44x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-data-cloud.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-marketplace.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-market-cap.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "connective-tissue.png",
+    "natural": "2394x1220",
+    "rendered": "500x500",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "summit.png",
+    "natural": "476x100",
+    "rendered": "190x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "summit-white.png",
+    "natural": "476x100",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "fft.png",
+    "natural": "422x80",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "fft-white.png",
+    "natural": "422x80",
+    "rendered": "205x39",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "tcw.png",
+    "natural": "306x116",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "tcw-white.png",
+    "natural": "306x116",
+    "rendered": "106x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "kent-state.png",
+    "natural": "374x110",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "kent-state-white.png",
+    "natural": "374x110",
+    "rendered": "136x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "world-map.png",
+    "natural": "2560x1402",
+    "rendered": "1123x615",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "zach-womack.png",
+    "natural": "568x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "ryan-hicke.png",
+    "natural": "568x624",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "jeff-benfield.png",
+    "natural": "564x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "sneha-shah.png",
+    "natural": "564x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "footer-logo.png",
+    "natural": "128x112",
+    "rendered": "40x35",
+    "stretched": false,
+    "failedToLoad": false
+   }
+  ],
+  "headings": [
+   {
+    "tag": "h1",
+    "text": "Financial value is createdbetwee",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "66px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Data Cloud webcast",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "SEI Marketplace",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "$12B in market cap",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "The connective tissue of modern ",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Proof in practice.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Depth you can feel. Reach you ca",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Perspectives from SEI Leadership",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Defining RAG models and agentic ",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "The business behind the business",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Modernizing wealth at scale.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Building the next wave of AI.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "What’s New at SEI",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   }
+  ],
+  "eyebrows": [
+   {
+    "text": "STAY CONNECTED",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "flushText": [],
+  "contentBoxes": [
+   {
+    "sel": "wrap",
+    "width": 1280,
+    "left": 80
+   },
+   {
+    "sel": "promo-grid",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "wrap",
+    "width": 1280,
+    "left": 80
+   },
+   {
+    "sel": "panel",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "reach__grid",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "lead-grid",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "wrap",
+    "width": 1280,
+    "left": 80
+   }
+  ]
+ },
+ "EDS": {
+  "viewport": 1440,
+  "blankRender": false,
+  "mainHeight": 3942,
+  "textLen": 2299,
+  "images": [
+   {
+    "src": "sei-logo.png",
+    "natural": "88x80",
+    "rendered": "44x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "search.svg",
+    "natural": "24x24",
+    "rendered": "20x20",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-data-cloud.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-marketplace.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "card-market-cap.png",
+    "natural": "790x866",
+    "rendered": "395x400",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "connective-tissue.png",
+    "natural": "2394x1220",
+    "rendered": "500x500",
+    "stretched": true,
+    "failedToLoad": false
+   },
+   {
+    "src": "summit.png",
+    "natural": "476x100",
+    "rendered": "190x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "summit-white.png",
+    "natural": "476x100",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "fft.png",
+    "natural": "422x80",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "fft-white.png",
+    "natural": "422x80",
+    "rendered": "205x39",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "tcw.png",
+    "natural": "306x116",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "tcw-white.png",
+    "natural": "306x116",
+    "rendered": "106x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "kent-state.png",
+    "natural": "374x110",
+    "rendered": "0x0",
+    "stretched": 0,
+    "failedToLoad": false
+   },
+   {
+    "src": "kent-state-white.png",
+    "natural": "374x110",
+    "rendered": "136x40",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "world-map.png",
+    "natural": "2560x1402",
+    "rendered": "1123x615",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "zach-womack.png",
+    "natural": "568x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "ryan-hicke.png",
+    "natural": "568x624",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "jeff-benfield.png",
+    "natural": "564x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "sneha-shah.png",
+    "natural": "564x628",
+    "rendered": "290x321",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "footer-logo.png",
+    "natural": "128x112",
+    "rendered": "48x42",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "facebook.svg",
+    "natural": "150x150",
+    "rendered": "16x16",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "instagram.svg",
+    "natural": "150x150",
+    "rendered": "16x16",
+    "stretched": false,
+    "failedToLoad": false
+   },
+   {
+    "src": "linkedin.svg",
+    "natural": "150x150",
+    "rendered": "16x16",
+    "stretched": false,
+    "failedToLoad": false
+   }
+  ],
+  "headings": [
+   {
+    "tag": "h1",
+    "text": "Financial value is createdbetwee",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "66px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Data Cloud webcast",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "SEI Marketplace",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "$12B in market cap",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "24.96px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "The connective tissue of modern ",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Proof in practice.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Depth you can feel. Reach you ca",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "Perspectives from SEI Leadership",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Defining RAG models and agentic ",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "The business behind the business",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Modernizing wealth at scale.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h3",
+    "text": "Building the next wave of AI.",
+    "color": "rgb(19, 21, 23)",
+    "fontSize": "21px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   },
+   {
+    "tag": "h2",
+    "text": "What’s New at SEI",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "42px",
+    "family": "DM Sans",
+    "fontLoaded": true
+   }
+  ],
+  "eyebrows": [
+   {
+    "text": "STAY CONNECTED",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "flushText": [],
+  "contentBoxes": [
+   {
+    "sel": "sd-hero-headline",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-hero-lede",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-promos-list",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-statement",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-case-panel",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-reach-grid",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-perspectives-list",
+    "width": 1232,
+    "left": 104
+   },
+   {
+    "sel": "sd-newsletter",
+    "width": 1232,
+    "left": 104
+   }
+  ]
+ }
+}

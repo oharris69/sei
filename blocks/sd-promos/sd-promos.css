@@ -1,0 +1,197 @@
+/* sd-promos — stardust redesign promo tiles. Tokens scoped to the section container. */
+main > .section.sd-promos-container {
+  --sd-ease: cubic-bezier(0.2, 0, 0, 1);
+  --sd-lift: 0 12px 32px rgb(19 21 23 / 12%);
+  --sd-fs-title: clamp(1.375rem, 1.2rem + 0.4vw, 1.65rem);
+
+  position: relative;
+  z-index: 2;
+  margin: -72px 0 0;
+  padding: 0 0 32px;
+}
+
+.sd-promos,
+.sd-promos *,
+.sd-promos *::before,
+.sd-promos *::after {
+  box-sizing: border-box;
+}
+
+
+.sd-promos-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sd-promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-ink);
+  color: var(--color-white);
+  isolation: isolate;
+  transition: box-shadow 220ms var(--sd-ease), transform 220ms var(--sd-ease);
+}
+
+.sd-promo:hover {
+  box-shadow: var(--sd-lift);
+  transform: translateY(-2px);
+}
+
+.sd-promo.is-light {
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.sd-promo-media,
+.sd-promo-media picture {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.sd-promo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--sd-ease);
+}
+
+.sd-promo:hover .sd-promo-media img {
+  transform: scale(1.03);
+}
+
+.sd-promo-body {
+  display: grid;
+  gap: 10px;
+  padding: 48px 22px 22px;
+  background: linear-gradient(to top, rgb(19 21 23 / 90%) 0%, rgb(19 21 23 / 80%) 78%, rgb(19 21 23 / 0%) 100%);
+}
+
+.sd-promo.is-light .sd-promo-body {
+  background: linear-gradient(to top, #fff 0%, rgb(255 255 255 / 95%) 78%, rgb(255 255 255 / 0%) 100%);
+}
+
+.sd-promo-body :is(h2, h3) {
+  margin: 0;
+  color: inherit;
+  font-size: var(--sd-fs-title);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.sd-promo-body p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.sd-promo-body p strong {
+  font-weight: 600;
+}
+
+.sd-promo-when p {
+  font-size: 15px;
+}
+
+.sd-promo-when p strong {
+  font-weight: 800;
+}
+
+.sd-promo-body p.button-wrapper {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.sd-promo-body a.button:any-link {
+  min-height: 48px;
+  padding: 13px 22px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.sd-promo-body a.button::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 160ms var(--sd-ease);
+}
+
+.sd-promo-body a.button:hover::after {
+  transform: translateX(3px);
+}
+
+/* the whole tile is the click target of its one action */
+.sd-promo-body a.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* Experience Workspace edit mode: repaint the CTA from its authored <strong> mark */
+.sd-promo-body .prosemirror-editor p > strong > a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 13px 22px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sd-promo.is-inverse :focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+@media (width >= 600px) {
+  main > .section.sd-promos-container {
+    margin-top: -88px;
+    padding-bottom: 48px;
+  }
+
+  .sd-promo-body {
+    padding: 48px 28px 28px;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.sd-promos-container {
+    margin-top: -104px;
+    padding-bottom: 64px;
+  }
+
+  .sd-promos-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sd-promo {
+    min-height: 400px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-promo,
+  .sd-promo-media img,
+  .sd-promo-body a.button::after {
+    transition: none;
+  }
+
+  .sd-promo:hover,
+  .sd-promo:hover .sd-promo-media img {
+    transform: none;
+  }
+}

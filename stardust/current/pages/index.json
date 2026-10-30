@@ -1,0 +1,558 @@
+{
+  "_provenance": {
+    "renderedBy": "playwright",
+    "fetchedAt": "2026-10-29T23:26:56.820Z",
+    "waitMode": "medium",
+    "waitMs": 2500,
+    "httpStatus": 200
+  },
+  "slug": "index",
+  "url": "https://main--sei--oharris69.aem.live/",
+  "renderedBy": "playwright",
+  "fetchedAt": "2026-10-29T23:26:56.820Z",
+  "finalUrl": "https://main--sei--oharris69.aem.live/",
+  "title": "SEI | One partner. One connected wealth enterprise.",
+  "description": "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
+  "og": {
+    "title": "SEI | One partner. One connected wealth enterprise.",
+    "description": "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
+    "image": "https://main--sei--oharris69.aem.live/media_1883e95f2960557560f74e21a9e9c1f0ce3a6393c.png?width=1200&format=pjpg&optimize=medium",
+    "type": null
+  },
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Financial value is createdbetween the lines."
+    },
+    {
+      "tag": "h3",
+      "text": "Data Cloud webcast"
+    },
+    {
+      "tag": "h3",
+      "text": "SEI Marketplace"
+    },
+    {
+      "tag": "h3",
+      "text": "$12B in market cap"
+    },
+    {
+      "tag": "h2",
+      "text": "The connective tissue of modern finance."
+    },
+    {
+      "tag": "h2",
+      "text": "Proof in practice."
+    },
+    {
+      "tag": "h2",
+      "text": "Depth you can feel. Reach you can measure."
+    },
+    {
+      "tag": "h2",
+      "text": "Perspectives from SEI Leadership."
+    },
+    {
+      "tag": "h4",
+      "text": "Zach Womack"
+    },
+    {
+      "tag": "h3",
+      "text": "Defining RAG models and agentic AI."
+    },
+    {
+      "tag": "h4",
+      "text": "Ryan Hicke"
+    },
+    {
+      "tag": "h3",
+      "text": "The business behind the business."
+    },
+    {
+      "tag": "h4",
+      "text": "Jeff Benfield"
+    },
+    {
+      "tag": "h3",
+      "text": "Modernizing wealth at scale."
+    },
+    {
+      "tag": "h4",
+      "text": "Sneha Shah"
+    },
+    {
+      "tag": "h3",
+      "text": "Building the next wave of AI."
+    },
+    {
+      "tag": "h2",
+      "text": "What’s New at SEI"
+    },
+    {
+      "tag": "h3",
+      "text": "Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Who we serve"
+    },
+    {
+      "tag": "h3",
+      "text": "Our insights"
+    },
+    {
+      "tag": "h3",
+      "text": "Contact us"
+    }
+  ],
+  "body": [
+    "One partner. One connected wealth enterprise.",
+    "Data Cloud webcast Learn how your team can spend less time managing data and more time using it to drive growth. Thursday, October 111 am ET Register now",
+    "Learn how your team can spend less time managing data and more time using it to drive growth.",
+    "Thursday, October 111 am ET",
+    "Register now",
+    "SEI Marketplace Explore our ETFs and funds. Invest today",
+    "Explore our ETFs and funds.",
+    "Invest today",
+    "$12B in market cap SEI’s momentum makes its mark. Read Q2 press release",
+    "SEI’s momentum makes its mark.",
+    "Read Q2 press release",
+    "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
+    "See the stories—and the numbers—that show what’s possible with SEI as your trusted strategic partner.",
+    "Summit Wealth Group partnered with SEI to launch an integrated wealth platform allowing the firm to scale efficiently while maintaining flexibility and a high-touch client experience.",
+    "Read the full case study",
+    "$2B+",
+    "Asset migration",
+    "Multi-custodian access",
+    "Built around client needs",
+    "End-to-end capability, global coverage across platforms, products, and time zones.",
+    "58years of institutional service",
+    "58",
+    "years of institutional service",
+    "15countries served",
+    "15",
+    "countries served",
+    "2,000+industry experts worldwide",
+    "2,000+",
+    "industry experts worldwide",
+    "$1.9T",
+    "Assets Under Management & Administration",
+    "View all insights",
+    "Zach Womack Chief Technology Officer Defining RAG models and agentic AI. Separating AI buzzwords from the capabilities driving measurable business value.",
+    "Chief Technology Officer",
+    "Separating AI buzzwords from the capabilities driving measurable business value.",
+    "Ryan Hicke Chief Executive Officer The business behind the business. Big shifts are transforming financial services. Here’s how SEI sees the road ahead.",
+    "Chief Executive Officer",
+    "Big shifts are transforming financial services. Here’s how SEI sees the road ahead.",
+    "Jeff Benfield Chief Product Officer Modernizing wealth at scale. What it takes to modernize client experience while transaction volumes and expectations rise.",
+    "Chief Product Officer",
+    "What it takes to modernize client experience while transaction volumes and expectations rise.",
+    "Sneha Shah Executive Vice President, Chief AI Strategist Building the next wave of AI. How AI, tokenization, and innovation drive new wealth tech business models.",
+    "Executive Vice President, Chief AI Strategist",
+    "How AI, tokenization, and innovation drive new wealth tech business models.",
+    "STAY CONNECTED",
+    "Subscribe for timely insights on product innovation, platform enhancements, real-world use cases, expert conversations, and upcoming learning opportunities across the wealth ecosystem.",
+    "By subscribing, you agree to receive marketing emails from SEI. Unsubscribe at any time."
+  ],
+  "codeBlocks": [],
+  "ctas": [
+    {
+      "label": "Solutions",
+      "href": null
+    },
+    {
+      "label": "Who We Serve",
+      "href": null
+    },
+    {
+      "label": "Our Insights",
+      "href": null
+    },
+    {
+      "label": "About SEI",
+      "href": null
+    },
+    {
+      "label": "Client Login",
+      "href": "/login"
+    },
+    {
+      "label": "Contact Us",
+      "href": "/contact"
+    },
+    {
+      "label": "Register now",
+      "href": "/insights/events/data-cloud-webcast"
+    },
+    {
+      "label": "Invest today",
+      "href": "/etfs"
+    },
+    {
+      "label": "Read Q2 press release",
+      "href": "/about/newsroom/q2-results"
+    },
+    {
+      "label": "Read the full case study",
+      "href": "/insights/case-studies/summit-wealth-group"
+    },
+    {
+      "label": "View all insights",
+      "href": "/insights/thought-leadership"
+    },
+    {
+      "label": "Defining RAG models and agentic AI.",
+      "href": "/insights/defining-rag-models-and-agentic-ai"
+    },
+    {
+      "label": "The business behind the business.",
+      "href": "/insights/the-business-behind-the-business"
+    },
+    {
+      "label": "Modernizing wealth at scale.",
+      "href": "/insights/modernizing-wealth-at-scale"
+    },
+    {
+      "label": "Building the next wave of AI.",
+      "href": "/insights/building-the-next-wave-of-ai"
+    },
+    {
+      "label": "Subscribe to SEI Insights",
+      "href": null
+    },
+    {
+      "label": "Technology",
+      "href": "/solutions/technology"
+    },
+    {
+      "label": "Custody",
+      "href": "/solutions/custody"
+    },
+    {
+      "label": "Advisor services",
+      "href": "/solutions/advisor-services"
+    },
+    {
+      "label": "Asset managers",
+      "href": "/asset-managers"
+    },
+    {
+      "label": "Banks and wealth managers",
+      "href": "/who-we-serve/banks"
+    },
+    {
+      "label": "Financial advisors",
+      "href": "/bd-breakaway"
+    },
+    {
+      "label": "Institutional investors",
+      "href": "/who-we-serve/institutional-investors"
+    },
+    {
+      "label": "Thought leadership",
+      "href": "/insights/thought-leadership"
+    },
+    {
+      "label": "Events",
+      "href": "/insights/events"
+    },
+    {
+      "label": "SEI Growth Lab",
+      "href": "/insights/growth-lab"
+    },
+    {
+      "label": "Our team",
+      "href": "/about/our-team"
+    },
+    {
+      "label": "Contact us",
+      "href": "/contact"
+    },
+    {
+      "label": "About SEI",
+      "href": "/about"
+    },
+    {
+      "label": "Client login",
+      "href": "/login"
+    },
+    {
+      "label": "Contact us",
+      "href": "/contact"
+    },
+    {
+      "label": "Locations",
+      "href": "/about/locations"
+    },
+    {
+      "label": "Newsroom",
+      "href": "/about/newsroom"
+    },
+    {
+      "label": "Investor relations",
+      "href": "/about/investor-relations"
+    },
+    {
+      "label": "Careers",
+      "href": "/about/careers"
+    },
+    {
+      "label": "Cookies Settings",
+      "href": "/legal/cookie-settings"
+    },
+    {
+      "label": "Cookie policy",
+      "href": "/legal/cookie-policy"
+    },
+    {
+      "label": "Accessibility statement",
+      "href": "/legal/accessibility"
+    },
+    {
+      "label": "Terms of use",
+      "href": "/legal/terms-of-use"
+    },
+    {
+      "label": "Fund documents",
+      "href": "/legal/fund-documents"
+    },
+    {
+      "label": "Corporate governance",
+      "href": "/legal/corporate-governance"
+    },
+    {
+      "label": "SEI Assistant — Ask a question",
+      "href": "/modals/assistant"
+    }
+  ],
+  "links": [
+    "https://main--sei--oharris69.aem.live/",
+    "https://main--sei--oharris69.aem.live/solutions/technology",
+    "https://main--sei--oharris69.aem.live/solutions/custody",
+    "https://main--sei--oharris69.aem.live/solutions/advisor-services",
+    "https://main--sei--oharris69.aem.live/etfs",
+    "https://main--sei--oharris69.aem.live/portfolio-evaluator",
+    "https://main--sei--oharris69.aem.live/asset-managers",
+    "https://main--sei--oharris69.aem.live/bd-breakaway",
+    "https://main--sei--oharris69.aem.live/enterprise-ria",
+    "https://main--sei--oharris69.aem.live/who-we-serve/banks",
+    "https://main--sei--oharris69.aem.live/who-we-serve/institutional-investors",
+    "https://main--sei--oharris69.aem.live/insights/thought-leadership",
+    "https://main--sei--oharris69.aem.live/insights/events",
+    "https://main--sei--oharris69.aem.live/insights/growth-lab",
+    "https://main--sei--oharris69.aem.live/about",
+    "https://main--sei--oharris69.aem.live/pathfinder",
+    "https://main--sei--oharris69.aem.live/about/newsroom",
+    "https://main--sei--oharris69.aem.live/about/careers",
+    "https://main--sei--oharris69.aem.live/search",
+    "https://main--sei--oharris69.aem.live/login",
+    "https://main--sei--oharris69.aem.live/contact",
+    "https://main--sei--oharris69.aem.live/insights/events/data-cloud-webcast",
+    "https://main--sei--oharris69.aem.live/about/newsroom/q2-results",
+    "https://main--sei--oharris69.aem.live/insights/case-studies/summit-wealth-group",
+    "https://main--sei--oharris69.aem.live/insights/case-studies/fft-wealth-management",
+    "https://main--sei--oharris69.aem.live/insights/case-studies/tcw",
+    "https://main--sei--oharris69.aem.live/insights/case-studies/kent-state-university",
+    "https://main--sei--oharris69.aem.live/insights/defining-rag-models-and-agentic-ai",
+    "https://main--sei--oharris69.aem.live/insights/the-business-behind-the-business",
+    "https://main--sei--oharris69.aem.live/insights/modernizing-wealth-at-scale",
+    "https://main--sei--oharris69.aem.live/insights/building-the-next-wave-of-ai",
+    "https://main--sei--oharris69.aem.live/about/our-team",
+    "https://main--sei--oharris69.aem.live/about/locations",
+    "https://main--sei--oharris69.aem.live/about/investor-relations",
+    "https://www.facebook.com/",
+    "https://www.instagram.com/",
+    "https://www.linkedin.com/",
+    "https://main--sei--oharris69.aem.live/legal/cookie-settings",
+    "https://main--sei--oharris69.aem.live/legal/cookie-policy",
+    "https://main--sei--oharris69.aem.live/legal/privacy-notice",
+    "https://main--sei--oharris69.aem.live/legal/accessibility",
+    "https://main--sei--oharris69.aem.live/legal/terms-of-use",
+    "https://main--sei--oharris69.aem.live/legal/fund-documents",
+    "https://main--sei--oharris69.aem.live/legal/corporate-governance",
+    "https://main--sei--oharris69.aem.live/modals/assistant"
+  ],
+  "media": {
+    "imgs": [
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_115c495188bf7452b75fe614c8561b64f8b147e55.png?width=2000&format=webply&optimize=medium",
+        "alt": "SEI",
+        "w": 88,
+        "h": 80
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/icons/search.svg",
+        "alt": "",
+        "w": 24,
+        "h": 24
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1883e95f2960557560f74e21a9e9c1f0ce3a6393c.png?width=800&format=webply&optimize=medium",
+        "alt": "Glass panels in green light",
+        "w": 790,
+        "h": 866
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1c9a524700a2166c9ab0992e73dc1047e03cf136d.png?width=800&format=webply&optimize=medium",
+        "alt": "Abstract network illustration",
+        "w": 790,
+        "h": 866
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_12342cedbac4addecb7f65e64420994220bb27614.png?width=800&format=webply&optimize=medium",
+        "alt": "Market chart over a blue background",
+        "w": 790,
+        "h": 866
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_128b7d42b9f692fb18b12be0e660ba45b7cacf632.png?width=2000&format=webply&optimize=medium",
+        "alt": "The SEI logo inside a green-to-blue ring",
+        "w": 2000,
+        "h": 1019
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1318ece14137d086db510e520b4feb6ac0a045725.png?width=2000&format=webply&optimize=medium",
+        "alt": "Summit Wealth Group",
+        "w": 476,
+        "h": 100
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_190a3e5a1ef8e4adbb9160de7a01f6ff189c4ddd7.png?width=2000&format=webply&optimize=medium",
+        "alt": "FFT Wealth Management",
+        "w": 422,
+        "h": 80
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1a165511c8a15e028f83e2afe3096bd8037054df5.png?width=2000&format=webply&optimize=medium",
+        "alt": "TCW",
+        "w": 306,
+        "h": 116
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_10e7124ffaaf6a8dfa623d0e7f0db1e4a481fc4e2.png?width=2000&format=webply&optimize=medium",
+        "alt": "Kent State University",
+        "w": 374,
+        "h": 110
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1ad019ca7b820ff6fb28f1aa60753f417d4e10f92.png?width=2000&format=webply&optimize=medium",
+        "alt": "",
+        "w": 2000,
+        "h": 1095
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1b223bc17abecf642135362d1b7b7611dab829f54.png?width=600&format=webply&optimize=medium",
+        "alt": "Zach Womack",
+        "w": 568,
+        "h": 628
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_171632d9fe0fbdb721859044c14a03f2cff581dc4.png?width=600&format=webply&optimize=medium",
+        "alt": "Ryan Hicke",
+        "w": 568,
+        "h": 624
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_1bc7db3ad9fbee933fd4eba4bcc8c950d9e26c008.png?width=600&format=webply&optimize=medium",
+        "alt": "Jeff Benfield",
+        "w": 564,
+        "h": 628
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_17579c121a303f2767d8c2ead6ff820fdb044e030.png?width=600&format=webply&optimize=medium",
+        "alt": "Sneha Shah",
+        "w": 564,
+        "h": 628
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/media_11f5d681c63bb26227f140e16ad4e027ea0b9e319.png?width=2000&format=webply&optimize=medium",
+        "alt": "SEI",
+        "w": 128,
+        "h": 112
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/icons/facebook.svg",
+        "alt": "",
+        "w": 150,
+        "h": 150
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/icons/instagram.svg",
+        "alt": "",
+        "w": 150,
+        "h": 150
+      },
+      {
+        "src": "https://main--sei--oharris69.aem.live/icons/linkedin.svg",
+        "alt": "",
+        "w": 150,
+        "h": 150
+      }
+    ],
+    "allImgCount": 23,
+    "cssBackgrounds": [],
+    "modals": [],
+    "videos": [],
+    "iframes": []
+  },
+  "customProps": {
+    "--color-ink": "#131517",
+    "--color-ink-soft": "#101828",
+    "--color-slate": "#364153",
+    "--color-gray-600": "#4a5565",
+    "--color-gray-500": "#6a7282",
+    "--color-gray-400": "#99a1af",
+    "--color-red": "#d82b2a",
+    "--color-red-dark": "#b82322",
+    "--color-cyan": "#00c0f3",
+    "--color-cyan-bright": "#00c4f8",
+    "--color-green": "#a6ce39",
+    "--color-orange": "#f6a01a",
+    "--color-white": "#fff",
+    "--color-gray-50": "#f9fafb",
+    "--color-gray-100": "#f3f4f6",
+    "--color-gray-200": "#e5e7eb",
+    "--color-gray-300": "#d9d9d9",
+    "--gradient-brand": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)",
+    "--gradient-brand-horizontal": "linear-gradient(90deg, #00c0f3 0%, #a6ce39 100%)",
+    "--gradient-newsletter": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
+    "--background-color": "#fff",
+    "--light-color": "#f9fafb",
+    "--dark-color": "#131517",
+    "--text-color": "#131517",
+    "--link-color": "#131517",
+    "--link-hover-color": "#d82b2a",
+    "--border-color": "#e5e7eb",
+    "--body-font-family": "'DM Sans', dm-sans-fallback, sans-serif",
+    "--heading-font-family": "'DM Sans', dm-sans-fallback, sans-serif",
+    "--heading-font-weight": "1000",
+    "--body-font-size-xl": "22px",
+    "--body-font-size-l": "18px",
+    "--body-font-size-m": "16px",
+    "--body-font-size-s": "14px",
+    "--body-font-size-xs": "12px",
+    "--heading-font-size-xxl": "64px",
+    "--heading-font-size-xl": "48px",
+    "--heading-font-size-l": "36px",
+    "--heading-font-size-m": "32px",
+    "--heading-font-size-s": "24px",
+    "--heading-font-size-xs": "20px",
+    "--content-max-width": "1280px",
+    "--content-padding": "24px",
+    "--section-spacing": "64px",
+    "--radius-card": "15px",
+    "--radius-input": "15px",
+    "--nav-height": "80px"
+  },
+  "_signals": {
+    "filteredInterstitials": 0,
+    "distinctHeadings": 21,
+    "mainTextLen": 3091,
+    "realImageCount": 19,
+    "trackingOnlyMedia": false,
+    "spaShellSuspect": false,
+    "screenshotMode": "fullPage"
+  },
+  "screenshot": "assets/screenshots/index.png",
+  "renderedHtml": "pages/index.html"
+}
