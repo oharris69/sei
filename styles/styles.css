@@ -472,12 +472,49 @@ main .section.dark a:any-link:not(.button) {
   mask: url('../icons/chat.svg') center / contain no-repeat;
 }
 
+.assistant-launcher-label {
+  display: inline-block;
+  max-width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+/* compact: icon only while the full bar would cover content; expands on hover/focus */
+.assistant-launcher.compact {
+  gap: 0;
+}
+
+.assistant-launcher.compact .assistant-launcher-label {
+  max-width: 0;
+  opacity: 0;
+}
+
+.assistant-launcher.compact:is(:hover, :focus-visible) {
+  gap: 12px;
+}
+
+.assistant-launcher.compact:is(:hover, :focus-visible) .assistant-launcher-label {
+  max-width: 320px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-launcher-label {
+    transition: none;
+  }
+}
+
 @media (width >= 900px) {
   .assistant-launcher {
     bottom: 32px;
     padding: 24px 28px;
     border-radius: var(--radius-card) 0 0 0;
     font-size: var(--body-font-size-l);
+  }
+
+  .assistant-launcher.compact {
+    padding: 24px 22px;
   }
 }
 

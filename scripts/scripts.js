@@ -173,8 +173,37 @@ function buildAssistantLauncher(doc) {
   link.className = 'assistant-launcher';
   link.href = assistant && assistant.includes('/modals/') ? assistant : '/modals/assistant';
   link.setAttribute('aria-haspopup', 'dialog');
-  link.textContent = 'SEI Assistant — Ask a question';
+  link.setAttribute('aria-label', 'SEI Assistant — Ask a question');
+  link.innerHTML = '<span class="assistant-launcher-label">SEI Assistant — Ask a question</span>';
   doc.body.append(link);
+
+  // shrink to the chat icon while the full bar would cover page content people act on
+  const targets = 'main :is(a, button, input, select, textarea, h1, h2, h3, h4)';
+  let pending = false;
+  const update = () => {
+    pending = false;
+    const label = link.querySelector('.assistant-launcher-label');
+    const compact = link.classList.contains('compact');
+    link.classList.remove('compact');
+    const box = link.getBoundingClientRect();
+    if (compact) link.classList.add('compact');
+    const covered = [...doc.querySelectorAll(targets)].some((el) => {
+      if (!label || el.closest('dialog')) return false;
+      const r = el.getBoundingClientRect();
+      return r.width && r.height && r.right > box.left && r.left < box.right
+        && r.bottom > box.top && r.top < box.bottom;
+    });
+    link.classList.toggle('compact', covered);
+  };
+  const schedule = () => {
+    if (pending) return;
+    pending = true;
+    window.requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  new ResizeObserver(schedule).observe(doc.querySelector('main') || doc.body);
+  schedule();
 }
 
 /**
