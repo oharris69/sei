@@ -72,11 +72,12 @@ main > .section.sd-promos-container {
 .sd-promo-body {
   display: grid;
   gap: 10px;
-  padding: 48px 22px 22px;
-  background: linear-gradient(to top, rgb(19 21 23 / 90%) 0%, rgb(19 21 23 / 80%) 78%, rgb(19 21 23 / 0%) 100%);
+  padding: 72px 22px 22px;
+  background: linear-gradient(to bottom, rgb(19 21 23 / 0%) 0, rgb(19 21 23 / 62%) 64px, rgb(19 21 23 / 82%) 112px, rgb(19 21 23 / 90%) 100%);
 }
 
 .sd-promo.is-light .sd-promo-body {
+  padding-top: 48px;
   background: linear-gradient(to top, #fff 0%, rgb(255 255 255 / 95%) 78%, rgb(255 255 255 / 0%) 100%);
 }
 
@@ -164,7 +165,11 @@ main > .section.sd-promos-container {
   }
 
   .sd-promo-body {
-    padding: 48px 28px 28px;
+    padding: 72px 28px 28px;
+  }
+
+  .sd-promo.is-light .sd-promo-body {
+    padding-top: 48px;
   }
 }
 
@@ -179,7 +184,7 @@ main > .section.sd-promos-container {
   }
 
   .sd-promo {
-    min-height: 400px;
+    min-height: 428px;
   }
 }
 
