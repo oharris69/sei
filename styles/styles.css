@@ -73,6 +73,7 @@
 
   /* nav height */
   --nav-height: 64px;
+  --experience-height: 48px;
 }
 
 /* fallback fonts */
@@ -113,7 +114,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + var(--experience-height));
 }
 
 header .header,

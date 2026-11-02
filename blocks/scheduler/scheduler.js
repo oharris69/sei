@@ -1,4 +1,5 @@
 import { toClassName } from '../../scripts/aem.js';
+import { book, calendarHref, getProfile } from '../../scripts/profile.js';
 
 const STEPS = ['Advisor', 'Date & Time', 'Your Details', 'Confirm'];
 const DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -162,6 +163,13 @@ export default function decorate(block) {
       <label class="wide">What would you like to discuss?<textarea name="notes" rows="3"></textarea></label>
     </div>`;
 
+  // returning visitors: prefill what they told us last time
+  const { contact } = getProfile();
+  Object.entries(contact || {}).forEach(([key, value]) => {
+    const field = detailsPanel.elements[key];
+    if (field && !field.value) field.value = value;
+  });
+
   // step 4: confirm + success
   const confirmPanel = el('div', 'scheduler-panel scheduler-confirm');
   const donePanel = el('div', 'scheduler-panel scheduler-done');
@@ -288,17 +296,14 @@ export default function decorate(block) {
     if (state.step === 3) {
       const label = `${fmtLong.format(state.date).replace(/, \d{4}$/, '')}, ${state.time}`;
       const booking = {
-        advisor: config.advisor, date: state.date.toISOString(), time: state.time, label,
+        advisor: config.advisor, date: state.date.toISOString(), time: state.time, label, channel: 'scheduler',
       };
-      try {
-        sessionStorage.setItem('sei-booking', JSON.stringify(booking));
-      } catch { /* storage unavailable */ }
-      window.dispatchEvent(new CustomEvent('sei:booked', { detail: booking }));
+      book(booking, state.details);
       donePanel.innerHTML = `<span class="scheduler-done-icon" aria-hidden="true"></span>
         <h3>You are booked.</h3>
         <p>Your conversation with ${config.advisor} is set for <strong>${fmtLong.format(state.date)} at ${state.time} ${config.timezone}</strong>.</p>
         <p>A calendar invitation is on its way to ${(state.details.email || 'your inbox').replace(/</g, '&lt;')}.</p>
-        <p><button type="button" class="scheduler-finish">Done</button></p>`;
+        <p class="scheduler-done-actions"><a class="scheduler-ics" download="sei-call.ics" href="${calendarHref(booking)}">Add to calendar</a><button type="button" class="scheduler-finish">Done</button></p>`;
       donePanel.querySelector('.scheduler-finish').addEventListener('click', () => {
         block.dispatchEvent(new CustomEvent('modal:close', { bubbles: true }));
       });

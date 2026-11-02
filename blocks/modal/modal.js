@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { loadFragment } from '../fragment/fragment.js';
 import { loadCSS } from '../../scripts/aem.js';
+import { track } from '../../scripts/profile.js';
 
 /*
  * Modal
@@ -90,6 +91,7 @@ export async function openModal(href) {
   else dialog.showModal();
   lockScroll(!dialog.classList.contains('modal-docked'));
   dialog.dispatchEvent(new CustomEvent('modal:open'));
+  track(path.includes('/assistant') ? 'chat-opened' : 'modal-opened', { modal: { path } });
   const focusTarget = dialog.querySelector('[autofocus], input, .modal-content button, .modal-content a');
   if (focusTarget && dialog.classList.contains('modal-docked')) focusTarget.focus();
 }

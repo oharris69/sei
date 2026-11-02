@@ -163,15 +163,19 @@ function decorateEyebrows(main) {
 
 /**
  * Adds the floating "SEI Assistant" launcher unless the page opts out.
- * The `assistant` page metadata picks the chat fragment (default /modals/assistant).
+ * The `assistant` page metadata picks the chat fragment (default: the visitor's persona chat).
  * @param {Document} doc The document
  */
-function buildAssistantLauncher(doc) {
+async function buildAssistantLauncher(doc) {
   const assistant = getMetadata('assistant');
   if (assistant === 'off' || doc.querySelector('.assistant-launcher')) return;
+  const { assistantFor, onProfileChange } = await import('./profile.js');
   const link = doc.createElement('a');
   link.className = 'assistant-launcher';
-  link.href = assistant && assistant.includes('/modals/') ? assistant : '/modals/assistant';
+  // the page's chat wins; otherwise the one for the visitor's persona
+  const chatHref = () => (assistant && assistant.includes('/modals/') ? assistant : assistantFor());
+  link.href = chatHref();
+  onProfileChange(() => { link.href = chatHref(); });
   link.setAttribute('aria-haspopup', 'dialog');
   link.setAttribute('aria-label', 'SEI Assistant — Ask a question');
   link.innerHTML = '<span class="assistant-launcher-label">SEI Assistant — Ask a question</span>';
@@ -249,6 +253,8 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  // visitor profile: record this page against the visitor's journey before the header renders it
+  await import('./profile.js').then(({ recordView }) => recordView()).catch(() => {});
   loadHeader(doc.querySelector('body > header'));
 
   const main = doc.querySelector('main');

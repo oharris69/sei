@@ -218,3 +218,136 @@
   background-color: var(--color-white);
   mask: url('../../icons/arrow-right.svg') center / 16px no-repeat;
 }
+
+/* quick replies, persona choices and booking slots */
+.assistant .assistant-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assistant .assistant-chip {
+  min-height: 32px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid var(--color-cyan);
+  border-radius: 16px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+
+.assistant .assistant-chip:hover:not(:disabled) {
+  background-color: var(--color-cyan);
+  color: var(--color-white);
+}
+
+.assistant .assistant-chip:disabled {
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-500);
+  cursor: default;
+}
+
+.assistant .assistant-chip:focus-visible,
+.assistant .assistant-inline-form :focus-visible,
+.assistant .assistant-more:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+.assistant .assistant-slot {
+  border-radius: 4px;
+}
+
+.assistant a.assistant-more:any-link {
+  margin-top: -16px;
+  color: var(--color-ink);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.assistant .assistant-inline-form {
+  margin-top: 12px;
+}
+
+.assistant .assistant-inline-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-gray-600);
+}
+
+.assistant .assistant-inline-form div {
+  display: flex;
+  gap: 8px;
+}
+
+.assistant .assistant-inline-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--color-gray-400);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  font: inherit;
+  font-size: var(--body-font-size-s);
+}
+
+.assistant .assistant-inline-form button {
+  margin: 0;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font: inherit;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.assistant .assistant-inline-form button:disabled {
+  background-color: var(--color-gray-400);
+  cursor: default;
+}
+
+.assistant .assistant-booked {
+  background-color: #eef6dc;
+}
+
+.assistant .assistant-booked strong {
+  display: block;
+}
+
+.assistant a.assistant-ics:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--color-ink);
+  font-size: var(--body-font-size-s);
+  text-decoration: underline;
+}
+
+.assistant a.assistant-ics::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('../../icons/calendar.svg') center / contain no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant .assistant-typing span {
+    animation: none;
+  }
+}

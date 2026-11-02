@@ -308,3 +308,369 @@ header nav .nav-tools .icon {
     display: inline-flex;
   }
 }
+
+/* experience bar: persona, journey progress, next step */
+header .nav-experience {
+  --experience-muted: rgb(255 255 255 / 70%);
+
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+header nav[aria-expanded='true'] + .nav-experience {
+  display: none;
+}
+
+header .experience-inner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: var(--content-max-width);
+  height: var(--experience-height);
+  margin: auto;
+  padding: 0 var(--content-padding);
+}
+
+header .experience-persona {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+header .experience-persona-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  margin: 0;
+  padding: 0 12px 0 14px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 16px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+header .experience-persona-toggle:hover,
+header .experience-persona-toggle[aria-expanded='true'] {
+  border-color: var(--color-cyan);
+}
+
+header .experience-persona-toggle::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: currentcolor;
+  mask: url('../../icons/chevron-down.svg') center / contain no-repeat;
+  transition: transform 0.2s;
+}
+
+header .experience-persona-toggle[aria-expanded='true']::after {
+  transform: rotate(180deg);
+}
+
+header .experience-kicker {
+  color: var(--experience-muted);
+}
+
+header .experience-persona-label {
+  font-weight: 700;
+}
+
+header .nav-experience[data-persona=''] .experience-persona-label {
+  color: var(--color-cyan);
+}
+
+header .experience-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 20;
+  width: min(320px, calc(100vw - 40px));
+  padding: 8px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  box-shadow: 0 10px 30px rgb(16 24 40 / 16%);
+  color: var(--color-ink);
+}
+
+header .experience-menu[hidden] {
+  display: none;
+}
+
+header .experience-options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header .experience-option {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px 10px 36px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+header .experience-option:hover,
+header .experience-option:focus-visible {
+  background-color: var(--color-gray-100);
+  outline: none;
+}
+
+header .experience-option[aria-pressed='true']::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-red);
+  mask: url('../../icons/check.svg') center / contain no-repeat;
+}
+
+header .experience-option-label {
+  font-weight: 700;
+}
+
+header .experience-option-detail {
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
+}
+
+header .experience-reset {
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border: 0;
+  border-top: 1px solid var(--color-gray-200);
+  border-radius: 0;
+  background: none;
+  color: var(--color-gray-600);
+  font: inherit;
+  font-size: var(--body-font-size-xs);
+  text-align: left;
+  cursor: pointer;
+}
+
+header .experience-reset:hover {
+  color: var(--color-red);
+}
+
+header .experience-progress {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+header .experience-journey {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header .experience-stage {
+  margin: 0;
+  overflow: hidden;
+  color: var(--experience-muted);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+header .experience-step {
+  display: flex;
+  align-items: center;
+}
+
+header .experience-step + .experience-step::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  margin: 0 10px;
+  background-color: rgb(255 255 255 / 30%);
+}
+
+header .experience-step.done + .experience-step::before {
+  background-color: var(--color-green);
+}
+
+header .experience-step-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--experience-muted);
+  white-space: nowrap;
+}
+
+header .experience-step-link:hover {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+header .experience-step-link:hover .experience-step-label {
+  text-decoration: underline;
+}
+
+header .experience-step-marker {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .experience-step.done .experience-step-marker {
+  border-color: var(--color-green);
+  background-color: var(--color-green);
+  position: relative;
+}
+
+header .experience-step.done .experience-step-marker::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-ink);
+  mask: url('../../icons/check.svg') center / 12px no-repeat;
+}
+
+header .experience-step.current .experience-step-link {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+header .experience-step.current .experience-step-marker {
+  border-color: var(--color-cyan);
+  background-color: var(--color-cyan);
+  color: var(--color-ink);
+}
+
+header .experience-step.here .experience-step-label {
+  text-decoration: underline;
+  text-decoration-color: var(--color-cyan);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+header .experience-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+header .experience-action {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 16px;
+}
+
+header .experience-talk:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 4px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+header .experience-talk:hover {
+  background-color: var(--color-red-dark);
+  text-decoration: none;
+}
+
+header .experience-talk::before,
+header .experience-booked::before,
+header .experience-ics::before {
+  content: '';
+  flex: 0 0 16px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('../../icons/calendar.svg') center / contain no-repeat;
+}
+
+header .experience-booked {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+header .experience-booked::before {
+  background-color: var(--color-green);
+}
+
+header .experience-booked-label {
+  color: var(--experience-muted);
+}
+
+header .experience-ics:any-link {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-cyan);
+  white-space: nowrap;
+}
+
+header .nav-experience :focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+@media (width < 600px) {
+  header .experience-kicker,
+  header .experience-booked-label {
+    display: none;
+  }
+
+  header .experience-talk:any-link {
+    padding: 0 10px;
+  }
+}
+
+@media (width >= 900px) {
+  header .experience-inner {
+    gap: 24px;
+  }
+
+  header .experience-journey:not([hidden]) {
+    display: flex;
+    align-items: center;
+  }
+
+  header .experience-journey:not([hidden]) + .experience-stage {
+    display: none;
+  }
+
+  header .experience-ics:any-link {
+    display: inline-flex;
+  }
+
+  header .experience-ics::before {
+    display: none;
+  }
+}

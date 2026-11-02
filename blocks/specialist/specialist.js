@@ -1,4 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { getProfile } from '../../scripts/profile.js';
 
 /**
  * Specialist: the SEI person a visitor has been matched with.
@@ -87,7 +88,5 @@ export default function decorate(block) {
     });
   };
   window.addEventListener('sei:booked', (e) => showBooked(e.detail));
-  try {
-    showBooked(JSON.parse(sessionStorage.getItem('sei-booking')));
-  } catch { /* no stored booking */ }
+  showBooked(getProfile().booking);
 }
