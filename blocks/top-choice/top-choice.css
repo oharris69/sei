@@ -1,0 +1,60 @@
+.top-choice {
+  box-sizing: border-box;
+  max-width: 440px;
+  padding: 24px 24px 32px;
+  background-color: var(--color-gray-50);
+}
+
+.top-choice .top-choice-intro > * {
+  margin: 0;
+}
+
+.top-choice .top-choice-intro :is(h2, h3) {
+  font-size: var(--heading-font-size-s);
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
+
+.top-choice .top-choice-intro p {
+  margin-top: 10px;
+  font-size: var(--body-font-size-m);
+  line-height: 20px;
+}
+
+.top-choice .top-choice-card {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 4px;
+  background-color: var(--color-white);
+}
+
+.top-choice .top-choice-card > * {
+  margin: 0;
+}
+
+.top-choice .top-choice-ticker {
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: -0.025em;
+}
+
+.top-choice .top-choice-name {
+  margin-top: 8px;
+  font-size: var(--body-font-size-xs);
+  line-height: 18px;
+  letter-spacing: 0.3px;
+}
+
+.top-choice .top-choice-card p.button-wrapper {
+  margin-top: 24px;
+}
+
+.top-choice .top-choice-card a.button:any-link {
+  padding: 10px 18px;
+}
+
+/* the content after the panel continues the section; don't restart the intro spacing */
+main > div.section > .top-choice-wrapper + .default-content-wrapper {
+  padding-top: 16px;
+}
