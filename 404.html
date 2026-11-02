@@ -54,7 +54,8 @@
         return `The ${parts[0] === 'etfs' ? parts.at(-2).toUpperCase() : humanize(parts.at(-2))} fact sheet`;
       }
       if (parts[0] === 'etfs' && parts.length === 2) return `The ${parts[1].toUpperCase()} fund page`;
-      const kind = KINDS.find(([re]) => re.test(path))?.[1];
+      const kind = new URLSearchParams(window.location.search).get('missing') === 'pdf'
+        ? 'guide' : KINDS.find(([re]) => re.test(path))?.[1];
       let name = humanize(parts.at(-1));
       // videos, podcasts and case studies are named after people and firms
       if (['video', 'podcast', 'case study'].includes(kind)) name = name.replace(/\b[a-z]/g, (c) => c.toUpperCase());

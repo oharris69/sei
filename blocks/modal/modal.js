@@ -114,6 +114,14 @@ export function autolinkModals(doc) {
       return;
     }
     if (url.origin !== window.location.origin) return;
+    // a missing document would show a bare CDN error; send it to the "not in the demo" page
+    if (/\.pdf$/i.test(url.pathname)) {
+      e.preventDefault();
+      fetch(url.href, { method: 'HEAD' }).then((res) => {
+        window.location.href = res.ok ? url.href : `${url.pathname.replace(/\.pdf$/i, '')}?missing=pdf`;
+      }).catch(() => { window.location.href = url.href; });
+      return;
+    }
     // "Contact us" books a call with the visitor's SEI specialist
     if (/^(\/content)?\/contact\/?$/.test(url.pathname)) {
       e.preventDefault();
