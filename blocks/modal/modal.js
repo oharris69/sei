@@ -35,7 +35,9 @@ async function getDialog(path) {
   if (dialogs.has(path)) return dialogs.get(path);
 
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
-  const fragment = await loadFragment(path);
+  let fragment = await loadFragment(path);
+  // a persona chat that isn't published yet falls back to the general one
+  if (!fragment && path.startsWith('/modals/assistant-')) fragment = await loadFragment('/modals/assistant');
   if (!fragment) return null;
 
   const name = path.split('/').pop();
