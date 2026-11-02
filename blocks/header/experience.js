@@ -10,6 +10,7 @@ import {
  */
 
 const fmtShort = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+const fmtDay = new Intl.DateTimeFormat('en-US', { weekday: 'short' });
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -35,14 +36,11 @@ function buildMenu(menu, toggle) {
     option.setAttribute('aria-pressed', profile.persona === id);
     option.append(el('span', 'experience-option-label', persona.label), el('span', 'experience-option-detail', persona.detail));
     option.addEventListener('click', () => {
-      const updated = setPersona(id);
+      // stay on the page: the journey strip appears and links to the next step
+      setPersona(id);
       toggle.setAttribute('aria-expanded', 'false');
       menu.hidden = true;
-      // take the visitor to their journey unless they are already on it
-      const status = journeyStatus(updated);
-      const onJourney = status.steps.some((step) => step.href === currentPath());
-      const next = status.current.href || status.steps[0].href;
-      if (!onJourney && next) window.location.href = pageHref(next);
+      toggle.focus();
     });
     li.append(option);
     list.append(li);
@@ -89,9 +87,10 @@ function renderJourney(journeyEl, stageEl, profile) {
     journeyEl.append(li);
   });
   const all = status.steps.every((s) => s.done);
+  // shown instead of the strip on small screens
   stageEl.textContent = all
     ? `${status.journey.name}: complete`
-    : `Step ${status.index + 1} of ${status.steps.length}: ${status.current.label}`;
+    : `${status.index + 1}/${status.steps.length} · ${status.current.label}`;
 }
 
 function renderAction(actionEl, profile) {
@@ -99,7 +98,11 @@ function renderAction(actionEl, profile) {
   const { booking } = profile;
   if (booking) {
     const pill = el('p', 'experience-booked');
-    pill.append(el('span', 'experience-booked-label', `Your call with ${booking.advisor}`), el('strong', '', bookingWhen(booking)));
+    const when = el('strong', '', bookingWhen(booking));
+    const date = new Date(booking.date);
+    const short = el('strong', 'experience-booked-short', `${Number.isNaN(date.getTime()) ? '' : fmtDay.format(date)} ${booking.time}`.trim());
+    pill.append(el('span', 'experience-booked-label', `Your call with ${booking.advisor}`), when, short);
+    pill.setAttribute('aria-label', `Your call with ${booking.advisor}, ${bookingWhen(booking)}`);
     const ics = el('a', 'experience-ics', 'Add to calendar');
     ics.href = calendarHref(booking);
     ics.download = 'sei-call.ics';

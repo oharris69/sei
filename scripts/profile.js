@@ -34,6 +34,10 @@ export const JOURNEYS = {
     name: 'Fund administration',
     steps: [
       { id: 'explore', label: 'Explore', href: '/asset-managers' },
+      // the home page tells the client stories; visiting it doesn't make someone an asset manager
+      {
+        id: 'proof', label: 'Client stories', href: '/', infer: false,
+      },
       {
         id: 'meet', label: 'Talk to SEI', href: null, completeOn: 'booking',
       },
@@ -182,7 +186,7 @@ export function recordView(path = currentPath()) {
   Object.entries(JOURNEYS).forEach(([journeyId, journey]) => {
     const step = journey.steps.find((s) => s.href === path);
     if (!step) return;
-    if (!profile.persona) {
+    if (!profile.persona && step.infer !== false) {
       const inferred = Object.keys(PERSONAS).find((id) => PERSONAS[id].journey === journeyId);
       profile.persona = inferred;
       profile.personaSource = 'inferred';
@@ -240,11 +244,29 @@ export function book(booking, contact = {}) {
   window.dispatchEvent(new CustomEvent('sei:booked', { detail: booking }));
 }
 
+/** The instant of a US Eastern wall-clock time (handles daylight saving). */
+function easternTime(year, month, date, hours, minutes) {
+  const guess = Date.UTC(year, month, date, hours, minutes);
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric',
+  }).formatToParts(new Date(guess)).map((p) => [p.type, Number(p.value)]));
+  const wall = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute);
+  return new Date(guess + (guess - wall));
+}
+
 /** A calendar file (.ics) for a booking, as a data URL. */
 export function calendarHref(booking) {
-  const start = new Date(booking.date);
+  // slots are SEI (US Eastern) times, whatever the visitor's own time zone
+  const day = new Date(booking.date);
   const [, h, m, ampm] = (booking.time || '').match(/(\d+):(\d+)\s*(AM|PM)/i) || [];
-  if (h) start.setHours((Number(h) % 12) + (/pm/i.test(ampm) ? 12 : 0), Number(m), 0, 0);
+  const hours = h ? (Number(h) % 12) + (/pm/i.test(ampm) ? 12 : 0) : 9;
+  const start = easternTime(
+    day.getFullYear(),
+    day.getMonth(),
+    day.getDate(),
+    hours,
+    Number(m || 0),
+  );
   const end = new Date(start.getTime() + 30 * 60000);
   const stamp = (d) => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
   const ics = [

@@ -641,10 +641,27 @@ header .nav-experience :focus-visible {
   outline-offset: 2px;
 }
 
+header .experience-booked-short {
+  display: none;
+}
+
 @media (width < 600px) {
+  header .experience-inner {
+    gap: 12px;
+  }
+
   header .experience-kicker,
-  header .experience-booked-label {
+  header .experience-booked-label,
+  header .experience-booked strong:not(.experience-booked-short) {
     display: none;
+  }
+
+  header .experience-booked .experience-booked-short {
+    display: inline;
+  }
+
+  header .experience-persona-toggle {
+    padding: 0 10px 0 12px;
   }
 
   header .experience-talk:any-link {

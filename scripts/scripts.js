@@ -211,6 +211,39 @@ async function buildAssistantLauncher(doc) {
 }
 
 /**
+ * Links handled in the page rather than by navigating: pop-ups, Contact and PDFs.
+ * @param {URL} url The link URL
+ * @returns {boolean} Whether the modal code should follow the link
+ */
+function isSpecialLink(url) {
+  return url.origin === window.location.origin
+    && /^(\/content)?\/(modals\/|contact\/?$)|\.pdf$/i.test(url.pathname);
+}
+
+/**
+ * Catches clicks on special links from the very start of the page load, so a click made
+ * while the page is still loading opens the pop-up instead of navigating away.
+ * @param {Document} doc The document
+ */
+function handleSpecialLinks(doc) {
+  doc.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link || link.download || e.defaultPrevented) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    let url;
+    try {
+      url = new URL(link.href, window.location);
+    } catch {
+      return;
+    }
+    if (!isSpecialLink(url)) return;
+    e.preventDefault();
+    // eslint-disable-next-line import/no-cycle
+    import('../blocks/modal/modal.js').then(({ followLink }) => followLink(url));
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -230,6 +263,7 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  handleSpecialLinks(doc);
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
@@ -267,10 +301,9 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('body > footer'));
   buildAssistantLauncher(doc);
 
-  // pop-ups: /modals/ links open dialogs; `modal` + `modal-delay` metadata auto-open one
+  // pop-ups: `modal` + `modal-delay` metadata auto-open one
   // eslint-disable-next-line import/no-cycle
-  import('../blocks/modal/modal.js').then(({ autolinkModals, scheduleModal }) => {
-    autolinkModals(doc);
+  import('../blocks/modal/modal.js').then(({ scheduleModal }) => {
     const autoModal = getMetadata('modal');
     if (autoModal) scheduleModal(autoModal, Number(getMetadata('modal-delay')) || 8);
   });

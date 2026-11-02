@@ -5,7 +5,8 @@ import { specialistFor, track } from '../../scripts/profile.js';
 
 /*
  * Modal
- * Not authored as a block: any link to /modals/<name> opens the fragment at that path in a dialog.
+ * Not authored as a block: any link to /modals/<name> opens the fragment at that path in a dialog
+ * (scripts.js catches the click from the start and hands it to followLink).
  * The dialog gets a `modal-<name>` class so a fragment can be sized/positioned per pop-up;
  * fragments whose name starts with `assistant` dock to the bottom-right as a chat panel.
  */
@@ -99,39 +100,21 @@ export async function openModal(href) {
 }
 
 /**
- * Makes every /modals/ link on the page open its modal instead of navigating, and /contact
- * links open the visitor's specialist scheduler.
- * @param {Document} doc The document
+ * Follows a link that scripts.js hands over (see `isSpecialLink` there): /modals/ links open
+ * their modal, /contact opens the visitor's specialist scheduler, and a missing PDF goes to
+ * the "not in the demo" page instead of a bare CDN error.
+ * @param {URL} url The link URL
  */
-export function autolinkModals(doc) {
-  doc.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href]');
-    if (!link || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
-    let url;
-    try {
-      url = new URL(link.href, window.location);
-    } catch {
-      return;
-    }
-    if (url.origin !== window.location.origin) return;
-    // a missing document would show a bare CDN error; send it to the "not in the demo" page
-    if (/\.pdf$/i.test(url.pathname)) {
-      e.preventDefault();
-      fetch(url.href, { method: 'HEAD' }).then((res) => {
-        window.location.href = res.ok ? url.href : `${url.pathname.replace(/\.pdf$/i, '')}?missing=pdf`;
-      }).catch(() => { window.location.href = url.href; });
-      return;
-    }
-    // "Contact us" books a call with the visitor's SEI specialist
-    if (/^(\/content)?\/contact\/?$/.test(url.pathname)) {
-      e.preventDefault();
-      openModal(specialistFor().modal);
-      return;
-    }
-    if (!/^(\/content)?\/modals\//.test(url.pathname)) return;
-    e.preventDefault();
+export function followLink(url) {
+  if (/\.pdf$/i.test(url.pathname)) {
+    fetch(url.href, { method: 'HEAD' }).then((res) => {
+      window.location.href = res.ok ? url.href : `${url.pathname.replace(/\.pdf$/i, '')}?missing=pdf`;
+    }).catch(() => { window.location.href = url.href; });
+  } else if (/^(\/content)?\/contact\/?$/.test(url.pathname)) {
+    openModal(specialistFor().modal);
+  } else {
     openModal(url.href);
-  });
+  }
 }
 
 /**
