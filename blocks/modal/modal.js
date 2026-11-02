@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { loadFragment } from '../fragment/fragment.js';
 import { loadCSS } from '../../scripts/aem.js';
-import { track } from '../../scripts/profile.js';
+import { specialistFor, track } from '../../scripts/profile.js';
 
 /*
  * Modal
@@ -99,7 +99,8 @@ export async function openModal(href) {
 }
 
 /**
- * Makes every /modals/ link on the page open its modal instead of navigating.
+ * Makes every /modals/ link on the page open its modal instead of navigating, and /contact
+ * links open the visitor's specialist scheduler.
  * @param {Document} doc The document
  */
 export function autolinkModals(doc) {
@@ -112,7 +113,14 @@ export function autolinkModals(doc) {
     } catch {
       return;
     }
-    if (url.origin !== window.location.origin || !/^(\/content)?\/modals\//.test(url.pathname)) return;
+    if (url.origin !== window.location.origin) return;
+    // "Contact us" books a call with the visitor's SEI specialist
+    if (/^(\/content)?\/contact\/?$/.test(url.pathname)) {
+      e.preventDefault();
+      openModal(specialistFor().modal);
+      return;
+    }
+    if (!/^(\/content)?\/modals\//.test(url.pathname)) return;
     e.preventDefault();
     openModal(url.href);
   });

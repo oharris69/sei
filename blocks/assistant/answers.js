@@ -18,15 +18,15 @@ const TOPICS = [
     match: /break ?away|independen|leav(e|ing)|transition|broker|\bbd\b|go(ing)? ria/i,
     answer: () => ({
       text: 'Most advisors who break away with SEI work through four steps: plan the transition, choose custody and technology, move client assets, then run the new firm. Summit Wealth moved $2.1 billion onto the SEI Wealth Platform this way.',
-      links: [['BD to RIA transition roadmap', '/insights/bd-to-ria-transition-roadmap'], ['Watch Summit Wealth’s story', '/insights/videos/summit-wealth-partnering-with-purpose']],
+      links: [['Summit Wealth’s breakaway story', '/bd-breakaway'], ['SEI Pathfinder Program', '/pathfinder']],
     }),
   },
   {
     id: 'cost',
     match: /cost|fee|pric|econom|afford|payout|break-?even/i,
     answer: () => ({
-      text: 'It depends on the size of your book and the services you take on. The independence economics model puts payout, overhead and break-even side by side, so you can see the numbers before you talk to us.',
-      links: [['Model your independence economics', '/tools/independence-calculator']],
+      text: 'It depends on the size of your book and the services you take on. Your specialist can walk you through payout, overhead and break-even for a practice like yours.',
+      book: true,
     }),
   },
   {
@@ -34,7 +34,7 @@ const TOPICS = [
     match: /custod|platform|tech|stack|operations|back.?office/i,
     answer: () => ({
       text: 'SEI brings custody, the SEI Wealth Platform and back-office operations together, so a new firm runs on one stack from day one.',
-      links: [['Simplify your operations', '/insights/videos/simplify-your-operations'], ['Custody at SEI', '/solutions/custody']],
+      links: [['How Summit Wealth made the move', '/bd-breakaway']],
     }),
   },
   {
@@ -65,8 +65,8 @@ const TOPICS = [
     id: 'data',
     match: /\bdata\b|\bai\b|artificial|analytics/i,
     answer: () => ({
-      text: 'SEI Data Cloud brings your firm’s data together so it is ready for analytics and AI. A good first step is the Data & AI strategy paper.',
-      links: [['Data & AI strategy paper', '/insights/data-and-ai-strategy']],
+      text: 'SEI Data Cloud brings your firm’s data together so it is ready for analytics and AI. A specialist can show you how it would work with your data.',
+      book: true,
     }),
   },
   {

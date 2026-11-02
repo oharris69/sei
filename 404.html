@@ -7,48 +7,236 @@
     content="script-src 'nonce-aem' 'strict-dynamic' 'unsafe-inline' http: https:; base-uri 'self'; object-src 'none';"
     move-to-http-header="true"
   >
-  <title>Page not found</title>
+  <title>Not part of the demo yet | SEI</title>
   <script nonce="aem" type="text/javascript">
     window.isErrorPage = true;
     window.errorCode = '404';
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Not part of the demo yet">
   <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
-  <script nonce="aem" type="module">
-    window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
-        }
-      }
-    });
-  </script>
   <script nonce="aem" type="module">
     import { sampleRUM } from '/scripts/aem.js';
     sampleRUM('404', { source: document.referrer });
   </script>
+  <script nonce="aem" type="module">
+    import {
+      PERSONAS, getProfile, journeyStatus, pageHref, setPersona, specialistFor, track,
+    } from '/scripts/profile.js';
+
+    const KINDS = [
+      [/^\/insights\/videos\//, 'video'],
+      [/^\/insights\/podcasts\//, 'podcast'],
+      [/^\/insights\/case-studies\//, 'case study'],
+      [/^\/insights\/events\//, 'event'],
+      [/^\/insights\//, 'article'],
+      [/^\/etfs\/[^/]+$/, 'fund page'],
+      [/^\/strategies\//, 'strategy page'],
+      [/^\/tools\//, 'tool'],
+      [/\.pdf$/, 'guide'],
+    ];
+    const UPPER = ['bd', 'ria', 'etf', 'etfs', 'ai', 'sei', 'rag', 'pdf', 'q2', 'tcw', 'fft', 'hig', 'cdo'];
+
+    function humanize(slug) {
+      const words = slug.replace(/\.[a-z]+$/, '').split('-').filter(Boolean)
+        .map((w) => (UPPER.includes(w) ? w.toUpperCase().replace('ETFS', 'ETFs') : w));
+      if (!words.length) return '';
+      words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+      return words.join(' ');
+    }
+
+    /** "the BD to RIA transition roadmap article", "the SEIV fact sheet", "Careers" … */
+    function describe(path) {
+      const parts = path.replace(/\/$/, '').split('/').filter(Boolean);
+      if (!parts.length) return 'This page';
+      if (parts.at(-1) === 'fact-sheet' && parts.length > 2) {
+        return `The ${parts[0] === 'etfs' ? parts.at(-2).toUpperCase() : humanize(parts.at(-2))} fact sheet`;
+      }
+      if (parts[0] === 'etfs' && parts.length === 2) return `The ${parts[1].toUpperCase()} fund page`;
+      const kind = KINDS.find(([re]) => re.test(path))?.[1];
+      let name = humanize(parts.at(-1));
+      // videos, podcasts and case studies are named after people and firms
+      if (['video', 'podcast', 'case study'].includes(kind)) name = name.replace(/\b[a-z]/g, (c) => c.toUpperCase());
+      if (kind === 'guide') return `The ${name} PDF`;
+      return kind ? `The ${kind} “${name}”` : `The ${name} page`;
+    }
+
+    function link(href, text, className) {
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = text;
+      if (className) a.className = className;
+      return a;
+    }
+
+    const path = window.location.pathname.replace(/^\/content(?=\/)/, '');
+    document.getElementById('nid-title').textContent = `${describe(path)} isn’t part of the demo yet.`;
+    track('page-not-in-demo', { missing: { path, referrer: document.referrer || null } });
+
+    const next = document.getElementById('nid-next');
+    const profile = getProfile();
+    const status = journeyStatus(profile);
+    if (status) {
+      const done = status.steps.every((s) => s.done);
+      const step = status.current;
+      const card = document.createElement('div');
+      card.className = 'nid-journey';
+      const label = document.createElement('p');
+      label.className = 'nid-label';
+      label.textContent = `Your journey: ${status.journey.name}`;
+      const heading = document.createElement('h2');
+      heading.textContent = done ? 'You’ve completed every step.' : `Next: ${step.label}`;
+      const actions = document.createElement('p');
+      actions.className = 'nid-actions';
+      const specialist = specialistFor(profile);
+      if (!done && step.href) actions.append(link(pageHref(step.href), `Continue to ${step.label}`, 'button primary'));
+      actions.append(link(specialist.modal, `Talk to ${specialist.name}`, done || !step.href ? 'button primary' : 'button secondary'));
+      card.append(label, heading, actions);
+      next.append(card);
+    } else {
+      const label = document.createElement('p');
+      label.className = 'nid-label';
+      label.textContent = 'Pick up a journey:';
+      const list = document.createElement('ul');
+      list.className = 'nid-choices';
+      Object.entries(PERSONAS).forEach(([id, persona]) => {
+        const li = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.innerHTML = '<strong></strong><span></span>';
+        button.querySelector('strong').textContent = persona.label;
+        button.querySelector('span').textContent = persona.detail;
+        button.addEventListener('click', () => {
+          const s = journeyStatus(setPersona(id, 'not-in-demo'));
+          window.location.href = pageHref(s.current.href || s.steps[0].href);
+        });
+        li.append(button);
+        list.append(li);
+      });
+      next.append(label, list);
+    }
+
+    const back = document.getElementById('nid-back');
+    if (document.referrer && new URL(document.referrer).origin === window.location.origin) {
+      back.href = new URL(document.referrer).pathname;
+    } else {
+      back.href = pageHref('/');
+      back.textContent = 'Go to the home page';
+    }
+  </script>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
     main.error {
-      min-height: calc(100vh - var(--nav-height));
+      min-height: calc(100vh - var(--nav-height) - var(--experience-height));
+    }
+
+    main.error .section {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 96px var(--content-padding) 120px;
+    }
+
+    main.error h1 {
+      margin: 12px 0 16px;
+      font-size: var(--heading-font-size-xl);
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    main.error .nid-lead {
+      max-width: 60ch;
+      margin: 0 0 40px;
+      color: var(--color-slate);
+      font-size: var(--body-font-size-l);
+    }
+
+    main.error .nid-label {
+      margin: 0 0 12px;
+      color: var(--color-gray-600);
+      font-size: var(--body-font-size-s);
+      font-weight: 500;
+    }
+
+    main.error .nid-journey {
+      padding: 28px 32px;
+      border-radius: var(--radius-card);
+      background-color: var(--color-ink);
+      color: var(--color-white);
+    }
+
+    main.error .nid-journey .nid-label {
+      color: rgb(255 255 255 / 70%);
+    }
+
+    main.error .nid-journey h2 {
+      margin: 0 0 20px;
+      color: inherit;
+      font-size: var(--heading-font-size-s);
+    }
+
+    main.error .nid-actions {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0;
     }
 
-    main.error .error-number {
+    main.error .nid-journey a.button.secondary {
+      border-color: var(--color-white);
+      background: none;
+      color: var(--color-white);
+    }
+
+    main.error .nid-choices {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    main.error .nid-choices button {
+      display: grid;
+      gap: 4px;
       width: 100%;
+      margin: 0;
+      padding: 18px 20px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-card);
+      background-color: var(--color-white);
+      color: var(--color-ink);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
     }
 
-    main.error .error-number text {
-      font-family: monospace;
+    main.error .nid-choices button:hover {
+      border-color: var(--color-cyan);
+    }
+
+    main.error .nid-choices button:focus-visible {
+      outline: 2px solid var(--color-cyan);
+      outline-offset: 2px;
+    }
+
+    main.error .nid-choices strong {
+      font-weight: 700;
+    }
+
+    main.error .nid-choices span {
+      color: var(--color-gray-600);
+      font-size: var(--body-font-size-s);
+    }
+
+    main.error .section p.nid-back {
+      margin: 32px 0 0;
+    }
+
+    @media (width >= 900px) {
+      main.error .nid-choices {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -57,14 +245,12 @@
 <body>
   <header></header>
   <main class="error">
-    <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-      </p>
+    <div>
+      <p>NOT IN THE DEMO YET</p>
+      <h1 id="nid-title">This page isn’t part of the demo yet.</h1>
+      <p class="nid-lead">It’s planned for the full SEI site, but this demo covers the advisor, enterprise RIA and asset manager journeys. Here’s where to pick up.</p>
+      <div id="nid-next"></div>
+      <p class="nid-back"><a id="nid-back" href="/">Go back</a></p>
     </div>
   </main>
   <footer></footer>
