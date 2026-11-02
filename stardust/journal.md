@@ -107,3 +107,43 @@ See `skills/stardust/reference/journal-format.md` for entry format.
 **Next:** user review of http://localhost:3001/content/index-stardust; on approval, DA delivery plus the deployed-URL Step 10 checks (CLS, chrome crop, AI-readability).
 
 ---
+
+## 2026-10-30T20:00:00Z — direction (user decision) — 64px section spacing confirmed
+
+**Prompt:** "keep the 64px spacing"
+
+**Decisions:**
+- density pinned `balanced` by the user: `sectionPadding.desktop` stays 64px; the named assumption in direction.md (density, Q1) is now user-confirmed, not hands-off-derived. No airy (96px) variant.
+- Recorded post-deploy changes since the last entry: SEI Assistant launcher collapses to its icon when it would cover content (sitewide, scripts.js + styles.css); sd-promos dark tiles show more image (shallower overlay, 428px desktop tiles). Both shipped to main and live; DA/preview/publish of /index-stardust done with title/description/noindex metadata.
+
+**Artifacts touched:**
+- stardust/journal.md — this entry (no design or code change)
+
+**Open questions:**
+- Remove `noindex` from /index-stardust in DA if it should appear in search.
+
+**Next:** none pending on spacing.
+
+---
+
+## 2026-11-02T00:00:00Z — deploy (metadata) — /index-stardust indexable with its own title and description
+
+**Prompt:** "Remove noindex from index-stardust in DA", then "give index-stardust its own title and description", each followed by preview + publish.
+
+**Decisions:**
+- Robots `noindex` row removed from the DA document; the page is now indexable.
+- Own metadata so it is distinguishable from Home: Title "SEI | The connective tissue of modern finance"; Description "Investments, operations and advice under one roof: SEI supports $1.9T in assets under management and administration with 2,000+ experts in 15 countries." (figures from the page's own stats section).
+
+**Artifacts touched:**
+- DA: index-stardust.html metadata table — edited; previewed and published (main--sei--oharris69.aem.live/index-stardust)
+- stardust/journal.md — this entry
+
+**Findings worth flagging:**
+- Page body still mirrors Home's content; search engines may treat the two as near-duplicates despite distinct metadata.
+
+**Open questions:**
+- none (the 2026-10-30 noindex question is resolved)
+
+**Next:** none pending.
+
+---
