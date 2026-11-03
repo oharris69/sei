@@ -1,0 +1,266 @@
+/* rb-ledger — rebrand R proof ledger. Page tokens are scoped to the section container. */
+main > .section.rb-ledger-container {
+  --rb-verde: #0f2b26;
+  --rb-slab: #f5f7f5;
+  --rb-veil: #3d5450;
+  --rb-brass: #a88231;
+  --rb-rose: #e8b6a6;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-pad: 32px;
+  --rb-state: 160ms cubic-bezier(0.2, 0, 0, 1);
+
+  margin: 0;
+  padding: var(--rb-pad) 0;
+  background: var(--rb-rose);
+  color: var(--rb-verde);
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+main > .section.rb-ledger-container > div {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+/* section head (default content): h2 left, lede right */
+main > .section.rb-ledger-container > .default-content-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+main > .section.rb-ledger-container > .default-content-wrapper > * {
+  margin: 0;
+}
+
+main > .section.rb-ledger-container > .default-content-wrapper :is(h1, h2) {
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 760;
+  font-stretch: 115%;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+main > .section.rb-ledger-container > .default-content-wrapper > p {
+  max-width: 44ch;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+main > .section.rb-ledger-container > .default-content-wrapper + div {
+  margin-top: 0;
+}
+
+.rb-ledger,
+.rb-ledger *,
+.rb-ledger *::before,
+.rb-ledger *::after {
+  box-sizing: border-box;
+}
+
+.rb-ledger :focus-visible {
+  outline: 3px solid var(--rb-verde);
+  outline-offset: 3px;
+}
+
+.rb-ledger-sheet {
+  display: grid;
+  gap: 2px;
+  border: 2px solid var(--rb-brass);
+  background: var(--rb-brass);
+}
+
+.rb-ledger-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.rb-ledger-row > * {
+  min-width: 0;
+  padding: 18px;
+  background: var(--rb-slab);
+}
+
+.rb-ledger-row p {
+  margin: 0;
+}
+
+.rb-ledger-logo {
+  display: grid;
+  grid-column: 1 / -1;
+  place-items: center start;
+}
+
+.rb-ledger-logo picture {
+  display: block;
+}
+
+.rb-ledger .rb-ledger-logo img {
+  display: block;
+  width: auto;
+  max-width: 160px;
+  height: auto;
+  max-height: 52px;
+}
+
+.rb-ledger-summary {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rb-ledger-summary p {
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+.rb-ledger a.rb-ledger-link:any-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-block: -12px;
+  padding-block: 12px;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-decoration-color: var(--rb-brass);
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
+  text-underline-offset: 6px;
+  transition: text-decoration-color var(--rb-state);
+}
+
+.rb-ledger a.rb-ledger-link::after {
+  content: '→' / '';
+}
+
+.rb-ledger a.rb-ledger-link:hover {
+  text-decoration-color: currentcolor;
+}
+
+.rb-ledger-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rb-ledger .rb-ledger-value {
+  font-family: var(--rb-display);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.rb-ledger .rb-ledger-label {
+  color: var(--rb-veil);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rb-ledger-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.rb-ledger-feature {
+  display: grid;
+  gap: 2px;
+  text-wrap: pretty;
+}
+
+.rb-ledger .rb-ledger-feature-title {
+  font-family: var(--rb-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  line-height: 1.25;
+}
+
+.rb-ledger .rb-ledger-feature-line {
+  color: var(--rb-veil);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+@media (width > 640px) {
+  main > .section.rb-ledger-container {
+    --rb-gutter: 24px;
+    --rb-pad: 48px;
+  }
+
+  .rb-ledger-row > * {
+    padding: 24px;
+  }
+
+  .rb-ledger-logo {
+    padding-block: 18px;
+  }
+
+  .rb-ledger .rb-ledger-value {
+    font-size: clamp(2rem, 2.8vw, 3.25rem);
+  }
+}
+
+@media (width > 900px) {
+  main > .section.rb-ledger-container {
+    --rb-pad: 64px;
+  }
+
+  main > .section.rb-ledger-container > .default-content-wrapper {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 64px;
+  }
+
+  .rb-ledger-row {
+    grid-template-columns: 180px minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .rb-ledger-logo,
+  .rb-ledger-summary {
+    grid-column: auto;
+  }
+
+  .rb-ledger-logo {
+    place-items: center;
+    padding-block: 24px;
+  }
+}
+
+@media (width > 1180px) {
+  .rb-ledger-row {
+    grid-template-columns: 220px minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-ledger * {
+    transition-duration: 0ms;
+  }
+}

@@ -1,0 +1,164 @@
+/* rb-spec-sheet — rebrand R spec rows. Page tokens are scoped to the section container. */
+main > .section.rb-spec-sheet-container {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-veil: #3d5450;
+  --rb-brass: #a88231;
+  --rb-mist: #c9d3ce;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-pad: 32px;
+
+  margin: 0;
+  padding: var(--rb-pad) 0;
+  border-top: 2px solid var(--rb-brass);
+  background: var(--rb-stone);
+  color: var(--rb-verde);
+}
+
+main > .section.rb-spec-sheet-container > .rb-spec-sheet-wrapper {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+.rb-spec-sheet,
+.rb-spec-sheet *,
+.rb-spec-sheet *::before,
+.rb-spec-sheet *::after {
+  box-sizing: border-box;
+}
+
+.rb-spec-sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.rb-spec-sheet-intro > * {
+  margin: 0;
+}
+
+.rb-spec-sheet .rb-spec-sheet-intro :is(h1, h2, h3) {
+  margin-bottom: 20px;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 760;
+  font-stretch: 115%;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.rb-spec-sheet .rb-spec-sheet-lede {
+  max-width: 38ch;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.rb-spec-sheet .rb-spec-sheet-map {
+  margin-top: 24px;
+}
+
+.rb-spec-sheet-map picture {
+  display: block;
+}
+
+/* decorative world map re-toned to verde dots */
+.rb-spec-sheet .rb-spec-sheet-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+  filter: brightness(0);
+}
+
+.rb-spec-sheet-list {
+  display: grid;
+  margin: 0;
+}
+
+.rb-spec-sheet-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: baseline;
+  gap: 6px;
+  padding: 18px 0;
+  border-top: 2px solid var(--rb-brass);
+}
+
+.rb-spec-sheet-row:last-child {
+  border-bottom: 2px solid var(--rb-brass);
+}
+
+.rb-spec-sheet-figure {
+  margin: 0;
+  font-family: var(--rb-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.rb-spec-sheet-label {
+  margin: 0;
+  color: var(--rb-veil);
+  line-height: 1.4;
+}
+
+.rb-spec-sheet-row.is-lead {
+  padding: 22px 18px;
+  border-top: 0;
+  background: var(--rb-verde);
+  color: var(--rb-stone);
+}
+
+.rb-spec-sheet-row.is-lead .rb-spec-sheet-figure {
+  font-size: clamp(2.75rem, 6.4vw, 6rem);
+}
+
+.rb-spec-sheet-row.is-lead .rb-spec-sheet-label {
+  max-width: 24ch;
+  color: var(--rb-mist);
+}
+
+@media (width > 640px) {
+  main > .section.rb-spec-sheet-container {
+    --rb-gutter: 24px;
+    --rb-pad: 48px;
+  }
+
+  .rb-spec-sheet .rb-spec-sheet-map {
+    margin-top: 40px;
+  }
+
+  .rb-spec-sheet-row {
+    grid-template-columns: minmax(7ch, 0.9fr) 1fr;
+    gap: 24px;
+    padding: 22px 0;
+  }
+
+  .rb-spec-sheet-row.is-lead {
+    grid-template-columns: auto 1fr;
+    padding: 28px 24px;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.rb-spec-sheet-container {
+    --rb-pad: 64px;
+  }
+
+  .rb-spec-sheet {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 64px;
+  }
+}

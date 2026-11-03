@@ -1,0 +1,559 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:direct (via stardust:uplift Phase 4)",
+    "writtenAt": "2026-11-03T18:25:00Z",
+    "againstDirection": "stardust/direction.md#active-direction",
+    "readArtifacts": [
+      "stardust/current/_brand-extraction.json",
+      "stardust/current/DESIGN.json",
+      "stardust/uplift-improvements.md",
+      "stardust/uplift-questions.md",
+      "DESIGN.md"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.32.1",
+    "variant": "A"
+  },
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T18:25:00Z",
+  "title": "Design System: SEI — uplift variant A (faithful + improvements)",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "hex": "#131517"
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "hex": "#364153"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "hex": "#ffffff"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "hex": "#e5e7eb"
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "hex": "#d9d9d9"
+      },
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "hex": "#d82b2a",
+        "hover": "#b82322"
+      },
+      "sei-cyan": {
+        "role": "secondary",
+        "displayName": "SEI Cyan",
+        "hex": "#00c0f3",
+        "textOn": [
+          "ink"
+        ]
+      },
+      "sei-green": {
+        "role": "tertiary",
+        "displayName": "SEI Green",
+        "hex": "#a6ce39",
+        "textOn": [
+          "ink"
+        ]
+      },
+      "deep-current": {
+        "role": "tertiary",
+        "displayName": "Deep Current",
+        "hex": "#086c8a",
+        "source": "captured newsletter gradient end"
+      }
+    },
+    "contrastPairs": [
+      {
+        "fg": "#ffffff",
+        "bg": "#d82b2a",
+        "ratio": 4.89
+      },
+      {
+        "fg": "#00c0f3",
+        "bg": "#131517",
+        "ratio": 8.57
+      },
+      {
+        "fg": "#a6ce39",
+        "bg": "#131517",
+        "ratio": 10.03
+      },
+      {
+        "fg": "#131517",
+        "bg": "#00c0f3",
+        "ratio": 8.57
+      },
+      {
+        "fg": "#131517",
+        "bg": "#a6ce39",
+        "ratio": 10.03
+      },
+      {
+        "fg": "#ffffff",
+        "bg": "#086c8a",
+        "ratio": 5.96
+      },
+      {
+        "fg": "#086c8a",
+        "bg": "#ffffff",
+        "ratio": 5.96
+      },
+      {
+        "forbidden": true,
+        "fg": "#00c0f3",
+        "bg": "#ffffff",
+        "ratio": 2.14
+      },
+      {
+        "forbidden": true,
+        "fg": "#a6ce39",
+        "bg": "#ffffff",
+        "ratio": 1.82
+      },
+      {
+        "forbidden": true,
+        "fg": "#ffffff",
+        "bg": "#00c0f3",
+        "ratio": 2.14
+      }
+    ],
+    "typographyMeta": {
+      "family": "CircularXX",
+      "css": "circularxx",
+      "license": "licensed (Lineto), self-hosted",
+      "files": {
+        "400": "fonts/CircularXXSub-Regular.woff2",
+        "500": "fonts/CircularXXSub-Medium.woff2",
+        "900": "fonts/CircularXXSub-Black.woff2",
+        "950": "fonts/CircularXXSub-ExtraBlack.woff2",
+        "400i": "fonts/CircularXXSub-Italic.woff2",
+        "500i": "fonts/CircularXXSub-MediumItalic.woff2"
+      },
+      "weightRanges": {
+        "Regular": "100 450",
+        "Medium": "451 750",
+        "Black": "751 925",
+        "ExtraBlack": "926 1000"
+      },
+      "prototypeSrcPrefix": "../../fonts/",
+      "scale": [
+        80,
+        48,
+        36,
+        24,
+        20,
+        17,
+        15
+      ],
+      "figma": {
+        "h1": "80/950/-0.4px",
+        "h2": "48 & 36 / 950",
+        "body": "20 Medium"
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 12px 32px rgba(19,21,23,.12)",
+        "purpose": "card hover"
+      },
+      {
+        "name": "launcher",
+        "value": "0 10px 30px rgba(0,0,0,.2)",
+        "purpose": "floating SEI Assistant"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "field",
+        "value": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)",
+        "purpose": "hero field, proof band, ring"
+      },
+      {
+        "name": "deep",
+        "value": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
+        "purpose": "newsletter band"
+      }
+    ],
+    "componentStyle": {
+      "buttons": {
+        "shape": "near-square 2px",
+        "primary": "signal-red / paper label 900 / trailing arrow",
+        "secondary": "ink / paper",
+        "outlineOnDark": "1.5px paper border"
+      },
+      "cards": {
+        "radius": "15px",
+        "hover": "lift"
+      },
+      "inputs": {
+        "radius": "2px",
+        "height": 52
+      },
+      "dualCTAPattern": "never two red fills side by side"
+    },
+    "systemComponentRoles": {
+      "header": {
+        "purpose": "global navigation + search + client login + contact",
+        "position": "top, static"
+      },
+      "role-bar": {
+        "purpose": "persistent role picker + explainer + advisor action",
+        "position": "directly under header",
+        "constraint": "labels and destinations unchanged"
+      },
+      "persistent-help": {
+        "purpose": "SEI Assistant launcher",
+        "position": "fixed bottom-right",
+        "constraint": "label unchanged; must not cover primary content at 390"
+      },
+      "newsletter": {
+        "purpose": "cross-site subscribe band",
+        "position": "above footer"
+      },
+      "footer": {
+        "purpose": "sitemap columns + legal",
+        "position": "bottom"
+      }
+    },
+    "voice": {
+      "dos": [
+        "Declarative headlines that end in a period",
+        "Numbers stated plainly",
+        "Second person only where captured (\"Tell us who you are.\")"
+      ],
+      "donts": [
+        "Exclamation marks",
+        "Hype adjectives",
+        "Invented eyebrows or stats"
+      ]
+    },
+    "iaPriorities": [
+      {
+        "signal": "audience-routing",
+        "evidence": "pages/index.json ctas[6] role bar \"I’m a Choose your role\" + ctas[12-14] three role CTAs; headings[4]",
+        "preserveAs": "reachable-first-viewport (role bar) + one in-page chooser",
+        "scope": "site-wide",
+        "mutability": "movable"
+      },
+      {
+        "signal": "commercial-conversion",
+        "evidence": "pages/index.json ctas[8] \"Talk to an advisor\" -> /modals/schedule-eric-dunn (role bar, red)",
+        "preserveAs": "first-viewport",
+        "scope": "site-wide",
+        "mutability": "movable"
+      },
+      {
+        "signal": "time-bound-promo",
+        "evidence": "pages/index.json ctas[9] \"Register now\" Data Cloud webcast, Thursday October 1",
+        "preserveAs": "above-proof",
+        "scope": "page",
+        "mutability": "movable"
+      }
+    ],
+    "divergence": {
+      "mode": "A (brand-faithful) + B (agent-sourced anchors)",
+      "signal": "signal-strong",
+      "seed": {
+        "decade": "2025-now",
+        "craft": "institutional signage",
+        "register": "financial broadsheet",
+        "groundFamily": "stark-white",
+        "picked_by": "reasoned (anchors; research tier 2)"
+      },
+      "font_deck": {
+        "name": "brand-inherited",
+        "family": "CircularXX",
+        "picked_by": "user-constraint"
+      },
+      "palette": {
+        "source": "inherited from _brand-extraction.json",
+        "picked_by": "user-constraint",
+        "roleRenaming": "brand-native"
+      },
+      "anchors": [
+        "https://stripe.com/",
+        "https://www.addepar.com/",
+        "https://www.blackrock.com/aladdin"
+      ],
+      "antiToolboxAudit": [
+        {
+          "hit": "Big-number stat row",
+          "justification": "the page’s own four captured stats (58 / 15 / 2,000+ / $1.9T)"
+        },
+        {
+          "hit": "Rounded cards",
+          "justification": "captured 15px radius motif (census mode)"
+        },
+        {
+          "hit": "Split hero (variant B)",
+          "justification": "captured role CTAs + Addepar/Stripe routing anchors; left-anchored, not centred"
+        }
+      ],
+      "brand_faithful_inversions": [
+        "#ffffff retained as page ground (existing SEI decision). The impeccable \"no pure black/white\" rule is inverted per brand-faithful direction.",
+        "Color tokens retained in hex format (matches captured brand surface and DESIGN.md Stitch frontmatter). OKLCH applies to new authoring; this is inheritance.",
+        "Saturated Signal Red #d82b2a retained as the action colour. The tinted-neutral reflex is inverted per brand-faithful direction.",
+        "Near-square (2px) action corners retained on buttons; the rounded-pill button reflex is inverted."
+      ]
+    },
+    "breakpoints": {
+      "containerMaxWidth": "1280px",
+      "probeWidth": 2560,
+      "shellMaxWidth": null,
+      "caps": [
+        {
+          "kind": "module",
+          "px": 1280,
+          "via": "max-width",
+          "selector": "body.appear > main > div.section.cards-container > div.cards-wrapper",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 920,
+          "via": "max-width",
+          "selector": "main > div.display.section > div.default-content-wrapper > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 816,
+          "via": "max-width",
+          "selector": "div.hero-wrapper > div.hero.home > div.hero-content > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 775,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > ul.stats-list",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 753,
+          "via": "fixed",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > h2",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 677,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li.cards-card-inverse.is-active",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 642,
+          "via": "fixed",
+          "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > div.newsletter-content",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 616,
+          "via": "max-width",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 565,
+          "via": "fixed",
+          "selector": "#tabpanel-1-0 > div.tabs-panel-col",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 520,
+          "via": "max-width",
+          "selector": "ul > li.cards-card-inverse.is-active > div.cards-card-body > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 417,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > div.stats-featured",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 388,
+          "via": "fixed",
+          "selector": "#the-connective-tissue-of-modern-finance > em",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 308,
+          "via": "fixed",
+          "selector": "#tab-1-0",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 283,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.leadership > ul > li.cards-card-linked",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 251,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 0,
+          "selector": "body.appear > main > div.section.hero-container",
+          "px": 816
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 1,
+          "selector": "body.appear > main > div.section.cards-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 2,
+          "selector": "body.appear > main > div.section.adaptive-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 3,
+          "selector": "body.appear > main > div.display.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 4,
+          "selector": "body.appear > main > div.gradient.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 5,
+          "selector": "body.appear > main > div.section.stats-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 6,
+          "selector": "body.appear > main > div.heading-link.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 7,
+          "selector": "body.appear > main > div.section.newsletter-container",
+          "px": 1280
+        }
+      ],
+      "capRegister": [],
+      "capProvenance": {
+        "writtenBy": "skills/replica/scripts/cap-probe.mjs",
+        "writtenAt": "2026-11-03T17:34:18.494Z",
+        "baseWidth": 1440,
+        "urls": [
+          "https://main--sei--oharris69.aem.live/"
+        ]
+      },
+      "layoutBreakpoints": {
+        "tablet": 768,
+        "mobile": 390,
+        "note": "redesign target keeps its own two breakpoints (600 / 900 css)"
+      }
+    },
+    "variant": {
+      "id": "A",
+      "role": "faithful + improvements",
+      "pitch": "Tomorrow’s version of the site you have today.",
+      "composition": "captured IA, same section sequence",
+      "improvementsApplied": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "motion": "static (hover/focus transitions ≤ 200ms)"
+    }
+  },
+  "narrative": {
+    "northStar": "Between the Lines",
+    "keyCharacteristics": [
+      "CircularXX ExtraBlack headlines on offset bars",
+      "Green→cyan field as the brand ground",
+      "Accents as grounds and rules, never low-contrast text",
+      "Ranked red actions",
+      "Tabular ExtraBlack numerals"
+    ],
+    "rules": [
+      "Accents are grounds, not ink",
+      "Red is ranked (≤ 2 red fills per viewport)",
+      "One scale: 80/48/36/24/20/17"
+    ],
+    "dos": [
+      "Keep the offset heading bars",
+      "Set stats as numerals",
+      "Reserve red for the actions that matter now"
+    ],
+    "donts": [
+      "Cyan/green text on white",
+      "Gradient text, glassmorphism, side-stripe accents",
+      "Invented content"
+    ]
+  }
+}

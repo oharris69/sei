@@ -1,24 +1,44 @@
 {
   "_provenance": {
-    "writtenBy": "stardust:deploy",
-    "writtenAt": "2026-10-30T00:34:27Z",
+    "writtenBy": "stardust:prototype",
+    "writtenAt": "2026-11-03T19:04:54Z",
     "stardustVersion": "0.32.1"
   },
   "site": {
     "originUrl": "https://main--sei--oharris69.aem.live/",
     "deployUrl": null,
-    "extractedAt": "2026-10-29T23:33:11.242Z",
+    "extractedAt": "2026-11-03T17:30:09.447Z",
     "pageCap": 1,
     "totalDiscovered": 1,
-    "crawled": 1
+    "crawled": 1,
+    "reExtractReason": "uplift --re-extract: CircularXX brand face now live (previous capture recorded DM Sans)"
   },
   "direction": {
-    "resolvedAt": "2026-10-29T23:40:23.163Z",
-    "phrase": "brand-faithful refresh of the home page: keep SEI palette (ink #131517, red #d82b2a, cyan #00c0f3, green #a6ce39, green→cyan gradient), voice and all content; modernize hierarchy, spacing rhythm, typography scale and component polish; distinctiveness familiar→slightly distinctive; density balanced/airy; no cinematic motion (subtle CSS transitions only, prefers-reduced-motion); ia-fidelity verbatim — every section, heading, copy line, CTA and image in the same order",
+    "resolvedAt": "2026-11-03T17:49:00Z",
+    "phrase": "uplift presales redesign — three variants per stardust/direction.md",
     "directionFile": "stardust/direction.md",
-    "iaFidelity": "verbatim",
-    "mode": "A+B brand-faithful",
-    "density": "balanced"
+    "iaFidelity": "reimagined",
+    "mode": "A brand-faithful (+B anchors)",
+    "density": "balanced",
+    "variantMode": "uplift A+B+C",
+    "variants": [
+      {
+        "id": "A",
+        "role": "faithful + improvements",
+        "design": "DESIGN-A.json"
+      },
+      {
+        "id": "B",
+        "role": "role-first routing amplified",
+        "design": "DESIGN-B.json"
+      },
+      {
+        "id": "C",
+        "role": "kinetic bars (cinematic, kinetic-display)",
+        "design": "DESIGN-C.json"
+      }
+    ],
+    "prior": "stardust/archive/2026-10-30-index-stardust/direction.md"
   },
   "handsOff": true,
   "flow": "redesign",
@@ -52,16 +72,60 @@
         {
           "status": "migrated",
           "at": "2026-10-30T00:34:27Z"
+        },
+        {
+          "status": "extracted",
+          "at": "2026-11-03T17:40:07Z"
+        },
+        {
+          "status": "directed",
+          "at": "2026-11-03T17:49:47Z"
+        },
+        {
+          "status": "prototyped",
+          "at": "2026-11-03T19:04:54Z",
+          "variants": [
+            "A",
+            "B",
+            "C"
+          ]
         }
       ],
-      "stale": false,
-      "staleReason": null,
+      "stale": true,
+      "staleReason": "2026-11-03 uplift re-extract (CircularXX live) and new 3-variant uplift direction; the migrated /index-stardust page reflects the archived 2026-10-30 direction (stardust/archive/2026-10-30-index-stardust/). Linearity rule: status not demoted; new extracted/directed/prototyped entries appended history-only. Uplift 2026-11-03 prototyped A/B/C (see upliftVariants); none approved.",
       "currentStatePath": "stardust/current/pages/index.json",
       "prototypePath": "stardust/prototypes/index-proposed.html",
       "migratedPath": "content/index-stardust.plain.html",
       "targetPath": "/index-stardust",
       "deployedLocalUrl": "http://localhost:3001/content/index-stardust",
-      "delivery": "deferred — user approves remote actions separately"
+      "delivery": "deferred — user approves remote actions separately",
+      "upliftVariants": {
+        "A": {
+          "shape": "stardust/prototypes/index-A-shape.md",
+          "proposed": "stardust/prototypes/index-A-proposed.html",
+          "design": "DESIGN-A.json",
+          "status": "prototyped",
+          "gates": "critique 23/32 · audit 15/20 · adapt ok · finish review resolved"
+        },
+        "B": {
+          "shape": "stardust/prototypes/index-B-shape.md",
+          "proposed": "stardust/prototypes/index-B-proposed.html",
+          "design": "DESIGN-B.json",
+          "status": "prototyped",
+          "gates": "critique 21/32 · audit 15/20 · adapt ok · finish review resolved (1 recorded open)"
+        },
+        "C": {
+          "shape": "stardust/prototypes/index-C-shape.md",
+          "proposed": "stardust/prototypes/index-C-proposed.html",
+          "cinematic": "stardust/prototypes/index-C-cinematic.html",
+          "design": "DESIGN-C.json",
+          "register": "kinetic-display",
+          "status": "prototyped",
+          "gates": "critique 22/32 (pre-fix) · audit 15/20 (pre-fix) · adapt ok · motion Pass 1-6 pass · finish review resolved (ceiling polish open)"
+        },
+        "convergence": "Discipline 10 pass: A–B 5, A–C 3 (+motion), B–C 4 structural deltas; dominantDimension fidelity / ia-priority / motion-energy",
+        "approval": "none — awaiting user choice (uplift stops before approve/migrate/deploy)"
+      }
     }
   ]
 }

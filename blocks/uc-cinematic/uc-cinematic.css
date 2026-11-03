@@ -1,0 +1,421 @@
+/*
+ * uc-cinematic — uplift variant C (index-uplift-c): page-level layer over the ua-* blocks.
+ * This file loads with the block, so it only ever applies to pages that author `uc-cinematic`.
+ * Every rule is scoped to `main:has(.uc-cinematic.block)` (the two classes also lift these rules
+ * above the ua-* section-container rules they adjust).
+ *
+ * 1. Static layer — C's layout deltas from A; no JS needed, so it holds if the script fails.
+ * 2. Motion layer — hidden/start states exist only under `html.uc-motion` + a hook class that
+ *    uc-cinematic.js adds at runtime and removes once a reveal has finished.
+ */
+
+.uc-cinematic-wrapper,
+.uc-cinematic {
+  display: none;
+}
+
+main:has(.uc-cinematic.block) {
+  --uc-edge: max(
+    var(--content-padding),
+    calc((100vw - var(--content-max-width)) / 2 + var(--content-padding))
+  );
+  --uc-field: linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%);
+  --uc-hairline: var(--color-cyan);
+  --uc-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --uc-enter: 800ms;
+  --uc-stagger: 110ms;
+  --uc-word-stagger: 50ms;
+}
+
+/* ---------- 1. static layer ---------- */
+
+/* hero: full-bleed field, three offset bars from the left page edge (lede on its own bar) */
+main:has(.uc-cinematic.block) > .section.ua-hero-container {
+  padding: 36px 0 32px;
+  background: var(--uc-field);
+}
+
+main:has(.uc-cinematic.block) .ua-hero-field {
+  display: none;
+}
+
+main:has(.uc-cinematic.block) .ua-hero-bar {
+  max-width: calc(100% + 2 * var(--uc-edge) - 32px);
+}
+
+main:has(.uc-cinematic.block) .ua-hero-bar.is-ink {
+  max-width: calc(100% + 2 * var(--uc-edge) - 44px);
+  margin-top: 8px;
+  margin-left: calc(20px - var(--uc-edge));
+}
+
+main:has(.uc-cinematic.block) .ua-hero-lede p {
+  display: block;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: calc(100% + 2 * var(--uc-edge) - 64px);
+  margin: 8px 0 0 calc(-1 * var(--uc-edge));
+  padding: 12px 20px 14px var(--uc-edge);
+  border-block: 2px solid var(--uc-hairline);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.16px;
+}
+
+main:has(.uc-cinematic.block) .uc-bt {
+  display: inline-block;
+}
+
+main:has(.uc-cinematic.block) > .section.ua-promos-container {
+  padding-top: 48px;
+}
+
+/* section heads: every h2 on its own bar with cyan hairlines, hanging from the left edge.
+   Ink bar on paper grounds; paper bar on the field (proof), ink (stats) and panels. */
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2,
+main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
+main:has(.uc-cinematic.block) .ua-statement-text > h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: calc(-1 * var(--uc-edge));
+  padding: 10px 18px 12px var(--uc-edge);
+  border-block: 2px solid var(--uc-hairline);
+  color: var(--uc-bar-fg, var(--color-white));
+  isolation: isolate;
+}
+
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2::before,
+main:has(.uc-cinematic.block) .ua-role-panel-intro > h2::before,
+main:has(.uc-cinematic.block) .ua-statement-text > h2::before,
+main:has(.uc-cinematic.block) .ua-newsletter-copy > h2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--uc-bar-bg, var(--color-ink));
+  transform-origin: left center;
+}
+
+main:has(.uc-cinematic.block) > .section.ua-case-tabs-container > .default-content-wrapper > h2,
+main:has(.uc-cinematic.block) > .section.ua-stats-container > .default-content-wrapper > h2,
+main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+  --uc-bar-bg: var(--color-white);
+  --uc-bar-fg: var(--color-ink);
+}
+
+/* inset bars: inside a panel/card they reach only just past the panel's text edge */
+main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+  margin-left: -12px;
+  padding-right: 20px;
+  padding-left: 12px;
+  font-size: 24px;
+}
+
+/* the newsletter card's bar runs the card's full text width */
+main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+  display: block;
+}
+
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2 + p,
+main:has(.uc-cinematic.block) .ua-statement-text > h2 + p {
+  margin-top: 18px;
+}
+
+main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+  font-size: 28px;
+}
+
+/* "connective tissue" in green on the ink bar (no highlighter) */
+main:has(.uc-cinematic.block) .ua-statement-text > h2 em {
+  padding-inline: 0;
+  background: none;
+  color: var(--color-green);
+}
+
+main:has(.uc-cinematic.block) .uc-word {
+  display: inline-block;
+}
+
+/* stats: stacked numeral bars, each row on a 2px cyan rule */
+main:has(.uc-cinematic.block) .ua-stats-row {
+  display: block;
+  margin: 40px 0 0;
+}
+
+main:has(.uc-cinematic.block) .ua-stat {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  align-items: baseline;
+  padding: 18px 0;
+  border: 0;
+}
+
+main:has(.uc-cinematic.block) .ua-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--uc-hairline);
+  transform-origin: left center;
+}
+
+main:has(.uc-cinematic.block) .ua-stat .ua-stat-value {
+  display: block;
+  padding: 0;
+  border: 0;
+  color: var(--color-white);
+  font-size: 60px;
+  line-height: 0.92;
+}
+
+main:has(.uc-cinematic.block) .ua-stat.is-lead .ua-stat-value {
+  color: var(--color-cyan);
+  font-size: 80px;
+}
+
+main:has(.uc-cinematic.block) .ua-stat .ua-stat-label {
+  max-width: 30ch;
+  min-height: 0;
+  margin: 0;
+  color: rgb(255 255 255 / 90%);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media (width > 640px) {
+  main:has(.uc-cinematic.block) > .section.ua-hero-container {
+    padding: 72px 0 64px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-hero-bar,
+  main:has(.uc-cinematic.block) .ua-hero-bar.is-ink {
+    max-width: none;
+  }
+
+  main:has(.uc-cinematic.block) .ua-hero-bar.is-ink {
+    margin-left: calc(40px - var(--uc-edge));
+  }
+
+  main:has(.uc-cinematic.block) .ua-hero-lede p {
+    max-width: none;
+    padding: 14px 40px 16px var(--uc-edge);
+    font-size: 24px;
+  }
+
+  main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2,
+  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+    padding: 12px 28px 14px var(--uc-edge);
+  }
+
+  main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
+  main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+    margin-left: -16px;
+    padding: 12px 20px 14px 16px;
+    font-size: 30px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+    font-size: 34px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    gap: 40px;
+    padding: 22px 0 20px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat .ua-stat-value {
+    font-size: 76px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat.is-lead .ua-stat-value {
+    font-size: 104px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat .ua-stat-label {
+    font-size: 20px;
+  }
+}
+
+@media (width > 900px) {
+  main:has(.uc-cinematic.block) .ua-hero-bar.is-ink {
+    margin-left: calc(80px - var(--uc-edge));
+  }
+
+  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+    font-size: 44px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat {
+    grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat .ua-stat-value {
+    font-size: 104px;
+  }
+
+  main:has(.uc-cinematic.block) .ua-stat.is-lead .ua-stat-value {
+    font-size: 144px;
+  }
+}
+
+/* ---------- 2. motion layer (kinetic-display) ---------- */
+
+@keyframes uc-field-in {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0); }
+}
+
+@keyframes uc-bar-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+
+@keyframes uc-text-up {
+  from { transform: translateY(105%); }
+  to { transform: none; }
+}
+
+/* hero (load): field R→L, bars L→R, then each line rises out of its bar */
+html.uc-motion main .uc-hero {
+  animation: uc-field-in 900ms var(--uc-expo) both;
+}
+
+html.uc-motion main .uc-hero .uc-bar {
+  overflow: hidden;
+  animation: uc-bar-wipe var(--uc-enter) var(--uc-expo) both;
+  animation-delay: calc(240ms + var(--uc-i, 0) * var(--uc-stagger));
+}
+
+html.uc-motion main .uc-hero .uc-bar .uc-bt {
+  animation: uc-text-up 700ms var(--uc-expo) both;
+  animation-delay: calc(440ms + var(--uc-i, 0) * var(--uc-stagger));
+}
+
+/* section heads (IO): the bar draws, the hairlines land, the words wipe in */
+html.uc-motion main .uc-head {
+  transition: border-color 200ms linear 500ms;
+}
+
+html.uc-motion main .uc-head::before {
+  transition: transform var(--uc-enter) var(--uc-expo);
+}
+
+html.uc-motion main .uc-head .uc-word {
+  transition:
+    clip-path 600ms var(--uc-expo),
+    transform 600ms var(--uc-expo);
+  transition-delay: calc(120ms + var(--uc-w, 0) * var(--uc-word-stagger));
+}
+
+html.uc-motion main .uc-head:not(.is-in) {
+  border-color: transparent;
+}
+
+html.uc-motion main .uc-head:not(.is-in)::before {
+  transform: scaleX(0);
+}
+
+html.uc-motion main .uc-head:not(.is-in) .uc-word {
+  clip-path: inset(0 100% 0 0);
+  transform: translateY(40%);
+}
+
+html.uc-motion main .uc-head.is-in .uc-word {
+  clip-path: inset(0);
+}
+
+/* stats (IO): the cyan rule draws, the numeral wipes in along it */
+html.uc-motion main .uc-srow::before {
+  transition: transform var(--uc-enter) var(--uc-expo);
+}
+
+html.uc-motion main .uc-srow .uc-nm {
+  transition:
+    clip-path 700ms var(--uc-expo) 160ms,
+    transform 700ms var(--uc-expo) 160ms;
+}
+
+html.uc-motion main .uc-srow:not(.is-in)::before {
+  transform: scaleX(0);
+}
+
+html.uc-motion main .uc-srow:not(.is-in) .uc-nm {
+  clip-path: inset(0 100% 0 0);
+  transform: translateY(18%);
+}
+
+html.uc-motion main .uc-srow.is-in .uc-nm {
+  clip-path: inset(0);
+}
+
+/* cards (IO, one-shot): hard L→R wipe, staggered among siblings */
+html.uc-motion main .uc-rise {
+  transition: clip-path 640ms var(--uc-expo);
+  transition-delay: calc(var(--uc-k, 0) * var(--uc-stagger));
+}
+
+html.uc-motion main .uc-rise:not(.is-in) {
+  clip-path: inset(0 100% 0 0);
+}
+
+html.uc-motion main .uc-rise.is-in {
+  clip-path: inset(0);
+}
+
+/* case-study tab change: the shown panel wipes in */
+html.uc-motion main .uc-swap {
+  animation: uc-bar-wipe 320ms var(--uc-expo) both;
+}
+
+/* Lenis: native smooth-scroll CSS must not fight the lerp */
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* safety nets: reduced motion and print always show the final state */
+@media (prefers-reduced-motion: reduce) {
+  html.uc-motion main :is(.uc-hero, .uc-bar, .uc-bt, .uc-word, .uc-nm, .uc-rise, .uc-swap) {
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html.uc-motion main :is(.uc-head, .uc-srow)::before {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html.uc-motion main .uc-head {
+    border-color: var(--uc-hairline) !important;
+  }
+}
+
+@media print {
+  html.uc-motion main :is(.uc-hero, .uc-bar, .uc-bt, .uc-word, .uc-nm, .uc-rise, .uc-swap) {
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+
+  html.uc-motion main :is(.uc-head, .uc-srow)::before {
+    transform: none !important;
+  }
+
+  html.uc-motion main .uc-head {
+    border-color: var(--uc-hairline) !important;
+  }
+}

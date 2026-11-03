@@ -1,0 +1,301 @@
+/* ua-case-tabs — uplift variant A proof band. Variant tokens scoped to the section container. */
+main > .section.ua-case-tabs-container {
+  --ua-section-pad: 32px;
+  --ua-fs-title: 28px;
+  --ua-field: linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%);
+  --ua-deep-current: #086c8a;
+  --ua-tab-ink: rgb(19 21 23 / 62%);
+  --ua-tab-ink-hover: rgb(19 21 23 / 78%);
+  --ua-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  margin: 0;
+  padding: var(--ua-section-pad) 0;
+  background: var(--ua-field);
+  color: var(--color-ink);
+}
+
+main > .section.ua-case-tabs-container > .default-content-wrapper > * {
+  margin: 0;
+}
+
+main > .section.ua-case-tabs-container > .default-content-wrapper :is(h1, h2) {
+  color: var(--color-ink);
+  font-size: var(--ua-fs-title);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+main > .section.ua-case-tabs-container > .default-content-wrapper p {
+  max-width: 70ch;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+main > .section.ua-case-tabs-container > .default-content-wrapper + div {
+  margin-top: 32px;
+}
+
+.ua-case-tabs,
+.ua-case-tabs *,
+.ua-case-tabs *::before,
+.ua-case-tabs *::after {
+  box-sizing: border-box;
+}
+
+.ua-case-tablist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.ua-case-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 16px 14px;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: var(--ua-tab-ink);
+  color: var(--color-white);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.16s var(--ua-ease);
+}
+
+.ua-case-tab:hover {
+  background: var(--ua-tab-ink-hover);
+}
+
+.ua-case-tab[aria-selected='true'] {
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.ua-case-tab:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.ua-case-logos picture {
+  display: block;
+}
+
+.ua-case-logos img {
+  display: block;
+  width: auto;
+  max-width: 120px;
+  height: 28px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.ua-case-tab:not(.single-logo) .ua-logo-on,
+.ua-case-tab[aria-selected='true']:not(.single-logo) .ua-logo-off {
+  display: none;
+}
+
+.ua-case-tab[aria-selected='true'] .ua-logo-on {
+  display: block;
+}
+
+.ua-case-tab-label {
+  font-weight: 900;
+}
+
+.ua-case-tab-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ua-case-tab-metric b {
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums proportional-nums;
+  white-space: nowrap;
+}
+
+.ua-case-tab[aria-selected='true'] .ua-case-tab-metric b {
+  color: var(--ua-deep-current);
+}
+
+.ua-case-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+  padding: 28px 22px;
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.ua-case-panel[hidden] {
+  display: none;
+}
+
+.ua-case-story > * {
+  margin: 0;
+}
+
+.ua-case-story p:not(.ua-case-action) {
+  max-width: 52ch;
+  font-size: 18px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.ua-case-story p.ua-case-action {
+  margin-top: 24px;
+}
+
+.ua-case-story a.ua-case-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid currentcolor;
+  color: var(--color-ink);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.ua-case-story a.ua-case-link::after {
+  content: '';
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 0.16s var(--ua-ease);
+}
+
+.ua-case-story a.ua-case-link:hover {
+  color: var(--color-ink);
+}
+
+.ua-case-story a.ua-case-link:hover::after {
+  transform: translateX(3px);
+}
+
+.ua-case-metric {
+  padding-left: 24px;
+  border-left: 1px solid var(--color-ink);
+}
+
+.ua-case-metric > * {
+  margin: 0;
+}
+
+.ua-case-metric .ua-case-value {
+  color: var(--ua-deep-current);
+  font-family: var(--heading-font-family);
+  font-size: 44px;
+  font-weight: 950;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.ua-case-metric.is-term .ua-case-value {
+  font-size: 28px;
+  line-height: 1.12;
+}
+
+.ua-case-metric .ua-case-label {
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ua-case-tab,
+  .ua-case-story a.ua-case-link::after {
+    transition: none;
+  }
+}
+
+@media (width > 640px) {
+  main > .section.ua-case-tabs-container {
+    --ua-section-pad: 48px;
+    --ua-fs-title: 30px;
+  }
+
+  .ua-case-tablist {
+    gap: 4px;
+  }
+
+  .ua-case-tab {
+    gap: 14px;
+    padding: 22px 24px 18px;
+  }
+
+  .ua-case-logos img {
+    max-width: 180px;
+    height: 40px;
+  }
+
+  .ua-case-tab-metric {
+    flex-flow: row wrap;
+    align-items: baseline;
+    gap: 2px 8px;
+    font-size: 14px;
+  }
+
+  .ua-case-tab-metric b {
+    font-size: 22px;
+  }
+
+  .ua-case-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    padding: 40px 48px;
+  }
+
+  .ua-case-story {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ua-case-tabs-container {
+    --ua-section-pad: 64px;
+    --ua-fs-title: 36px;
+  }
+
+  .ua-case-tablist {
+    grid-template-columns: none;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+
+  /* content box is the site's 1232px (not the prototype's 1280px): 4px less side padding
+     keeps the longest lead metric on one line */
+  .ua-case-tab {
+    padding-inline: 20px;
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+  }
+
+  .ua-case-panel {
+    grid-template-columns: 6fr repeat(var(--ua-metrics, 2), 3fr);
+    margin-top: 0;
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
+  }
+
+  .ua-case-story {
+    grid-column: auto;
+  }
+}

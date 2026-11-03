@@ -1,0 +1,272 @@
+/* ub-hero — uplift variant B split hero. Variant tokens are scoped to the section container. */
+main > .section.ub-hero-container {
+  --ub-edge: max(
+    var(--content-padding),
+    calc((100vw - var(--content-max-width)) / 2 + var(--content-padding))
+  );
+  --ub-fs-display: 40px;
+  --ub-field: linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%);
+  --ub-hairline: var(--color-cyan);
+  --ub-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 32px;
+  padding: 0;
+  background: var(--color-white);
+  isolation: isolate;
+}
+
+/* the split runs edge to edge: the bars bleed left, the field bleeds right */
+main > .section.ub-hero-container > .ub-hero-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.ub-hero,
+.ub-hero *,
+.ub-hero *::before,
+.ub-hero *::after {
+  box-sizing: border-box;
+}
+
+.ub-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ub-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 0 20px;
+}
+
+.ub-hero-headline :is(h1, h2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--ub-fs-display);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  text-wrap: balance;
+}
+
+.ub-hero-bar {
+  display: block;
+  padding: 14px 24px 16px var(--ub-edge);
+  border-block: 2px solid var(--ub-hairline);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.ub-hero-bar.is-ink {
+  margin-top: 6px;
+  background: var(--color-ink);
+  color: var(--color-cyan);
+}
+
+.ub-hero-lede p {
+  margin: 18px 0 0;
+  padding-inline: var(--ub-edge);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.16px;
+  text-wrap: pretty;
+}
+
+.ub-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  padding-inline: var(--ub-edge);
+}
+
+.ub-hero-actions p,
+.ub-hero-actions p.button-wrapper {
+  margin: 0;
+}
+
+/* the role doors on the field */
+.ub-hero-doors {
+  display: flex;
+  align-items: center;
+  margin-inline: var(--ub-edge);
+  padding: 24px 20px;
+  border-radius: var(--radius-card);
+  background: var(--ub-field);
+  color: var(--color-ink);
+}
+
+.ub-hero-doors-inner {
+  width: 100%;
+}
+
+.ub-hero-doors-inner > :is(p, h2, h3) {
+  margin: 0;
+}
+
+.ub-hero-doors-inner p.ub-hero-doors-label {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
+
+.ub-hero-doors-inner :is(h2, h3) {
+  margin-top: 10px;
+  color: var(--color-ink);
+  font-size: 26px;
+  font-weight: 950;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ub-hero-doors-inner > :first-child {
+  margin-top: 0;
+}
+
+.ub-hero-doors-inner p.ub-hero-doors-lede {
+  max-width: 44ch;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.ub-hero-door-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ub-hero a.ub-hero-door:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 0 18px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background-color 0.16s var(--ub-ease), color 0.16s var(--ub-ease);
+}
+
+.ub-hero a.ub-hero-door:hover {
+  background: var(--color-white);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.ub-hero a.ub-hero-door:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-ink);
+}
+
+.ub-hero-door-arrow {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 0.16s var(--ub-ease);
+}
+
+.ub-hero-door:hover .ub-hero-door-arrow {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ub-hero a.ub-hero-door:any-link,
+  .ub-hero-door-arrow {
+    transition: none;
+  }
+}
+
+@media (width > 640px) {
+  main > .section.ub-hero-container {
+    --ub-fs-display: 56px;
+
+    margin-bottom: 48px;
+  }
+
+  .ub-hero-text {
+    padding: 64px 0 48px;
+  }
+
+  .ub-hero-bar,
+  .ub-hero-bar.is-ink {
+    padding: 22px 48px 26px var(--ub-edge);
+  }
+
+  .ub-hero-lede p {
+    margin-top: 32px;
+    font-size: 22px;
+  }
+
+  .ub-hero-doors {
+    padding: 32px 28px;
+  }
+
+  .ub-hero-doors-inner :is(h2, h3) {
+    font-size: 30px;
+  }
+
+  .ub-hero-doors-inner p.ub-hero-doors-lede {
+    font-size: 16px;
+  }
+
+  .ub-hero-door-list {
+    margin-top: 24px;
+  }
+
+  .ub-hero a.ub-hero-door:any-link {
+    min-height: 72px;
+    padding: 0 24px;
+    font-size: 20px;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ub-hero-container {
+    --ub-fs-display: 72px;
+
+    margin-bottom: 64px;
+  }
+
+  .ub-hero {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: stretch;
+    min-height: 600px;
+  }
+
+  .ub-hero.no-doors {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ub-hero-doors {
+    margin-inline: 0;
+    padding: 48px var(--ub-edge) 48px 48px;
+    border-radius: var(--radius-card) 0 0 var(--radius-card);
+  }
+
+  .ub-hero-doors-inner {
+    max-width: 520px;
+  }
+}

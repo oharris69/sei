@@ -1,17 +1,18 @@
 {
   "_provenance": {
     "writtenBy": "stardust:extract",
-    "writtenAt": "2026-10-29T23:32:00Z",
+    "writtenAt": "2026-11-03T17:34:11Z",
     "readArtifacts": [
       "stardust/current/_computed-styles.json",
       "stardust/current/_brand-extraction.json",
-      "styles/styles.css"
+      "styles/fonts.css"
     ],
     "synthesizedInputs": [],
-    "stardustVersion": "0.32.1"
+    "stardustVersion": "0.32.1",
+    "notes": "fresh capture 2026-11-03 (CircularXX live)"
   },
   "schemaVersion": 2,
-  "generatedAt": "2026-10-29T23:32:00Z",
+  "generatedAt": "2026-11-03T17:34:11Z",
   "title": "Design System: SEI (current)",
   "extensions": {
     "colorMeta": {
@@ -64,9 +65,13 @@
     "motifs": [
       "offset white heading bars over gradient",
       "green-to-cyan gradient bands",
+      "persona role-pick strip under the header",
+      "3-up expanding promo tiles (wide + 2 narrow)",
+      "dark 'Recommended for you' role panel",
       "cyan featured-stat disc",
       "folder-tab case-study switcher",
-      "dotted world map on ink"
+      "dotted world map on ink",
+      "portrait cards with cyan text panel"
     ],
     "voice": [
       "bold-direct",
@@ -116,9 +121,36 @@
         },
         {
           "kind": "module",
+          "px": 753,
+          "via": "fixed",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > h2",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 677,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li.cards-card-inverse.is-active",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
           "px": 642,
           "via": "fixed",
           "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > div.newsletter-content",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 616,
+          "via": "max-width",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > p",
           "pages": [
             "https://main--sei--oharris69.aem.live/"
           ]
@@ -134,9 +166,9 @@
         },
         {
           "kind": "module",
-          "px": 510,
-          "via": "fixed",
-          "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > form.newsletter-form",
+          "px": 520,
+          "via": "max-width",
+          "selector": "ul > li.cards-card-inverse.is-active > div.cards-card-body > p",
           "pages": [
             "https://main--sei--oharris69.aem.live/"
           ]
@@ -152,18 +184,9 @@
         },
         {
           "kind": "module",
-          "px": 393,
+          "px": 388,
           "via": "fixed",
-          "selector": "div.cards-wrapper > div.cards.promo > ul > li.cards-card-inverse",
-          "pages": [
-            "https://main--sei--oharris69.aem.live/"
-          ]
-        },
-        {
-          "kind": "module",
-          "px": 340,
-          "via": "fixed",
-          "selector": "li.cards-card-inverse > div.cards-card-body > p > strong",
+          "selector": "#the-connective-tissue-of-modern-finance > em",
           "pages": [
             "https://main--sei--oharris69.aem.live/"
           ]
@@ -179,18 +202,18 @@
         },
         {
           "kind": "module",
-          "px": 281,
+          "px": 283,
           "via": "fixed",
-          "selector": "#tabpanel-1-0 > div.tabs-panel-col > p > a",
+          "selector": "div.cards-wrapper > div.cards.leadership > ul > li.cards-card-linked",
           "pages": [
             "https://main--sei--oharris69.aem.live/"
           ]
         },
         {
           "kind": "module",
-          "px": 253,
+          "px": 251,
           "via": "fixed",
-          "selector": "div.stats.block > ul.stats-list > li.stats-item > p.stats-value",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li",
           "pages": [
             "https://main--sei--oharris69.aem.live/"
           ]
@@ -212,30 +235,36 @@
         {
           "url": "https://main--sei--oharris69.aem.live/",
           "section": 2,
-          "selector": "body.appear > main > div.display.section",
+          "selector": "body.appear > main > div.section.adaptive-container",
           "px": 1280
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
           "section": 3,
-          "selector": "body.appear > main > div.gradient.section",
+          "selector": "body.appear > main > div.display.section",
           "px": 1280
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
           "section": 4,
-          "selector": "body.appear > main > div.section.stats-container",
+          "selector": "body.appear > main > div.gradient.section",
           "px": 1280
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
           "section": 5,
-          "selector": "body.appear > main > div.heading-link.section",
+          "selector": "body.appear > main > div.section.stats-container",
           "px": 1280
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
           "section": 6,
+          "selector": "body.appear > main > div.heading-link.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 7,
           "selector": "body.appear > main > div.section.newsletter-container",
           "px": 1280
         }
@@ -243,11 +272,23 @@
       "capRegister": [],
       "capProvenance": {
         "writtenBy": "skills/replica/scripts/cap-probe.mjs",
-        "writtenAt": "2026-10-29T23:30:30.253Z",
+        "writtenAt": "2026-11-03T17:34:18.494Z",
         "baseWidth": 1440,
         "urls": [
           "https://main--sei--oharris69.aem.live/"
         ]
+      }
+    },
+    "typeFamily": {
+      "display": "CircularXX",
+      "body": "CircularXX",
+      "css": "circularxx",
+      "files": "fonts/CircularXXSub-{Regular,Medium,Black,ExtraBlack,Italic,MediumItalic}.woff2",
+      "weightMap": {
+        "400": "Regular (100-450)",
+        "500": "Medium (451-750)",
+        "900": "Black (751-925)",
+        "950-1000": "ExtraBlack (926-1000)"
       }
     }
   },

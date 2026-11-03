@@ -1,12 +1,13 @@
 {
   "_provenance": {
     "writtenBy": "stardust:extract",
-    "writtenAt": "2026-10-29T23:33:21.323Z",
+    "writtenAt": "2026-11-03T17:33:39.000Z",
     "readArtifacts": [
       "https://main--sei--oharris69.aem.live/"
     ],
     "synthesizedInputs": [],
-    "stardustVersion": "0.32.1"
+    "stardustVersion": "0.32.1",
+    "notes": "uplift --re-extract (CircularXX now live); crawl.mjs --max 1"
   },
   "discovery": {
     "fetchTechnique": "headless",
@@ -31,9 +32,12 @@
     {
       "slug": "index",
       "verdict": "ok",
-      "notes": "rendered page (no consent wall/blank shell); hero headline + gradient field match the record; promo/leadership/logo imagery present; cssBackgrounds [] is believable — hero/proof/newsletter fields are CSS gradients, not raster images; logo captured"
+      "notes": "rendered page (no consent wall / blank shell); hero 'Financial value is created / between the lines.' over offset white bars + green-cyan gradient matches heroHeadline; role bar, promo tiles, recommended panel, connective-tissue ring, proof tabs, stats map, leadership cards, newsletter, footer all present; type renders in CircularXX (geometric single-storey a, round dots); cssBackgrounds [] believable — hero/proof/newsletter fields are CSS gradients; logo captured"
     }
   ],
   "siblingCandidates": [],
-  "userChoice": "explicit --pages / (single page, user decision)"
+  "userChoice": "single page (uplift default: home); --re-extract forced",
+  "media": {
+    "note": "crawl.mjs does not download media; the site's own images are in the repo at content/images/** (same assets the live pages serve) and prototypes reference them as ../../content/images/…"
+  }
 }

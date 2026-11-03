@@ -1,0 +1,614 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:direct (--rebrand)",
+    "writtenAt": "2026-11-03T21:00:00Z",
+    "againstDirection": "stardust/direction.md#active-direction",
+    "readArtifacts": [
+      "stardust/current/_brand-extraction.json",
+      "stardust/current/pages/index.json",
+      "stardust/current/PRODUCT.md",
+      "PRODUCT.md",
+      "DESIGN.md"
+    ],
+    "synthesizedInputs": [
+      "seed roll SEI|2026-11-03",
+      "palette anchor coolors Monochrome Harmony (library v0.7.0)"
+    ],
+    "stardustVersion": "0.32.1",
+    "variant": "R (rebrand, single)",
+    "amendedBy": "stardust:prototype index (anti-toolbox + render audit amendments)"
+  },
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T19:40:00Z",
+  "title": "Design System: SEI — The Lobby Floor",
+  "extensions": {
+    "colorMeta": {
+      "lobby-stone": {
+        "role": "neutral",
+        "displayName": "Lobby Stone",
+        "canonical": "oklch(93.5% 0.008 152)",
+        "use": "page ground",
+        "tonalRamp": [
+          "oklch(25% 0.008 152)",
+          "oklch(35% 0.008 152)",
+          "oklch(45% 0.008 152)",
+          "oklch(55% 0.008 152)",
+          "oklch(65% 0.008 152)",
+          "oklch(75% 0.008 152)",
+          "oklch(85% 0.008 152)",
+          "oklch(95% 0.008 152)"
+        ]
+      },
+      "slab-white": {
+        "role": "neutral",
+        "displayName": "Slab White",
+        "canonical": "oklch(97.4% 0.003 146)",
+        "use": "raised slabs, plates, inputs",
+        "tonalRamp": [
+          "oklch(25% 0.003 146)",
+          "oklch(35% 0.003 146)",
+          "oklch(45% 0.003 146)",
+          "oklch(55% 0.003 146)",
+          "oklch(65% 0.003 146)",
+          "oklch(75% 0.003 146)",
+          "oklch(85% 0.003 146)",
+          "oklch(97% 0.003 146)"
+        ]
+      },
+      "verde-matrix": {
+        "role": "primary",
+        "displayName": "Verde Matrix",
+        "canonical": "oklch(26.6% 0.035 180)",
+        "use": "primary text; dark slab ground",
+        "tonalRamp": [
+          "oklch(15% 0.035 180)",
+          "oklch(26.6% 0.035 180)",
+          "oklch(36% 0.035 180)",
+          "oklch(46% 0.035 180)",
+          "oklch(58% 0.035 180)",
+          "oklch(70% 0.03 180)",
+          "oklch(82% 0.02 180)",
+          "oklch(94% 0.01 180)"
+        ]
+      },
+      "verde-veil": {
+        "role": "neutral",
+        "displayName": "Verde Veil",
+        "canonical": "oklch(42.6% 0.029 183)",
+        "use": "secondary text on light"
+      },
+      "brass-strip": {
+        "role": "secondary",
+        "displayName": "Brass Strip",
+        "canonical": "oklch(62.8% 0.108 83)",
+        "use": "2px divider strips, spec-row rules; decorative only"
+      },
+      "brass-engraved": {
+        "role": "secondary",
+        "displayName": "Brass Engraved",
+        "canonical": "oklch(45.1% 0.081 83)",
+        "use": "eyebrow labels on light"
+      },
+      "saffron-chip": {
+        "role": "primary",
+        "displayName": "Saffron Chip",
+        "canonical": "oklch(80.6% 0.147 79)",
+        "use": "action fill; one slab per page (newsletter)",
+        "tonalRamp": [
+          "oklch(30% 0.08 79)",
+          "oklch(40% 0.1 79)",
+          "oklch(50% 0.12 79)",
+          "oklch(60% 0.14 79)",
+          "oklch(70% 0.15 79)",
+          "oklch(80.6% 0.147 79)",
+          "oklch(88% 0.1 79)",
+          "oklch(95% 0.05 79)"
+        ]
+      },
+      "rose-chip": {
+        "role": "secondary",
+        "displayName": "Rose Chip",
+        "canonical": "oklch(81.7% 0.063 38)",
+        "use": "proof slab ground; badges"
+      },
+      "mist-chip": {
+        "role": "neutral",
+        "displayName": "Mist Chip",
+        "canonical": "oklch(85.8% 0.013 165)",
+        "use": "secondary text and rules on verde"
+      },
+      "pebble-chip": {
+        "role": "neutral",
+        "displayName": "Pebble Chip",
+        "canonical": "oklch(69.6% 0.017 172)",
+        "use": "terrazzo aggregate only"
+      }
+    },
+    "contrastPairs": [
+      {
+        "fg": "verde-matrix",
+        "bg": "lobby-stone",
+        "ratio": 12.48,
+        "pass": "AAA"
+      },
+      {
+        "fg": "verde-matrix",
+        "bg": "slab-white",
+        "ratio": 13.99,
+        "pass": "AAA"
+      },
+      {
+        "fg": "verde-veil",
+        "bg": "lobby-stone",
+        "ratio": 6.74,
+        "pass": "AA"
+      },
+      {
+        "fg": "verde-veil",
+        "bg": "slab-white",
+        "ratio": 7.55,
+        "pass": "AAA"
+      },
+      {
+        "fg": "brass-engraved",
+        "bg": "lobby-stone",
+        "ratio": 6.18,
+        "pass": "AA"
+      },
+      {
+        "fg": "verde-matrix",
+        "bg": "saffron-chip",
+        "ratio": 8.1,
+        "pass": "AAA"
+      },
+      {
+        "fg": "verde-matrix",
+        "bg": "rose-chip",
+        "ratio": 8.37,
+        "pass": "AAA"
+      },
+      {
+        "fg": "lobby-stone",
+        "bg": "verde-matrix",
+        "ratio": 12.48,
+        "pass": "AAA"
+      },
+      {
+        "fg": "saffron-chip",
+        "bg": "verde-matrix",
+        "ratio": 8.1,
+        "pass": "AAA"
+      },
+      {
+        "fg": "mist-chip",
+        "bg": "verde-matrix",
+        "ratio": 9.82,
+        "pass": "AAA"
+      },
+      {
+        "fg": "brass-strip",
+        "bg": "lobby-stone",
+        "ratio": 2.95,
+        "pass": "decorative only (non-text, non-essential)"
+      }
+    ],
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only.",
+        "family": "Archivo",
+        "licence": "SIL Open Font License 1.1 (Omnibus-Type)",
+        "source": "Google Fonts",
+        "axes": "wdth 62–125, wght 100–900"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, leader and article titles."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Stat and case-study values in Spec Rows."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section intros.",
+        "family": "Source Serif 4",
+        "licence": "SIL Open Font License 1.1 (Adobe)",
+        "source": "Google Fonts",
+        "axes": "opsz 8–60, wght 200–900, ital"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraph copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, buttons, nav, spec labels."
+      },
+      "title-lg": {
+        "displayName": "Title large",
+        "purpose": "Directory names, lead promo title."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Role-strip stage line, leader roles, footer nav, captions."
+      },
+      "figure-sm": {
+        "displayName": "Figure small",
+        "purpose": "Case-study figures in the proof ledger."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Archivo",
+        "licence": "SIL Open Font License 1.1",
+        "foundry": "Omnibus-Type",
+        "delivery": "prototype: Google Fonts CSS2 (family=Archivo:wdth,wght@62..125,100..900); production: self-host from OFL release"
+      },
+      {
+        "family": "Source Serif 4",
+        "licence": "SIL Open Font License 1.1",
+        "foundry": "Adobe",
+        "delivery": "prototype: Google Fonts CSS2 (family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900); production: self-host from OFL release"
+      }
+    ],
+    "shadows": [],
+    "gradients": [],
+    "motion": {
+      "register": null,
+      "registerRationale": "user-phrase: \"static (no cinematic motion layer; subtle CSS transitions only, honour prefers-reduced-motion)\"",
+      "transitions": [
+        {
+          "name": "ease-state",
+          "value": "cubic-bezier(0.2, 0, 0, 1)",
+          "purpose": "colour / underline state changes"
+        },
+        {
+          "name": "duration-state",
+          "value": "160ms",
+          "purpose": "hover, focus, tab switch"
+        }
+      ],
+      "reducedMotion": "all transitions set to 0ms under prefers-reduced-motion: reduce"
+    },
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "390px"
+      },
+      {
+        "name": "tablet",
+        "value": "768px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "desktop",
+        "value": "1440px"
+      },
+      {
+        "name": "containerMaxWidth",
+        "value": "1320px"
+      }
+    ],
+    "componentStyle": {
+      "buttons": {
+        "shape": "square 0px",
+        "primary": "saffron fill / verde label / trailing arrow",
+        "secondary": "2px verde outline",
+        "hover": "invert",
+        "focus": "3px outline, 3px offset (verde on light, saffron on dark)"
+      },
+      "cards": {
+        "shape": "square 0px",
+        "surface": "slab-white on lobby-stone; lobby-stone on verde",
+        "separation": "2px brass strips, no gaps",
+        "shadow": "none"
+      },
+      "inputs": {
+        "shape": "square 0px",
+        "border": "2px verde",
+        "height": "52px",
+        "focus": "3px verde border + saffron outline"
+      },
+      "dualCTAPattern": "avoided — one labelled action per bay"
+    },
+    "systemComponentRoles": {
+      "header": {
+        "purpose": "logo mark, primary nav disclosures, search, client login, contact",
+        "position": "top, not sticky"
+      },
+      "role-strip": {
+        "purpose": "persistent audience routing + talk to an advisor",
+        "position": "directly under header, full-bleed verde strip"
+      },
+      "persistent-help": {
+        "purpose": "SEI Assistant launcher",
+        "position": "fixed bottom-right, square saffron"
+      },
+      "cta-band": {
+        "purpose": "newsletter subscription",
+        "position": "last slab before footer"
+      },
+      "footer": {
+        "purpose": "link columns, brand row, legal",
+        "position": "verde slab with terrazzo band"
+      }
+    },
+    "voice": {
+      "do": [
+        "Short declarative headlines ending in a period.",
+        "State figures plainly with their unit.",
+        "Name the visitor's role in first person (\"I'm an asset manager\")."
+      ],
+      "dont": [
+        "No exclamation marks.",
+        "No superlatives or hype adjectives.",
+        "No editorial-register vocabulary (journal, dispatch, atelier)."
+      ]
+    },
+    "iaPriorities": [
+      {
+        "signal": "audience-routing",
+        "evidence": "pages/index.json ctas[6] role bar \"I’m a Choose your role\" + ctas[12-14] three role CTAs; headings[4]",
+        "preserveAs": "first-viewport (role strip) + in-page directory directly after hero",
+        "scope": "site-wide",
+        "mutability": "movable"
+      },
+      {
+        "signal": "commercial-conversion",
+        "evidence": "pages/index.json ctas[8] \"Talk to an advisor\" -> /modals/schedule-eric-dunn",
+        "preserveAs": "first-viewport",
+        "scope": "site-wide",
+        "mutability": "movable"
+      },
+      {
+        "signal": "time-bound-promo",
+        "evidence": "pages/index.json ctas[9] \"Register now\" Data Cloud webcast, Thursday October 1",
+        "preserveAs": "above-proof",
+        "scope": "page",
+        "mutability": "movable"
+      },
+      {
+        "signal": "persistent-help",
+        "evidence": "pages/index.json ctas[last] \"SEI Assistant — Ask a question\" -> /modals/assistant",
+        "preserveAs": "every-viewport",
+        "scope": "site-wide",
+        "mutability": "movable"
+      }
+    ],
+    "divergence": {
+      "toolkit_version": "v1.0 (stardust v2)",
+      "mode": "rebrand (--rebrand flag + phrase triggers 'from-scratch', 'not brand-faithful'); Mode A pins off",
+      "research_tier": "skipped — caller requested a full divergence-seed roll; refero MCP absent; WebSearch not available in this session",
+      "seed": {
+        "input": "SEI|2026-11-03",
+        "md5": "1694f9f60acd6afafb69db3c2381ff21",
+        "decade": "1950s",
+        "craft": "Terrazzo",
+        "register": "Real-estate listing",
+        "ground_family": "monochrome-tint",
+        "picked_by": "deterministic",
+        "overrides": [
+          {
+            "dimension": "ground_family",
+            "rolled": "cream (byte[3] 0xf6 % 6 = 0)",
+            "resolved": "monochrome-tint",
+            "reason": "anti-toolbox: cream-family ground needs a print/paper-category justification; SEI is a wealth-technology firm, so the hit cannot be justified. Re-resolved within the rolled craft: terrazzo's cement matrix is a cool mineral grey-green, which is monochrome-tint (S 5–20%, hue outside 20°–60°).",
+            "picked_by": "audit"
+          }
+        ]
+      },
+      "font_deck": "swiss-modernist (1950s International Style) with reflex substitutions",
+      "divergence_justifications": [
+        {
+          "font": "Archivo (replaces Inter Tight display slot)",
+          "reason": "Inter Tight is in the Inter reflex family. Archivo's width axis reaches 125, giving a 1950s extended-grotesque display (the decade of Microgramma and lobby directory boards). The decade dimension calls for it, and it is the widest available contrast with CircularXX's geometric ExtraBlack."
+        },
+        {
+          "font": "Source Serif 4 (replaces Inter body slot)",
+          "reason": "Inter is reflex-rejected. A reading serif for prose answers the listing-sheet register (typeset fact sheet), breaks the outgoing all-sans voice, and is on the toolkit's substitute list."
+        },
+        {
+          "font": "Iosevka (dropped)",
+          "reason": "Monospace metadata is an anti-toolbox move. Labels use Archivo wdth 112 instead."
+        }
+      ],
+      "reflex_reject_count": 0,
+      "palette_source": {
+        "library_version": "v0.7.0",
+        "anchor": {
+          "name": "Monochrome Harmony",
+          "source": "https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533",
+          "hexes": [
+            "#CFDBD5",
+            "#E8EDDF",
+            "#F5CB5C",
+            "#242423",
+            "#333533"
+          ]
+        },
+        "derivation": "Anchor's mineral greys + saffron kept as strategy. The anchor ground #E8EDDF is cream-flagged (R−B = 9), so it was cooled to #E6EBE7 (R−B = −1). Charcoal moved to verde-matrix #0F2B26 (terrazzo cement / verde-alpi chip). Added rose-chip (pink marble aggregate) and brass strips (terrazzo divider metal). Every text pair validated in contrastPairs.",
+        "picked_by": "reasoned: seed craft Terrazzo + anchor"
+      },
+      "anti_toolbox_count": 2,
+      "anti_toolbox_hits": [
+        {
+          "move": "Oversized display numerals as section markers (near-hit: large figures)",
+          "justification": "Large figures appear only as the content's own captured stats/metrics inside Spec Rows (58, 15, 2,000+, $1.9T, $2B+, $206B+, 8+ years). They are never section markers or decoration, and they are stacked as a listing sheet rather than a trust bar."
+        },
+        {
+          "move": "SVG noise / grain overlay on backgrounds (near-hit: terrazzo field)",
+          "justification": "The terrazzo field is discrete aggregate chips in palette colours, not noise or grain. It is the rolled craft and a literal picture of SEI's 'many capabilities bound under one roof' claim, it is used on two surfaces only, and it never sits behind text."
+        }
+      ],
+      "off_toolbox_moves": [
+        {
+          "move": "Brass divider strips replace gutters and shadows",
+          "basis": "Terrazzo floors are poured in bays separated by brass strips; the page is laid out the same way, so separation is a material, not whitespace or elevation."
+        },
+        {
+          "move": "'between the lines.' set literally between two brass strips with an aggregate infill",
+          "basis": "SEI's captured hero wordplay; the line becomes the brand's divider strip. Cannot transfer to another brand's copy."
+        },
+        {
+          "move": "Role router as a lobby building directory (ruled rows, leader rule, arrow)",
+          "basis": "1950s office-lobby directory board + the captured 'Tell us who you are' routing; each row is one captured role link."
+        },
+        {
+          "move": "Stats and case metrics as listing-sheet Spec Rows",
+          "basis": "Real-estate listing register: facts are typeset as a specification sheet (typographic substitution of the stat-callout bar)."
+        }
+      ],
+      "audit_adjustments": [
+        {
+          "from": "seed",
+          "to": "override",
+          "move": "cream ground",
+          "reason": "cream-family hit unjustifiable for a non-print brand; see seed.overrides"
+        },
+        {
+          "from": "candidate",
+          "to": "removed",
+          "move": "Italic serif accent on 'connective tissue'",
+          "reason": "Italic expressive serif single-word accent is an anti-toolbox move; the captured <em> is rendered as a brass underline in the display face instead."
+        },
+        {
+          "from": "candidate",
+          "to": "removed",
+          "move": "Sticky header",
+          "reason": "anti-toolbox structural move; the role strip is reachable in the first viewport without stickiness."
+        },
+        {
+          "from": "render",
+          "to": "removed",
+          "move": "terrazzo footer band (third aggregate surface)",
+          "reason": "finish review: OWN-WORLD caps aggregate at two surfaces; footer keeps the brass edge only (2026-11-03T20:58Z)"
+        },
+        {
+          "from": "render",
+          "to": "amended",
+          "move": "captured imagery re-toned into the palette",
+          "reason": "critique P2: promo art (green glass / cyan chart) and a cyan portrait backdrop re-imported the outgoing brand; verde→white duotone on promos, greyscale portraits (colour on hover/focus), brass/verde duotone on the ring medallion. Images, positions and alt text unchanged."
+        }
+      ],
+      "references_used": [],
+      "triplet_audit": "Captured copy contains no display-level triplets introduced by this direction; no copy was rewritten."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Saffron chip action with trailing arrow.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Register now <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn{display:inline-flex;gap:10px;align-items:center;background:#F2B33D;color:#0F2B26;font:650 0.8125rem/1.2 Archivo,Arial,sans-serif;font-variation-settings:'wdth' 112;letter-spacing:.08em;text-transform:uppercase;padding:15px 22px;border-radius:0;text-decoration:none;transition:background-color .16s cubic-bezier(.2,0,0,1),color .16s cubic-bezier(.2,0,0,1)}.ds-btn:hover{background:#0F2B26;color:#F2B33D}.ds-btn:focus-visible{outline:3px solid #0F2B26;outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined verde action.",
+      "html": "<a class=\"ds-btn-2\" href=\"#\">Client Login</a>",
+      "css": ".ds-btn-2{display:inline-flex;border:2px solid #0F2B26;color:#0F2B26;font:650 0.8125rem/1.2 Archivo,Arial,sans-serif;font-variation-settings:'wdth' 112;letter-spacing:.08em;text-transform:uppercase;padding:13px 20px;text-decoration:none;transition:background-color .16s,color .16s}.ds-btn-2:hover{background:#0F2B26;color:#E6EBE7}.ds-btn-2:focus-visible{outline:3px solid #0F2B26;outline-offset:3px}"
+    },
+    {
+      "name": "Bay (card)",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Square slab bay; siblings separated by brass strips.",
+      "html": "<div class=\"ds-bays\"><div class=\"ds-bay\"><h3>SEI Marketplace</h3><p>Explore our ETFs and funds.</p></div><div class=\"ds-bay\"><h3>$12B in market cap</h3><p>SEI’s momentum makes its mark.</p></div></div>",
+      "css": ".ds-bays{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#A88231}.ds-bay{background:#F5F7F5;color:#0F2B26;padding:24px}.ds-bay h3{font:700 1.375rem/1.15 Archivo,Arial,sans-serif;margin:0 0 8px}.ds-bay p{font:400 1.0625rem/1.6 'Source Serif 4',Georgia,serif;margin:0;color:#3D5450}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square field, 2px verde border.",
+      "html": "<label class=\"ds-field\"><span>Business Email</span><input type=\"email\" placeholder=\"yourname@company.com\"></label>",
+      "css": ".ds-field{display:grid;gap:6px;font:650 .8125rem Archivo,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0F2B26}.ds-field input{height:52px;padding:14px 16px;border:2px solid #0F2B26;border-radius:0;background:#F5F7F5;font:400 1.0625rem 'Source Serif 4',Georgia,serif;color:#0F2B26}.ds-field input:focus-visible{outline:3px solid #F2B33D;outline-offset:0;border-width:3px}"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Rose chip tag for date/time and spec tags.",
+      "html": "<span class=\"ds-badge\">11 am ET</span>",
+      "css": ".ds-badge{display:inline-block;background:#E8B6A6;color:#0F2B26;font:650 .8125rem/1.2 Archivo,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px}"
+    },
+    {
+      "name": "Spec Row",
+      "kind": "custom",
+      "refersTo": "spec-row",
+      "description": "Listing-sheet fact row: figure + label, brass rule above.",
+      "html": "<dl class=\"ds-spec\"><div><dt>58</dt><dd>years of institutional service</dd></div><div><dt>15</dt><dd>countries served</dd></div></dl>",
+      "css": ".ds-spec{margin:0}.ds-spec div{display:grid;grid-template-columns:minmax(8ch,auto) 1fr;gap:24px;align-items:baseline;border-top:2px solid #A88231;padding:16px 0}.ds-spec dt{font:800 3rem/1 Archivo,Arial,sans-serif;font-variation-settings:'wdth' 125;font-variant-numeric:tabular-nums lining-nums;color:#0F2B26}.ds-spec dd{margin:0;font:400 1.0625rem/1.4 'Source Serif 4',Georgia,serif;color:#3D5450}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Non-sticky label-style nav with disclosure buttons.",
+      "html": "<nav class=\"ds-nav\"><button aria-expanded=\"false\">Solutions</button><button aria-expanded=\"false\">Who We Serve</button><a href=\"#\">Contact Us</a></nav>",
+      "css": ".ds-nav{display:flex;gap:28px;align-items:center;background:#E6EBE7;padding:16px 24px}.ds-nav button,.ds-nav a{background:none;border:0;padding:6px 0;font:650 .8125rem Archivo,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0F2B26;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .16s}.ds-nav button:hover,.ds-nav a:hover{border-bottom-color:#A88231}.ds-nav :focus-visible{outline:3px solid #0F2B26;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lobby Floor",
+    "overview": "Picture the floor of a 1950s financial building's lobby, poured in terrazzo. Chips of stone, glass and marble are bound in one cement matrix and divided into bays by thin brass strips. That floor is SEI's promise made physical: capabilities rarely found under one roof, joined into one surface. The system is built from slabs (flat, square-edged fields of one tone) laid side by side and separated by strips (2px brass rules). The page reads as a plan of bays, not a stack of floating cards. The register borrows the structure of a property listing sheet: facts are set in ruled specification rows, features are listed plainly and each bay has one labelled action. Type pairs a mid-century expanded grotesque (Archivo at width 125) for display and figures with a sturdy reading serif (Source Serif 4) for prose.",
+    "keyCharacteristics": [
+      "Cool mineral ground (lobby stone), deep verde matrix ink, saffron chips for actions, rose chips for proof.",
+      "Square corners everywhere (0px). Depth comes from slab tone, never from shadow.",
+      "2px brass strips divide bays horizontally and vertically. They are the system's only ornament besides the terrazzo field.",
+      "Terrazzo aggregate field: discrete chips in palette colours, used on at most two surfaces per page.",
+      "Figures are set as specification rows, never as a trust bar."
+    ],
+    "rules": [
+      {
+        "name": "The Chip Dose Rule",
+        "body": "Saffron and Rose are chips, not paint. Each covers at most one full slab per page. Elsewhere they appear only as buttons, badges and aggregate.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Gradient Rule",
+        "body": "The outgoing green→cyan field is retired. No gradients on any surface, text or border.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Archivo speaks in names, numbers and actions. Source Serif 4 speaks in sentences. A paragraph is never set in Archivo, and a button is never set in the serif.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Accent Face Rule",
+        "body": "No third family, no italic display accents and no monospace metadata.",
+        "section": "typography"
+      },
+      {
+        "name": "The Poured Floor Rule",
+        "body": "Nothing floats. A surface that needs emphasis changes tone or gains a brass strip. It never gains a shadow, blur or glass.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do separate bays with 2px Brass strips (#A88231) instead of gaps or shadows.",
+      "Do set every figure in Archivo wdth 125 with tabular lining numerals, inside a Spec Row.",
+      "Do keep Saffron (#F2B33D) for actions and at most one full slab per page.",
+      "Do crop images square inside a frame and keep them at their captured semantic role."
+    ],
+    "donts": [
+      "Don't use rounded corners, shadows, gradients, glass or blur.",
+      "Don't reintroduce SEI's outgoing green→cyan field, red action buttons or CircularXX.",
+      "Don't line up three or four big numbers horizontally as a trust bar.",
+      "Don't put text on the terrazzo field or set display copy over a photograph.",
+      "Don't use Saffron, Rose or Brass Strip as text colours on light grounds."
+    ]
+  }
+}

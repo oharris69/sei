@@ -89,6 +89,7 @@ const PAGE_STAGES = {
   '/start/linkedin': 'discover',
   '/start/ai-search': 'discover',
   '/bd-breakaway': 'engage',
+  '/insights/videos/summit-wealth-partnering-with-purpose': 'engage',
   '/enterprise-ria': 'engage',
   '/asset-managers': 'engage',
   '/pathfinder': 'try',

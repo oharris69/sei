@@ -1,0 +1,206 @@
+/* rb-directory — rebrand R role directory board. Page tokens are scoped to the section container. */
+main > .section.rb-directory-container {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-saffron: #f2b33d;
+  --rb-brass: #a88231;
+  --rb-mist: #c9d3ce;
+  --rb-pebble: #93a19c;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-pad: 32px;
+  --rb-state: 160ms cubic-bezier(0.2, 0, 0, 1);
+
+  margin: 0;
+  padding: var(--rb-pad) 0;
+  background: var(--rb-verde);
+  color: var(--rb-stone);
+}
+
+main > .section.rb-directory-container > .rb-directory-wrapper {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+.rb-directory,
+.rb-directory *,
+.rb-directory *::before,
+.rb-directory *::after {
+  box-sizing: border-box;
+}
+
+.rb-directory {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.rb-directory :focus-visible {
+  outline: 3px solid var(--rb-saffron);
+  outline-offset: 3px;
+}
+
+.rb-directory .rb-directory-intro > * {
+  margin: 0;
+}
+
+.rb-directory .rb-directory-intro :is(h1, h2, h3) {
+  margin-bottom: 20px;
+  color: var(--rb-stone);
+  font-family: var(--rb-display);
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 760;
+  font-stretch: 115%;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.rb-directory .rb-directory-intro p {
+  max-width: 44ch;
+  color: var(--rb-mist);
+  text-wrap: pretty;
+}
+
+.rb-directory .rb-directory-intro p + p {
+  margin-top: 16px;
+}
+
+.rb-directory-board {
+  border: 2px solid var(--rb-brass);
+  background: var(--rb-verde);
+}
+
+.rb-directory .rb-directory-plate {
+  display: block;
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--rb-brass);
+  color: var(--rb-mist);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rb-directory-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rb-directory a.rb-directory-row:any-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--rb-mist) 35%, transparent);
+  color: var(--rb-stone);
+  text-decoration: none;
+  transition: color var(--rb-state), background-color var(--rb-state);
+}
+
+.rb-directory-list li:last-child .rb-directory-row {
+  border-bottom: 0;
+}
+
+.rb-directory-name {
+  flex: 1;
+  font-family: var(--rb-display);
+  font-size: clamp(1.375rem, 2.2vw, 2rem);
+  font-weight: 700;
+  font-stretch: 112%;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.rb-directory-leader {
+  display: none;
+  flex: 1;
+  align-self: flex-end;
+  min-width: 24px;
+  height: 4px;
+  margin-bottom: 0.55em;
+  background:
+    radial-gradient(circle, var(--rb-pebble) 1.4px, transparent 1.6px) 0 50% / 10px 4px repeat-x;
+}
+
+.rb-directory-arrow {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  box-shadow: inset 0 0 0 2px var(--rb-saffron);
+  color: var(--rb-saffron);
+  font-family: var(--rb-display);
+  font-size: 1.375rem;
+  font-weight: 800;
+  transition: background-color var(--rb-state), color var(--rb-state);
+}
+
+.rb-directory a.rb-directory-row:hover,
+.rb-directory a.rb-directory-row:focus-visible {
+  background: color-mix(in srgb, var(--rb-stone) 6%, transparent);
+  color: var(--rb-saffron);
+  text-decoration: none;
+}
+
+.rb-directory a.rb-directory-row:focus-visible {
+  outline-offset: -3px;
+}
+
+.rb-directory-row:hover .rb-directory-arrow,
+.rb-directory-row:focus-visible .rb-directory-arrow {
+  background: var(--rb-saffron);
+  color: var(--rb-verde);
+}
+
+@media (width > 640px) {
+  main > .section.rb-directory-container {
+    --rb-gutter: 24px;
+    --rb-pad: 48px;
+  }
+
+  .rb-directory .rb-directory-plate {
+    padding: 14px 24px;
+  }
+
+  .rb-directory a.rb-directory-row:any-link {
+    gap: 18px;
+    padding: 22px 24px;
+  }
+
+  .rb-directory-name {
+    flex: none;
+  }
+
+  .rb-directory-leader {
+    display: block;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.rb-directory-container {
+    --rb-pad: 64px;
+  }
+
+  .rb-directory {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    gap: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-directory * {
+    transition-duration: 0ms;
+  }
+}

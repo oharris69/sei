@@ -32,6 +32,12 @@ export async function loadFragment(path) {
         main.querySelectorAll(`${tag}[${attr}^="./media_"]`).forEach((elem) => {
           elem[attr] = new URL(elem.getAttribute(attr), new URL(path, window.location)).href;
         });
+        // local preview: ./images/ always means the content folder's images, from any page depth
+        if (localPrefix) {
+          main.querySelectorAll(`${tag}[${attr}^="./images/"]`).forEach((elem) => {
+            elem[attr] = new URL(elem.getAttribute(attr), `${window.location.origin}/content/`).href;
+          });
+        }
       };
       resetAttributeBase('img', 'src');
       resetAttributeBase('source', 'srcset');

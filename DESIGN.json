@@ -1,521 +1,543 @@
 {
   "_provenance": {
-    "writtenBy": "stardust:direct",
-    "writtenAt": "2026-10-29T23:40:00Z",
+    "writtenBy": "stardust:direct (via stardust:uplift Phase 4)",
+    "writtenAt": "2026-11-03T18:25:00Z",
     "againstDirection": "stardust/direction.md#active-direction",
     "readArtifacts": [
       "stardust/current/_brand-extraction.json",
       "stardust/current/DESIGN.json",
-      "stardust/prototypes/index-improvements.md",
-      "PRODUCT.md",
+      "stardust/uplift-improvements.md",
+      "stardust/uplift-questions.md",
       "DESIGN.md"
     ],
-    "synthesizedInputs": [
-      "type scale",
-      "spacing scale",
-      "component snippets"
-    ],
-    "stardustVersion": "0.32.1"
+    "synthesizedInputs": [],
+    "stardustVersion": "0.32.1",
+    "variant": "shared"
   },
   "schemaVersion": 2,
-  "generatedAt": "2026-10-29T23:40:00Z",
-  "title": "Design System: SEI — brand-faithful refresh",
+  "generatedAt": "2026-11-03T18:25:00Z",
+  "title": "Design System: SEI — uplift (shared)",
   "extensions": {
     "colorMeta": {
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
-        "canonical": "#131517",
-        "tonalRamp": [
-          "#0b0c0d",
-          "#131517",
-          "#2b2f33",
-          "#364153",
-          "#6a7282",
-          "#99a1af",
-          "#e5e7eb",
-          "#f3f4f6"
-        ]
+        "hex": "#131517"
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "hex": "#364153"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "hex": "#ffffff"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "hex": "#e5e7eb"
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "hex": "#d9d9d9"
       },
       "signal-red": {
         "role": "primary",
         "displayName": "Signal Red",
-        "canonical": "#d82b2a",
-        "tonalRamp": [
-          "#5c1111",
-          "#8a1a1a",
-          "#b82322",
-          "#d82b2a",
-          "#e2605f",
-          "#ec9594",
-          "#f5caca",
-          "#fbeaea"
-        ]
+        "hex": "#d82b2a",
+        "hover": "#b82322"
       },
       "sei-cyan": {
         "role": "secondary",
         "displayName": "SEI Cyan",
-        "canonical": "#00c0f3",
-        "tonalRamp": [
-          "#04384a",
-          "#086c8a",
-          "#0094bd",
-          "#00c0f3",
-          "#3fd0f6",
-          "#7fdff9",
-          "#bfeffc",
-          "#e6f9fe"
+        "hex": "#00c0f3",
+        "textOn": [
+          "ink"
         ]
       },
       "sei-green": {
         "role": "tertiary",
         "displayName": "SEI Green",
-        "canonical": "#a6ce39",
-        "tonalRamp": [
-          "#33400f",
-          "#566b1a",
-          "#7a9a26",
-          "#a6ce39",
-          "#bcdb6a",
-          "#d2e79b",
-          "#e8f3cd",
-          "#f5faeb"
+        "hex": "#a6ce39",
+        "textOn": [
+          "ink"
         ]
       },
       "deep-current": {
-        "role": "accent-text",
+        "role": "tertiary",
         "displayName": "Deep Current",
-        "canonical": "#086c8a"
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Paper",
-        "canonical": "#ffffff"
-      },
-      "fog": {
-        "role": "neutral",
-        "displayName": "Fog",
-        "canonical": "#f3f4f6"
-      },
-      "hairline": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "#e5e7eb"
-      },
-      "slate": {
-        "role": "neutral",
-        "displayName": "Slate",
-        "canonical": "#364153"
+        "hex": "#086c8a",
+        "source": "captured newsletter gradient end"
       }
     },
-    "gradients": [
+    "contrastPairs": [
       {
-        "name": "connective-field",
-        "value": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)",
-        "purpose": "Hero field and the proof band. Text on it is Ink."
+        "fg": "#ffffff",
+        "bg": "#d82b2a",
+        "ratio": 4.89
       },
       {
-        "name": "current",
-        "value": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
-        "purpose": "Newsletter band. White text only on the dark half; the form sits on a Paper card."
+        "fg": "#00c0f3",
+        "bg": "#131517",
+        "ratio": 8.57
       },
       {
-        "name": "connective-rule",
-        "value": "linear-gradient(90deg, #a6ce39 0%, #00c0f3 100%)",
-        "purpose": "Underline/rule under emphasis words and metrics."
+        "fg": "#a6ce39",
+        "bg": "#131517",
+        "ratio": 10.03
+      },
+      {
+        "fg": "#131517",
+        "bg": "#00c0f3",
+        "ratio": 8.57
+      },
+      {
+        "fg": "#131517",
+        "bg": "#a6ce39",
+        "ratio": 10.03
+      },
+      {
+        "fg": "#ffffff",
+        "bg": "#086c8a",
+        "ratio": 5.96
+      },
+      {
+        "fg": "#086c8a",
+        "bg": "#ffffff",
+        "ratio": 5.96
+      },
+      {
+        "forbidden": true,
+        "fg": "#00c0f3",
+        "bg": "#ffffff",
+        "ratio": 2.14
+      },
+      {
+        "forbidden": true,
+        "fg": "#a6ce39",
+        "bg": "#ffffff",
+        "ratio": 1.82
+      },
+      {
+        "forbidden": true,
+        "fg": "#ffffff",
+        "bg": "#00c0f3",
+        "ratio": 2.14
       }
     ],
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Hero headline only."
+      "family": "CircularXX",
+      "css": "circularxx",
+      "license": "licensed (Lineto), self-hosted",
+      "files": {
+        "400": "fonts/CircularXXSub-Regular.woff2",
+        "500": "fonts/CircularXXSub-Medium.woff2",
+        "900": "fonts/CircularXXSub-Black.woff2",
+        "950": "fonts/CircularXXSub-ExtraBlack.woff2",
+        "400i": "fonts/CircularXXSub-Italic.woff2",
+        "500i": "fonts/CircularXXSub-MediumItalic.woff2"
       },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Every section h2, one size site-wide."
+      "weightRanges": {
+        "Regular": "100 450",
+        "Medium": "451 750",
+        "Black": "751 925",
+        "ExtraBlack": "926 1000"
       },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Promo card titles."
-      },
-      "subtitle": {
-        "displayName": "Subtitle",
-        "purpose": "Leadership article titles, featured metrics."
-      },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "The paragraph under a section headline."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Card and panel copy."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Existing eyebrow copy only."
-      },
-      "numeral": {
-        "displayName": "Numeral",
-        "purpose": "Stat and metric values; tabular lining figures."
+      "prototypeSrcPrefix": "../../fonts/",
+      "scale": [
+        80,
+        48,
+        36,
+        24,
+        20,
+        17,
+        15
+      ],
+      "figma": {
+        "h1": "80/950/-0.4px",
+        "h2": "48 & 36 / 950",
+        "body": "20 Medium"
       }
     },
     "shadows": [
       {
         "name": "lift",
-        "value": "0 12px 32px rgba(19, 21, 23, 0.12)",
-        "purpose": "Card hover only."
+        "value": "0 12px 32px rgba(19,21,23,.12)",
+        "purpose": "card hover"
       },
       {
         "name": "launcher",
-        "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-        "purpose": "Global assistant launcher (existing chrome)."
+        "value": "0 10px 30px rgba(0,0,0,.2)",
+        "purpose": "floating SEI Assistant"
       }
     ],
-    "motion": {
-      "register": null,
-      "registerRationale": "user-phrase: \"no cinematic motion register (subtle CSS transitions only, honour prefers-reduced-motion)\"",
-      "easings": {
-        "transition": "cubic-bezier(0.2, 0, 0, 1)"
+    "gradients": [
+      {
+        "name": "field",
+        "value": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)",
+        "purpose": "hero field, proof band, ring"
       },
-      "durations": {
-        "hover": 160,
-        "state": 220
-      },
-      "reducedMotion": "all transforms and transitions disabled under prefers-reduced-motion: reduce"
-    },
-    "breakpoints": {
-      "layout": [
-        {
-          "name": "tablet",
-          "value": "600px"
-        },
-        {
-          "name": "desktop",
-          "value": "900px"
-        },
-        {
-          "name": "wide",
-          "value": "1200px"
-        }
-      ],
-      "containerMaxWidth": "1280px",
-      "probeWidth": 2560,
-      "shellMaxWidth": null,
-      "source": "stardust/current/DESIGN.json extensions.breakpoints (cap-probe) — content cap kept at 1280px"
-    },
-    "divergence": {
-      "toolkit_version": "v1.0 (stardust v2)",
-      "mode": "A (brand-faithful) + B (agent-sourced anchors)",
-      "signal": "signal-strong",
-      "seed": {
-        "input": "SEI|2026-10-29",
-        "hash": "002373fdcd627704bdc34ae319b14cb6",
-        "decade": "2025-now",
-        "craft": "Mosaic tile",
-        "register": "Auction catalogue",
-        "ground_family": "stark-white",
-        "picked_by": "mixed",
-        "overrides": [
-          {
-            "dimension": "decade",
-            "rolled": "1920s",
-            "picked": "2025-now",
-            "picked_by": "reasoned: anchors Addepar, Stripe, MoMA are all current-era (2025-now)"
-          },
-          {
-            "dimension": "craft",
-            "picked": "Mosaic tile",
-            "picked_by": "deterministic (no anchor implied a craft)",
-            "translation": "the stat band as an aligned tile mosaic over the dotted map; promo and leadership rows as equal tiles with one shared gap"
-          },
-          {
-            "dimension": "register",
-            "picked": "Auction catalogue",
-            "picked_by": "deterministic",
-            "translation": "catalogue precision: hairline rules between metric rows, caption-style name/role pairs, tabular numerals — no invented lot numbers or labels"
-          },
-          {
-            "dimension": "ground_family",
-            "picked": "stark-white",
-            "picked_by": "deterministic; agrees with captured #ffffff ground (no Mode C override needed)",
-            "override": null
-          }
-        ]
-      },
-      "font_deck": {
-        "name": "brand-inherited",
-        "picked_by": "user-constraint",
-        "families": [
-          "DM Sans"
-        ],
-        "notes": "DM Sans is variable (wght 100-1000); weights 400/500/800/900/1000 engaged."
-      },
-      "palette": {
-        "source": "inherited from stardust/current/_brand-extraction.json",
-        "picked_by": "user-constraint",
-        "role_renames": {
-          "primary": "signal-red",
-          "accent": "sei-cyan",
-          "secondary": "sei-green",
-          "text": "ink",
-          "background": "paper",
-          "border": "hairline"
-        }
-      },
-      "palette_source": {
-        "library_version": null,
-        "candidates": [],
-        "recommended_index": null,
-        "picked_index": null,
-        "note": "Mode A — palette pinned; picker not invoked"
-      },
-      "references_used": [
-        {
-          "name": "Addepar",
-          "url": "https://www.addepar.com/",
-          "tier": "WebFetch",
-          "studied": "stats grid with large numerals + labels beneath; alternating white and tinted bands; case-study cards ending in a single action",
-          "implies": [
-            "decade: 2025-now"
-          ]
-        },
-        {
-          "name": "Stripe",
-          "url": "https://stripe.com/",
-          "tier": "WebFetch",
-          "studied": "metric grid with emphasised numerals; generous whitespace between bands; image cards with overlays",
-          "implies": [
-            "decade: 2025-now"
-          ]
-        },
-        {
-          "name": "MoMA",
-          "url": "https://www.moma.org/",
-          "tier": "WebFetch",
-          "out_of_category": true,
-          "studied": "institutional confidence through whitespace and consistent left alignment; bands separated by colour and space, not borders",
-          "implies": [
-            "decade: 2025-now",
-            "alignment discipline"
-          ]
-        }
-      ],
-      "research_tier": "2 (WebFetch only; refero MCP and WebSearch unavailable)",
-      "anti_toolbox_count": 2,
-      "anti_toolbox_hits": [
-        {
-          "move": "Big-number stat row",
-          "justification": "Captured content: the source page's stats band (58 / 15 / 2,000+ / $1.9T) is the brand's own proof section; kept verbatim, re-set as a tabular mosaic rather than invented."
-        },
-        {
-          "move": "Rounded cards with hover lift",
-          "justification": "15px card radius is the captured brand motif (18 occurrences); lift is a hover-only response, flat at rest."
-        }
-      ],
-      "off_toolbox_moves": [
-        "white-bar headline overlapping the gradient field (captured signature, re-tuned)",
-        "folder-tab case-study switcher with logo tabs (captured)"
-      ],
-      "audit_adjustments": [
-        "dropped section index numerals (would be numbers not present in the capture — fabricated-content guard)"
-      ],
-      "brand_faithful_inversions": [
-        "#ffffff retained as page ground (existing SEI decision; #fff is canonical for SEI). The 'no pure black/white' impeccable rule is inverted per brand-faithful direction.",
-        "Color tokens retained in hex format (matches captured brand surface and DESIGN.md Stitch frontmatter convention). OKLCH applies to new authoring; this is inheritance.",
-        "Saturated #d82b2a retained as the action colour (SEI's canonical voice for 'press here'). The agent-default reflex toward tinted-neutral primaries is inverted per brand-faithful direction.",
-        "Sharp 0px corners retained on buttons and inputs (SEI's action shape) while cards keep the captured 15px radius."
-      ],
-      "brand_adjacent_refinements": [],
-      "notes": [
-        "Pure #ffffff page ground retained by brand-faithful decision (captured SEI ground), not an agent default.",
-        "Hex tokens retained to match DESIGN.md frontmatter (Stitch convention)."
-      ],
-      "prototype_audit": {
-        "page": "index",
-        "anti_toolbox_hits_confirmed": 2,
-        "amendments": [
-          "section index numerals dropped (fabricated-content guard)",
-          "name/role captions moved off portraits into the cyan panel (contrast)"
-        ]
+      {
+        "name": "deep",
+        "value": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
+        "purpose": "newsletter band"
       }
-    },
+    ],
     "componentStyle": {
       "buttons": {
-        "primary": "Signal Red fill, white 800 label, square, 48px min-height, trailing arrow; hover #b82322 + arrow nudge",
-        "secondary": "Ink fill, white label, square"
+        "shape": "near-square 2px",
+        "primary": "signal-red / paper label 900 / trailing arrow",
+        "secondary": "ink / paper",
+        "outlineOnDark": "1.5px paper border"
       },
       "cards": {
         "radius": "15px",
-        "atRest": "flat",
-        "hover": "lift shadow + 2px rise (reduced-motion: no rise)",
-        "imageCards": "Ink scrim under text, ≥ 4.5:1 for body copy"
+        "hover": "lift"
       },
       "inputs": {
-        "shape": "square, 52px",
-        "border": "1px hairline → ink on hover/focus",
-        "focus": "3px cyan ring"
+        "radius": "2px",
+        "height": 52
       },
-      "links": {
-        "default": "Ink 700 with trailing arrow; underline offset 0.2em on hover; hover colour signal-red"
-      },
-      "dualCTAPattern": "none — one action per card/section"
+      "dualCTAPattern": "never two red fills side by side"
     },
     "systemComponentRoles": {
       "header": {
-        "purpose": "global navigation",
-        "position": "top, existing site chrome",
-        "constraint": "not restyled by the redesign"
+        "purpose": "global navigation + search + client login + contact",
+        "position": "top, static"
       },
-      "footer": {
-        "purpose": "global footer",
-        "position": "bottom, existing site chrome",
-        "constraint": "not restyled by the redesign"
+      "role-bar": {
+        "purpose": "persistent role picker + explainer + advisor action",
+        "position": "directly under header",
+        "constraint": "labels and destinations unchanged"
       },
       "persistent-help": {
         "purpose": "SEI Assistant launcher",
-        "position": "fixed bottom-right, existing site chrome",
-        "constraint": "untouched; page content must not be hidden behind it at the last scroll position"
+        "position": "fixed bottom-right",
+        "constraint": "label unchanged; must not cover primary content at 390"
       },
-      "cta-band": {
-        "purpose": "newsletter sign-up above the footer",
-        "position": "last content band",
-        "constraint": "copy verbatim from the source"
+      "newsletter": {
+        "purpose": "cross-site subscribe band",
+        "position": "above footer"
+      },
+      "footer": {
+        "purpose": "sitemap columns + legal",
+        "position": "bottom"
       }
     },
     "voice": {
-      "tone": "bold-direct",
-      "do": [
-        "Financial value is created between the lines.",
-        "Proof in practice.",
-        "Depth you can feel. Reach you can measure."
+      "dos": [
+        "Declarative headlines that end in a period",
+        "Numbers stated plainly",
+        "Second person only where captured (\"Tell us who you are.\")"
       ],
-      "dont": [
+      "donts": [
         "Exclamation marks",
-        "Invented superlatives ('industry-leading', 'best-in-class')",
-        "Question-headline hooks"
-      ],
-      "rules": [
-        "Headlines end in a period.",
-        "Numbers are stated, never rounded up or invented."
+        "Hype adjectives",
+        "Invented eyebrows or stats"
       ]
     },
     "iaPriorities": [
       {
         "signal": "audience-routing",
-        "evidence": "pages/index.json#ctas: three promo cards (Register now / Invest today / Read Q2 press release) directly after the hero",
-        "preserveAs": "immediately-after-hero, peeking into the first viewport at 1440×900",
-        "scope": "page",
-        "mutability": "locked"
+        "evidence": "pages/index.json ctas[6] role bar \"I’m a Choose your role\" + ctas[12-14] three role CTAs; headings[4]",
+        "preserveAs": "reachable-first-viewport (role bar) + one in-page chooser",
+        "scope": "site-wide",
+        "mutability": "movable"
       },
       {
-        "signal": "section-order",
-        "evidence": "content/index.plain.html: hero → promo cards → connective tissue → proof in practice → depth/reach stats → leadership → newsletter",
-        "preserveAs": "same order",
+        "signal": "commercial-conversion",
+        "evidence": "pages/index.json ctas[8] \"Talk to an advisor\" -> /modals/schedule-eric-dunn (role bar, red)",
+        "preserveAs": "first-viewport",
+        "scope": "site-wide",
+        "mutability": "movable"
+      },
+      {
+        "signal": "time-bound-promo",
+        "evidence": "pages/index.json ctas[9] \"Register now\" Data Cloud webcast, Thursday October 1",
+        "preserveAs": "above-proof",
         "scope": "page",
-        "mutability": "locked"
+        "mutability": "movable"
       }
-    ]
-  },
-  "components": [
-    {
-      "name": "Primary Button",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "The one action of a card or section. Red means press.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">Register now <span aria-hidden=\"true\">→</span></a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 22px;background:#d82b2a;color:#fff;font:800 16px/1.2 'DM Sans',sans-serif;text-decoration:none;border-radius:0;transition:background-color .16s cubic-bezier(.2,0,0,1)}.ds-btn-primary span{transition:transform .16s cubic-bezier(.2,0,0,1)}.ds-btn-primary:hover{background:#b82322}.ds-btn-primary:hover span{transform:translateX(3px)}.ds-btn-primary:focus-visible{outline:3px solid #131517;outline-offset:3px}"
+    ],
+    "divergence": {
+      "mode": "A (brand-faithful) + B (agent-sourced anchors)",
+      "signal": "signal-strong",
+      "seed": {
+        "decade": "2025-now",
+        "craft": "institutional signage",
+        "register": "financial broadsheet",
+        "groundFamily": "stark-white",
+        "picked_by": "reasoned (anchors; research tier 2)"
+      },
+      "font_deck": {
+        "name": "brand-inherited",
+        "family": "CircularXX",
+        "picked_by": "user-constraint"
+      },
+      "palette": {
+        "source": "inherited from _brand-extraction.json",
+        "picked_by": "user-constraint",
+        "roleRenaming": "brand-native"
+      },
+      "anchors": [
+        "https://stripe.com/",
+        "https://www.addepar.com/",
+        "https://www.blackrock.com/aladdin"
+      ],
+      "antiToolboxAudit": [
+        {
+          "hit": "Big-number stat row",
+          "justification": "the page’s own four captured stats (58 / 15 / 2,000+ / $1.9T)"
+        },
+        {
+          "hit": "Rounded cards",
+          "justification": "captured 15px radius motif (census mode)"
+        },
+        {
+          "hit": "Split hero (variant B)",
+          "justification": "captured role CTAs + Addepar/Stripe routing anchors; left-anchored, not centred"
+        }
+      ],
+      "brand_faithful_inversions": [
+        "#ffffff retained as page ground (existing SEI decision). The impeccable \"no pure black/white\" rule is inverted per brand-faithful direction.",
+        "Color tokens retained in hex format (matches captured brand surface and DESIGN.md Stitch frontmatter). OKLCH applies to new authoring; this is inheritance.",
+        "Saturated Signal Red #d82b2a retained as the action colour. The tinted-neutral reflex is inverted per brand-faithful direction.",
+        "Near-square (2px) action corners retained on buttons; the rounded-pill button reflex is inverted."
+      ]
     },
-    {
-      "name": "Secondary Button",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Form submit on coloured fields.",
-      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Subscribe to SEI Insights <span aria-hidden=\"true\">→</span></button>",
-      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 22px;background:#131517;color:#fff;border:0;border-radius:0;font:800 16px/1.2 'DM Sans',sans-serif;cursor:pointer;transition:background-color .16s}.ds-btn-secondary:hover{background:#2b2f33}.ds-btn-secondary:focus-visible{outline:3px solid #00c0f3;outline-offset:3px}"
-    },
-    {
-      "name": "Text Link",
-      "kind": "custom",
-      "refersTo": "link",
-      "description": "Secondary navigation such as 'View all insights'.",
-      "html": "<a class=\"ds-link\" href=\"#\">View all insights <span aria-hidden=\"true\">→</span></a>",
-      "css": ".ds-link{color:#131517;font:700 17px/1.4 'DM Sans',sans-serif;text-decoration:none;display:inline-flex;gap:8px}.ds-link:hover{color:#d82b2a;text-decoration:underline;text-underline-offset:.2em}.ds-link:focus-visible{outline:3px solid #131517;outline-offset:3px}"
-    },
-    {
-      "name": "Card",
-      "kind": "card",
-      "refersTo": "card",
-      "description": "Paper card, 15px radius, flat at rest, lifts on hover.",
-      "html": "<article class=\"ds-card\"><h3>SEI Marketplace</h3><p>Explore our ETFs and funds.</p></article>",
-      "css": ".ds-card{background:#fff;border:1px solid #e5e7eb;border-radius:15px;padding:24px;font-family:'DM Sans',sans-serif;color:#131517;transition:box-shadow .22s,transform .22s}.ds-card h3{font-weight:900;font-size:24px;letter-spacing:-.02em;margin:0 0 8px}.ds-card:hover{box-shadow:0 12px 32px rgba(19,21,23,.12);transform:translateY(-2px)}@media (prefers-reduced-motion:reduce){.ds-card{transition:none}.ds-card:hover{transform:none}}"
-    },
-    {
-      "name": "Email Input",
-      "kind": "input",
-      "refersTo": "input",
-      "description": "Labelled email field on a Paper card.",
-      "html": "<label class=\"ds-field\"><span>Business Email</span><input type=\"email\" placeholder=\"yourname@company.com\"></label>",
-      "css": ".ds-field{display:grid;gap:8px;font:700 15px/1.2 'DM Sans',sans-serif;color:#131517}.ds-field input{height:52px;padding:0 16px;border:1px solid #99a1af;border-radius:0;font:400 17px 'DM Sans',sans-serif;color:#131517;background:#fff}.ds-field input:hover{border-color:#131517}.ds-field input:focus-visible{outline:3px solid #00c0f3;outline-offset:0;border-color:#131517}"
-    },
-    {
-      "name": "Ledger Metric",
-      "kind": "custom",
-      "refersTo": "numeral",
-      "description": "A figure with its label, tabular numerals, gradient rule beneath.",
-      "html": "<div class=\"ds-metric\"><p class=\"v\">$2B+</p><p class=\"l\">Asset migration</p></div>",
-      "css": ".ds-metric{font-family:'DM Sans',sans-serif;color:#131517;border-top:1px solid #e5e7eb;padding-top:16px}.ds-metric .v{font-weight:1000;font-size:56px;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums lining-nums;margin:0 0 12px;padding-bottom:12px;background:linear-gradient(90deg,#a6ce39,#00c0f3) left bottom/64px 4px no-repeat}.ds-metric .l{margin:0;font-size:17px;color:#364153}"
+    "breakpoints": {
+      "containerMaxWidth": "1280px",
+      "probeWidth": 2560,
+      "shellMaxWidth": null,
+      "caps": [
+        {
+          "kind": "module",
+          "px": 1280,
+          "via": "max-width",
+          "selector": "body.appear > main > div.section.cards-container > div.cards-wrapper",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 920,
+          "via": "max-width",
+          "selector": "main > div.display.section > div.default-content-wrapper > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 816,
+          "via": "max-width",
+          "selector": "div.hero-wrapper > div.hero.home > div.hero-content > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 775,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > ul.stats-list",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 753,
+          "via": "fixed",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > h2",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 677,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li.cards-card-inverse.is-active",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 642,
+          "via": "fixed",
+          "selector": "div.section.newsletter-container > div.newsletter-wrapper > div.newsletter.block > div.newsletter-content",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 616,
+          "via": "max-width",
+          "selector": "div.adaptive.block > div.adaptive-panel > div.adaptive-body > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 565,
+          "via": "fixed",
+          "selector": "#tabpanel-1-0 > div.tabs-panel-col",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 520,
+          "via": "max-width",
+          "selector": "ul > li.cards-card-inverse.is-active > div.cards-card-body > p",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 417,
+          "via": "fixed",
+          "selector": "div.section.stats-container > div.stats-wrapper > div.stats.block > div.stats-featured",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 388,
+          "via": "fixed",
+          "selector": "#the-connective-tissue-of-modern-finance > em",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 308,
+          "via": "fixed",
+          "selector": "#tab-1-0",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 283,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.leadership > ul > li.cards-card-linked",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        },
+        {
+          "kind": "module",
+          "px": 251,
+          "via": "fixed",
+          "selector": "div.cards-wrapper > div.cards.promo > ul > li",
+          "pages": [
+            "https://main--sei--oharris69.aem.live/"
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 0,
+          "selector": "body.appear > main > div.section.hero-container",
+          "px": 816
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 1,
+          "selector": "body.appear > main > div.section.cards-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 2,
+          "selector": "body.appear > main > div.section.adaptive-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 3,
+          "selector": "body.appear > main > div.display.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 4,
+          "selector": "body.appear > main > div.gradient.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 5,
+          "selector": "body.appear > main > div.section.stats-container",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 6,
+          "selector": "body.appear > main > div.heading-link.section",
+          "px": 1280
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "section": 7,
+          "selector": "body.appear > main > div.section.newsletter-container",
+          "px": 1280
+        }
+      ],
+      "capRegister": [],
+      "capProvenance": {
+        "writtenBy": "skills/replica/scripts/cap-probe.mjs",
+        "writtenAt": "2026-11-03T17:34:18.494Z",
+        "baseWidth": 1440,
+        "urls": [
+          "https://main--sei--oharris69.aem.live/"
+        ]
+      },
+      "layoutBreakpoints": {
+        "tablet": 768,
+        "mobile": 390,
+        "note": "redesign target keeps its own two breakpoints (600 / 900 css)"
+      }
     }
-  ],
+  },
   "narrative": {
-    "northStar": "The Connected Ledger",
-    "overview": "SEI's system already owns a field — the green→cyan gradient — and a gesture — headlines on white bars that sit \"between the lines\". The refresh keeps both and spends its effort on precision: one modular type scale, one section rhythm, one 12-column grid, and every number set like a ledger entry — tabular, aligned, legible. Distinctiveness comes from the rigour of the alignment and the confidence of the numerals, not from new decoration.\n\nDensity is balanced: 64px section padding on desktop with generous internal gaps, so seven bands read as a calm sequence rather than a stack. Colour is used structurally — white ground, gradient fields at the two moments that matter (the hero and the proof band), one ink band for scale, red only where something happens.",
+    "northStar": "Between the Lines",
     "keyCharacteristics": [
-      "Heavy DM Sans headlines (900–1000), tight tracking, ending in a period.",
-      "The green→cyan 225° field and the white-bar headline as the two brand signatures.",
-      "Ink text on every coloured field; white text only on ink or on darkened imagery.",
-      "Tabular, baseline-aligned numerals for every figure.",
-      "Square red actions; 15px cards; hairline rules as the catalogue device."
+      "CircularXX ExtraBlack headlines on offset bars",
+      "Green→cyan field as the brand ground",
+      "Accents as grounds and rules, never low-contrast text",
+      "Ranked red actions",
+      "Tabular ExtraBlack numerals"
     ],
     "rules": [
-      {
-        "name": "The Red Means Go Rule",
-        "body": "Signal Red appears only on things you can press. Never on headings, rules or decoration.",
-        "section": "colors"
-      },
-      {
-        "name": "The Ink On Field Rule",
-        "body": "Text on the gradient, cyan or green fields is always Ink. White text lives on Ink and on scrimmed imagery only.",
-        "section": "colors"
-      },
-      {
-        "name": "The One Scale Rule",
-        "body": "Ratio 1.25 from a 17px body. No ad-hoc sizes; a new size is a new step or it does not exist.",
-        "section": "typography"
-      },
-      {
-        "name": "The Ledger Rule",
-        "body": "Numbers use font-variant-numeric: tabular-nums lining-nums and share a baseline with their siblings.",
-        "section": "typography"
-      },
-      {
-        "name": "The Flat At Rest Rule",
-        "body": "Surfaces are flat at rest; lift appears only as a response to hover or focus.",
-        "section": "elevation"
-      }
+      "Accents are grounds, not ink",
+      "Red is ranked (≤ 2 red fills per viewport)",
+      "One scale: 80/48/36/24/20/17"
     ],
     "dos": [
-      "Do keep every heading, line of copy, CTA and image of the source page, in order.",
-      "Do set text on gradient, cyan and green fields in Ink (#131517).",
-      "Do use one headline size for every section h2 (32→42px).",
-      "Do give every figure tabular lining numerals on a shared baseline.",
-      "Do honour prefers-reduced-motion: no transforms, no smooth scroll."
+      "Keep the offset heading bars",
+      "Set stats as numerals",
+      "Reserve red for the actions that matter now"
     ],
     "donts": [
-      "Don't put white text on cyan (2.14:1) or green text on white (1.82:1).",
-      "Don't use Signal Red for anything that is not pressable.",
-      "Don't add eyebrows, stats, quotes, logos or copy that the source page does not carry.",
-      "Don't use gradient text, glassmorphism or decorative motion.",
-      "Don't introduce a second typeface or a colour outside the captured palette."
+      "Cyan/green text on white",
+      "Gradient text, glassmorphism, side-stripe accents",
+      "Invented content"
     ]
   }
 }

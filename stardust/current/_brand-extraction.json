@@ -1,16 +1,18 @@
 {
   "_provenance": {
     "writtenBy": "stardust:extract",
-    "writtenAt": "2026-10-29T23:29:30.597Z",
+    "writtenAt": "2026-11-03T17:33:39.000Z",
+    "againstInput": "https://main--sei--oharris69.aem.live/ (uplift --re-extract, --single)",
     "readArtifacts": [
       "https://main--sei--oharris69.aem.live/",
       "stardust/current/pages/index.json",
+      "stardust/current/pages/index.html",
       "stardust/current/_computed-styles.json",
-      "styles/styles.css (font + token names only)"
+      "styles/fonts.css (@font-face file map only)"
     ],
     "synthesizedInputs": [],
     "stardustVersion": "0.32.1",
-    "notes": "Single-page capture (home). Cross-page aggregation scope = 1 page; home-only and cross-page modes are identical by construction."
+    "notes": "Fresh single-page capture 2026-11-03 after the CircularXX brand face went live (replaces the 2026-10-29 DM Sans capture, archived at stardust/archive/2026-10-30-index-stardust/current-capture/). Cross-page aggregation scope = 1 page; home-only and cross-page modes are identical by construction."
   },
   "site": {
     "name": "SEI",
@@ -55,12 +57,12 @@
     {
       "role": "background",
       "hex": "#ffffff",
-      "weight": 137,
-      "note": "page background, text on dark/gradient bands",
+      "weight": 84,
+      "note": "page background; text on dark / gradient bands",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "#data-cloud-webcast",
+          "selector": "header > div > div > div > div > div:nth-of-type(3) > a > span",
           "prop": "text"
         },
         {
@@ -73,8 +75,8 @@
     {
       "role": "text",
       "hex": "#131517",
-      "weight": 82,
-      "note": "ink: body text, headings, dark stats band, footer",
+      "weight": 43,
+      "note": "ink: headings, body, role bar, recommended panel, stats band, footer",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
@@ -83,7 +85,7 @@
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "main > div:nth-of-type(5)",
+          "selector": "header > div > div > div",
           "prop": "background"
         }
       ]
@@ -91,12 +93,12 @@
     {
       "role": "primary",
       "hex": "#d82b2a",
-      "weight": 28,
-      "note": "red: primary CTA buttons, SEI Assistant launcher; hover #b82322",
+      "weight": 20,
+      "note": "red: primary CTAs (Register now, Talk to an advisor, I'm a financial advisor), SEI Assistant launcher; hover #b82322",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+          "selector": "header > div > div > div > div > div:nth-of-type(3) > a",
           "prop": "background"
         },
         {
@@ -109,17 +111,17 @@
     {
       "role": "accent",
       "hex": "#00c0f3",
-      "weight": 26,
-      "note": "cyan: hero second line, stat numerals, featured stat disc, leadership card panels",
+      "weight": 14,
+      "note": "cyan: hero line 2, stat numerals, $1.9T disc, leadership card panels, newsletter field, role-bar 'Choose your role'",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)",
+          "selector": "header > div > div > div > div > div:nth-of-type(1) > button > span:nth-of-type(2)",
           "prop": "text"
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
+          "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)",
           "prop": "background"
         }
       ]
@@ -127,12 +129,12 @@
     {
       "role": "secondary",
       "hex": "#a6ce39",
-      "weight": 6,
-      "note": "green: emphasis word in display heading, gradient start, case-study stat",
+      "weight": 4,
+      "note": "green: 'connective tissue' emphasis, RECOMMENDED FOR YOU eyebrow, case-study stats, gradient start",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "#the-connective-tissue-of-modern-finance > em",
+          "selector": "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(1)",
           "prop": "text"
         }
       ]
@@ -140,8 +142,8 @@
     {
       "role": "border",
       "hex": "#d9d9d9",
-      "weight": 50,
-      "note": "hairline nav button borders, subtle dividers",
+      "weight": 27,
+      "note": "hairline header button borders, dividers",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
@@ -150,7 +152,7 @@
         },
         {
           "url": "https://main--sei--oharris69.aem.live/",
-          "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
+          "selector": "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
           "prop": "background"
         }
       ]
@@ -158,8 +160,8 @@
     {
       "role": "surface",
       "hex": "#2b2f33",
-      "weight": 6,
-      "note": "footer secondary surface",
+      "weight": 3,
+      "note": "footer secondary surface (social discs)",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
@@ -171,8 +173,8 @@
     {
       "role": "muted",
       "hex": "#999999",
-      "weight": 16,
-      "note": "footer legal/muted text",
+      "weight": 8,
+      "note": "footer legal / muted text",
       "sources": [
         {
           "url": "https://main--sei--oharris69.aem.live/",
@@ -180,25 +182,82 @@
           "prop": "text"
         }
       ]
+    },
+    {
+      "role": "text-secondary",
+      "hex": "#364153",
+      "weight": 8,
+      "note": "secondary body text on light panels",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "#nav > div:nth-of-type(3) > div > ul > li:nth-of-type(1) > button > p",
+          "prop": "text"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(2) > a",
+          "prop": "button-text"
+        }
+      ]
     }
   ],
   "type": {
-    "headingFamily": "DM Sans",
-    "bodyFamily": "DM Sans",
+    "headingFamily": "CircularXX",
+    "bodyFamily": "CircularXX",
+    "cssFamily": "circularxx",
+    "fallbacks": {
+      "body": "circularxx-fallback",
+      "heading": "circularxx-heading-fallback"
+    },
     "files": [
       {
-        "path": "/fonts/dmsans-latin.woff2",
-        "licensing": "OFL (Google Fonts)"
+        "path": "/fonts/CircularXXSub-Regular.woff2",
+        "weight": "100 450",
+        "licensing": "licensed (Lineto) — self-hosted by the site"
       },
       {
-        "path": "/fonts/dmsans-latin-italic.woff2",
-        "licensing": "OFL (Google Fonts)"
+        "path": "/fonts/CircularXXSub-Medium.woff2",
+        "weight": "451 750",
+        "licensing": "licensed (Lineto)"
+      },
+      {
+        "path": "/fonts/CircularXXSub-Black.woff2",
+        "weight": "751 925",
+        "licensing": "licensed (Lineto)"
+      },
+      {
+        "path": "/fonts/CircularXXSub-ExtraBlack.woff2",
+        "weight": "926 1000",
+        "licensing": "licensed (Lineto)"
+      },
+      {
+        "path": "/fonts/CircularXXSub-Italic.woff2",
+        "weight": "100 450 italic",
+        "licensing": "licensed (Lineto)"
+      },
+      {
+        "path": "/fonts/CircularXXSub-MediumItalic.woff2",
+        "weight": "451 750 italic",
+        "licensing": "licensed (Lineto)"
       }
     ],
-    "note": "CircularXX is the licensed original brand face; unavailable, so DM Sans (variable, wght up to 1000) is self-hosted as the substitute.",
+    "note": "CircularXX (licensed brand face) is now live — captured from computed font-family 'circularxx' on 49/49 measured text nodes and --body-font-family / --heading-font-family custom props. Sub files = Latin subset; CircularXXWeb-* load only for extended characters via unicode-range. The previous capture's DM Sans stand-in is retired.",
+    "sources": [
+      {
+        "url": "https://main--sei--oharris69.aem.live/",
+        "selector": ":root",
+        "prop": "--heading-font-family: circularxx, circularxx-heading-fallback, sans-serif"
+      },
+      {
+        "url": "https://main--sei--oharris69.aem.live/",
+        "selector": ":root",
+        "prop": "--body-font-family: circularxx, circularxx-fallback, sans-serif"
+      }
+    ],
     "sizes": [
       {
-        "px": 64,
+        "px": 80,
         "count": 1,
         "headings": 1,
         "text": 0,
@@ -206,8 +265,8 @@
       },
       {
         "px": 48,
-        "count": 1,
-        "headings": 1,
+        "count": 2,
+        "headings": 2,
         "text": 0,
         "buttons": 0
       },
@@ -220,23 +279,16 @@
       },
       {
         "px": 34,
-        "count": 4,
-        "headings": 4,
-        "text": 0,
-        "buttons": 0
-      },
-      {
-        "px": 30,
-        "count": 7,
-        "headings": 7,
+        "count": 2,
+        "headings": 2,
         "text": 0,
         "buttons": 0
       },
       {
         "px": 24,
-        "count": 9,
+        "count": 10,
         "headings": 8,
-        "text": 1,
+        "text": 2,
         "buttons": 0
       },
       {
@@ -247,89 +299,82 @@
         "buttons": 0
       },
       {
-        "px": 20,
-        "count": 9,
-        "headings": 8,
-        "text": 1,
-        "buttons": 0
-      },
-      {
         "px": 18,
-        "count": 14,
+        "count": 7,
         "headings": 0,
-        "text": 5,
-        "buttons": 9
+        "text": 2,
+        "buttons": 5
       },
       {
         "px": 16,
-        "count": 21,
+        "count": 13,
         "headings": 0,
-        "text": 14,
-        "buttons": 7
+        "text": 7,
+        "buttons": 6
       },
       {
         "px": 14,
-        "count": 10,
-        "headings": 8,
+        "count": 8,
+        "headings": 4,
         "text": 0,
-        "buttons": 2
-      },
-      {
-        "px": 12,
-        "count": 2,
-        "headings": 0,
-        "text": 2,
-        "buttons": 0
+        "buttons": 4
       }
     ],
     "weights": [
       {
+        "weight": "900",
+        "count": 15,
+        "headings": 4,
+        "text": 0,
+        "buttons": 11
+      },
+      {
         "weight": "1000",
-        "count": 26,
-        "headings": 26,
+        "count": 14,
+        "headings": 14,
         "text": 0,
         "buttons": 0
       },
       {
         "weight": "500",
-        "count": 24,
-        "headings": 8,
-        "text": 14,
+        "count": 10,
+        "headings": 4,
+        "text": 4,
         "buttons": 2
       },
       {
-        "weight": "900",
-        "count": 24,
-        "headings": 8,
-        "text": 0,
-        "buttons": 16
+        "weight": "400",
+        "count": 9,
+        "headings": 0,
+        "text": 8,
+        "buttons": 1
       },
       {
-        "weight": "400",
-        "count": 10,
+        "weight": "700",
+        "count": 1,
         "headings": 0,
-        "text": 10,
-        "buttons": 0
+        "text": 0,
+        "buttons": 1
       }
     ],
     "levels": {
       "h1": {
-        "fontSize": 64,
+        "fontSize": 80,
         "fontWeight": "1000",
         "count": 1,
-        "score": 160
+        "score": 200
       },
       "h2": {
         "fontSize": 36,
         "fontWeight": "1000",
-        "count": 4,
-        "score": 180
+        "count": 5,
+        "score": 201.25
       },
       "h3": {
         "fontSize": 34,
         "fontWeight": "1000",
-        "count": 3,
-        "score": 147.22
+        "count": 2,
+        "score": 120.21
       },
       "h4": {
         "fontSize": 24,
@@ -338,9 +383,14 @@
         "score": 60
       }
     },
+    "figmaReference": {
+      "heroH1": "80px / 950 / -0.4px tracking",
+      "sectionH2": "48px and 36px / 950",
+      "body": "20px Medium"
+    },
     "scaleAudit": {
       "kind": "ad-hoc",
-      "evidence": "heading sizes 64/48/36/34/30/24/20 px; ratios 1.33, 1.33, 1.06, 1.13, 1.25, 1.2 (no constant ratio)"
+      "evidence": "heading sizes 80/48/36/34/24 px; ratios 1.67, 1.33, 1.06, 1.42 (no constant ratio)"
     }
   },
   "spacing": {
@@ -357,8 +407,8 @@
       "values": [
         {
           "value": "15px",
-          "count": 18,
-          "area": 2356941,
+          "count": 10,
+          "area": 1512653,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
@@ -376,8 +426,8 @@
         },
         {
           "value": "15px 15px 0px 0px",
-          "count": 16,
-          "area": 1074612,
+          "count": 8,
+          "area": 481304,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
@@ -395,12 +445,12 @@
         },
         {
           "value": "50%",
-          "count": 8,
-          "area": 277377,
+          "count": 4,
+          "area": 176961,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
-              "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)"
+              "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)"
             },
             {
               "url": "https://main--sei--oharris69.aem.live/",
@@ -415,7 +465,7 @@
         {
           "value": "15px 0px 0px",
           "count": 1,
-          "area": 26433,
+          "area": 25471,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
@@ -424,24 +474,24 @@
           ]
         },
         {
-          "value": "15px 0px 0px 15px",
+          "value": "16px",
           "count": 1,
-          "area": 17129,
+          "area": 6144,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
-              "selector": "body > a"
+              "selector": "header > div > div > div > div > div:nth-of-type(1) > button"
             }
           ]
         },
         {
-          "value": "2px",
+          "value": "4px",
           "count": 1,
-          "area": 40,
+          "area": 5092,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
-              "selector": "#nav > div:nth-of-type(1) > button > span"
+              "selector": "header > div > div > div > div > div:nth-of-type(3) > a"
             }
           ]
         }
@@ -450,7 +500,7 @@
     "shadows": [
       {
         "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-        "count": 2,
+        "count": 1,
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
@@ -462,34 +512,37 @@
     "gradients": [
       {
         "value": "linear-gradient(225deg, rgb(0, 197, 250) 25%, rgb(8, 108, 138) 100%)",
-        "count": 2,
-        "area": 882255,
+        "count": 1,
+        "area": 656640,
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(7)"
+            "selector": "main > div:nth-of-type(8)"
           }
         ]
       },
       {
         "value": "linear-gradient(225deg, rgb(166, 206, 57) 0%, rgb(0, 192, 243) 100%)",
-        "count": 2,
-        "area": 1024421,
+        "count": 1,
+        "area": 703103,
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(4)"
+            "selector": "main > div:nth-of-type(5)"
           }
         ]
       }
     ],
     "patterns": [
-      "offset white heading bars over a gradient field (hero)",
-      "green-to-cyan gradient bands as section backgrounds",
-      "image cards with dark overlay + red CTA",
-      "cyan disc for the featured stat",
-      "folder-tab case-study switcher",
-      "portrait cards with a cyan text panel"
+      "offset white heading bars over a green-to-cyan gradient field (hero)",
+      "persona / role-pick strip under the header (I'm a … Choose your role · Why? · Talk to an advisor)",
+      "3-up promo tiles: one wide photo tile + two narrow tiles with large headline over image (expanding accordion)",
+      "dark ink rounded panel 'Recommended for you' with green eyebrow and three role buttons",
+      "green-to-cyan gradient band as section background (Proof in practice)",
+      "folder-tab case-study switcher (15px top radii)",
+      "dotted world map + cyan disc for the featured stat",
+      "portrait cards with a cyan text panel",
+      "cyan-to-teal gradient newsletter band"
     ]
   },
   "componentStyle": {
@@ -515,55 +568,11 @@
           "backgroundColor": "rgb(184, 35, 34)",
           "borderColor": "rgb(184, 35, 34)"
         },
-        "count": 2,
+        "count": 1,
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
-          }
-        ]
-      },
-      {
-        "kind": "button",
-        "from": {
-          "backgroundColor": "rgba(0, 0, 0, 0.3)"
-        },
-        "to": {
-          "backgroundColor": "rgba(0, 0, 0, 0.4)"
-        },
-        "count": 2,
-        "sources": [
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#tab-1-1"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#tab-1-1"
-          }
-        ]
-      },
-      {
-        "kind": "link",
-        "from": {
-          "color": "rgb(19, 21, 23)"
-        },
-        "to": {
-          "color": "rgb(216, 43, 42)"
-        },
-        "count": 2,
-        "sources": [
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
           }
         ]
       },
@@ -579,7 +588,23 @@
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "body > a"
+            "selector": "header > div > div > div > div > div:nth-of-type(3) > a"
+          }
+        ]
+      },
+      {
+        "kind": "button",
+        "from": {
+          "borderColor": "rgba(255, 255, 255, 0.35)"
+        },
+        "to": {
+          "borderColor": "rgb(0, 192, 243)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button"
           }
         ]
       },
@@ -598,6 +623,22 @@
             "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(2) > a"
           }
         ]
+      },
+      {
+        "kind": "link",
+        "from": {
+          "color": "rgb(19, 21, 23)"
+        },
+        "to": {
+          "color": "rgb(216, 43, 42)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(7) > div:nth-of-type(1) > p > a"
+          }
+        ]
       }
     ]
   },
@@ -608,19 +649,24 @@
       "evidence": "nav: Solutions / Who We Serve / Our Insights / About SEI + search, Client Login, Contact Us"
     },
     {
+      "id": "role-bar",
+      "kind": "persistent-cta",
+      "evidence": "dark strip under header: \"I'm a Choose your role\" picker, \"Tell us who you are and we'll map your path.\", Why?, red \"Talk to an advisor\""
+    },
+    {
       "id": "site-footer",
       "kind": "footer",
-      "evidence": "Solutions / Who we serve / Our insights / Contact us columns, legal row"
+      "evidence": "Solutions / Who we serve / Our insights / Contact us columns, About/legal rows, social"
     },
     {
       "id": "sei-assistant-launcher",
       "kind": "persistent-cta",
-      "evidence": "body > a fixed red pill \"SEI Assistant — Ask a question\""
+      "evidence": "body > a fixed red pill \"SEI Assistant — Ask a question\" (href /modals/assistant)"
     },
     {
       "id": "newsletter",
       "kind": "cross-promo",
-      "evidence": "reference/BLOCK-LIBRARY.md: newsletter band appears on every page above the footer"
+      "evidence": "STAY CONNECTED / What's New at SEI band above the footer"
     }
   ],
   "iconFont": null,
@@ -632,17 +678,19 @@
       "alt": null,
       "source": "css-background",
       "domPath": "main > div:nth-of-type(1) .hero",
-      "note": "Hero visual is a CSS gradient field (green to cyan), not a photo."
+      "note": "Hero visual is a CSS green-to-cyan gradient field with offset white heading bars, not a photo. og:image = card-data-cloud (Glass panels in green light)."
     },
     "heroMedium": null,
-    "primaryCTALabel": "Register now",
+    "primaryCTALabel": "Talk to an advisor",
     "ctaSamples": [
       "Register now",
       "Invest today",
       "Read Q2 press release",
+      "I'm a financial advisor",
       "Read the full case study",
       "View all insights",
-      "Subscribe to SEI Insights"
+      "Subscribe to SEI Insights",
+      "Talk to an advisor"
     ],
     "navItems": [
       "Solutions",
@@ -666,12 +714,16 @@
   },
   "voiceTable": {
     "headlines": [
-      "Financial value is createdbetween the lines.",
+      "Financial value is created between the lines.",
+      "Data Cloud webcast",
+      "SEI Marketplace",
+      "$12B in market cap",
+      "Tell us who you are. We'll tailor what you see.",
       "The connective tissue of modern finance.",
       "Proof in practice.",
       "Depth you can feel. Reach you can measure.",
       "Perspectives from SEI Leadership.",
-      "What’s New at SEI"
+      "What's New at SEI"
     ]
   },
   "crossPromo": {

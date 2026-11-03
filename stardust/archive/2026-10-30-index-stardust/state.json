@@ -1,0 +1,67 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:deploy",
+    "writtenAt": "2026-10-30T00:34:27Z",
+    "stardustVersion": "0.32.1"
+  },
+  "site": {
+    "originUrl": "https://main--sei--oharris69.aem.live/",
+    "deployUrl": null,
+    "extractedAt": "2026-10-29T23:33:11.242Z",
+    "pageCap": 1,
+    "totalDiscovered": 1,
+    "crawled": 1
+  },
+  "direction": {
+    "resolvedAt": "2026-10-29T23:40:23.163Z",
+    "phrase": "brand-faithful refresh of the home page: keep SEI palette (ink #131517, red #d82b2a, cyan #00c0f3, green #a6ce39, green→cyan gradient), voice and all content; modernize hierarchy, spacing rhythm, typography scale and component polish; distinctiveness familiar→slightly distinctive; density balanced/airy; no cinematic motion (subtle CSS transitions only, prefers-reduced-motion); ia-fidelity verbatim — every section, heading, copy line, CTA and image in the same order",
+    "directionFile": "stardust/direction.md",
+    "iaFidelity": "verbatim",
+    "mode": "A+B brand-faithful",
+    "density": "balanced"
+  },
+  "handsOff": true,
+  "flow": "redesign",
+  "flowChosenAt": "2026-10-29T23:33:11.242Z",
+  "flowSource": "user",
+  "pages": [
+    {
+      "slug": "index",
+      "url": "https://main--sei--oharris69.aem.live/",
+      "title": "SEI | One partner. One connected wealth enterprise.",
+      "type": "landing",
+      "status": "migrated",
+      "history": [
+        {
+          "status": "extracted",
+          "at": "2026-10-29T23:33:11.242Z"
+        },
+        {
+          "status": "directed",
+          "at": "2026-10-29T23:40:23Z"
+        },
+        {
+          "status": "prototyped",
+          "at": "2026-10-30T00:08:06Z"
+        },
+        {
+          "status": "approved",
+          "at": "2026-10-30T00:08:06Z",
+          "approvedBy": "hands-off"
+        },
+        {
+          "status": "migrated",
+          "at": "2026-10-30T00:34:27Z"
+        }
+      ],
+      "stale": false,
+      "staleReason": null,
+      "currentStatePath": "stardust/current/pages/index.json",
+      "prototypePath": "stardust/prototypes/index-proposed.html",
+      "migratedPath": "content/index-stardust.plain.html",
+      "targetPath": "/index-stardust",
+      "deployedLocalUrl": "http://localhost:3001/content/index-stardust",
+      "delivery": "deferred — user approves remote actions separately"
+    }
+  ]
+}

@@ -1,0 +1,684 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-10-29T23:29:30.597Z",
+    "readArtifacts": [
+      "https://main--sei--oharris69.aem.live/",
+      "stardust/current/pages/index.json",
+      "stardust/current/_computed-styles.json",
+      "styles/styles.css (font + token names only)"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.32.1",
+    "notes": "Single-page capture (home). Cross-page aggregation scope = 1 page; home-only and cross-page modes are identical by construction."
+  },
+  "site": {
+    "name": "SEI",
+    "tagline": "One partner. One connected wealth enterprise.",
+    "originUrl": "https://main--sei--oharris69.aem.live/"
+  },
+  "origins": [
+    {
+      "origin": "https://main--sei--oharris69.aem.live/",
+      "role": "primary",
+      "pages": [
+        "/"
+      ],
+      "contributes": [
+        "palette",
+        "type",
+        "motifs",
+        "voice",
+        "systemComponents"
+      ]
+    }
+  ],
+  "logo": {
+    "source": "img",
+    "selector": "#nav > div:nth-of-type(2) > div > p > a > picture > img",
+    "src": "https://main--sei--oharris69.aem.live/media_115c495188bf7452b75fe614c8561b64f8b147e55.png?width=2000&format=webply&optimize=medium",
+    "alt": "SEI",
+    "rect": {
+      "x": 104,
+      "y": 19,
+      "w": 44,
+      "h": 40
+    },
+    "localPath": "stardust/current/assets/logo.png",
+    "note": "Local copy taken from content/images/shared/sei-logo.png (same asset the header renders)."
+  },
+  "favicon": {
+    "localPath": "stardust/current/assets/favicon.ico",
+    "src": "https://main--sei--oharris69.aem.live/favicon.ico"
+  },
+  "palette": [
+    {
+      "role": "background",
+      "hex": "#ffffff",
+      "weight": 137,
+      "note": "page background, text on dark/gradient bands",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "#data-cloud-webcast",
+          "prop": "text"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "body",
+          "prop": "background"
+        }
+      ]
+    },
+    {
+      "role": "text",
+      "hex": "#131517",
+      "weight": 82,
+      "note": "ink: body text, headings, dark stats band, footer",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(1)",
+          "prop": "text"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "main > div:nth-of-type(5)",
+          "prop": "background"
+        }
+      ]
+    },
+    {
+      "role": "primary",
+      "hex": "#d82b2a",
+      "weight": 28,
+      "note": "red: primary CTA buttons, SEI Assistant launcher; hover #b82322",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+          "prop": "background"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+          "prop": "border"
+        }
+      ]
+    },
+    {
+      "role": "accent",
+      "hex": "#00c0f3",
+      "weight": 26,
+      "note": "cyan: hero second line, stat numerals, featured stat disc, leadership card panels",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)",
+          "prop": "text"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
+          "prop": "background"
+        }
+      ]
+    },
+    {
+      "role": "secondary",
+      "hex": "#a6ce39",
+      "weight": 6,
+      "note": "green: emphasis word in display heading, gradient start, case-study stat",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "#the-connective-tissue-of-modern-finance > em",
+          "prop": "text"
+        }
+      ]
+    },
+    {
+      "role": "border",
+      "hex": "#d9d9d9",
+      "weight": 50,
+      "note": "hairline nav button borders, subtle dividers",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > ul > li:nth-of-type(1) > a",
+          "prop": "text"
+        },
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
+          "prop": "background"
+        }
+      ]
+    },
+    {
+      "role": "surface",
+      "hex": "#2b2f33",
+      "weight": 6,
+      "note": "footer secondary surface",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(1) > a",
+          "prop": "background"
+        }
+      ]
+    },
+    {
+      "role": "muted",
+      "hex": "#999999",
+      "weight": 16,
+      "note": "footer legal/muted text",
+      "sources": [
+        {
+          "url": "https://main--sei--oharris69.aem.live/",
+          "selector": "footer > div > div > div:nth-of-type(3) > div > p",
+          "prop": "text"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "headingFamily": "DM Sans",
+    "bodyFamily": "DM Sans",
+    "files": [
+      {
+        "path": "/fonts/dmsans-latin.woff2",
+        "licensing": "OFL (Google Fonts)"
+      },
+      {
+        "path": "/fonts/dmsans-latin-italic.woff2",
+        "licensing": "OFL (Google Fonts)"
+      }
+    ],
+    "note": "CircularXX is the licensed original brand face; unavailable, so DM Sans (variable, wght up to 1000) is self-hosted as the substitute.",
+    "sizes": [
+      {
+        "px": 64,
+        "count": 1,
+        "headings": 1,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "px": 48,
+        "count": 1,
+        "headings": 1,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "px": 36,
+        "count": 5,
+        "headings": 5,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "px": 34,
+        "count": 4,
+        "headings": 4,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "px": 30,
+        "count": 7,
+        "headings": 7,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "px": 24,
+        "count": 9,
+        "headings": 8,
+        "text": 1,
+        "buttons": 0
+      },
+      {
+        "px": 22,
+        "count": 1,
+        "headings": 0,
+        "text": 1,
+        "buttons": 0
+      },
+      {
+        "px": 20,
+        "count": 9,
+        "headings": 8,
+        "text": 1,
+        "buttons": 0
+      },
+      {
+        "px": 18,
+        "count": 14,
+        "headings": 0,
+        "text": 5,
+        "buttons": 9
+      },
+      {
+        "px": 16,
+        "count": 21,
+        "headings": 0,
+        "text": 14,
+        "buttons": 7
+      },
+      {
+        "px": 14,
+        "count": 10,
+        "headings": 8,
+        "text": 0,
+        "buttons": 2
+      },
+      {
+        "px": 12,
+        "count": 2,
+        "headings": 0,
+        "text": 2,
+        "buttons": 0
+      }
+    ],
+    "weights": [
+      {
+        "weight": "1000",
+        "count": 26,
+        "headings": 26,
+        "text": 0,
+        "buttons": 0
+      },
+      {
+        "weight": "500",
+        "count": 24,
+        "headings": 8,
+        "text": 14,
+        "buttons": 2
+      },
+      {
+        "weight": "900",
+        "count": 24,
+        "headings": 8,
+        "text": 0,
+        "buttons": 16
+      },
+      {
+        "weight": "400",
+        "count": 10,
+        "headings": 0,
+        "text": 10,
+        "buttons": 0
+      }
+    ],
+    "levels": {
+      "h1": {
+        "fontSize": 64,
+        "fontWeight": "1000",
+        "count": 1,
+        "score": 160
+      },
+      "h2": {
+        "fontSize": 36,
+        "fontWeight": "1000",
+        "count": 4,
+        "score": 180
+      },
+      "h3": {
+        "fontSize": 34,
+        "fontWeight": "1000",
+        "count": 3,
+        "score": 147.22
+      },
+      "h4": {
+        "fontSize": 24,
+        "fontWeight": "500",
+        "count": 4,
+        "score": 60
+      }
+    },
+    "scaleAudit": {
+      "kind": "ad-hoc",
+      "evidence": "heading sizes 64/48/36/34/30/24/20 px; ratios 1.33, 1.33, 1.06, 1.13, 1.25, 1.2 (no constant ratio)"
+    }
+  },
+  "spacing": {
+    "contentMaxWidth": "1280px",
+    "sectionSpacing": "64px (>=900px) / 48px",
+    "contentPadding": "24px / 20px",
+    "source": "styles/styles.css :root"
+  },
+  "motifs": {
+    "radius": {
+      "mode": "15px",
+      "areaMode": "15px",
+      "pill": "50%",
+      "values": [
+        {
+          "value": "15px",
+          "count": 18,
+          "area": 2356941,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1)"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2)"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3)"
+            }
+          ]
+        },
+        {
+          "value": "15px 15px 0px 0px",
+          "count": 16,
+          "area": 1074612,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "#tab-1-0"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "#tab-1-1"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "#tab-1-2"
+            }
+          ]
+        },
+        {
+          "value": "50%",
+          "count": 8,
+          "area": 277377,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(1) > a"
+            },
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(2) > a"
+            }
+          ]
+        },
+        {
+          "value": "15px 0px 0px",
+          "count": 1,
+          "area": 26433,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "body > a"
+            }
+          ]
+        },
+        {
+          "value": "15px 0px 0px 15px",
+          "count": 1,
+          "area": 17129,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "body > a"
+            }
+          ]
+        },
+        {
+          "value": "2px",
+          "count": 1,
+          "area": 40,
+          "sources": [
+            {
+              "url": "https://main--sei--oharris69.aem.live/",
+              "selector": "#nav > div:nth-of-type(1) > button > span"
+            }
+          ]
+        }
+      ]
+    },
+    "shadows": [
+      {
+        "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
+        "count": 2,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "body > a"
+          }
+        ]
+      }
+    ],
+    "gradients": [
+      {
+        "value": "linear-gradient(225deg, rgb(0, 197, 250) 25%, rgb(8, 108, 138) 100%)",
+        "count": 2,
+        "area": 882255,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(7)"
+          }
+        ]
+      },
+      {
+        "value": "linear-gradient(225deg, rgb(166, 206, 57) 0%, rgb(0, 192, 243) 100%)",
+        "count": 2,
+        "area": 1024421,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(4)"
+          }
+        ]
+      }
+    ],
+    "patterns": [
+      "offset white heading bars over a gradient field (hero)",
+      "green-to-cyan gradient bands as section backgrounds",
+      "image cards with dark overlay + red CTA",
+      "cyan disc for the featured stat",
+      "folder-tab case-study switcher",
+      "portrait cards with a cyan text panel"
+    ]
+  },
+  "componentStyle": {
+    "buttonPrimary": {
+      "background": "#d82b2a",
+      "color": "#ffffff",
+      "hover": "#b82322"
+    },
+    "card": {
+      "radius": "15px"
+    },
+    "tabs": {
+      "radius": "15px 15px 0 0"
+    },
+    "hover": [
+      {
+        "kind": "button",
+        "from": {
+          "backgroundColor": "rgb(216, 43, 42)",
+          "borderColor": "rgb(216, 43, 42)"
+        },
+        "to": {
+          "backgroundColor": "rgb(184, 35, 34)",
+          "borderColor": "rgb(184, 35, 34)"
+        },
+        "count": 2,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
+          },
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
+          }
+        ]
+      },
+      {
+        "kind": "button",
+        "from": {
+          "backgroundColor": "rgba(0, 0, 0, 0.3)"
+        },
+        "to": {
+          "backgroundColor": "rgba(0, 0, 0, 0.4)"
+        },
+        "count": 2,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "#tab-1-1"
+          },
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "#tab-1-1"
+          }
+        ]
+      },
+      {
+        "kind": "link",
+        "from": {
+          "color": "rgb(19, 21, 23)"
+        },
+        "to": {
+          "color": "rgb(216, 43, 42)"
+        },
+        "count": 2,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
+          },
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
+          }
+        ]
+      },
+      {
+        "kind": "button",
+        "from": {
+          "backgroundColor": "rgb(216, 43, 42)"
+        },
+        "to": {
+          "backgroundColor": "rgb(184, 35, 34)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "body > a"
+          }
+        ]
+      },
+      {
+        "kind": "button",
+        "from": {
+          "borderColor": "rgb(217, 217, 217)"
+        },
+        "to": {
+          "borderColor": "rgb(19, 21, 23)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(2) > a"
+          }
+        ]
+      }
+    ]
+  },
+  "systemComponents": [
+    {
+      "id": "site-header",
+      "kind": "header",
+      "evidence": "nav: Solutions / Who We Serve / Our Insights / About SEI + search, Client Login, Contact Us"
+    },
+    {
+      "id": "site-footer",
+      "kind": "footer",
+      "evidence": "Solutions / Who we serve / Our insights / Contact us columns, legal row"
+    },
+    {
+      "id": "sei-assistant-launcher",
+      "kind": "persistent-cta",
+      "evidence": "body > a fixed red pill \"SEI Assistant — Ask a question\""
+    },
+    {
+      "id": "newsletter",
+      "kind": "cross-promo",
+      "evidence": "reference/BLOCK-LIBRARY.md: newsletter band appears on every page above the footer"
+    }
+  ],
+  "iconFont": null,
+  "voice": {
+    "heroHeadline": "Financial value is created between the lines.",
+    "heroSubcopy": "One partner. One connected wealth enterprise.",
+    "heroImage": {
+      "url": null,
+      "alt": null,
+      "source": "css-background",
+      "domPath": "main > div:nth-of-type(1) .hero",
+      "note": "Hero visual is a CSS gradient field (green to cyan), not a photo."
+    },
+    "heroMedium": null,
+    "primaryCTALabel": "Register now",
+    "ctaSamples": [
+      "Register now",
+      "Invest today",
+      "Read Q2 press release",
+      "Read the full case study",
+      "View all insights",
+      "Subscribe to SEI Insights"
+    ],
+    "navItems": [
+      "Solutions",
+      "Who We Serve",
+      "Our Insights",
+      "About SEI",
+      "Client Login",
+      "Contact Us"
+    ],
+    "footerHeadings": [
+      "Solutions",
+      "Who we serve",
+      "Our insights",
+      "Contact us"
+    ],
+    "firstParagraph": "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
+    "tone": {
+      "guess": "bold-direct",
+      "evidence": "short declarative headlines ending in a period (\"Proof in practice.\", \"Depth you can feel. Reach you can measure.\"), confident numbers, no exclamation marks"
+    }
+  },
+  "voiceTable": {
+    "headlines": [
+      "Financial value is createdbetween the lines.",
+      "The connective tissue of modern finance.",
+      "Proof in practice.",
+      "Depth you can feel. Reach you can measure.",
+      "Perspectives from SEI Leadership.",
+      "What’s New at SEI"
+    ]
+  },
+  "crossPromo": {
+    "detected": true,
+    "items": [
+      "newsletter"
+    ]
+  },
+  "register": "brand"
+}

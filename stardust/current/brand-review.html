@@ -3,7 +3,8 @@
 <head>
 <!-- stardust:provenance
   writtenBy:        stardust:extract
-  writtenAt:        2026-10-29T23:32:00Z
+  writtenAt:        2026-11-03T17:45:00Z
+  againstInput:     https://main--sei--oharris69.aem.live/ (uplift --re-extract; CircularXX live)
   readArtifacts:
     - stardust/current/_brand-extraction.json
     - stardust/current/_computed-styles.json
@@ -18,8 +19,11 @@
 <title>SEI · Current state · brand review</title>
 <link rel="icon" href="assets/favicon.ico">
 <style>
-@font-face { font-family: 'DM Sans'; src: url('../../fonts/dmsans-latin.woff2') format('woff2'); font-weight: 100 1000; font-display: swap; }
-:root { --primary: #d82b2a; --primary-dark: #131517; --accent: #00c0f3; --green: #a6ce39; --surface: #fff; --surface-alt: #f3f4f6; --text: #131517; --muted: #4a5565; --font: 'DM Sans', Arial, sans-serif; --mono: ui-monospace, SFMono-Regular, Menlo, monospace; }
+@font-face { font-family: circularxx; src: url('../../fonts/CircularXXSub-Regular.woff2') format('woff2'); font-weight: 100 450; font-display: swap; }
+@font-face { font-family: circularxx; src: url('../../fonts/CircularXXSub-Medium.woff2') format('woff2'); font-weight: 451 750; font-display: swap; }
+@font-face { font-family: circularxx; src: url('../../fonts/CircularXXSub-Black.woff2') format('woff2'); font-weight: 751 925; font-display: swap; }
+@font-face { font-family: circularxx; src: url('../../fonts/CircularXXSub-ExtraBlack.woff2') format('woff2'); font-weight: 926 1000; font-display: swap; }
+:root { --primary: #d82b2a; --primary-dark: #131517; --accent: #00c0f3; --green: #a6ce39; --surface: #fff; --surface-alt: #f3f4f6; --text: #131517; --muted: #4a5565; --font: circularxx, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; --mono: ui-monospace, SFMono-Regular, Menlo, monospace; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: var(--font); color: var(--text); background: var(--surface); line-height: 1.5; }
 nav.top { position: sticky; top: 0; z-index: 10; background: var(--primary-dark); color: #fff; display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; padding: 10px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
@@ -90,11 +94,11 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
   <section id="coverage">
     <h2>Coverage <span class="badge">home-only</span></h2>
     <div class="row">
-      <div class="stat"><b>1 / 1</b>pages extracted (explicit <span class="mono">--pages /</span>), 0 failures</div>
+      <div class="stat"><b>1 / 1</b>pages extracted (uplift single page, <span class="mono">--re-extract</span>), 0 failures</div>
       <div class="stat"><b>medium</b>wait mode, 2500 ms, headless, HTTP 200</div>
-      <div class="stat"><b>8 · 1 · 6</b>palette roles · type family (DM Sans) · radius values</div>
+      <div class="stat"><b>9 · 1 · 6</b>palette roles · type family (CircularXX) · radius values</div>
     </div>
-    <p>Single-page scope by user decision: cross-page aggregation equals the home page. Every badge below is therefore <em>home-only</em>.</p>
+    <p>Single-page scope (uplift default): cross-page aggregation equals the home page. Every badge below is therefore <em>home-only</em>. Fresh capture 2026-11-03 supersedes the 2026-10-29 stand-in-font capture (archived).</p>
   </section>
 
   <section id="pages">
@@ -105,13 +109,13 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
   <section id="palette">
     <h2>Color palette <span class="badge">home-only</span></h2>
     <div class="swatches">
-      <div class="sw"><div class="chip" style="background:#131517"></div><div class="role">Text · Ink</div><div class="mono">#131517 · 82×</div><div class="chips"><span>text</span><span>heading</span><span>background</span><span>border</span></div></div>
-      <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="role">Background</div><div class="mono">#ffffff · 137×</div><div class="chips"><span>background</span><span>text</span><span>heading</span><span>button-text</span></div></div>
-      <div class="sw"><div class="chip" style="background:#d82b2a"></div><div class="role">Primary · Red</div><div class="mono">#d82b2a · 28× (hover #b82322)</div><div class="chips"><span>button-background</span><span>border</span></div></div>
-      <div class="sw"><div class="chip" style="background:#00c0f3"></div><div class="role">Accent · Cyan</div><div class="mono">#00c0f3 · 26×</div><div class="chips"><span>text</span><span>background</span><span>border</span></div></div>
-      <div class="sw"><div class="chip" style="background:#a6ce39"></div><div class="role">Secondary · Green</div><div class="mono">#a6ce39 · 6×</div><div class="chips"><span>text</span><span>(gradient stop)</span></div></div>
-      <div class="sw"><div class="chip" style="background:#d9d9d9"></div><div class="role">Border</div><div class="mono">#d9d9d9 · 50×</div><div class="chips"><span>text</span><span>background</span><span>border</span></div></div>
-      <div class="sw"><div class="chip" style="background:#2b2f33"></div><div class="role">Surface (footer)</div><div class="mono">#2b2f33 · 6×</div><div class="chips"><span>background</span></div></div>
+      <div class="sw"><div class="chip" style="background:#131517"></div><div class="role">Text · Ink</div><div class="mono">#131517 · 43×</div><div class="chips"><span>text</span><span>heading</span><span>background</span><span>border</span></div></div>
+      <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="role">Background</div><div class="mono">#ffffff · 84×</div><div class="chips"><span>background</span><span>text</span><span>heading</span><span>button-text</span></div></div>
+      <div class="sw"><div class="chip" style="background:#d82b2a"></div><div class="role">Primary · Red</div><div class="mono">#d82b2a · 20× (hover #b82322)</div><div class="chips"><span>button-background</span><span>border</span></div></div>
+      <div class="sw"><div class="chip" style="background:#00c0f3"></div><div class="role">Accent · Cyan</div><div class="mono">#00c0f3 · 14×</div><div class="chips"><span>text</span><span>background</span><span>border</span></div></div>
+      <div class="sw"><div class="chip" style="background:#a6ce39"></div><div class="role">Secondary · Green</div><div class="mono">#a6ce39 · 4×</div><div class="chips"><span>text</span><span>(gradient stop)</span></div></div>
+      <div class="sw"><div class="chip" style="background:#d9d9d9"></div><div class="role">Border</div><div class="mono">#d9d9d9 · 27×</div><div class="chips"><span>text</span><span>background</span><span>border</span></div></div>
+      <div class="sw"><div class="chip" style="background:#2b2f33"></div><div class="role">Surface (footer)</div><div class="mono">#2b2f33 · 3×</div><div class="chips"><span>background</span></div></div>
       <div class="sw"><div class="chip" style="background:linear-gradient(225deg,#a6ce39 0%,#00c0f3 100%)"></div><div class="role">Brand gradient</div><div class="mono">225° #a6ce39 → #00c0f3</div><div class="chips"><span>hero</span><span>proof band</span></div></div>
     </div>
     <p class="mono">Source: _brand-extraction.json § palette, _computed-styles.json aggregate.colors[].sources</p>
@@ -119,12 +123,15 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
 
   <section id="type">
     <h2>Typography <span class="badge">home-only</span> <span class="badge synth">No modular scale</span></h2>
-    <div class="spec"><span class="mono">H1 · DM Sans 1000 / 64px / 1.2 / -0.02em</span><div style="font-size:64px;font-weight:1000;letter-spacing:-.02em;line-height:1.2">Financial value is created</div></div>
-    <div class="spec"><span class="mono">H2 · DM Sans 1000 / 36px / 1.2</span><div style="font-size:36px;font-weight:1000;letter-spacing:-.02em">Proof in practice.</div></div>
-    <div class="spec"><span class="mono">H3 · DM Sans 1000 / 34px → 20px (cards)</span><div style="font-size:30px;font-weight:1000;letter-spacing:-.02em">$12B in market cap</div></div>
-    <div class="spec"><span class="mono">H4 · DM Sans 500 / 24px</span><div style="font-size:24px;font-weight:500">Zach Womack</div></div>
-    <div class="spec"><span class="mono">Body · DM Sans 500 / 16px / 1.5 / -0.01em</span><p style="font-size:16px;font-weight:500;max-width:70ch">SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.</p></div>
-    <p class="mono">Scale: 64 → 48 → 36 → 34 → 30 → 24 → 20 px (ad-hoc). CircularXX licensed original unavailable; DM Sans substitute. Source: _brand-extraction.json § type</p>
+    <div class="spec"><span class="mono">H1 · CircularXX 1000 (ExtraBlack) / 80px / 88px / -0.4px</span><div style="font-size:80px;font-weight:1000;letter-spacing:-.4px;line-height:88px">Financial value is created</div></div>
+    <div class="spec"><span class="mono">H2 · CircularXX 1000 / 48px / 67.2px / -0.96px (display)</span><div style="font-size:48px;font-weight:1000;letter-spacing:-.96px;line-height:1.4">The connective tissue of modern finance.</div></div>
+    <div class="spec"><span class="mono">H2 · CircularXX 1000 / 36px / 50.4px / -0.72px</span><div style="font-size:36px;font-weight:1000;letter-spacing:-.72px;line-height:1.4">Proof in practice.</div></div>
+    <div class="spec"><span class="mono">H3 · CircularXX 1000 / 48px → 34px (promo tiles) → 24px (articles)</span><div style="font-size:34px;font-weight:1000;letter-spacing:-.4px;line-height:38px">$12B in market cap</div></div>
+    <div class="spec"><span class="mono">H4 · CircularXX 500 / 24px / 24px</span><div style="font-size:24px;font-weight:500;line-height:1">Zach Womack</div></div>
+    <div class="spec"><span class="mono">Lede · CircularXX 500 / 22px / 27.5px / -0.16px</span><p style="font-size:22px;font-weight:500;line-height:1.25;max-width:70ch;margin:0">SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.</p></div>
+    <div class="spec"><span class="mono">Body · CircularXX 400 / 18px / 26.1px / -0.16px</span><p style="font-size:18px;font-weight:400;line-height:1.45;max-width:70ch;margin:0">Summit Wealth Group partnered with SEI to launch an integrated wealth platform allowing the firm to scale efficiently while maintaining flexibility and a high-touch client experience.</p></div>
+    <div class="spec"><span class="mono">Label · CircularXX 900 (Black) / 14–16px</span><span class="pill">Talk to an advisor</span></div>
+    <p class="mono">Scale: 80 → 48 → 36 → 34 → 24 px (ad-hoc). Family: CircularXX (licensed, Lineto) self-hosted /fonts/CircularXXSub-*.woff2 — Regular 400, Medium 500, Black 900, ExtraBlack 926–1000. Computed font-family "circularxx" on every measured node. Source: _brand-extraction.json § type, _computed-styles.json aggregate.type</p>
   </section>
 
   <section id="voice">
@@ -133,29 +140,34 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
     <div class="voice"><b>Tagline</b><br>One partner. One connected wealth enterprise.</div>
     <div class="voice"><b>First paragraph</b><br>SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.</div>
     <h3>CTA labels (1× each)</h3>
-    <div><span class="pill">Register now</span><span class="pill">Invest today</span><span class="pill">Read Q2 press release</span><span class="pill">Read the full case study</span><span class="pill">View all insights</span><span class="pill">Subscribe to SEI Insights</span></div>
+    <div><span class="pill">Talk to an advisor</span><span class="pill">Register now</span><span class="pill">Invest today</span><span class="pill">Read Q2 press release</span><span class="pill">I’m a financial advisor</span><span class="pill">I’m at an enterprise RIA</span><span class="pill">I’m an asset manager</span><span class="pill">Read the full case study</span><span class="pill">View all insights</span><span class="pill">Subscribe to SEI Insights</span></div>
     <div class="row" style="margin-top:16px">
-      <div class="stat"><b>0%</b>headings uppercase (eyebrow "STAY CONNECTED" only)</div>
-      <div class="stat"><b>21</b>distinct headings</div>
-      <div class="stat"><b>6</b>distinct in-content CTA labels</div>
+      <div class="stat"><b>0%</b>headings uppercase (eyebrows "RECOMMENDED FOR YOU", "STAY CONNECTED" only)</div>
+      <div class="stat"><b>22</b>distinct headings</div>
+      <div class="stat"><b>10</b>distinct in-content CTA labels</div>
     </div>
   </section>
 
   <section id="tensions">
     <h2>Tensions <span class="badge synth">synthesized</span></h2>
     <div class="tensions">
-      <article class="tension"><span class="tag">T-scale</span><h3 style="font-size:20px">Type scale is ad-hoc</h3><p>Type scale is ad-hoc (64 → 48 → 36 → 34 → 30 → 24 → 20, no consistent ratio). Direct will need to decide whether the target adopts a modular scale.</p><footer>_brand-extraction.json#type.scaleAudit</footer></article>
-      <article class="tension"><span class="tag">T-logo-variants</span><h3 style="font-size:20px">Single logo variant captured</h3><p>Only one logo variant captured (header img, 88×80 PNG). The footer uses a separate white-on-ink PNG; no SVG set exists. The redesign keeps the global header, so no new variant is needed.</p><footer>_brand-extraction.json#logo</footer></article>
-      <article class="tension"><span class="tag">T-color-imbalance</span><h3 style="font-size:20px">Green appears as text only</h3><p>Color #a6ce39 (secondary) appears as text only — never as a solid fill (it lives only as a gradient stop). Direct will need to decide: drop, expand, or keep as accent.</p><footer>_computed-styles.json aggregate.colors[#a6ce39].by</footer></article>
-      <article class="tension"><span class="tag">T-color-imbalance</span><h3 style="font-size:20px">Footer surface is fill only</h3><p>Color #2b2f33 (surface) appears as background only. It belongs to the global footer, outside the redesign scope.</p><footer>_computed-styles.json aggregate.colors[#2b2f33].by</footer></article>
+      <article class="tension"><span class="tag">T-scale</span><h3 style="font-size:20px">Type scale is ad-hoc</h3><p>Type scale is ad-hoc (80 → 48 → 36 → 34 → 24, no consistent ratio). Direct will need to decide whether the target adopts a modular scale.</p><footer>_brand-extraction.json#type.scaleAudit</footer></article>
+      <article class="tension"><span class="tag">T-logo-variants</span><h3 style="font-size:20px">Single logo variant captured</h3><p>Only one logo variant captured (header img, 88×80 PNG). The footer uses a separate white-on-ink PNG; no SVG set exists. Direct should plan a variant set if the redesign needs the mark on dark.</p><footer>_brand-extraction.json#logo</footer></article>
+      <article class="tension"><span class="tag">T-color-imbalance</span><h3 style="font-size:20px">Green appears as text only</h3><p>Color #a6ce39 (secondary) appears as text only (4×), never as a solid fill; it otherwise lives as a gradient stop. Direct will need to decide: drop, expand, or keep as accent.</p><footer>_computed-styles.json aggregate.colors[#a6ce39].by</footer></article>
+      <article class="tension"><span class="tag">T-color-imbalance</span><h3 style="font-size:20px">Muted gray is text only</h3><p>Color #999999 (muted) appears as text only (8×, footer legal). Direct will need to decide: drop, expand, or keep as accent.</p><footer>_computed-styles.json aggregate.colors[#999999].by</footer></article>
+      <article class="tension"><span class="tag">T-color-imbalance</span><h3 style="font-size:20px">Footer surface is fill only</h3><p>Color #2b2f33 (surface) appears as background only (3×, footer social discs). It belongs to the global footer.</p><footer>_computed-styles.json aggregate.colors[#2b2f33].by</footer></article>
+      <article class="tension"><span class="tag">T-contrast</span><h3 style="font-size:20px">Brand accents fail contrast as text on light, and white fails on them</h3><p>Cyan #00c0f3 on white = 2.14:1 (hero line 2, 80px) and green #a6ce39 on white = 1.82:1 (“connective tissue”, 48px), both below the 3:1 large-text floor. White on cyan = 2.14:1 for 16px leadership-panel body copy; white “Proof in practice.” on the green→cyan field ≈ 1.8–2.2:1; newsletter body on the cyan end ≈ 2.0:1. Direct must decide where the accents may carry text.</p><footer>_computed-styles.json pages[…].headings/text colors; WCAG 2.2 ratio computed</footer></article>
+      <article class="tension"><span class="tag">T-route-twice (agent)</span><h3 style="font-size:20px">Role routing is asked twice in two vocabularies</h3><p>The role bar under the header asks “I’m a … Choose your role” (dropdown) and, one promo row later, the ‘Recommended for you’ panel asks again with three buttons (financial advisor / enterprise RIA / asset manager). Two widgets, one decision. Direct should pick one canonical role moment.</p><footer>pages/index.json ctas[6], ctas[12–14]; headings[4]</footer></article>
+      <article class="tension"><span class="tag">T-red-overload (agent)</span><h3 style="font-size:20px">Four red actions compete in the first ~1.5 viewports</h3><p>Red #d82b2a fills “Talk to an advisor” (role bar), “Register now” (promo tile), “I’m a financial advisor” (role panel) and the fixed “SEI Assistant” launcher: four primary-weight actions in the first 1,600px with no hierarchy between them. Direct should rank them.</p><footer>_computed-styles.json aggregate.colors[#d82b2a].by (button-background 6×); pages/index.json ctas</footer></article>
+      <article class="tension"><span class="tag">T-proof-hidden (agent)</span><h3 style="font-size:20px">Three of four proofs sit behind tabs</h3><p>All four case studies carry copy + two metrics (Summit $2B+ asset migration; FFT $2B+ AUM; TCW $206B+ AUM; Kent State 8+ years OCIO), but the folder tabs show one at a time, so the visible proof is one panel and three logos. The headline promises “the stories—and the numbers”.</p><footer>pages/index.html tab panels (hidden panels excluded from index.json by the visibility filter); content/index.plain.html tabs (case-study)</footer></article>
     </div>
   </section>
 
   <section id="motifs">
     <h2>Motifs <span class="badge">home-only</span></h2>
     <div class="motifs">
-      <div class="motif"><div style="border-radius:15px"></div>15px · 18×</div>
-      <div class="motif"><div style="border-radius:15px 15px 0 0"></div>15px 15px 0 0 · 16×</div>
+      <div class="motif"><div style="border-radius:15px"></div>15px · 10×</div>
+      <div class="motif"><div style="border-radius:15px 15px 0 0"></div>15px 15px 0 0 · 8×</div>
       <div class="motif"><div style="border-radius:50%;width:72px"></div>50% · 8×</div>
       <div class="motif"><div style="border-radius:15px 0 0 0"></div>15px 0 0 · 1×</div>
       <div class="motif"><div style="border-radius:2px"></div>2px · 1×</div>
@@ -167,7 +179,9 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
     <h2>Components <span class="badge">home-only</span></h2>
     <ul class="complist">
       <li>Hero (home): offset white heading bars over a gradient field</li>
-      <li>Promo cards ×3: image + overlay + red CTA</li>
+      <li>Role bar (system): “I’m a … Choose your role”, Why?, red Talk to an advisor</li>
+      <li>Promo tiles ×3 (expanding accordion): one wide photo tile with red CTA + two narrow headline tiles</li>
+      <li>Recommended for you: ink rounded panel, green eyebrow, three role buttons</li>
       <li>Display section: heading with green emphasis + ring illustration</li>
       <li>Case-study tabs ×4: folder tabs, white panel, two metrics</li>
       <li>Stats: ink band, dotted world map, cyan featured disc</li>
@@ -188,6 +202,7 @@ footer.page { padding: 40px 0; font-size: 14px; color: var(--muted); }
     <ul class="complist">
       <li><b>header</b> · Solutions / Who We Serve / Our Insights / About SEI · CTAs: Client Login, Contact Us</li>
       <li><b>footer</b> · Solutions / Who we serve / Our insights / Contact us · legal row</li>
+      <li><b>persistent-cta</b> · role bar under header: Choose your role / Why? / Talk to an advisor</li>
       <li><b>persistent-cta</b> · SEI Assistant — Ask a question (fixed, red)</li>
       <li><b>cross-promo</b> · newsletter band</li>
     </ul>

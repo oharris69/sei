@@ -10,3 +10,4 @@ reference/*
 migration-work/*
 stardust/
 DESIGN.json
+DESIGN-*.json

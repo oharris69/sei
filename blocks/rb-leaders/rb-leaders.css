@@ -1,0 +1,275 @@
+/* rb-leaders — rebrand R leadership bays. Page tokens are scoped to the section container. */
+main > .section.rb-leaders-container {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-slab: #f5f7f5;
+  --rb-veil: #3d5450;
+  --rb-brass: #a88231;
+  --rb-mist: #c9d3ce;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-pad: 32px;
+  --rb-state: 160ms cubic-bezier(0.2, 0, 0, 1);
+
+  margin: 0;
+  padding: var(--rb-pad) 0;
+  background: var(--rb-slab);
+  color: var(--rb-verde);
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+main > .section.rb-leaders-container > div {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+main > .section.rb-leaders-container :focus-visible {
+  outline: 3px solid var(--rb-verde);
+  outline-offset: 3px;
+}
+
+/* section head (default content): h2 left, "View all insights" right, baseline-aligned */
+main > .section.rb-leaders-container > .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper > * {
+  margin: 0;
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper + div {
+  margin-top: 0;
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper :is(h1, h2) {
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 760;
+  font-stretch: 115%;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper a:any-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-block: -12px;
+  padding-block: 12px;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-decoration-color: var(--rb-brass);
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
+  text-underline-offset: 6px;
+  white-space: nowrap;
+  transition: text-decoration-color var(--rb-state);
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper a.arrow-link::after {
+  content: '→' / '';
+  width: auto;
+  height: auto;
+  background: none;
+  mask: none;
+}
+
+main > .section.rb-leaders-container > .default-content-wrapper a:hover {
+  color: var(--rb-verde);
+  text-decoration-color: currentcolor;
+}
+
+.rb-leaders,
+.rb-leaders *,
+.rb-leaders *::before,
+.rb-leaders *::after {
+  box-sizing: border-box;
+}
+
+.rb-leaders-bays {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--rb-brass);
+  background: var(--rb-brass);
+  list-style: none;
+}
+
+.rb-leaders-bay {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  min-width: 0;
+  background: var(--rb-stone);
+}
+
+.rb-leaders-frame {
+  align-self: start;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--rb-mist);
+}
+
+.rb-leaders-frame picture {
+  display: block;
+  height: 100%;
+}
+
+.rb-leaders .rb-leaders-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 18%;
+  transform: scale(1.045);
+  filter: grayscale(1) contrast(1.04);
+  transition: filter var(--rb-state);
+}
+
+.rb-leaders-bay:hover .rb-leaders-frame img,
+.rb-leaders-bay:focus-within .rb-leaders-frame img {
+  filter: none;
+}
+
+.rb-leaders-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.rb-leaders-body > * {
+  margin: 0;
+}
+
+.rb-leaders .rb-leaders-name {
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.rb-leaders .rb-leaders-role {
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--rb-brass);
+  color: var(--rb-veil);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.rb-leaders .rb-leaders-title {
+  margin: 0;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.rb-leaders a.rb-leaders-link:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rb-leaders a.rb-leaders-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.rb-leaders a.rb-leaders-link:focus-visible {
+  outline: none;
+}
+
+.rb-leaders-bay:hover a.rb-leaders-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rb-brass);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.rb-leaders-bay:has(a.rb-leaders-link:focus-visible) {
+  z-index: 1;
+  outline: 3px solid var(--rb-verde);
+  outline-offset: 3px;
+}
+
+.rb-leaders .rb-leaders-dek {
+  color: var(--rb-veil);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+@media (width > 640px) {
+  main > .section.rb-leaders-container {
+    --rb-gutter: 24px;
+    --rb-pad: 48px;
+  }
+
+  main > .section.rb-leaders-container > .default-content-wrapper {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .rb-leaders-bays {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rb-leaders-bay {
+    display: block;
+  }
+
+  .rb-leaders .rb-leaders-frame img {
+    object-position: 50% 50%;
+  }
+
+  .rb-leaders-body {
+    padding: 24px;
+  }
+
+  .rb-leaders .rb-leaders-role {
+    min-height: calc(2.7em + 14px);
+  }
+}
+
+@media (width > 900px) {
+  main > .section.rb-leaders-container {
+    --rb-pad: 64px;
+  }
+
+  .rb-leaders-bays {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > .section.rb-leaders-container * {
+    transition-duration: 0ms;
+  }
+}

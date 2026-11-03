@@ -1,0 +1,93 @@
+/* video: poster that becomes a player */
+.video .video-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  background-color: var(--color-ink);
+}
+
+.video .video-poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.video.no-source .video-poster {
+  cursor: default;
+}
+
+.video .video-poster picture,
+.video .video-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video .video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  box-shadow: 0 10px 30px rgb(19 21 23 / 30%);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.video .video-play::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-white);
+  mask: url('../../icons/play.svg') 54% 50% / 32px no-repeat;
+}
+
+.video .video-poster:hover .video-play {
+  background-color: var(--color-red-dark);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.video .video-poster:focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: -3px;
+}
+
+.video .video-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: var(--color-ink);
+}
+
+.video .video-caption {
+  margin-top: 16px;
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+}
+
+.video .video-caption p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video .video-play {
+    transition: none;
+  }
+
+  .video .video-poster:hover .video-play {
+    transform: translate(-50%, -50%);
+  }
+}

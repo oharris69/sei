@@ -1,7 +1,7 @@
 {
   "_provenance": {
     "renderedBy": "playwright",
-    "fetchedAt": "2026-10-29T23:26:56.820Z",
+    "fetchedAt": "2026-11-03T17:30:09.447Z",
     "waitMode": "medium",
     "waitMs": 2500,
     "httpStatus": 200
@@ -9,7 +9,7 @@
   "slug": "index",
   "url": "https://main--sei--oharris69.aem.live/",
   "renderedBy": "playwright",
-  "fetchedAt": "2026-10-29T23:26:56.820Z",
+  "fetchedAt": "2026-11-03T17:30:09.447Z",
   "finalUrl": "https://main--sei--oharris69.aem.live/",
   "title": "SEI | One partner. One connected wealth enterprise.",
   "description": "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
@@ -35,6 +35,10 @@
     {
       "tag": "h3",
       "text": "$12B in market cap"
+    },
+    {
+      "tag": "h2",
+      "text": "Tell us who you are. We’ll tailor what you see."
     },
     {
       "tag": "h2",
@@ -112,11 +116,12 @@
     "Thursday, October 111 am ET",
     "Register now",
     "SEI Marketplace Explore our ETFs and funds. Invest today",
-    "Explore our ETFs and funds.",
-    "Invest today",
     "$12B in market cap SEI’s momentum makes its mark. Read Q2 press release",
-    "SEI’s momentum makes its mark.",
-    "Read Q2 press release",
+    "RECOMMENDED FOR YOU",
+    "Pick your role and we’ll map the most useful path through SEI, from a first look to a partnership.",
+    "I’m a financial advisor",
+    "I’m at an enterprise RIA",
+    "I’m an asset manager",
     "SEI sits at the intersection of investments, operations, and advice, bringing together capabilities that are rarely found under one roof.",
     "See the stories—and the numbers—that show what’s possible with SEI as your trusted strategic partner.",
     "Summit Wealth Group partnered with SEI to launch an integrated wealth platform allowing the firm to scale efficiently while maintaining flexibility and a high-touch client experience.",
@@ -181,6 +186,18 @@
       "href": "/contact"
     },
     {
+      "label": "I’m aChoose your role",
+      "href": null
+    },
+    {
+      "label": "Why?",
+      "href": null
+    },
+    {
+      "label": "Talk to an advisor",
+      "href": "/modals/schedule-eric-dunn"
+    },
+    {
       "label": "Register now",
       "href": "/insights/events/data-cloud-webcast"
     },
@@ -191,6 +208,18 @@
     {
       "label": "Read Q2 press release",
       "href": "/about/newsroom/q2-results"
+    },
+    {
+      "label": "I’m a financial advisor",
+      "href": "/bd-breakaway"
+    },
+    {
+      "label": "I’m at an enterprise RIA",
+      "href": "/enterprise-ria"
+    },
+    {
+      "label": "I’m an asset manager",
+      "href": "/asset-managers"
     },
     {
       "label": "Read the full case study",
@@ -347,6 +376,7 @@
     "https://main--sei--oharris69.aem.live/search",
     "https://main--sei--oharris69.aem.live/login",
     "https://main--sei--oharris69.aem.live/contact",
+    "https://main--sei--oharris69.aem.live/modals/schedule-eric-dunn",
     "https://main--sei--oharris69.aem.live/insights/events/data-cloud-webcast",
     "https://main--sei--oharris69.aem.live/about/newsroom/q2-results",
     "https://main--sei--oharris69.aem.live/insights/case-studies/summit-wealth-group",
@@ -523,8 +553,8 @@
     "--link-color": "#131517",
     "--link-hover-color": "#d82b2a",
     "--border-color": "#e5e7eb",
-    "--body-font-family": "'DM Sans', dm-sans-fallback, sans-serif",
-    "--heading-font-family": "'DM Sans', dm-sans-fallback, sans-serif",
+    "--body-font-family": "circularxx, circularxx-fallback, sans-serif",
+    "--heading-font-family": "circularxx, circularxx-heading-fallback, sans-serif",
     "--heading-font-weight": "1000",
     "--body-font-size-xl": "22px",
     "--body-font-size-l": "18px",
@@ -542,12 +572,13 @@
     "--section-spacing": "64px",
     "--radius-card": "15px",
     "--radius-input": "15px",
-    "--nav-height": "80px"
+    "--nav-height": "80px",
+    "--experience-height": "48px"
   },
   "_signals": {
     "filteredInterstitials": 0,
-    "distinctHeadings": 21,
-    "mainTextLen": 3091,
+    "distinctHeadings": 22,
+    "mainTextLen": 3326,
     "realImageCount": 19,
     "trackingOnlyMedia": false,
     "spaShellSuspect": false,

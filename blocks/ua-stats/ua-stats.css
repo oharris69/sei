@@ -1,0 +1,193 @@
+/* ua-stats — uplift variant A numeral band. Variant tokens scoped to the section container. */
+main > .section.ua-stats-container {
+  --ua-section-pad: 32px;
+  --ua-fs-title: 28px;
+  --ua-fs-figure: 52px;
+  --ua-fs-lead: 84px;
+  --ua-rule: rgb(255 255 255 / 28%);
+
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: var(--ua-section-pad) 0;
+  background: var(--color-ink);
+  color: var(--color-white);
+  isolation: isolate;
+}
+
+main > .section.ua-stats-container > .default-content-wrapper > * {
+  margin: 0;
+}
+
+main > .section.ua-stats-container > .default-content-wrapper :is(h1, h2) {
+  color: var(--color-white);
+  font-size: var(--ua-fs-title);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+main > .section.ua-stats-container > .default-content-wrapper p {
+  margin-top: 10px;
+  color: var(--color-cyan);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+main > .section.ua-stats-container > .default-content-wrapper + div {
+  margin-top: 0;
+}
+
+.ua-stats,
+.ua-stats *,
+.ua-stats *::before,
+.ua-stats *::after {
+  box-sizing: border-box;
+}
+
+.ua-stats-map {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ua-stats-map img {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 1100px;
+  max-width: none;
+  height: auto;
+  opacity: 0.12;
+  transform: translate(-50%, -60%);
+}
+
+.ua-stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 16px;
+  align-items: start;
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ua-stat-value {
+  font-family: var(--heading-font-family);
+  font-size: var(--ua-fs-figure);
+  font-weight: 950;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.ua-stat-label {
+  max-width: 18ch;
+  margin-top: 14px;
+  color: rgb(255 255 255 / 86%);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.ua-stat-value > *,
+.ua-stat-label > * {
+  margin: 0;
+}
+
+.ua-stat.is-lead {
+  grid-column: 1 / -1;
+}
+
+.ua-stat.is-lead .ua-stat-value {
+  display: inline-block;
+  padding-bottom: 14px;
+  border-bottom: 6px solid var(--color-cyan);
+  color: var(--color-cyan);
+  font-size: var(--ua-fs-lead);
+}
+
+.ua-stat.is-lead .ua-stat-label {
+  max-width: 22ch;
+  color: var(--color-white);
+}
+
+.ua-stat:not(.is-lead) {
+  padding-top: 16px;
+  border-top: 1px solid var(--ua-rule);
+}
+
+.ua-stats:not(.no-lead) .ua-stat:not(.is-lead):last-child:nth-child(even) {
+  grid-column: 1 / -1;
+}
+
+@media (width > 640px) {
+  main > .section.ua-stats-container {
+    --ua-section-pad: 48px;
+    --ua-fs-title: 30px;
+    --ua-fs-figure: 72px;
+    --ua-fs-lead: 120px;
+  }
+
+  .ua-stats-row {
+    gap: 32px;
+    align-items: end;
+  }
+
+  .ua-stat-label {
+    min-height: 2.7em;
+    font-size: 17px;
+  }
+
+  .ua-stat:not(.is-lead) {
+    padding-top: 0;
+    padding-left: 24px;
+    border-top: 0;
+    border-left: 1px solid var(--ua-rule);
+  }
+
+  .ua-stats:not(.no-lead) .ua-stat:not(.is-lead):last-child:nth-child(even) {
+    grid-column: auto;
+  }
+}
+
+/* tablet: 2-up figures, the first column carries no rule */
+@media (640px < width <= 900px) {
+  .ua-stats:not(.no-lead) .ua-stat:not(.is-lead):nth-child(even),
+  .ua-stats.no-lead .ua-stat:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ua-stats-container {
+    --ua-section-pad: 64px;
+    --ua-fs-title: 36px;
+  }
+
+  .ua-stats-row {
+    grid-template-columns: 5fr repeat(var(--ua-rest, 3), minmax(0, 2fr));
+  }
+
+  .ua-stats-row:has(> .is-lead + li + li + li:last-child) {
+    grid-template-columns: 5fr 2fr 2fr 3fr;
+  }
+
+  .ua-stats.no-lead .ua-stats-row {
+    grid-template-columns: repeat(var(--ua-rest, 4), minmax(0, 1fr));
+  }
+
+  .ua-stat.is-lead {
+    grid-column: auto;
+  }
+
+  .ua-stats.no-lead .ua-stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

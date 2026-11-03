@@ -1,0 +1,39 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-10-29T23:33:21.323Z",
+    "readArtifacts": [
+      "https://main--sei--oharris69.aem.live/"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.32.1"
+  },
+  "discovery": {
+    "fetchTechnique": "headless",
+    "count": 1,
+    "concurrency": 1
+  },
+  "consent": {
+    "method": "auto"
+  },
+  "favicon": {
+    "url": "https://main--sei--oharris69.aem.live/favicon.ico",
+    "file": "assets/favicon.ico"
+  },
+  "crawl": {
+    "failures": []
+  },
+  "captureGaps": {
+    "roots": [],
+    "detail": "uncaptured first-level targets: none (no locale root captured)"
+  },
+  "visionCheck": [
+    {
+      "slug": "index",
+      "verdict": "ok",
+      "notes": "rendered page (no consent wall/blank shell); hero headline + gradient field match the record; promo/leadership/logo imagery present; cssBackgrounds [] is believable — hero/proof/newsletter fields are CSS gradients, not raster images; logo captured"
+    }
+  ],
+  "siblingCandidates": [],
+  "userChoice": "explicit --pages / (single page, user decision)"
+}

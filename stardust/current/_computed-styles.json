@@ -1,14 +1,13 @@
 {
   "_provenance": {
     "writtenBy": "stardust:extract",
-    "writtenAt": "2026-10-29T23:27:25.948Z",
+    "writtenAt": "2026-11-03T17:30:34.745Z",
     "script": "style-census.mjs",
     "readArtifacts": [
       "https://main--sei--oharris69.aem.live/"
     ],
     "widths": [
-      1440,
-      390
+      1440
     ],
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
     "synthesizedInputs": [],
@@ -16,1222 +15,6 @@
   },
   "pages": {
     "https://main--sei--oharris69.aem.live/": {
-      "390": {
-        "title": "SEI | One partner. One connected wealth enterprise.",
-        "viewport": {
-          "width": 390,
-          "height": 900
-        },
-        "elements": {
-          "total": 430,
-          "visible": 281
-        },
-        "occluders": [],
-        "headings": [
-          {
-            "tag": "h1",
-            "text": "Financial value is createdbetween the l…",
-            "selector": "main > div:nth-of-type(1) > div > div > div > h1",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "36px",
-            "fontWeight": "1000",
-            "lineHeight": "43.2px",
-            "letterSpacing": "-0.36px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "Data Cloud webcast",
-            "selector": "#data-cloud-webcast",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "33.6px",
-            "letterSpacing": "-0.3px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h3",
-            "text": "SEI Marketplace",
-            "selector": "#sei-marketplace",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "33.6px",
-            "letterSpacing": "-0.3px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "$12B in market cap",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > h3",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "33.6px",
-            "letterSpacing": "-0.3px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h2",
-            "text": "The connective tissue of modern finance.",
-            "selector": "#the-connective-tissue-of-modern-finance",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "34px",
-            "fontWeight": "1000",
-            "lineHeight": "47.6px",
-            "letterSpacing": "-0.68px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h2",
-            "text": "Proof in practice.",
-            "selector": "#proof-in-practice",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "42px",
-            "letterSpacing": "-0.6px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h2",
-            "text": "Depth you can feel. Reach you can measu…",
-            "selector": "#depth-you-can-feel-reach-you-can-measure",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "42px",
-            "letterSpacing": "-0.6px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h2",
-            "text": "Perspectives from SEI Leadership.",
-            "selector": "#perspectives-from-sei-leadership",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "42px",
-            "letterSpacing": "-0.6px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h4",
-            "text": "Zach Womack",
-            "selector": "#zach-womack",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "normal",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "Defining RAG models and agentic AI.",
-            "selector": "#defining-rag-models-and-agentic-ai",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "1000",
-            "lineHeight": "32px",
-            "letterSpacing": "-0.2px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h4",
-            "text": "Ryan Hicke",
-            "selector": "#ryan-hicke",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "normal",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "The business behind the business.",
-            "selector": "#the-business-behind-the-business",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "1000",
-            "lineHeight": "32px",
-            "letterSpacing": "-0.2px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h4",
-            "text": "Jeff Benfield",
-            "selector": "#jeff-benfield",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "normal",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "Modernizing wealth at scale.",
-            "selector": "#modernizing-wealth-at-scale",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "1000",
-            "lineHeight": "32px",
-            "letterSpacing": "-0.2px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h4",
-            "text": "Sneha Shah",
-            "selector": "#sneha-shah",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "normal",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "h3",
-            "text": "Building the next wave of AI.",
-            "selector": "#building-the-next-wave-of-ai",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
-            "fontWeight": "1000",
-            "lineHeight": "32px",
-            "letterSpacing": "-0.2px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h2",
-            "text": "What’s New at SEI",
-            "selector": "#whats-new-at-sei",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "30px",
-            "fontWeight": "1000",
-            "lineHeight": "37.5px",
-            "letterSpacing": "-0.6px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h3",
-            "text": "Solutions",
-            "selector": "#solutions",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "14px",
-            "fontWeight": "900",
-            "lineHeight": "20px",
-            "letterSpacing": "0.55px",
-            "textTransform": "uppercase",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h3",
-            "text": "Who we serve",
-            "selector": "#who-we-serve",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "14px",
-            "fontWeight": "900",
-            "lineHeight": "20px",
-            "letterSpacing": "0.55px",
-            "textTransform": "uppercase",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h3",
-            "text": "Our insights",
-            "selector": "#our-insights",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "14px",
-            "fontWeight": "900",
-            "lineHeight": "20px",
-            "letterSpacing": "0.55px",
-            "textTransform": "uppercase",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "h3",
-            "text": "Contact us",
-            "selector": "#contact-us",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "14px",
-            "fontWeight": "900",
-            "lineHeight": "20px",
-            "letterSpacing": "0.55px",
-            "textTransform": "uppercase",
-            "color": "rgb(255, 255, 255)"
-          }
-        ],
-        "text": [
-          {
-            "tag": "p",
-            "text": "One partner. One connected wealth enter…",
-            "selector": "main > div:nth-of-type(1) > div > div > div > p",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "500",
-            "lineHeight": "24.3px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "li",
-            "text": "Data Cloud webcast Learn how your team …",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "400",
-            "lineHeight": "24px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "p",
-            "text": "Learn how your team can spend less time…",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "500",
-            "lineHeight": "21.6px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "p",
-            "text": "Thursday, October 111 am ET",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "li",
-            "text": "SEI Marketplace Explore our ETFs and fu…",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "400",
-            "lineHeight": "24px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "p",
-            "text": "Explore our ETFs and funds.",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "12px",
-            "fontWeight": "500",
-            "lineHeight": "15px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "li",
-            "text": "$12B in market cap SEI’s momentum makes…",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "400",
-            "lineHeight": "24px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "p",
-            "text": "SEI’s momentum makes its mark.",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "12px",
-            "fontWeight": "500",
-            "lineHeight": "15px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "p",
-            "text": "Read Q2 press release",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(255, 255, 255)"
-          },
-          {
-            "tag": "p",
-            "text": "SEI sits at the intersection of investm…",
-            "selector": "main > div:nth-of-type(3) > div > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "500",
-            "lineHeight": "22.5px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "p",
-            "text": "See the stories—and the numbers—that sh…",
-            "selector": "main > div:nth-of-type(4) > div:nth-of-type(1) > p",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "400",
-            "lineHeight": "24px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "p",
-            "text": "Summit Wealth Group partnered with SEI …",
-            "selector": "#tabpanel-1-0 > div:nth-of-type(1) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "400",
-            "lineHeight": "26.1px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          }
-        ],
-        "buttons": [
-          {
-            "text": "Register now",
-            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-            "count": 3,
-            "backgroundColor": "rgb(216, 43, 42)",
-            "color": "rgb(255, 255, 255)",
-            "borderRadius": "0px",
-            "padding": "8px 16px",
-            "border": "2px solid rgb(216, 43, 42)",
-            "borderColor": "rgb(216, 43, 42)",
-            "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "900",
-            "textTransform": "none",
-            "letterSpacing": "-0.32px",
-            "hover": {
-              "backgroundColor": "rgb(184, 35, 34)",
-              "color": "rgb(255, 255, 255)",
-              "borderColor": "rgb(184, 35, 34)",
-              "boxShadow": "none",
-              "changed": true
-            }
-          },
-          {
-            "text": "Summit Wealth Group",
-            "selector": "#tab-1-0",
-            "count": 1,
-            "backgroundColor": "rgb(255, 255, 255)",
-            "color": "rgb(19, 21, 23)",
-            "borderRadius": "15px 15px 0px 0px",
-            "padding": "16px 20px",
-            "border": "0px none rgb(19, 21, 23)",
-            "borderColor": "rgb(19, 21, 23)",
-            "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "900",
-            "textTransform": "none",
-            "letterSpacing": "normal",
-            "hover": {
-              "backgroundColor": "rgb(255, 255, 255)",
-              "color": "rgb(19, 21, 23)",
-              "borderColor": "rgb(19, 21, 23)",
-              "boxShadow": "none",
-              "changed": false
-            }
-          },
-          {
-            "text": "FFT Wealth Management",
-            "selector": "#tab-1-1",
-            "count": 3,
-            "backgroundColor": "rgba(0, 0, 0, 0.3)",
-            "color": "rgb(255, 255, 255)",
-            "borderRadius": "15px 15px 0px 0px",
-            "padding": "16px 20px",
-            "border": "0px none rgb(255, 255, 255)",
-            "borderColor": "rgb(255, 255, 255)",
-            "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": "900",
-            "textTransform": "none",
-            "letterSpacing": "normal",
-            "hover": {
-              "backgroundColor": "rgba(0, 0, 0, 0.4)",
-              "color": "rgb(255, 255, 255)",
-              "borderColor": "rgb(255, 255, 255)",
-              "boxShadow": "none",
-              "changed": true
-            }
-          },
-          {
-            "text": "SEI Assistant — Ask a question",
-            "selector": "body > a",
-            "count": 1,
-            "backgroundColor": "rgb(216, 43, 42)",
-            "color": "rgb(255, 255, 255)",
-            "borderRadius": "15px 0px 0px 15px",
-            "padding": "14px 20px",
-            "border": "0px none rgb(255, 255, 255)",
-            "borderColor": "rgb(255, 255, 255)",
-            "boxShadow": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "900",
-            "textTransform": "none",
-            "letterSpacing": "-0.16px",
-            "hover": {
-              "backgroundColor": "rgb(184, 35, 34)",
-              "color": "rgb(255, 255, 255)",
-              "borderColor": "rgb(255, 255, 255)",
-              "boxShadow": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-              "changed": true
-            }
-          }
-        ],
-        "links": [
-          {
-            "text": "Read the full case study",
-            "selector": "#tabpanel-1-0 > div:nth-of-type(1) > p:nth-of-type(2) > a",
-            "count": 1,
-            "color": "rgb(19, 21, 23)",
-            "textDecoration": "none",
-            "fontWeight": "900",
-            "hover": {
-              "backgroundColor": "rgba(0, 0, 0, 0)",
-              "color": "rgb(19, 21, 23)",
-              "borderColor": "rgb(19, 21, 23)",
-              "boxShadow": "none",
-              "changed": true
-            }
-          },
-          {
-            "text": "View all insights",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a",
-            "count": 1,
-            "color": "rgb(19, 21, 23)",
-            "textDecoration": "none",
-            "fontWeight": "500",
-            "hover": {
-              "backgroundColor": "rgba(0, 0, 0, 0)",
-              "color": "rgb(216, 43, 42)",
-              "borderColor": "rgb(216, 43, 42)",
-              "boxShadow": "none",
-              "changed": true
-            }
-          },
-          {
-            "text": "Defining RAG models and agentic AI.",
-            "selector": "#defining-rag-models-and-agentic-ai > a",
-            "count": 4,
-            "color": "rgb(255, 255, 255)",
-            "textDecoration": "none",
-            "fontWeight": "1000",
-            "hover": {
-              "backgroundColor": "rgba(0, 0, 0, 0)",
-              "color": "rgb(255, 255, 255)",
-              "borderColor": "rgb(255, 255, 255)",
-              "boxShadow": "none",
-              "changed": true
-            }
-          }
-        ],
-        "surfaces": [
-          {
-            "matched": "header",
-            "selector": "header",
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 390,
-              "h": 64
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(19, 21, 23)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "nav",
-            "selector": "#nav",
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 390,
-              "h": 64
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(54, 65, 83)",
-            "padding": "0px 20px",
-            "maxWidth": "1280px",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "main",
-            "selector": "main",
-            "rect": {
-              "x": 0,
-              "y": 64,
-              "w": 390,
-              "h": 7142
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(19, 21, 23)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "footer",
-            "selector": "footer",
-            "rect": {
-              "x": 0,
-              "y": 7254,
-              "w": 390,
-              "h": 808
-            },
-            "backgroundColor": "rgb(19, 21, 23)",
-            "color": "rgb(217, 217, 217)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "14px"
-          },
-          {
-            "matched": "main > *",
-            "selector": "main > div:nth-of-type(1)",
-            "rect": {
-              "x": 0,
-              "y": 64,
-              "w": 390,
-              "h": 560
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(19, 21, 23)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "main > *",
-            "selector": "main > div:nth-of-type(2)",
-            "rect": {
-              "x": 0,
-              "y": 672,
-              "w": 390,
-              "h": 1347
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(19, 21, 23)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "main > *",
-            "selector": "main > div:nth-of-type(3)",
-            "rect": {
-              "x": 0,
-              "y": 2067,
-              "w": 390,
-              "h": 410
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(19, 21, 23)",
-            "padding": "0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "main > *",
-            "selector": "main > div:nth-of-type(4)",
-            "rect": {
-              "x": 0,
-              "y": 2526,
-              "w": 390,
-              "h": 728
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(255, 255, 255)",
-            "padding": "40px 0px 0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          }
-        ],
-        "radii": [
-          {
-            "value": "15px",
-            "count": 9,
-            "area": 1246658,
-            "sources": [
-              "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1)",
-              "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2)",
-              "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3)"
-            ]
-          },
-          {
-            "value": "15px 15px 0px 0px",
-            "count": 8,
-            "area": 593308,
-            "sources": [
-              "#tab-1-0",
-              "#tab-1-1",
-              "#tab-1-2"
-            ]
-          },
-          {
-            "value": "50%",
-            "count": 4,
-            "area": 100416,
-            "sources": [
-              "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
-              "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(1) > a",
-              "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(2) > a"
-            ]
-          },
-          {
-            "value": "15px 0px 0px 15px",
-            "count": 1,
-            "area": 17129,
-            "sources": [
-              "body > a"
-            ]
-          },
-          {
-            "value": "2px",
-            "count": 1,
-            "area": 40,
-            "sources": [
-              "#nav > div:nth-of-type(1) > button > span"
-            ]
-          }
-        ],
-        "shadows": [
-          {
-            "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-            "count": 1,
-            "sources": [
-              "body > a"
-            ]
-          }
-        ],
-        "gradients": [
-          {
-            "value": "linear-gradient(225deg, rgb(166, 206, 57) 0%, rgb(0, 192, 243) 100%)",
-            "count": 1,
-            "area": 283743,
-            "sources": [
-              "main > div:nth-of-type(4)"
-            ]
-          },
-          {
-            "value": "linear-gradient(225deg, rgb(0, 197, 250) 25%, rgb(8, 108, 138) 100%)",
-            "count": 1,
-            "area": 225615,
-            "sources": [
-              "main > div:nth-of-type(7)"
-            ]
-          }
-        ],
-        "bgColors": [
-          {
-            "value": "rgb(255, 255, 255)",
-            "count": 12,
-            "area": 4113863,
-            "sources": [
-              "body",
-              "header > div > div",
-              "#nav > div:nth-of-type(1) > button"
-            ]
-          },
-          {
-            "value": "rgb(0, 192, 243)",
-            "count": 5,
-            "area": 857852,
-            "sources": [
-              "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(2)"
-            ]
-          },
-          {
-            "value": "rgb(217, 217, 217)",
-            "count": 4,
-            "area": 542108,
-            "sources": [
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(2) > div:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(3) > div:nth-of-type(1)"
-            ]
-          },
-          {
-            "value": "rgb(216, 43, 42)",
-            "count": 4,
-            "area": 38321,
-            "sources": [
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a"
-            ]
-          },
-          {
-            "value": "rgb(19, 21, 23)",
-            "count": 3,
-            "area": 678790,
-            "sources": [
-              "main > div:nth-of-type(5)",
-              "main > div:nth-of-type(7) > div > div > form > button",
-              "footer"
-            ]
-          },
-          {
-            "value": "rgba(0, 0, 0, 0.3)",
-            "count": 3,
-            "area": 38400,
-            "sources": [
-              "#tab-1-1",
-              "#tab-1-2",
-              "#tab-1-3"
-            ]
-          },
-          {
-            "value": "rgb(43, 47, 51)",
-            "count": 3,
-            "area": 3072,
-            "sources": [
-              "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(1) > a",
-              "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(2) > a",
-              "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(3) > a"
-            ]
-          },
-          {
-            "value": "rgb(54, 65, 83)",
-            "count": 1,
-            "area": 40,
-            "sources": [
-              "#nav > div:nth-of-type(1) > button > span"
-            ]
-          }
-        ],
-        "textColors": [
-          {
-            "value": "rgb(255, 255, 255)",
-            "count": 30,
-            "sources": [
-              "#data-cloud-webcast",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > strong:nth-of-type(1)"
-            ]
-          },
-          {
-            "value": "rgb(19, 21, 23)",
-            "count": 26,
-            "sources": [
-              "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(1)",
-              "main > div:nth-of-type(1) > div > div > div > p",
-              "#sei-marketplace"
-            ]
-          },
-          {
-            "value": "rgb(217, 217, 217)",
-            "count": 19,
-            "sources": [
-              "div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > ul > li:nth-of-type(1) > a",
-              "div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > ul > li:nth-of-type(2) > a",
-              "div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > ul > li:nth-of-type(3) > a"
-            ]
-          },
-          {
-            "value": "rgb(153, 153, 153)",
-            "count": 8,
-            "sources": [
-              "footer > div > div > div:nth-of-type(3) > div > p",
-              "footer > div > div > div:nth-of-type(3) > div > ul > li:nth-of-type(1) > a",
-              "footer > div > div > div:nth-of-type(3) > div > ul > li:nth-of-type(2) > a"
-            ]
-          },
-          {
-            "value": "rgb(0, 192, 243)",
-            "count": 6,
-            "sources": [
-              "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)",
-              "#the-connective-tissue-of-modern-finance > strong",
-              "main > div:nth-of-type(5) > div:nth-of-type(1) > p"
-            ]
-          },
-          {
-            "value": "rgb(166, 206, 57)",
-            "count": 3,
-            "sources": [
-              "#the-connective-tissue-of-modern-finance > em",
-              "#tabpanel-1-0 > div:nth-of-type(2) > p:nth-of-type(1)",
-              "#tabpanel-1-0 > div:nth-of-type(3) > p:nth-of-type(1)"
-            ]
-          }
-        ],
-        "borderColors": [
-          {
-            "value": "rgb(216, 43, 42)",
-            "count": 3,
-            "sources": [
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a"
-            ]
-          },
-          {
-            "value": "rgb(0, 192, 243)",
-            "count": 2,
-            "sources": [
-              "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(1)",
-              "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)"
-            ]
-          },
-          {
-            "value": "rgb(102, 102, 102)",
-            "count": 2,
-            "sources": [
-              "footer > div > div > div:nth-of-type(2)",
-              "footer > div > div > div:nth-of-type(3)"
-            ]
-          },
-          {
-            "value": "rgb(229, 231, 235)",
-            "count": 1,
-            "sources": [
-              "header > div > div"
-            ]
-          },
-          {
-            "value": "rgba(255, 255, 255, 0.2)",
-            "count": 1,
-            "sources": [
-              "#newsletter-email-wc6d3t"
-            ]
-          }
-        ],
-        "customProps": {
-          "--color-ink": {
-            "declared": "#131517",
-            "computed": "#131517"
-          },
-          "--color-ink-soft": {
-            "declared": "#101828",
-            "computed": "#101828"
-          },
-          "--color-slate": {
-            "declared": "#364153",
-            "computed": "#364153"
-          },
-          "--color-gray-600": {
-            "declared": "#4a5565",
-            "computed": "#4a5565"
-          },
-          "--color-gray-500": {
-            "declared": "#6a7282",
-            "computed": "#6a7282"
-          },
-          "--color-gray-400": {
-            "declared": "#99a1af",
-            "computed": "#99a1af"
-          },
-          "--color-red": {
-            "declared": "#d82b2a",
-            "computed": "#d82b2a"
-          },
-          "--color-red-dark": {
-            "declared": "#b82322",
-            "computed": "#b82322"
-          },
-          "--color-cyan": {
-            "declared": "#00c0f3",
-            "computed": "#00c0f3"
-          },
-          "--color-cyan-bright": {
-            "declared": "#00c4f8",
-            "computed": "#00c4f8"
-          },
-          "--color-green": {
-            "declared": "#a6ce39",
-            "computed": "#a6ce39"
-          },
-          "--color-orange": {
-            "declared": "#f6a01a",
-            "computed": "#f6a01a"
-          },
-          "--color-white": {
-            "declared": "#fff",
-            "computed": "#fff"
-          },
-          "--color-gray-50": {
-            "declared": "#f9fafb",
-            "computed": "#f9fafb"
-          },
-          "--color-gray-100": {
-            "declared": "#f3f4f6",
-            "computed": "#f3f4f6"
-          },
-          "--color-gray-200": {
-            "declared": "#e5e7eb",
-            "computed": "#e5e7eb"
-          },
-          "--color-gray-300": {
-            "declared": "#d9d9d9",
-            "computed": "#d9d9d9"
-          },
-          "--gradient-brand": {
-            "declared": "linear-gradient(225deg, var(--color-green) 0%, var(--color-cyan) 100%)",
-            "computed": "linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%)"
-          },
-          "--gradient-brand-horizontal": {
-            "declared": "linear-gradient(90deg, var(--color-cyan) 0%, var(--color-green) 100%)",
-            "computed": "linear-gradient(90deg, #00c0f3 0%, #a6ce39 100%)"
-          },
-          "--gradient-newsletter": {
-            "declared": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)",
-            "computed": "linear-gradient(225deg, #00c5fa 25%, #086c8a 100%)"
-          },
-          "--background-color": {
-            "declared": "var(--color-white)",
-            "computed": "#fff"
-          },
-          "--light-color": {
-            "declared": "var(--color-gray-50)",
-            "computed": "#f9fafb"
-          },
-          "--dark-color": {
-            "declared": "var(--color-ink)",
-            "computed": "#131517"
-          },
-          "--text-color": {
-            "declared": "var(--color-ink)",
-            "computed": "#131517"
-          },
-          "--link-color": {
-            "declared": "var(--color-ink)",
-            "computed": "#131517"
-          },
-          "--link-hover-color": {
-            "declared": "var(--color-red)",
-            "computed": "#d82b2a"
-          },
-          "--border-color": {
-            "declared": "var(--color-gray-200)",
-            "computed": "#e5e7eb"
-          },
-          "--body-font-family": {
-            "declared": "'DM Sans', dm-sans-fallback, sans-serif",
-            "computed": "'DM Sans', dm-sans-fallback, sans-serif"
-          },
-          "--heading-font-family": {
-            "declared": "'DM Sans', dm-sans-fallback, sans-serif",
-            "computed": "'DM Sans', dm-sans-fallback, sans-serif"
-          },
-          "--heading-font-weight": {
-            "declared": "1000",
-            "computed": "1000"
-          },
-          "--body-font-size-xl": {
-            "declared": "22px",
-            "computed": "22px"
-          },
-          "--body-font-size-l": {
-            "declared": "18px",
-            "computed": "18px"
-          },
-          "--body-font-size-m": {
-            "declared": "16px",
-            "computed": "16px"
-          },
-          "--body-font-size-s": {
-            "declared": "14px",
-            "computed": "14px"
-          },
-          "--body-font-size-xs": {
-            "declared": "12px",
-            "computed": "12px"
-          },
-          "--heading-font-size-xxl": {
-            "declared": "64px",
-            "computed": "44px"
-          },
-          "--heading-font-size-xl": {
-            "declared": "48px",
-            "computed": "34px"
-          },
-          "--heading-font-size-l": {
-            "declared": "36px",
-            "computed": "30px"
-          },
-          "--heading-font-size-m": {
-            "declared": "32px",
-            "computed": "24px"
-          },
-          "--heading-font-size-s": {
-            "declared": "24px",
-            "computed": "20px"
-          },
-          "--heading-font-size-xs": {
-            "declared": "20px",
-            "computed": "18px"
-          },
-          "--content-max-width": {
-            "declared": "1280px",
-            "computed": "1280px"
-          },
-          "--content-padding": {
-            "declared": "24px",
-            "computed": "20px"
-          },
-          "--section-spacing": {
-            "declared": "64px",
-            "computed": "48px"
-          },
-          "--radius-card": {
-            "declared": "15px",
-            "computed": "15px"
-          },
-          "--radius-input": {
-            "declared": "15px",
-            "computed": "15px"
-          },
-          "--nav-height": {
-            "declared": "80px",
-            "computed": "64px"
-          }
-        },
-        "fonts": [
-          {
-            "family": "dm-sans-fallback",
-            "weight": "normal",
-            "style": "normal",
-            "status": "error"
-          },
-          {
-            "family": "DM Sans",
-            "weight": "100 1000",
-            "style": "normal",
-            "status": "loaded"
-          },
-          {
-            "family": "DM Sans",
-            "weight": "100 1000",
-            "style": "italic",
-            "status": "unloaded"
-          }
-        ],
-        "logoCandidates": [
-          {
-            "tag": "img",
-            "selector": "#nav > div:nth-of-type(2) > div > p > a > picture > img",
-            "src": "https://main--sei--oharris69.aem.live/media_115c495188bf7452b75fe614c8561b64f8b147e55.png?width=750&format=webply&optimize=medium",
-            "inlineSvg": false,
-            "alt": "SEI",
-            "ariaLabel": null,
-            "class": "",
-            "id": null,
-            "href": "/",
-            "inHomeLink": true,
-            "rect": {
-              "x": 64,
-              "y": 11,
-              "w": 44,
-              "h": 40
-            }
-          },
-          {
-            "tag": "img",
-            "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(1) > a > span > img",
-            "src": "https://main--sei--oharris69.aem.live/icons/search.svg",
-            "inlineSvg": false,
-            "alt": "",
-            "ariaLabel": "Search",
-            "class": "",
-            "id": null,
-            "href": "/search",
-            "inHomeLink": false,
-            "rect": {
-              "x": 318,
-              "y": 22,
-              "w": 20,
-              "h": 20
-            }
-          }
-        ],
-        "iconFont": null,
-        "consent": {
-          "dismissed": null
-        },
-        "finalUrl": "https://main--sei--oharris69.aem.live/"
-      },
       "1440": {
         "title": "SEI | One partner. One connected wealth enterprise.",
         "viewport": {
@@ -1239,8 +22,8 @@
           "height": 900
         },
         "elements": {
-          "total": 430,
-          "visible": 298
+          "total": 460,
+          "visible": 322
         },
         "occluders": [],
         "headings": [
@@ -1248,11 +31,11 @@
             "tag": "h1",
             "text": "Financial value is createdbetween the l…",
             "selector": "main > div:nth-of-type(1) > div > div > div > h1",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "64px",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
+            "fontSize": "80px",
             "fontWeight": "1000",
-            "lineHeight": "74.88px",
-            "letterSpacing": "-0.64px",
+            "lineHeight": "88px",
+            "letterSpacing": "-0.4px",
             "textTransform": "none",
             "color": "rgb(19, 21, 23)"
           },
@@ -1260,11 +43,11 @@
             "tag": "h3",
             "text": "Data Cloud webcast",
             "selector": "#data-cloud-webcast",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "34px",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
+            "fontSize": "48px",
             "fontWeight": "1000",
-            "lineHeight": "38.08px",
-            "letterSpacing": "-0.34px",
+            "lineHeight": "54px",
+            "letterSpacing": "-0.3px",
             "textTransform": "none",
             "color": "rgb(255, 255, 255)"
           },
@@ -1272,11 +55,11 @@
             "tag": "h3",
             "text": "SEI Marketplace",
             "selector": "#sei-marketplace",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "34px",
             "fontWeight": "1000",
-            "lineHeight": "38.08px",
-            "letterSpacing": "-0.34px",
+            "lineHeight": "38px",
+            "letterSpacing": "-0.4px",
             "textTransform": "none",
             "color": "rgb(19, 21, 23)"
           },
@@ -1284,11 +67,23 @@
             "tag": "h3",
             "text": "$12B in market cap",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > h3",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "34px",
             "fontWeight": "1000",
-            "lineHeight": "38.08px",
-            "letterSpacing": "-0.34px",
+            "lineHeight": "38px",
+            "letterSpacing": "-0.4px",
+            "textTransform": "none",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "h2",
+            "text": "Tell us who you are. We’ll tailor what …",
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > h2",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
+            "fontSize": "36px",
+            "fontWeight": "1000",
+            "lineHeight": "39.6px",
+            "letterSpacing": "-0.72px",
             "textTransform": "none",
             "color": "rgb(255, 255, 255)"
           },
@@ -1296,7 +91,7 @@
             "tag": "h2",
             "text": "The connective tissue of modern finance.",
             "selector": "#the-connective-tissue-of-modern-finance",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "48px",
             "fontWeight": "1000",
             "lineHeight": "67.2px",
@@ -1308,7 +103,7 @@
             "tag": "h2",
             "text": "Proof in practice.",
             "selector": "#proof-in-practice",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "36px",
             "fontWeight": "1000",
             "lineHeight": "50.4px",
@@ -1320,7 +115,7 @@
             "tag": "h2",
             "text": "Depth you can feel. Reach you can measu…",
             "selector": "#depth-you-can-feel-reach-you-can-measure",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "36px",
             "fontWeight": "1000",
             "lineHeight": "50.4px",
@@ -1332,7 +127,7 @@
             "tag": "h2",
             "text": "Perspectives from SEI Leadership.",
             "selector": "#perspectives-from-sei-leadership",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "36px",
             "fontWeight": "1000",
             "lineHeight": "50.4px",
@@ -1344,7 +139,7 @@
             "tag": "h4",
             "text": "Zach Womack",
             "selector": "#zach-womack",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "500",
             "lineHeight": "24px",
@@ -1356,7 +151,7 @@
             "tag": "h3",
             "text": "Defining RAG models and agentic AI.",
             "selector": "#defining-rag-models-and-agentic-ai",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "1000",
             "lineHeight": "32px",
@@ -1368,7 +163,7 @@
             "tag": "h4",
             "text": "Ryan Hicke",
             "selector": "#ryan-hicke",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "500",
             "lineHeight": "24px",
@@ -1380,7 +175,7 @@
             "tag": "h3",
             "text": "The business behind the business.",
             "selector": "#the-business-behind-the-business",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "1000",
             "lineHeight": "32px",
@@ -1392,7 +187,7 @@
             "tag": "h4",
             "text": "Jeff Benfield",
             "selector": "#jeff-benfield",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "500",
             "lineHeight": "24px",
@@ -1404,7 +199,7 @@
             "tag": "h3",
             "text": "Modernizing wealth at scale.",
             "selector": "#modernizing-wealth-at-scale",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "1000",
             "lineHeight": "32px",
@@ -1416,7 +211,7 @@
             "tag": "h4",
             "text": "Sneha Shah",
             "selector": "#sneha-shah",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "500",
             "lineHeight": "24px",
@@ -1428,7 +223,7 @@
             "tag": "h3",
             "text": "Building the next wave of AI.",
             "selector": "#building-the-next-wave-of-ai",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "1000",
             "lineHeight": "32px",
@@ -1440,7 +235,7 @@
             "tag": "h2",
             "text": "What’s New at SEI",
             "selector": "#whats-new-at-sei",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "36px",
             "fontWeight": "1000",
             "lineHeight": "45px",
@@ -1452,7 +247,7 @@
             "tag": "h3",
             "text": "Solutions",
             "selector": "#solutions",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "14px",
             "fontWeight": "900",
             "lineHeight": "20px",
@@ -1464,7 +259,7 @@
             "tag": "h3",
             "text": "Who we serve",
             "selector": "#who-we-serve",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "14px",
             "fontWeight": "900",
             "lineHeight": "20px",
@@ -1476,7 +271,7 @@
             "tag": "h3",
             "text": "Our insights",
             "selector": "#our-insights",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "14px",
             "fontWeight": "900",
             "lineHeight": "20px",
@@ -1488,7 +283,7 @@
             "tag": "h3",
             "text": "Contact us",
             "selector": "#contact-us",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-heading-fallback, sans-serif",
             "fontSize": "14px",
             "fontWeight": "900",
             "lineHeight": "20px",
@@ -1502,7 +297,7 @@
             "tag": "p",
             "text": "One partner. One connected wealth enter…",
             "selector": "main > div:nth-of-type(1) > div > div > div > p",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "24px",
             "fontWeight": "500",
             "lineHeight": "32.4px",
@@ -1514,7 +309,7 @@
             "tag": "li",
             "text": "Data Cloud webcast Learn how your team …",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "400",
             "lineHeight": "24px",
@@ -1526,10 +321,10 @@
             "tag": "p",
             "text": "Learn how your team can spend less time…",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "20px",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "24px",
             "fontWeight": "500",
-            "lineHeight": "24px",
+            "lineHeight": "28px",
             "letterSpacing": "-0.16px",
             "textTransform": "none",
             "color": "rgb(255, 255, 255)"
@@ -1538,7 +333,7 @@
             "tag": "p",
             "text": "Thursday, October 111 am ET",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "500",
             "lineHeight": "20px",
@@ -1550,22 +345,10 @@
             "tag": "li",
             "text": "SEI Marketplace Explore our ETFs and fu…",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "400",
             "lineHeight": "24px",
-            "letterSpacing": "-0.16px",
-            "textTransform": "none",
-            "color": "rgb(19, 21, 23)"
-          },
-          {
-            "tag": "p",
-            "text": "Explore our ETFs and funds.",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
             "letterSpacing": "-0.16px",
             "textTransform": "none",
             "color": "rgb(19, 21, 23)"
@@ -1574,7 +357,7 @@
             "tag": "li",
             "text": "$12B in market cap SEI’s momentum makes…",
             "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "400",
             "lineHeight": "24px",
@@ -1584,24 +367,36 @@
           },
           {
             "tag": "p",
-            "text": "SEI’s momentum makes its mark.",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "text": "Pick your role and we’ll map the most u…",
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(2)",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": "400",
+            "lineHeight": "27px",
+            "letterSpacing": "-0.16px",
+            "textTransform": "none",
+            "color": "rgba(255, 255, 255, 0.8)"
+          },
+          {
+            "tag": "p",
+            "text": "I’m a financial advisor",
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > div > p:nth-of-type(1)",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
             "letterSpacing": "-0.16px",
             "textTransform": "none",
             "color": "rgb(255, 255, 255)"
           },
           {
             "tag": "p",
-            "text": "Read Q2 press release",
-            "selector": "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "text": "I’m at an enterprise RIA",
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > div > p:nth-of-type(2)",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
-            "fontWeight": "500",
-            "lineHeight": "20px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
             "letterSpacing": "-0.16px",
             "textTransform": "none",
             "color": "rgb(255, 255, 255)"
@@ -1609,8 +404,8 @@
           {
             "tag": "p",
             "text": "SEI sits at the intersection of investm…",
-            "selector": "main > div:nth-of-type(3) > div > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "selector": "main > div:nth-of-type(4) > div > p:nth-of-type(1)",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "22px",
             "fontWeight": "500",
             "lineHeight": "27.5px",
@@ -1621,8 +416,8 @@
           {
             "tag": "p",
             "text": "See the stories—and the numbers—that sh…",
-            "selector": "main > div:nth-of-type(4) > div:nth-of-type(1) > p",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "selector": "main > div:nth-of-type(5) > div:nth-of-type(1) > p",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "400",
             "lineHeight": "24px",
@@ -1634,7 +429,7 @@
             "tag": "p",
             "text": "Summit Wealth Group partnered with SEI …",
             "selector": "#tabpanel-1-0 > div:nth-of-type(1) > p:nth-of-type(1)",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "18px",
             "fontWeight": "400",
             "lineHeight": "26.1px",
@@ -1655,7 +450,7 @@
             "border": "1px solid rgb(217, 217, 217)",
             "borderColor": "rgb(217, 217, 217)",
             "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "14px",
             "fontWeight": "500",
             "textTransform": "none",
@@ -1669,9 +464,57 @@
             }
           },
           {
+            "text": "I’m aChoose your role",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button",
+            "count": 1,
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "16px",
+            "padding": "0px 12px 0px 14px",
+            "border": "1px solid rgba(255, 255, 255, 0.35)",
+            "borderColor": "rgba(255, 255, 255, 0.35)",
+            "boxShadow": "none",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "textTransform": "none",
+            "letterSpacing": "normal",
+            "hover": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 192, 243)",
+              "boxShadow": "none",
+              "changed": true
+            }
+          },
+          {
+            "text": "Talk to an advisor",
+            "selector": "header > div > div > div > div > div:nth-of-type(3) > a",
+            "count": 1,
+            "backgroundColor": "rgb(216, 43, 42)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "4px",
+            "padding": "0px 14px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderColor": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "700",
+            "textTransform": "none",
+            "letterSpacing": "-0.16px",
+            "hover": {
+              "backgroundColor": "rgb(184, 35, 34)",
+              "color": "rgb(255, 255, 255)",
+              "borderColor": "rgb(255, 255, 255)",
+              "boxShadow": "none",
+              "changed": true
+            }
+          },
+          {
             "text": "Register now",
             "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-            "count": 3,
+            "count": 4,
             "backgroundColor": "rgb(216, 43, 42)",
             "color": "rgb(255, 255, 255)",
             "borderRadius": "0px",
@@ -1679,7 +522,7 @@
             "border": "2px solid rgb(216, 43, 42)",
             "borderColor": "rgb(216, 43, 42)",
             "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px",
             "fontWeight": "900",
             "textTransform": "none",
@@ -1693,6 +536,24 @@
             }
           },
           {
+            "text": "I’m at an enterprise RIA",
+            "selector": "div:nth-of-type(3) > div > div > div > div > div > p:nth-of-type(2) > a",
+            "count": 2,
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "padding": "8px 16px",
+            "border": "2px solid rgb(255, 255, 255)",
+            "borderColor": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "900",
+            "textTransform": "none",
+            "letterSpacing": "-0.32px",
+            "hover": null
+          },
+          {
             "text": "Summit Wealth Group",
             "selector": "#tab-1-0",
             "count": 1,
@@ -1703,18 +564,12 @@
             "border": "0px none rgb(19, 21, 23)",
             "borderColor": "rgb(19, 21, 23)",
             "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "18px",
             "fontWeight": "900",
             "textTransform": "none",
             "letterSpacing": "normal",
-            "hover": {
-              "backgroundColor": "rgb(255, 255, 255)",
-              "color": "rgb(19, 21, 23)",
-              "borderColor": "rgb(19, 21, 23)",
-              "boxShadow": "none",
-              "changed": false
-            }
+            "hover": null
           },
           {
             "text": "FFT Wealth Management",
@@ -1727,18 +582,12 @@
             "border": "0px none rgb(255, 255, 255)",
             "borderColor": "rgb(255, 255, 255)",
             "boxShadow": "none",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "18px",
             "fontWeight": "900",
             "textTransform": "none",
             "letterSpacing": "normal",
-            "hover": {
-              "backgroundColor": "rgba(0, 0, 0, 0.4)",
-              "color": "rgb(255, 255, 255)",
-              "borderColor": "rgb(255, 255, 255)",
-              "boxShadow": "none",
-              "changed": true
-            }
+            "hover": null
           },
           {
             "text": "SEI Assistant — Ask a question",
@@ -1751,7 +600,7 @@
             "border": "0px none rgb(255, 255, 255)",
             "borderColor": "rgb(255, 255, 255)",
             "boxShadow": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "18px",
             "fontWeight": "900",
             "textTransform": "none",
@@ -1777,7 +626,7 @@
           },
           {
             "text": "View all insights",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a",
+            "selector": "main > div:nth-of-type(7) > div:nth-of-type(1) > p > a",
             "count": 1,
             "color": "rgb(19, 21, 23)",
             "textDecoration": "none",
@@ -1814,7 +663,7 @@
               "x": 0,
               "y": 0,
               "w": 1440,
-              "h": 80
+              "h": 128
             },
             "backgroundColor": "rgba(0, 0, 0, 0)",
             "color": "rgb(19, 21, 23)",
@@ -1823,7 +672,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           },
           {
@@ -1842,7 +691,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           },
           {
@@ -1850,9 +699,9 @@
             "selector": "main",
             "rect": {
               "x": 0,
-              "y": 80,
+              "y": 128,
               "w": 1440,
-              "h": 4647
+              "h": 5013
             },
             "backgroundColor": "rgba(0, 0, 0, 0)",
             "color": "rgb(19, 21, 23)",
@@ -1861,7 +710,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           },
           {
@@ -1869,7 +718,7 @@
             "selector": "footer",
             "rect": {
               "x": 0,
-              "y": 4791,
+              "y": 5205,
               "w": 1440,
               "h": 428
             },
@@ -1880,7 +729,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "14px"
           },
           {
@@ -1888,9 +737,9 @@
             "selector": "main > div:nth-of-type(1)",
             "rect": {
               "x": 0,
-              "y": 80,
+              "y": 128,
               "w": 1440,
-              "h": 800
+              "h": 802
             },
             "backgroundColor": "rgba(0, 0, 0, 0)",
             "color": "rgb(19, 21, 23)",
@@ -1899,7 +748,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           },
           {
@@ -1907,7 +756,7 @@
             "selector": "main > div:nth-of-type(2)",
             "rect": {
               "x": 0,
-              "y": 944,
+              "y": 994,
               "w": 1440,
               "h": 433
             },
@@ -1918,7 +767,7 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           },
           {
@@ -1926,7 +775,26 @@
             "selector": "main > div:nth-of-type(3)",
             "rect": {
               "x": 0,
-              "y": 1441,
+              "y": 1491,
+              "w": 1440,
+              "h": 327
+            },
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(19, 21, 23)",
+            "padding": "0px",
+            "maxWidth": "none",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "position": "static",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
+            "fontSize": "16px"
+          },
+          {
+            "matched": "main > *",
+            "selector": "main > div:nth-of-type(4)",
+            "rect": {
+              "x": 0,
+              "y": 1882,
               "w": 1440,
               "h": 797
             },
@@ -1937,34 +805,15 @@
             "borderRadius": "0px",
             "boxShadow": "none",
             "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
-            "fontSize": "16px"
-          },
-          {
-            "matched": "main > *",
-            "selector": "main > div:nth-of-type(4)",
-            "rect": {
-              "x": 0,
-              "y": 2302,
-              "w": 1440,
-              "h": 514
-            },
-            "backgroundColor": "rgba(0, 0, 0, 0)",
-            "color": "rgb(255, 255, 255)",
-            "padding": "40px 0px 0px",
-            "maxWidth": "none",
-            "borderRadius": "0px",
-            "boxShadow": "none",
-            "position": "static",
-            "fontFamily": "\"DM Sans\", dm-sans-fallback, sans-serif",
+            "fontFamily": "circularxx, circularxx-fallback, sans-serif",
             "fontSize": "16px"
           }
         ],
         "radii": [
           {
             "value": "15px",
-            "count": 9,
-            "area": 1110283,
+            "count": 10,
+            "area": 1512653,
             "sources": [
               "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(1)",
               "main > div:nth-of-type(2) > div > div > ul > li:nth-of-type(2)",
@@ -1986,7 +835,7 @@
             "count": 4,
             "area": 176961,
             "sources": [
-              "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
+              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)",
               "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(1) > a",
               "footer > div > div > div:nth-of-type(2) > div > ul:nth-of-type(2) > li:nth-of-type(2) > a"
             ]
@@ -1994,9 +843,25 @@
           {
             "value": "15px 0px 0px",
             "count": 1,
-            "area": 26433,
+            "area": 25471,
             "sources": [
               "body > a"
+            ]
+          },
+          {
+            "value": "16px",
+            "count": 1,
+            "area": 6144,
+            "sources": [
+              "header > div > div > div > div > div:nth-of-type(1) > button"
+            ]
+          },
+          {
+            "value": "4px",
+            "count": 1,
+            "area": 5092,
+            "sources": [
+              "header > div > div > div > div > div:nth-of-type(3) > a"
             ]
           }
         ],
@@ -2013,9 +878,9 @@
           {
             "value": "linear-gradient(225deg, rgb(166, 206, 57) 0%, rgb(0, 192, 243) 100%)",
             "count": 1,
-            "area": 740678,
+            "area": 703103,
             "sources": [
-              "main > div:nth-of-type(4)"
+              "main > div:nth-of-type(5)"
             ]
           },
           {
@@ -2023,7 +888,7 @@
             "count": 1,
             "area": 656640,
             "sources": [
-              "main > div:nth-of-type(7)"
+              "main > div:nth-of-type(8)"
             ]
           }
         ],
@@ -2031,7 +896,7 @@
           {
             "value": "rgb(255, 255, 255)",
             "count": 13,
-            "area": 9999951,
+            "area": 10667317,
             "sources": [
               "body",
               "header > div > div",
@@ -2039,13 +904,33 @@
             ]
           },
           {
+            "value": "rgb(216, 43, 42)",
+            "count": 6,
+            "area": 58955,
+            "sources": [
+              "header > div > div > div > div > div:nth-of-type(3) > a",
+              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a"
+            ]
+          },
+          {
+            "value": "rgb(19, 21, 23)",
+            "count": 5,
+            "area": 2206647,
+            "sources": [
+              "header > div > div > div",
+              "main > div:nth-of-type(3) > div > div > div",
+              "main > div:nth-of-type(6)"
+            ]
+          },
+          {
             "value": "rgb(0, 192, 243)",
             "count": 5,
             "area": 728205,
             "sources": [
-              "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(2)"
+              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)",
+              "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(1)",
+              "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(2)"
             ]
           },
           {
@@ -2053,29 +938,9 @@
             "count": 4,
             "area": 353176,
             "sources": [
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(2) > div:nth-of-type(1)",
-              "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(3) > div:nth-of-type(1)"
-            ]
-          },
-          {
-            "value": "rgb(216, 43, 42)",
-            "count": 4,
-            "area": 47625,
-            "sources": [
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a"
-            ]
-          },
-          {
-            "value": "rgb(19, 21, 23)",
-            "count": 3,
-            "area": 1735163,
-            "sources": [
-              "main > div:nth-of-type(5)",
-              "main > div:nth-of-type(7) > div > div > form > button",
-              "footer"
+              "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
+              "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(2) > div:nth-of-type(1)",
+              "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(3) > div:nth-of-type(1)"
             ]
           },
           {
@@ -2102,16 +967,16 @@
         "textColors": [
           {
             "value": "rgb(255, 255, 255)",
-            "count": 30,
+            "count": 34,
             "sources": [
+              "header > div > div > div > div > div:nth-of-type(3) > a > span",
               "#data-cloud-webcast",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong",
-              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > strong:nth-of-type(1)"
+              "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong"
             ]
           },
           {
             "value": "rgb(19, 21, 23)",
-            "count": 26,
+            "count": 25,
             "sources": [
               "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(1)",
               "main > div:nth-of-type(1) > div > div > div > p",
@@ -2138,11 +1003,11 @@
           },
           {
             "value": "rgb(0, 192, 243)",
-            "count": 6,
+            "count": 7,
             "sources": [
+              "header > div > div > div > div > div:nth-of-type(1) > button > span:nth-of-type(2)",
               "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)",
-              "#the-connective-tissue-of-modern-finance > strong",
-              "main > div:nth-of-type(5) > div:nth-of-type(1) > p"
+              "#the-connective-tissue-of-modern-finance > strong"
             ]
           },
           {
@@ -2156,18 +1021,34 @@
           },
           {
             "value": "rgb(166, 206, 57)",
+            "count": 4,
+            "sources": [
+              "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(1)",
+              "#the-connective-tissue-of-modern-finance > em",
+              "#tabpanel-1-0 > div:nth-of-type(2) > p:nth-of-type(1)"
+            ]
+          },
+          {
+            "value": "rgba(255, 255, 255, 0.7)",
             "count": 3,
             "sources": [
-              "#the-connective-tissue-of-modern-finance > em",
-              "#tabpanel-1-0 > div:nth-of-type(2) > p:nth-of-type(1)",
-              "#tabpanel-1-0 > div:nth-of-type(3) > p:nth-of-type(1)"
+              "header > div > div > div > div > div:nth-of-type(1) > button > span:nth-of-type(1)",
+              "header > div > div > div > div > div:nth-of-type(2) > p",
+              "header > div > div > div > div > button"
+            ]
+          },
+          {
+            "value": "rgba(255, 255, 255, 0.8)",
+            "count": 1,
+            "sources": [
+              "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(2)"
             ]
           }
         ],
         "borderColors": [
           {
             "value": "rgb(216, 43, 42)",
-            "count": 3,
+            "count": 4,
             "sources": [
               "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
               "div:nth-of-type(2) > div > div > ul > li:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a",
@@ -2207,6 +1088,14 @@
             ]
           },
           {
+            "value": "rgb(255, 255, 255)",
+            "count": 2,
+            "sources": [
+              "div:nth-of-type(3) > div > div > div > div > div > p:nth-of-type(2) > a",
+              "div:nth-of-type(3) > div > div > div > div > div > p:nth-of-type(3) > a"
+            ]
+          },
+          {
             "value": "rgb(229, 231, 235)",
             "count": 1,
             "sources": [
@@ -2217,7 +1106,14 @@
             "value": "rgba(255, 255, 255, 0.2)",
             "count": 1,
             "sources": [
-              "#newsletter-email-grkudl"
+              "#newsletter-email-dadl1w"
+            ]
+          },
+          {
+            "value": "rgba(255, 255, 255, 0.35)",
+            "count": 1,
+            "sources": [
+              "header > div > div > div > div > div:nth-of-type(1) > button"
             ]
           }
         ],
@@ -2331,12 +1227,12 @@
             "computed": "#e5e7eb"
           },
           "--body-font-family": {
-            "declared": "'DM Sans', dm-sans-fallback, sans-serif",
-            "computed": "'DM Sans', dm-sans-fallback, sans-serif"
+            "declared": "circularxx, circularxx-fallback, sans-serif",
+            "computed": "circularxx, circularxx-fallback, sans-serif"
           },
           "--heading-font-family": {
-            "declared": "'DM Sans', dm-sans-fallback, sans-serif",
-            "computed": "'DM Sans', dm-sans-fallback, sans-serif"
+            "declared": "circularxx, circularxx-heading-fallback, sans-serif",
+            "computed": "circularxx, circularxx-heading-fallback, sans-serif"
           },
           "--heading-font-weight": {
             "declared": "1000",
@@ -2409,24 +1305,82 @@
           "--nav-height": {
             "declared": "80px",
             "computed": "80px"
+          },
+          "--experience-height": {
+            "declared": "48px",
+            "computed": "48px"
           }
         },
         "fonts": [
           {
-            "family": "dm-sans-fallback",
+            "family": "circularxx-fallback",
             "weight": "normal",
             "style": "normal",
             "status": "error"
           },
           {
-            "family": "DM Sans",
-            "weight": "100 1000",
+            "family": "circularxx-heading-fallback",
+            "weight": "normal",
+            "style": "normal",
+            "status": "error"
+          },
+          {
+            "family": "circularxx",
+            "weight": "100 450",
             "style": "normal",
             "status": "loaded"
           },
           {
-            "family": "DM Sans",
-            "weight": "100 1000",
+            "family": "circularxx",
+            "weight": "100 450",
+            "style": "normal",
+            "status": "unloaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "451 750",
+            "style": "normal",
+            "status": "loaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "451 750",
+            "style": "normal",
+            "status": "unloaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "751 925",
+            "style": "normal",
+            "status": "loaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "751 925",
+            "style": "normal",
+            "status": "unloaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "926 1000",
+            "style": "normal",
+            "status": "loaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "926 1000",
+            "style": "normal",
+            "status": "unloaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "100 450",
+            "style": "italic",
+            "status": "unloaded"
+          },
+          {
+            "family": "circularxx",
+            "weight": "451 1000",
             "style": "italic",
             "status": "unloaded"
           }
@@ -2462,7 +1416,7 @@
             "href": "/search",
             "inHomeLink": false,
             "rect": {
-              "x": 1077,
+              "x": 1079,
               "y": 30,
               "w": 20,
               "h": 20
@@ -2481,10 +1435,9 @@
     "counts": {
       "pages": 1,
       "widths": [
-        390,
         1440
       ],
-      "measurements": 2
+      "measurements": 1
     },
     "colors": [
       {
@@ -2492,15 +1445,17 @@
         "values": [
           "rgb(255, 255, 255)"
         ],
-        "weight": 137,
-        "bgArea": 14113814,
+        "weight": 84,
+        "bgArea": 10667317,
         "by": {
-          "text": 60,
-          "background": 25,
-          "link": 8,
-          "button-text": 14,
-          "button-background": 4,
-          "heading": 26
+          "text": 34,
+          "background": 13,
+          "button-text": 12,
+          "link": 4,
+          "border": 2,
+          "button-background": 3,
+          "button-border": 2,
+          "heading": 14
         },
         "roles": [
           "background",
@@ -2510,13 +1465,18 @@
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#data-cloud-webcast",
+            "selector": "header > div > div > div > div > div:nth-of-type(3) > a > span",
             "prop": "text"
           },
           {
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "body",
             "prop": "background"
+          },
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+            "prop": "button-text"
           },
           {
             "url": "https://main--sei--oharris69.aem.live/",
@@ -2527,11 +1487,6 @@
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "#tab-1-1",
             "prop": "button-text"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
-            "prop": "button-text"
           }
         ]
       },
@@ -2540,15 +1495,15 @@
         "values": [
           "rgb(19, 21, 23)"
         ],
-        "weight": 82,
-        "bgArea": 2413953,
+        "weight": 43,
+        "bgArea": 2206647,
         "by": {
-          "text": 52,
-          "background": 6,
+          "text": 25,
+          "background": 5,
           "border": 2,
-          "button-text": 2,
-          "heading": 16,
-          "link": 4
+          "button-text": 1,
+          "heading": 8,
+          "link": 2
         },
         "roles": [
           "surface"
@@ -2561,7 +1516,7 @@
           },
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(5)",
+            "selector": "header > div > div > div",
             "prop": "background"
           },
           {
@@ -2586,11 +1541,11 @@
         "values": [
           "rgb(217, 217, 217)"
         ],
-        "weight": 50,
-        "bgArea": 895284,
+        "weight": 27,
+        "bgArea": 353176,
         "by": {
-          "text": 38,
-          "background": 8,
+          "text": 19,
+          "background": 4,
           "border": 2,
           "button-border": 2
         },
@@ -2605,7 +1560,7 @@
           },
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
+            "selector": "main > div:nth-of-type(7) > div:nth-of-type(2) > div > ul > li:nth-of-type(1) > div:nth-of-type(1)",
             "prop": "background"
           },
           {
@@ -2625,13 +1580,13 @@
         "values": [
           "rgb(216, 43, 42)"
         ],
-        "weight": 28,
-        "bgArea": 85946,
+        "weight": 20,
+        "bgArea": 58955,
         "by": {
-          "background": 8,
-          "border": 6,
-          "button-background": 8,
-          "button-border": 6
+          "background": 6,
+          "border": 4,
+          "button-background": 6,
+          "button-border": 4
         },
         "roles": [
           "primary",
@@ -2640,7 +1595,7 @@
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a",
+            "selector": "header > div > div > div > div > div:nth-of-type(3) > a",
             "prop": "background"
           },
           {
@@ -2670,11 +1625,11 @@
         "values": [
           "rgba(0, 0, 0, 0.3)"
         ],
-        "weight": 12,
-        "bgArea": 134496,
+        "weight": 6,
+        "bgArea": 96096,
         "by": {
-          "background": 6,
-          "button-background": 6
+          "background": 3,
+          "button-background": 3
         },
         "roles": [
           "secondary"
@@ -2697,23 +1652,23 @@
         "values": [
           "rgb(0, 192, 243)"
         ],
-        "weight": 26,
-        "bgArea": 1586057,
+        "weight": 14,
+        "bgArea": 728205,
         "by": {
-          "text": 12,
-          "background": 10,
-          "border": 4
+          "text": 7,
+          "background": 5,
+          "border": 2
         },
         "roles": [],
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(1) > div > div > div > h1 > span:nth-of-type(2)",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button > span:nth-of-type(2)",
             "prop": "text"
           },
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)",
+            "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)",
             "prop": "background"
           },
           {
@@ -2724,34 +1679,14 @@
         ]
       },
       {
-        "hex": "#999999",
-        "values": [
-          "rgb(153, 153, 153)"
-        ],
-        "weight": 16,
-        "by": {
-          "text": 16
-        },
-        "roles": [],
-        "sources": [
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "footer > div > div > div:nth-of-type(3) > div > p",
-            "prop": "text"
-          }
-        ]
-      },
-      {
         "hex": "#364153",
         "values": [
           "rgb(54, 65, 83)"
         ],
-        "weight": 9,
-        "bgArea": 40,
+        "weight": 8,
         "by": {
           "text": 6,
-          "button-text": 2,
-          "background": 1
+          "button-text": 2
         },
         "roles": [],
         "sources": [
@@ -2764,11 +1699,42 @@
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(2) > a",
             "prop": "button-text"
-          },
+          }
+        ]
+      },
+      {
+        "hex": "#999999",
+        "values": [
+          "rgb(153, 153, 153)"
+        ],
+        "weight": 8,
+        "by": {
+          "text": 8
+        },
+        "roles": [],
+        "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#nav > div:nth-of-type(1) > button > span",
-            "prop": "background"
+            "selector": "footer > div > div > div:nth-of-type(3) > div > p",
+            "prop": "text"
+          }
+        ]
+      },
+      {
+        "hex": "#a6ce39",
+        "values": [
+          "rgb(166, 206, 57)"
+        ],
+        "weight": 4,
+        "by": {
+          "text": 4
+        },
+        "roles": [],
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(1)",
+            "prop": "text"
           }
         ]
       },
@@ -2777,10 +1743,10 @@
         "values": [
           "rgb(43, 47, 51)"
         ],
-        "weight": 6,
-        "bgArea": 6144,
+        "weight": 3,
+        "bgArea": 3072,
         "by": {
-          "background": 6
+          "background": 3
         },
         "roles": [],
         "sources": [
@@ -2792,19 +1758,19 @@
         ]
       },
       {
-        "hex": "#a6ce39",
+        "hex": "#ffffffb3",
         "values": [
-          "rgb(166, 206, 57)"
+          "rgba(255, 255, 255, 0.7)"
         ],
-        "weight": 6,
+        "weight": 3,
         "by": {
-          "text": 6
+          "text": 3
         },
         "roles": [],
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#the-connective-tissue-of-modern-finance > em",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button > span:nth-of-type(1)",
             "prop": "text"
           }
         ]
@@ -2814,9 +1780,9 @@
         "values": [
           "rgb(102, 102, 102)"
         ],
-        "weight": 4,
+        "weight": 2,
         "by": {
-          "border": 4
+          "border": 2
         },
         "roles": [],
         "sources": [
@@ -2828,13 +1794,37 @@
         ]
       },
       {
+        "hex": "#ffffff59",
+        "values": [
+          "rgba(255, 255, 255, 0.35)"
+        ],
+        "weight": 2,
+        "by": {
+          "border": 1,
+          "button-border": 1
+        },
+        "roles": [],
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button",
+            "prop": "border"
+          },
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button",
+            "prop": "button-border"
+          }
+        ]
+      },
+      {
         "hex": "#e5e7eb",
         "values": [
           "rgb(229, 231, 235)"
         ],
-        "weight": 2,
+        "weight": 1,
         "by": {
-          "border": 2
+          "border": 1
         },
         "roles": [],
         "sources": [
@@ -2850,21 +1840,34 @@
         "values": [
           "rgba(255, 255, 255, 0.2)"
         ],
-        "weight": 2,
+        "weight": 1,
         "by": {
-          "border": 2
+          "border": 1
         },
         "roles": [],
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#newsletter-email-grkudl",
+            "selector": "#newsletter-email-dadl1w",
             "prop": "border"
-          },
+          }
+        ]
+      },
+      {
+        "hex": "#ffffffcc",
+        "values": [
+          "rgba(255, 255, 255, 0.8)"
+        ],
+        "weight": 1,
+        "by": {
+          "text": 1
+        },
+        "roles": [],
+        "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#newsletter-email-wc6d3t",
-            "prop": "border"
+            "selector": "main > div:nth-of-type(3) > div > div > div > div > p:nth-of-type(2)",
+            "prop": "text"
           }
         ]
       }
@@ -2872,18 +1875,18 @@
     "type": {
       "families": [
         {
-          "family": "DM Sans",
-          "count": 84,
-          "headings": 42,
-          "text": 24,
-          "buttons": 18
+          "family": "circularxx",
+          "count": 49,
+          "headings": 22,
+          "text": 12,
+          "buttons": 15
         }
       ],
-      "headingFamily": "DM Sans",
-      "bodyFamily": "DM Sans",
+      "headingFamily": "circularxx",
+      "bodyFamily": "circularxx",
       "sizes": [
         {
-          "px": 64,
+          "px": 80,
           "count": 1,
           "headings": 1,
           "text": 0,
@@ -2891,8 +1894,8 @@
         },
         {
           "px": 48,
-          "count": 1,
-          "headings": 1,
+          "count": 2,
+          "headings": 2,
           "text": 0,
           "buttons": 0
         },
@@ -2905,23 +1908,16 @@
         },
         {
           "px": 34,
-          "count": 4,
-          "headings": 4,
-          "text": 0,
-          "buttons": 0
-        },
-        {
-          "px": 30,
-          "count": 7,
-          "headings": 7,
+          "count": 2,
+          "headings": 2,
           "text": 0,
           "buttons": 0
         },
         {
           "px": 24,
-          "count": 9,
+          "count": 10,
           "headings": 8,
-          "text": 1,
+          "text": 2,
           "buttons": 0
         },
         {
@@ -2932,89 +1928,82 @@
           "buttons": 0
         },
         {
-          "px": 20,
-          "count": 9,
-          "headings": 8,
-          "text": 1,
-          "buttons": 0
-        },
-        {
           "px": 18,
-          "count": 14,
+          "count": 7,
           "headings": 0,
-          "text": 5,
-          "buttons": 9
+          "text": 2,
+          "buttons": 5
         },
         {
           "px": 16,
-          "count": 21,
+          "count": 13,
           "headings": 0,
-          "text": 14,
-          "buttons": 7
+          "text": 7,
+          "buttons": 6
         },
         {
           "px": 14,
-          "count": 10,
-          "headings": 8,
+          "count": 8,
+          "headings": 4,
           "text": 0,
-          "buttons": 2
-        },
-        {
-          "px": 12,
-          "count": 2,
-          "headings": 0,
-          "text": 2,
-          "buttons": 0
+          "buttons": 4
         }
       ],
       "weights": [
         {
+          "weight": "900",
+          "count": 15,
+          "headings": 4,
+          "text": 0,
+          "buttons": 11
+        },
+        {
           "weight": "1000",
-          "count": 26,
-          "headings": 26,
+          "count": 14,
+          "headings": 14,
           "text": 0,
           "buttons": 0
         },
         {
           "weight": "500",
-          "count": 24,
-          "headings": 8,
-          "text": 14,
+          "count": 10,
+          "headings": 4,
+          "text": 4,
           "buttons": 2
         },
         {
-          "weight": "900",
-          "count": 24,
-          "headings": 8,
-          "text": 0,
-          "buttons": 16
+          "weight": "400",
+          "count": 9,
+          "headings": 0,
+          "text": 8,
+          "buttons": 1
         },
         {
-          "weight": "400",
-          "count": 10,
+          "weight": "700",
+          "count": 1,
           "headings": 0,
-          "text": 10,
-          "buttons": 0
+          "text": 0,
+          "buttons": 1
         }
       ],
       "levels": {
         "h1": {
-          "fontSize": 64,
+          "fontSize": 80,
           "fontWeight": "1000",
           "count": 1,
-          "score": 160
+          "score": 200
         },
         "h2": {
           "fontSize": 36,
           "fontWeight": "1000",
-          "count": 4,
-          "score": 180
+          "count": 5,
+          "score": 201.25
         },
         "h3": {
           "fontSize": 34,
           "fontWeight": "1000",
-          "count": 3,
-          "score": 147.22
+          "count": 2,
+          "score": 120.21
         },
         "h4": {
           "fontSize": 24,
@@ -3032,8 +2021,8 @@
         "values": [
           {
             "value": "15px",
-            "count": 18,
-            "area": 2356941,
+            "count": 10,
+            "area": 1512653,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
@@ -3051,8 +2040,8 @@
           },
           {
             "value": "15px 15px 0px 0px",
-            "count": 16,
-            "area": 1074612,
+            "count": 8,
+            "area": 481304,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
@@ -3070,12 +2059,12 @@
           },
           {
             "value": "50%",
-            "count": 8,
-            "area": 277377,
+            "count": 4,
+            "area": 176961,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
-                "selector": "main > div:nth-of-type(5) > div:nth-of-type(2) > div > div:nth-of-type(2)"
+                "selector": "main > div:nth-of-type(6) > div:nth-of-type(2) > div > div:nth-of-type(2)"
               },
               {
                 "url": "https://main--sei--oharris69.aem.live/",
@@ -3090,7 +2079,7 @@
           {
             "value": "15px 0px 0px",
             "count": 1,
-            "area": 26433,
+            "area": 25471,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
@@ -3099,24 +2088,24 @@
             ]
           },
           {
-            "value": "15px 0px 0px 15px",
+            "value": "16px",
             "count": 1,
-            "area": 17129,
+            "area": 6144,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
-                "selector": "body > a"
+                "selector": "header > div > div > div > div > div:nth-of-type(1) > button"
               }
             ]
           },
           {
-            "value": "2px",
+            "value": "4px",
             "count": 1,
-            "area": 40,
+            "area": 5092,
             "sources": [
               {
                 "url": "https://main--sei--oharris69.aem.live/",
-                "selector": "#nav > div:nth-of-type(1) > button > span"
+                "selector": "header > div > div > div > div > div:nth-of-type(3) > a"
               }
             ]
           }
@@ -3125,7 +2114,7 @@
       "shadows": [
         {
           "value": "rgba(0, 0, 0, 0.2) 0px 10px 30px 0px",
-          "count": 2,
+          "count": 1,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
@@ -3137,23 +2126,23 @@
       "gradients": [
         {
           "value": "linear-gradient(225deg, rgb(0, 197, 250) 25%, rgb(8, 108, 138) 100%)",
-          "count": 2,
-          "area": 882255,
+          "count": 1,
+          "area": 656640,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
-              "selector": "main > div:nth-of-type(7)"
+              "selector": "main > div:nth-of-type(8)"
             }
           ]
         },
         {
           "value": "linear-gradient(225deg, rgb(166, 206, 57) 0%, rgb(0, 192, 243) 100%)",
-          "count": 2,
-          "area": 1024421,
+          "count": 1,
+          "area": 703103,
           "sources": [
             {
               "url": "https://main--sei--oharris69.aem.live/",
-              "selector": "main > div:nth-of-type(4)"
+              "selector": "main > div:nth-of-type(5)"
             }
           ]
         }
@@ -3170,55 +2159,11 @@
           "backgroundColor": "rgb(184, 35, 34)",
           "borderColor": "rgb(184, 35, 34)"
         },
-        "count": 2,
+        "count": 1,
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "div:nth-of-type(2) > div > div > ul > li:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3) > a"
-          }
-        ]
-      },
-      {
-        "kind": "button",
-        "from": {
-          "backgroundColor": "rgba(0, 0, 0, 0.3)"
-        },
-        "to": {
-          "backgroundColor": "rgba(0, 0, 0, 0.4)"
-        },
-        "count": 2,
-        "sources": [
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#tab-1-1"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "#tab-1-1"
-          }
-        ]
-      },
-      {
-        "kind": "link",
-        "from": {
-          "color": "rgb(19, 21, 23)"
-        },
-        "to": {
-          "color": "rgb(216, 43, 42)"
-        },
-        "count": 2,
-        "sources": [
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
-          },
-          {
-            "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "main > div:nth-of-type(6) > div:nth-of-type(1) > p > a"
           }
         ]
       },
@@ -3234,7 +2179,23 @@
         "sources": [
           {
             "url": "https://main--sei--oharris69.aem.live/",
-            "selector": "body > a"
+            "selector": "header > div > div > div > div > div:nth-of-type(3) > a"
+          }
+        ]
+      },
+      {
+        "kind": "button",
+        "from": {
+          "borderColor": "rgba(255, 255, 255, 0.35)"
+        },
+        "to": {
+          "borderColor": "rgb(0, 192, 243)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "header > div > div > div > div > div:nth-of-type(1) > button"
           }
         ]
       },
@@ -3251,6 +2212,22 @@
           {
             "url": "https://main--sei--oharris69.aem.live/",
             "selector": "#nav > div:nth-of-type(4) > div > p:nth-of-type(2) > a"
+          }
+        ]
+      },
+      {
+        "kind": "link",
+        "from": {
+          "color": "rgb(19, 21, 23)"
+        },
+        "to": {
+          "color": "rgb(216, 43, 42)"
+        },
+        "count": 1,
+        "sources": [
+          {
+            "url": "https://main--sei--oharris69.aem.live/",
+            "selector": "main > div:nth-of-type(7) > div:nth-of-type(1) > p > a"
           }
         ]
       }

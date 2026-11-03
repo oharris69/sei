@@ -1,0 +1,799 @@
+/*
+ * rb-chrome — rebrand R page chrome. Loaded by rb-hero.js, which adds `body.rb-page`.
+ * Restyles the shared header (nav + experience bar), footer and assistant launcher on the
+ * rebrand page only; every selector starts with `body.rb-page`, so no other page changes.
+ */
+body.rb-page {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-saffron: #f2b33d;
+  --rb-slab: #f5f7f5;
+  --rb-veil: #3d5450;
+  --rb-brass: #a88231;
+  --rb-mist: #c9d3ce;
+  --rb-pebble: #93a19c;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-state: 160ms cubic-bezier(0.2, 0, 0, 1);
+  --body-font-family: var(--rb-serif);
+  --heading-font-family: var(--rb-display);
+  --link-color: var(--rb-verde);
+  --link-hover-color: var(--rb-verde);
+  --nav-height: 68px;
+  --experience-height: 99px;
+
+  background-color: var(--rb-stone);
+  color: var(--rb-verde);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  font-optical-sizing: auto;
+}
+
+body.rb-page > header {
+  height: calc(var(--nav-height) + var(--experience-height) + 2px);
+}
+
+/* ---------- header: nav row ---------- */
+body.rb-page header .nav-wrapper {
+  border-bottom: 0;
+  background-color: var(--rb-stone);
+}
+
+/* the brass rule runs between the nav row and the role strip */
+body.rb-page header nav + .nav-experience {
+  border-top: 2px solid var(--rb-brass);
+}
+
+body.rb-page header nav {
+  grid-template:
+    'brand hamburger' var(--nav-height)
+    'sections sections' 1fr / 1fr auto;
+  gap: 0 16px;
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+  color: var(--rb-verde);
+  font-family: var(--rb-serif);
+}
+
+body.rb-page header nav[aria-expanded='true'] {
+  grid-template:
+    'brand hamburger' var(--nav-height)
+    'sections sections' 1fr
+    'tools tools' auto / 1fr auto;
+  padding-bottom: 24px;
+}
+
+body.rb-page header nav :focus-visible {
+  outline: 3px solid var(--rb-verde);
+  outline-offset: 3px;
+}
+
+body.rb-page header nav .nav-brand {
+  flex: 0 0 48px;
+}
+
+body.rb-page header nav .nav-brand a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+body.rb-page header nav .nav-brand img {
+  width: 40px;
+  height: auto;
+}
+
+/* stock hamburger: bordered "Menu" button on the right */
+body.rb-page header nav .nav-hamburger {
+  justify-self: end;
+  height: auto;
+}
+
+body.rb-page header nav .nav-hamburger button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  min-height: 44px;
+  padding: 12px 14px;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--rb-verde);
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.rb-page header nav .nav-hamburger button::after {
+  content: 'Menu';
+}
+
+body.rb-page header nav[aria-expanded='true'] .nav-hamburger button::after {
+  content: 'Close';
+}
+
+body.rb-page header nav .nav-hamburger-icon {
+  width: 16px;
+}
+
+/* menus (shared rules) */
+body.rb-page header nav .nav-sections .nav-drop > button {
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: border-color var(--rb-state);
+}
+
+body.rb-page header nav .nav-sections .nav-drop > button::after {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  background: none;
+  mask: none;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+body.rb-page header nav .nav-sections .nav-drop > button[aria-expanded='true']::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+body.rb-page header nav .nav-sections .nav-drop > button:hover,
+body.rb-page header nav .nav-sections .nav-drop > button[aria-expanded='true'] {
+  border-bottom-color: var(--rb-brass);
+}
+
+body.rb-page header nav .nav-sections ul > li > ul a:any-link {
+  display: block;
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+body.rb-page header nav .nav-sections ul > li > ul a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--rb-brass);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* tools */
+body.rb-page header nav .nav-tools .default-content-wrapper {
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+body.rb-page header nav .nav-tools a:has(.icon-search) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color var(--rb-state);
+}
+
+/* the captured link is named "Search" (aria-label); the label is shown */
+body.rb-page header nav .nav-tools a:has(.icon-search)::after {
+  content: 'Search';
+}
+
+body.rb-page header nav .nav-tools a:has(.icon-search):hover {
+  border-bottom-color: var(--rb-brass);
+}
+
+body.rb-page header nav .nav-tools .icon {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+}
+
+body.rb-page header nav .nav-tools a.button:any-link {
+  min-height: 48px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 0;
+  background: var(--rb-saffron);
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background-color var(--rb-state), color var(--rb-state);
+}
+
+body.rb-page header nav .nav-tools a.button:hover,
+body.rb-page header nav .nav-tools a.button:focus-visible {
+  background: var(--rb-verde);
+  color: var(--rb-saffron);
+}
+
+/* the first of the two tool buttons (Client Login) is the outlined secondary */
+body.rb-page header nav .nav-tools .button-wrapper:has(+ .button-wrapper) a.button:any-link {
+  padding: 13px 20px;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--rb-verde);
+}
+
+body.rb-page header nav .nav-tools .button-wrapper:has(+ .button-wrapper) a.button:hover {
+  background: var(--rb-verde);
+  color: var(--rb-stone);
+}
+
+/* ---------- header: experience bar (role strip) ---------- */
+body.rb-page header .nav-experience {
+  --experience-muted: var(--rb-mist);
+
+  background-color: var(--rb-verde);
+  color: var(--rb-stone);
+  font-family: var(--rb-serif);
+  font-size: 0.9375rem;
+}
+
+body.rb-page header .experience-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  gap: 0 16px;
+  max-width: 1320px;
+  padding: 6px var(--rb-gutter) 8px;
+}
+
+body.rb-page header .experience-persona {
+  grid-area: 1 / 1;
+}
+
+body.rb-page header .experience-action {
+  grid-area: 1 / 2;
+  justify-self: end;
+}
+
+body.rb-page header .experience-progress {
+  grid-area: 2 / 1;
+}
+
+body.rb-page header .experience-why {
+  grid-area: 2 / 2;
+  place-self: start end;
+}
+
+body.rb-page header .nav-experience :focus-visible {
+  outline: 3px solid var(--rb-saffron);
+  outline-offset: 3px;
+}
+
+body.rb-page header .experience-persona-toggle {
+  align-items: baseline;
+  gap: 6px;
+  height: auto;
+  padding: 6px 0;
+  border: 0;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+body.rb-page header .experience-kicker {
+  display: inline;
+  color: var(--rb-mist);
+  font-family: var(--rb-serif);
+  font-style: italic;
+}
+
+body.rb-page header .experience-persona-label,
+body.rb-page header .nav-experience[data-persona=''] .experience-persona-label {
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--rb-pebble);
+  color: var(--rb-stone);
+  font-family: var(--rb-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  transition: border-color var(--rb-state);
+}
+
+body.rb-page header .experience-persona-toggle:hover .experience-persona-label,
+body.rb-page header .experience-persona-toggle[aria-expanded='true'] .experience-persona-label {
+  border-bottom-color: var(--rb-stone);
+}
+
+body.rb-page header .experience-persona-toggle::after {
+  display: none;
+}
+
+body.rb-page header .experience-persona-label::after {
+  content: ' ↓' / '';
+  color: var(--rb-mist);
+}
+
+body.rb-page header .experience-menu {
+  border: 0;
+  border-top: 2px solid var(--rb-brass);
+  border-radius: 0;
+  background-color: var(--rb-slab);
+  box-shadow: 0 0 0 1px var(--rb-mist);
+  color: var(--rb-verde);
+}
+
+body.rb-page header .experience-menu :focus-visible {
+  outline-color: var(--rb-verde);
+}
+
+body.rb-page header .experience-option {
+  border-radius: 0;
+}
+
+body.rb-page header .experience-option:hover,
+body.rb-page header .experience-option:focus-visible {
+  background-color: var(--rb-stone);
+}
+
+body.rb-page header .experience-option-label {
+  font-family: var(--rb-display);
+  font-stretch: 105%;
+}
+
+body.rb-page header .experience-option[aria-pressed='true']::before {
+  background-color: var(--rb-verde);
+}
+
+body.rb-page header .experience-option-detail,
+body.rb-page header .experience-reset {
+  color: var(--rb-veil);
+}
+
+body.rb-page header .experience-reset {
+  border-top-color: var(--rb-mist);
+}
+
+body.rb-page header .experience-reset:hover {
+  color: var(--rb-verde);
+}
+
+body.rb-page header .experience-stage {
+  color: var(--rb-mist);
+  line-height: 1.35;
+  white-space: normal;
+}
+
+body.rb-page header .experience-step.done + .experience-step::before {
+  background-color: var(--rb-brass);
+}
+
+body.rb-page header .experience-step.done .experience-step-marker {
+  border-color: var(--rb-brass);
+  background-color: var(--rb-brass);
+}
+
+body.rb-page header .experience-step.done .experience-step-marker::after {
+  background-color: var(--rb-verde);
+}
+
+body.rb-page header .experience-step.current .experience-step-marker {
+  border-color: var(--rb-saffron);
+  background-color: var(--rb-saffron);
+  color: var(--rb-verde);
+}
+
+body.rb-page header .experience-step.here .experience-step-label {
+  text-decoration-color: var(--rb-saffron);
+}
+
+body.rb-page header .why-button.experience-why {
+  gap: 0;
+  padding: 0 0 4px;
+  color: var(--rb-mist);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-decoration-color: var(--rb-pebble);
+  text-transform: uppercase;
+  text-underline-offset: 5px;
+}
+
+body.rb-page header .why-button.experience-why::before {
+  display: none;
+}
+
+body.rb-page header .why-button.experience-why:hover {
+  color: var(--rb-stone);
+}
+
+body.rb-page header .experience-talk:any-link {
+  gap: 10px;
+  height: auto;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: var(--rb-saffron);
+  font-family: var(--rb-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  transition: border-color var(--rb-state);
+}
+
+body.rb-page header .experience-talk:hover {
+  border-bottom-color: var(--rb-saffron);
+  background: none;
+}
+
+body.rb-page header .experience-talk::before {
+  display: none;
+}
+
+body.rb-page header .experience-talk-label {
+  display: inline;
+}
+
+body.rb-page header .experience-talk::after {
+  content: '→' / '';
+  display: none;
+}
+
+body.rb-page header .experience-booked::before {
+  background-color: var(--rb-saffron);
+}
+
+body.rb-page header .experience-ics:any-link {
+  color: var(--rb-saffron);
+}
+
+/* ---------- footer ---------- */
+body.rb-page footer {
+  border-top: 2px solid var(--rb-brass);
+  background-color: var(--rb-verde);
+  color: var(--rb-mist);
+  font-family: var(--rb-serif);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+body.rb-page footer .footer > div {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+body.rb-page footer .footer a:any-link {
+  color: var(--rb-mist);
+  text-decoration: none;
+  transition: color var(--rb-state);
+}
+
+body.rb-page footer .footer a:hover {
+  color: var(--rb-saffron);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+body.rb-page footer .footer :focus-visible {
+  outline: 3px solid var(--rb-saffron);
+  outline-offset: 3px;
+}
+
+body.rb-page footer .footer-links {
+  padding-top: 56px;
+  padding-bottom: 40px;
+}
+
+body.rb-page footer .footer-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+
+body.rb-page footer .footer-column h3 {
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--rb-mist) 35%, transparent);
+  color: var(--rb-stone);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+body.rb-page footer .footer-column li {
+  padding: 4px 0;
+  font-size: 1.0625rem;
+}
+
+body.rb-page footer .footer-column li + li {
+  margin-top: 0;
+}
+
+body.rb-page footer .footer-brand {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 2px solid var(--rb-brass);
+}
+
+body.rb-page footer .footer-brand .default-content-wrapper {
+  gap: 20px 32px;
+}
+
+body.rb-page footer .footer-brand p a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+body.rb-page footer .footer-brand p img {
+  width: 56px;
+}
+
+body.rb-page footer .footer-nav {
+  flex: 1;
+  gap: 8px 28px;
+}
+
+body.rb-page footer .footer-social {
+  gap: 10px;
+}
+
+body.rb-page footer .footer-social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--rb-mist) 45%, transparent);
+  transition: background-color var(--rb-state);
+}
+
+body.rb-page footer .footer-social a:hover {
+  background: color-mix(in srgb, var(--rb-stone) 12%, transparent);
+}
+
+body.rb-page footer .footer-legal {
+  padding-top: 20px;
+  padding-bottom: 96px;
+  border-top: 1px solid color-mix(in srgb, var(--rb-mist) 25%, transparent);
+  color: var(--rb-mist);
+}
+
+body.rb-page footer .footer-legal .default-content-wrapper {
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 8px 24px;
+}
+
+body.rb-page footer .footer-legal ul {
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  white-space: normal;
+}
+
+body.rb-page footer .footer-legal li + li::before {
+  display: none;
+}
+
+/* ---------- assistant launcher: verde square, saffron ring, icon-first ---------- */
+body.rb-page .assistant-launcher {
+  box-sizing: border-box;
+  right: 14px;
+  bottom: 14px;
+  gap: 0;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 0 15px;
+  border-radius: 0;
+  background-color: var(--rb-verde);
+  box-shadow: 0 0 0 2px var(--rb-saffron);
+  color: var(--rb-saffron);
+  font-family: var(--rb-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  transition: background-color var(--rb-state), color var(--rb-state);
+}
+
+body.rb-page .assistant-launcher:any-link {
+  color: var(--rb-saffron);
+}
+
+body.rb-page .assistant-launcher:is(:hover, :focus-visible) {
+  gap: 12px;
+  background-color: var(--rb-saffron);
+  box-shadow: 0 0 0 2px var(--rb-verde);
+  color: var(--rb-verde);
+  text-decoration: none;
+}
+
+body.rb-page .assistant-launcher-label {
+  max-width: 0;
+  opacity: 0;
+}
+
+body.rb-page .assistant-launcher:is(:hover, :focus-visible) .assistant-launcher-label {
+  max-width: 22em;
+  opacity: 1;
+}
+
+/* ---------- wider screens ---------- */
+@media (width > 640px) {
+  body.rb-page {
+    --rb-gutter: 24px;
+  }
+
+  body.rb-page header nav .nav-brand img {
+    width: 48px;
+  }
+
+  body.rb-page header .experience-talk::after {
+    display: inline;
+  }
+
+  body.rb-page .assistant-launcher {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (width < 900px) {
+  body.rb-page header nav[aria-expanded='false'] .nav-tools {
+    display: none;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper > ul > li {
+    border-bottom: 1px solid var(--rb-mist);
+  }
+
+  body.rb-page header nav .nav-sections .nav-drop > button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 0;
+    font-size: 0.9375rem;
+  }
+
+  body.rb-page header nav .nav-sections ul > li > ul {
+    margin: 0;
+    padding: 0 0 12px;
+  }
+
+  body.rb-page header nav .nav-sections ul > li > ul a:any-link {
+    padding: 8px 0 8px 12px;
+  }
+}
+
+@media (width >= 900px) {
+  body.rb-page {
+    --nav-height: 84px;
+    --experience-height: 52px;
+  }
+
+  body.rb-page header nav {
+    gap: 0 20px;
+  }
+
+  /* between 900 and 1180 the menu labels may wrap; the tools stay on one row */
+  body.rb-page header nav .nav-sections {
+    white-space: normal;
+  }
+
+  body.rb-page header nav .nav-tools .default-content-wrapper {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper > ul {
+    gap: 20px;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+    padding: 0;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+    display: none;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper
+    > ul > li > button[aria-expanded='true'] + ul {
+    top: calc(100% + 22px);
+    left: -20px;
+    width: auto;
+    min-width: 260px;
+    padding: 8px 0;
+    border: 0;
+    border-top: 2px solid var(--rb-brass);
+    background-color: var(--rb-slab);
+    box-shadow: 0 0 0 1px var(--rb-mist);
+  }
+
+  body.rb-page header nav .nav-sections ul > li > ul a:any-link {
+    padding: 10px 20px;
+  }
+
+  body.rb-page header nav .nav-sections ul > li > ul a:hover {
+    background-color: var(--rb-stone);
+  }
+
+  body.rb-page header .experience-inner {
+    display: flex;
+    gap: 28px;
+    padding-block: 0;
+  }
+
+  body.rb-page header .experience-persona-toggle {
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  body.rb-page header .experience-stage {
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+
+  body.rb-page header .why-button.experience-why {
+    padding: 12px 0;
+  }
+
+  body.rb-page header .experience-talk:any-link {
+    padding: 12px 0;
+  }
+
+  body.rb-page footer .footer-columns {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px var(--rb-gutter);
+  }
+
+  body.rb-page footer .footer-brand .default-content-wrapper {
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+
+  body.rb-page footer .footer-social {
+    margin-left: 0;
+  }
+}
+
+@media (width > 1180px) {
+  body.rb-page header nav {
+    gap: 0 32px;
+  }
+
+  body.rb-page header nav .nav-sections {
+    white-space: nowrap;
+  }
+
+  body.rb-page header nav .nav-sections .default-content-wrapper > ul {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.rb-page header *,
+  body.rb-page footer *,
+  body.rb-page .assistant-launcher {
+    transition-duration: 0ms;
+  }
+}

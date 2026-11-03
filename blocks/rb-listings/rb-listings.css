@@ -1,0 +1,233 @@
+/* rb-listings — rebrand R promo bays on brass strips. Page tokens are scoped to the section container. */
+main > .section.rb-listings-container {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-saffron: #f2b33d;
+  --rb-slab: #f5f7f5;
+  --rb-brass: #a88231;
+  --rb-rose: #e8b6a6;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-gutter: 20px;
+  --rb-pad: 32px;
+  --rb-state: 160ms cubic-bezier(0.2, 0, 0, 1);
+
+  margin: 0;
+  padding: var(--rb-pad) 0;
+  background: var(--rb-stone);
+  color: var(--rb-verde);
+}
+
+main > .section.rb-listings-container > .rb-listings-wrapper {
+  max-width: 1320px;
+  padding: 0 var(--rb-gutter);
+}
+
+.rb-listings,
+.rb-listings *,
+.rb-listings *::before,
+.rb-listings *::after {
+  box-sizing: border-box;
+}
+
+.rb-listings {
+  font-family: var(--rb-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.rb-listings :focus-visible {
+  outline: 3px solid var(--rb-verde);
+  outline-offset: 3px;
+}
+
+/* strips = the 2px brass gap between bays */
+.rb-listings-bays {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--rb-brass);
+  background: var(--rb-brass);
+  list-style: none;
+}
+
+.rb-listings-bay {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--rb-slab);
+}
+
+.rb-listings-frame {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--rb-verde);
+}
+
+.rb-listings-frame picture {
+  display: block;
+  height: 100%;
+}
+
+/* re-tone: greyscale art screened over verde (duotone verde → white) */
+.rb-listings .rb-listings-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.045);
+  filter: grayscale(1) contrast(1.08) brightness(1.06);
+  mix-blend-mode: screen;
+}
+
+.rb-listings-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.rb-listings-body > * {
+  margin: 0;
+}
+
+.rb-listings .rb-listings-title {
+  margin: 0;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.rb-listings-body p {
+  text-wrap: pretty;
+}
+
+.rb-listings .rb-listings-strong strong {
+  font-weight: 600;
+}
+
+.rb-listings .rb-listings-when {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rb-listings-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--rb-rose);
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.rb-listings .rb-listings-cta {
+  align-self: flex-start;
+  margin: auto 0 0;
+}
+
+.rb-listings .rb-listings-cta a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 0;
+  background: var(--rb-saffron);
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color var(--rb-state), color var(--rb-state);
+}
+
+.rb-listings .rb-listings-cta a.button::after {
+  content: '→' / '';
+  font-size: 1.05em;
+  font-stretch: 100%;
+  letter-spacing: 0;
+}
+
+.rb-listings .rb-listings-cta a.button:hover,
+.rb-listings .rb-listings-cta a.button:focus-visible {
+  background: var(--rb-verde);
+  color: var(--rb-saffron);
+}
+
+@media (width > 640px) {
+  main > .section.rb-listings-container {
+    --rb-gutter: 24px;
+    --rb-pad: 48px;
+  }
+
+  .rb-listings-bays {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rb-listings-bay.is-lead {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .rb-listings-bay.is-lead .rb-listings-frame {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 380px;
+  }
+
+  .rb-listings-body {
+    padding: 24px;
+  }
+
+  .rb-listings-bay.is-lead .rb-listings-body {
+    padding: 32px;
+  }
+
+  .rb-listings-bay.is-lead .rb-listings-title {
+    font-size: clamp(1.375rem, 2.2vw, 2rem);
+    font-stretch: 112%;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.rb-listings-container {
+    --rb-pad: 64px;
+  }
+}
+
+@media (width > 1180px) {
+  .rb-listings-bays {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr);
+  }
+
+  .rb-listings-bay.is-lead {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-listings * {
+    transition-duration: 0ms;
+  }
+}

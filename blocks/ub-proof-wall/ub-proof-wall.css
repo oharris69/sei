@@ -1,0 +1,201 @@
+/* ub-proof-wall — uplift variant B proof band. Variant tokens scoped to the section container. */
+main > .section.ub-proof-wall-container {
+  --ub-section-pad: 32px;
+  --ub-fs-title: 28px;
+  --ub-field: linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%);
+  --ub-deep-current: #086c8a;
+  --ub-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  margin: 0;
+  padding: var(--ub-section-pad) 0;
+  background: var(--ub-field);
+  color: var(--color-ink);
+}
+
+main > .section.ub-proof-wall-container > .default-content-wrapper > * {
+  margin: 0;
+}
+
+main > .section.ub-proof-wall-container > .default-content-wrapper :is(h1, h2) {
+  color: var(--color-ink);
+  font-size: var(--ub-fs-title);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+main > .section.ub-proof-wall-container > .default-content-wrapper p {
+  max-width: 70ch;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+main > .section.ub-proof-wall-container > .default-content-wrapper + div {
+  margin-top: 32px;
+}
+
+.ub-proof-wall,
+.ub-proof-wall *,
+.ub-proof-wall *::before,
+.ub-proof-wall *::after {
+  box-sizing: border-box;
+}
+
+.ub-proof-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ub-proof-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.ub-proof-card > *,
+.ub-proof-card p {
+  margin: 0;
+}
+
+.ub-proof-logo picture {
+  display: block;
+}
+
+.ub-proof-logo img {
+  display: block;
+  width: auto;
+  max-width: 170px;
+  height: 40px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.ub-proof-card p.ub-proof-name {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.ub-proof-metric .ub-proof-value {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.ub-proof-metric.is-lead .ub-proof-value {
+  color: var(--ub-deep-current);
+  font-size: 44px;
+  line-height: 1;
+}
+
+.ub-proof-metric .ub-proof-label {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.ub-proof-metric:not(.is-lead) {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.ub-proof-story p {
+  color: var(--color-slate);
+  font-size: 15px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.ub-proof-story p + p {
+  margin-top: 10px;
+}
+
+.ub-proof-card .ub-proof-action {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.ub-proof-card a.ub-proof-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid currentcolor;
+  color: var(--color-ink);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.55;
+  text-decoration: none;
+}
+
+.ub-proof-card a.ub-proof-link::after {
+  content: '';
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 0.16s var(--ub-ease);
+}
+
+.ub-proof-card a.ub-proof-link:hover {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.ub-proof-card a.ub-proof-link:hover::after {
+  transform: translateX(3px);
+}
+
+.ub-proof-card a.ub-proof-link:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ub-proof-card a.ub-proof-link::after {
+    transition: none;
+  }
+}
+
+@media (width > 640px) {
+  main > .section.ub-proof-wall-container {
+    --ub-section-pad: 48px;
+    --ub-fs-title: 30px;
+  }
+
+  .ub-proof-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ub-proof-card a.ub-proof-link:any-link {
+    min-height: 0;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ub-proof-wall-container {
+    --ub-section-pad: 64px;
+    --ub-fs-title: 36px;
+  }
+
+  .ub-proof-list {
+    grid-template-columns: repeat(var(--ub-cards, 4), minmax(0, 1fr));
+  }
+}

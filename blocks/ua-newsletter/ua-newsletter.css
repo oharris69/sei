@@ -1,0 +1,193 @@
+/* ua-newsletter — uplift variant A sign-up band. Variant tokens scoped to the container. */
+main > .section.ua-newsletter-container {
+  --ua-band: linear-gradient(225deg, #00c5fa 25%, #086c8a 100%);
+  --ua-deep-current: #086c8a;
+  --ua-fs-title: 28px;
+  --ua-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  margin: 0;
+  padding: 40px 0;
+  background: var(--ua-band);
+  color: var(--color-white);
+}
+
+.ua-newsletter,
+.ua-newsletter *,
+.ua-newsletter *::before,
+.ua-newsletter *::after {
+  box-sizing: border-box;
+}
+
+.ua-newsletter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.ua-newsletter-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 26px 22px;
+  border-radius: var(--radius-card);
+  background: var(--ua-deep-current);
+}
+
+.ua-newsletter-copy > * {
+  margin: 0;
+}
+
+.ua-newsletter-copy :is(h1, h2, h3) {
+  color: var(--color-white);
+  font-size: var(--ua-fs-title);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ua-newsletter-copy p {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.ua-newsletter-form {
+  margin: 0;
+  padding: 26px 22px;
+  border-radius: var(--radius-card);
+  background: var(--color-ink);
+}
+
+.ua-newsletter-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ua-newsletter-legend {
+  margin-bottom: 18px;
+  padding: 0;
+  color: var(--color-cyan);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.ua-newsletter-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ua-newsletter-form input {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--color-white);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-ink);
+  font: 400 16px var(--body-font-family);
+}
+
+.ua-newsletter-form input::placeholder {
+  color: var(--color-slate);
+}
+
+.ua-newsletter-form :focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+.ua-newsletter-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 14px;
+  padding: 12px 22px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-ink);
+  font: 900 15px/1.2 var(--body-font-family);
+  cursor: pointer;
+  transition: background-color 0.16s var(--ua-ease);
+}
+
+.ua-newsletter-submit::after {
+  content: '';
+  flex: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 0.16s var(--ua-ease);
+}
+
+.ua-newsletter-submit:hover {
+  background: var(--color-cyan);
+}
+
+.ua-newsletter-submit:hover::after {
+  transform: translateX(3px);
+}
+
+.ua-newsletter-form p.ua-newsletter-fine {
+  margin: 14px 0 0;
+  color: rgb(255 255 255 / 82%);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.ua-newsletter-status {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ua-newsletter-status:not(:empty) {
+  margin-top: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ua-newsletter-submit,
+  .ua-newsletter-submit::after {
+    transition: none;
+  }
+}
+
+@media (width > 640px) {
+  main > .section.ua-newsletter-container {
+    --ua-fs-title: 30px;
+
+    padding: 72px 0;
+  }
+
+  .ua-newsletter-copy {
+    padding: 40px;
+  }
+
+  .ua-newsletter-form {
+    padding: 32px;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ua-newsletter-container {
+    --ua-fs-title: 36px;
+  }
+
+  .ua-newsletter {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}

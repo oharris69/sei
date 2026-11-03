@@ -1,0 +1,237 @@
+/* ua-promos — uplift variant A promo row. Variant tokens are scoped to the section container. */
+main > .section.ua-promos-container {
+  --ua-section-pad: 32px;
+  --ua-fs-title: 28px;
+  --ua-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ua-scrim-wide: linear-gradient(180deg, rgb(19 21 23 / 74%) 0%, rgb(19 21 23 / 56%) 100%);
+  --ua-scrim: var(--ua-scrim-wide);
+
+  margin: 0;
+  padding: 0 0 var(--ua-section-pad);
+}
+
+.ua-promos,
+.ua-promos *,
+.ua-promos *::before,
+.ua-promos *::after {
+  box-sizing: border-box;
+}
+
+.ua-promos-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ua-promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-gray-200);
+  color: var(--color-ink);
+  isolation: isolate;
+}
+
+.ua-promo.is-inverse {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.ua-promo-media,
+.ua-promo-media picture {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.ua-promo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ua-promo.is-inverse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ua-scrim);
+}
+
+.ua-promo-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.ua-promo-body :is(h2, h3) {
+  margin: 0;
+  color: inherit;
+  font-size: var(--ua-fs-title);
+  font-weight: 950;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ua-promo-body p {
+  margin: 12px 0 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.ua-promo.is-wide .ua-promo-dek {
+  max-width: 30ch;
+  font-size: 20px;
+}
+
+.ua-promo-body p.ua-promo-when {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ua-promo-when strong {
+  font-weight: inherit;
+}
+
+.ua-promo-action {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.ua-promo-action p,
+.ua-promo-action p.button-wrapper {
+  margin: 0;
+}
+
+.ua-promo-action a.button:any-link {
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-width: 1.5px;
+  border-radius: 2px;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.ua-promo-action a.ua-promo-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid currentcolor;
+  color: inherit;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.ua-promo-action a:any-link::after {
+  content: '';
+  flex: none;
+  width: 16px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+  transition: transform 0.16s var(--ua-ease);
+}
+
+.ua-promo-action a.ua-promo-link:any-link::after {
+  width: 14px;
+  height: 14px;
+}
+
+.ua-promo-action a:hover::after {
+  transform: translateX(3px);
+}
+
+.ua-promo-action a.ua-promo-link:hover {
+  color: inherit;
+}
+
+.ua-promo a:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.ua-promo.is-inverse a:focus-visible {
+  outline-color: var(--color-white);
+  box-shadow: 0 0 0 6px var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ua-promo-action a:any-link::after {
+    transition: none;
+  }
+}
+
+@media (width > 640px) {
+  main > .section.ua-promos-container {
+    --ua-section-pad: 48px;
+    --ua-fs-title: 30px;
+    --ua-scrim-wide: linear-gradient(
+      100deg,
+      rgb(19 21 23 / 74%) 0%,
+      rgb(19 21 23 / 50%) 48%,
+      rgb(19 21 23 / 0%) 78%
+    );
+    --ua-scrim: linear-gradient(
+      180deg,
+      rgb(19 21 23 / 50%) 0%,
+      rgb(19 21 23 / 15%) 50%,
+      rgb(19 21 23 / 55%) 100%
+    );
+  }
+
+  .ua-promos-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ua-promo {
+    min-height: 420px;
+    padding: 32px;
+  }
+
+  .ua-promo.is-wide {
+    grid-column: 1 / -1;
+  }
+
+  .ua-promo.is-wide.is-inverse::before {
+    background: var(--ua-scrim-wide);
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ua-promos-container {
+    --ua-section-pad: 64px;
+    --ua-fs-title: 36px;
+  }
+
+  .ua-promos-list {
+    grid-template-columns: 6fr 3fr 3fr;
+  }
+
+  .ua-promos-list:has(> li:nth-child(2):last-child) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .ua-promos-list:has(> li:nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ua-promo.is-wide {
+    grid-column: auto;
+  }
+}

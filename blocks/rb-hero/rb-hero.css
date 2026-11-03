@@ -1,0 +1,166 @@
+/* rb-hero — rebrand R "between the lines" hero. Page tokens are scoped to the section container. */
+
+/* Self-hosted OFL 1.1 faces (latin subset, variable). Declared once for the rebrand page. */
+@font-face {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('/fonts/archivo-latin-variable.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-variable.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-italic-variable.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+main > .section.rb-hero-container {
+  --rb-stone: #e6ebe7;
+  --rb-verde: #0f2b26;
+  --rb-brass: #a88231;
+  --rb-display: 'Archivo', 'Archivo Fallback', arial, sans-serif;
+  --rb-serif: 'Source Serif 4', georgia, 'Times New Roman', serif;
+  --rb-max: 1320px;
+  --rb-gutter: 20px;
+  --rb-edge: max(var(--rb-gutter), calc((100vw - var(--rb-max)) / 2 + var(--rb-gutter)));
+  --rb-fs-display: clamp(2.75rem, 6.4vw, 6rem);
+  --rb-fs-lede: clamp(1.25rem, 1.6vw, 1.5rem);
+
+  margin: 0;
+  padding: clamp(40px, 6vw, 88px) 0 56px;
+  background: var(--rb-stone);
+  color: var(--rb-verde);
+}
+
+main > .section.rb-hero-container > .rb-hero-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.rb-hero,
+.rb-hero *,
+.rb-hero *::before,
+.rb-hero *::after {
+  box-sizing: border-box;
+}
+
+.rb-hero .rb-hero-h1 {
+  margin: 0;
+  color: var(--rb-verde);
+  font-family: var(--rb-display);
+  font-size: clamp(2.5rem, 11vw, 3.25rem);
+  font-weight: 800;
+  font-stretch: 108%;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-wrap: initial;
+}
+
+.rb-hero-l1 {
+  display: block;
+  max-width: var(--rb-max);
+  margin-inline: auto;
+  padding-inline: var(--rb-gutter);
+  padding-bottom: 0.14em;
+}
+
+.rb-hero-band {
+  display: flex;
+  flex-direction: column;
+  border-block: 3px solid var(--rb-brass);
+  padding-left: var(--rb-edge);
+}
+
+.rb-hero-l2 {
+  flex: none;
+  padding: 0.1em var(--rb-gutter) 0.16em 0;
+  text-wrap: balance;
+}
+
+.rb-hero-agg {
+  flex: none;
+  min-height: 56px;
+  border-top: 3px solid var(--rb-brass);
+  background: url('terrazzo-tile.svg') -40px -20px / 200px 200px;
+}
+
+.rb-hero-foot {
+  margin-top: 24px;
+  padding-inline: var(--rb-gutter);
+}
+
+.rb-hero .rb-hero-lede {
+  max-width: 30ch;
+  margin: 0;
+  font-family: var(--rb-serif);
+  font-size: var(--rb-fs-lede);
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-wrap: pretty;
+}
+
+@media (width > 640px) {
+  main > .section.rb-hero-container {
+    --rb-gutter: 24px;
+  }
+
+  .rb-hero .rb-hero-h1 {
+    font-size: var(--rb-fs-display);
+    font-stretch: 112%;
+  }
+
+  .rb-hero-band {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* text-wrap is a shorthand that also sets the wrap mode, so nowrap must follow it */
+  .rb-hero-l2 {
+    padding: 0.1em 0.42em 0.16em 0;
+    text-wrap: initial;
+    white-space: nowrap;
+  }
+
+  .rb-hero-agg {
+    flex: 1;
+    min-width: 72px;
+    min-height: 0;
+    border-top: 0;
+    background-position: 0 0;
+  }
+
+  .rb-hero-foot {
+    margin-top: 32px;
+  }
+}
+
+@media (width > 900px) {
+  .rb-hero-l2 {
+    width: 10.16em;
+  }
+
+  /* the lede's left edge sits under the aggregate bay: band offset + the 10.16em text column */
+  .rb-hero-foot {
+    padding-left: calc(var(--rb-edge) + 10.16em);
+    font-size: var(--rb-fs-display);
+    line-height: 1;
+  }
+}

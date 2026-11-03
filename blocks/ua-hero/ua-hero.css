@@ -1,0 +1,120 @@
+/* ua-hero — uplift variant A hero. Variant tokens are scoped to the section container. */
+main > .section.ua-hero-container {
+  --ua-edge: max(
+    var(--content-padding),
+    calc((100vw - var(--content-max-width)) / 2 + var(--content-padding))
+  );
+  --ua-fs-display: 44px;
+  --ua-field: linear-gradient(225deg, #a6ce39 0%, #00c0f3 100%);
+  --ua-hairline: var(--color-cyan);
+
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 40px 0 32px;
+  background: var(--color-white);
+  isolation: isolate;
+}
+
+.ua-hero,
+.ua-hero *,
+.ua-hero *::before,
+.ua-hero *::after {
+  box-sizing: border-box;
+}
+
+.ua-hero-headline {
+  position: relative;
+}
+
+.ua-hero-field {
+  position: absolute;
+  z-index: -1;
+  top: -40px;
+  right: calc(-1 * var(--ua-edge));
+  bottom: -20px;
+  width: 60vw;
+  background: var(--ua-field);
+}
+
+.ua-hero-headline :is(h1, h2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--ua-fs-display);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  text-wrap: balance;
+}
+
+.ua-hero-bar {
+  display: block;
+  margin-right: calc(-1 * var(--ua-edge));
+  margin-left: calc(-1 * var(--ua-edge));
+  padding: 14px 28px 16px var(--ua-edge);
+  border-block: 2px solid var(--ua-hairline);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.ua-hero-bar.is-ink {
+  margin-top: 6px;
+  padding-right: 24px;
+  background: var(--color-ink);
+  color: var(--color-cyan);
+}
+
+.ua-hero-lede p {
+  margin: 28px 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.16px;
+}
+
+.ua-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ua-hero-actions p.button-wrapper {
+  margin: 0;
+}
+
+@media (width > 640px) {
+  main > .section.ua-hero-container {
+    --ua-fs-display: 56px;
+
+    padding: 72px 0 56px;
+  }
+
+  .ua-hero-field {
+    top: -72px;
+    bottom: -32px;
+    width: 52vw;
+  }
+
+  .ua-hero-bar {
+    padding: 22px 72px 26px var(--ua-edge);
+  }
+
+  .ua-hero-bar.is-ink {
+    padding-right: 64px;
+  }
+
+  .ua-hero-lede p {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+}
+
+@media (width > 900px) {
+  main > .section.ua-hero-container {
+    --ua-fs-display: 80px;
+  }
+}
