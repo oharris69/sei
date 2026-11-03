@@ -168,6 +168,7 @@ main > .section.hero-container > .readiness-wrapper {
 
   main > .section.hero-container.has-readiness .hero-content h1 {
     font-size: clamp(40px, 4vw, 58px);
+    line-height: 1.12;
     text-wrap: balance;
   }
 

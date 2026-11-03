@@ -45,8 +45,8 @@
   --border-color: var(--color-gray-200);
 
   /* fonts */
-  --body-font-family: 'DM Sans', dm-sans-fallback, sans-serif;
-  --heading-font-family: 'DM Sans', dm-sans-fallback, sans-serif;
+  --body-font-family: circularxx, circularxx-fallback, sans-serif;
+  --heading-font-family: circularxx, circularxx-heading-fallback, sans-serif;
   --heading-font-weight: 1000;
 
   /* body sizes */
@@ -76,11 +76,23 @@
   --experience-height: 48px;
 }
 
-/* fallback fonts */
+/* fallback fonts: Arial sized to CircularXX's metrics, so text doesn't jump when the brand font arrives */
 @font-face {
-  font-family: dm-sans-fallback;
-  size-adjust: 98%;
+  font-family: circularxx-fallback;
+  size-adjust: 114.7%;
+  ascent-override: 83.3%;
+  descent-override: 21.4%;
+  line-gap-override: 0%;
   src: local('Arial');
+}
+
+@font-face {
+  font-family: circularxx-heading-fallback;
+  size-adjust: 123%;
+  ascent-override: 77.6%;
+  descent-override: 19.9%;
+  line-gap-override: 0%;
+  src: local('Arial Bold'), local('Arial');
 }
 
 @media (width >= 900px) {

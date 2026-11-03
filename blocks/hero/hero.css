@@ -77,9 +77,11 @@ main > .section.hero-container > .hero-wrapper {
     padding-top: 172px;
   }
 
+  /* Figma: CircularXX 70/85, -0.4px */
   .hero:not(.home, .short) :is(h1, h2) {
-    font-size: 66px;
-    line-height: 1.1;
+    font-size: 70px;
+    line-height: 85px;
+    letter-spacing: -0.4px;
   }
 
   .hero .hero-content p {
@@ -197,9 +199,11 @@ main > .section.hero-container > .hero-wrapper {
     padding: 160px 0 240px;
   }
 
+  /* Figma: CircularXX 80px, -0.4px */
   .hero.home h1 {
-    font-size: var(--heading-font-size-xxl);
-    line-height: 1.17;
+    font-size: 80px;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
   }
 
   .hero.home .hero-line {

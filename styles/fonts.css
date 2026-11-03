@@ -1,20 +1,117 @@
 /* stylelint-disable max-line-length */
 
-/* DM Sans (OFL) stands in for the licensed CircularXX brand face */
+/*
+ * CircularXX (licensed, Lineto) — SEI's brand face.
+ * "Sub" files cover Latin and the punctuation the site uses (~47 KB a weight); the fuller "Web"
+ * files load only for characters outside that range (Latin Extended, arrows, maths).
+ * Weights: Regular 400, Medium 500, Black 900, ExtraBlack 950; in-between weights map to the
+ * nearest cut so nothing is synthesized.
+ */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: circularxx;
   font-style: normal;
-  font-weight: 100 1000;
+  font-weight: 100 450;
   font-display: swap;
-  src: url('../fonts/dmsans-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/CircularXXSub-Regular.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  font-style: italic;
-  font-weight: 100 1000;
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 100 450;
   font-display: swap;
-  src: url('../fonts/dmsans-latin-italic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/CircularXXWeb-Regular.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 451 750;
+  font-display: swap;
+  src: url('../fonts/CircularXXSub-Medium.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 451 750;
+  font-display: swap;
+  src: url('../fonts/CircularXXWeb-Medium.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 751 925;
+  font-display: swap;
+  src: url('../fonts/CircularXXSub-Black.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 751 925;
+  font-display: swap;
+  src: url('../fonts/CircularXXWeb-Black.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 926 1000;
+  font-display: swap;
+  src: url('../fonts/CircularXXSub-ExtraBlack.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: normal;
+  font-weight: 926 1000;
+  font-display: swap;
+  src: url('../fonts/CircularXXWeb-ExtraBlack.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: italic;
+  font-weight: 100 450;
+  font-display: swap;
+  src: url('../fonts/CircularXXSub-Italic.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: italic;
+  font-weight: 100 450;
+  font-display: swap;
+  src: url('../fonts/CircularXXWeb-Italic.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: italic;
+  font-weight: 451 1000;
+  font-display: swap;
+  src: url('../fonts/CircularXXSub-MediumItalic.woff2') format('woff2');
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2007-2008, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: circularxx;
+  font-style: italic;
+  font-weight: 451 1000;
+  font-display: swap;
+  src: url('../fonts/CircularXXWeb-MediumItalic.woff2') format('woff2');
+  unicode-range: U+0100-0151, U+0154-0177, U+0179-017E, U+018F, U+0192, U+01B5-01B6, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02C7, U+02C9, U+02D8-02DB, U+02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1EF2-1EF3, U+200B, U+2020-2021, U+2030, U+2042, U+2044, U+2051, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2126, U+2160-2169, U+216C-216F, U+2190-2193, U+2196-2199, U+21A9, U+21B0-21B5, U+21C6, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+24C5, U+25A0-25A1, U+25AF, U+25B2-25B3, U+25CA-25CB, U+25CF, U+262E, U+2713, U+2715, U+2780-2788, U+FB00, U+FB03-FB04;
 }
