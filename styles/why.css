@@ -1,0 +1,150 @@
+/* "Why am I seeing this?" side panel (scripts/why.js) */
+dialog.why-panel {
+  box-sizing: border-box;
+  width: min(420px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 0 0 auto;
+  padding: 0;
+  border: 0;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  box-shadow: -12px 0 40px rgb(16 24 40 / 18%);
+  font-family: var(--body-font-family);
+}
+
+dialog.why-panel::backdrop {
+  background-color: rgb(19 21 23 / 40%);
+}
+
+.why-panel .why-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.why-panel .why-title {
+  margin: 0;
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.2;
+}
+
+.why-panel .why-close {
+  flex: 0 0 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-gray-100);
+  cursor: pointer;
+}
+
+.why-panel .why-close::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-ink);
+  mask: url('../icons/close.svg') center / 16px no-repeat;
+}
+
+.why-panel .why-body {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+}
+
+.why-panel .why-section {
+  display: grid;
+  gap: 8px;
+}
+
+.why-panel .why-heading {
+  margin: 0;
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.why-panel p {
+  margin: 0;
+}
+
+.why-panel .why-value {
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+}
+
+.why-panel .why-reason {
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.why-panel .why-stages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-panel .why-stage {
+  padding: 4px 10px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 14px;
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+}
+
+.why-panel .why-stage.done {
+  border-color: var(--color-green);
+  background-color: #f1f8e3;
+  color: var(--color-ink);
+}
+
+.why-panel .why-stage.current {
+  border-color: var(--color-cyan);
+  background-color: var(--color-cyan);
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.why-panel .why-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+}
+
+.why-panel .why-reset {
+  justify-self: start;
+  margin: 8px 0 0;
+  padding: 8px 14px;
+  border: 1px solid var(--color-gray-400);
+  border-radius: 4px;
+  background: none;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--body-font-size-s);
+  cursor: pointer;
+}
+
+.why-panel .why-reset:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.why-panel :focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}

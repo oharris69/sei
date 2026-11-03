@@ -9,7 +9,8 @@ const THEMES = ['inverse'];
  *  - text cells → card body; for `leadership` the first text cell is the person (name, role)
  *    and the second is the topic (title, summary, optional link)
  *  - optional single-word cell `inverse` → white text on dark art
- * Variants: `promo`, `leadership`
+ * Variants: `promo`, `leadership`, `promo expand` (desktop accordion: the active tile widens
+ * and shows its copy, the others narrow to their title)
  * @param {Element} block The cards block element
  */
 export default function decorate(block) {
@@ -54,4 +55,29 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(ul);
+  // eslint-disable-next-line no-use-before-define
+  if (block.classList.contains('expand')) expandTiles(ul);
+}
+
+/**
+ * Accordion behaviour for `promo expand`: hovering, focusing or tapping a tile makes it the
+ * active (wide) one. Copy in narrow tiles stays in the tab order, so focusing it expands the tile.
+ * @param {Element} ul The card list
+ */
+function expandTiles(ul) {
+  const tiles = [...ul.children];
+  const activate = (tile) => {
+    tiles.forEach((t) => t.classList.toggle('is-active', t === tile));
+  };
+  tiles.forEach((tile) => {
+    tile.addEventListener('mouseenter', () => activate(tile));
+    tile.addEventListener('focusin', () => activate(tile));
+    tile.addEventListener('click', (e) => {
+      if (!tile.classList.contains('is-active')) {
+        e.preventDefault();
+        activate(tile);
+      }
+    });
+  });
+  activate(tiles[0]);
 }

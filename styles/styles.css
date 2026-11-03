@@ -607,3 +607,28 @@ main code {
   line-height: 17px;
   letter-spacing: 0.275px;
 }
+
+/* "Why am I seeing this?" trigger (panel styles load with scripts/why.js) */
+.why-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--body-font-size-xs);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.why-button::before {
+  content: '';
+  flex: 0 0 14px;
+  height: 14px;
+  background-color: currentcolor;
+  mask: url('../icons/info.svg') center / contain no-repeat;
+}

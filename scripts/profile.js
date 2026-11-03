@@ -48,6 +48,7 @@ export const JOURNEYS = {
 export const PERSONAS = {
   advisor: {
     label: 'Financial advisor',
+    audience: 'financial advisors',
     detail: 'Considering independence from a broker-dealer',
     journey: 'breakaway',
     specialist: { name: 'Eric Dunn', modal: '/modals/schedule-eric-dunn' },
@@ -55,6 +56,7 @@ export const PERSONAS = {
   },
   ria: {
     label: 'Enterprise RIA',
+    audience: 'enterprise RIAs',
     detail: 'Scaling an RIA with SEI ETFs and portfolios',
     journey: 'etf',
     specialist: { name: 'Clayton Johnson', modal: '/modals/schedule-clayton-johnson' },
@@ -62,6 +64,7 @@ export const PERSONAS = {
   },
   'asset-manager': {
     label: 'Asset manager',
+    audience: 'asset managers',
     detail: 'Looking for one fund administration partner',
     journey: 'administration',
     specialist: { name: 'Clayton Johnson', modal: '/modals/schedule-clayton-johnson' },
@@ -70,6 +73,38 @@ export const PERSONAS = {
 };
 
 const DEFAULT_SPECIALIST = PERSONAS.advisor.specialist;
+
+/** SEI's lifecycle stages, as labelled across the journeys in the Figma file. */
+export const STAGES = [
+  { id: 'discover', label: 'Discover' },
+  { id: 'engage', label: 'Engage' },
+  { id: 'try', label: 'Try' },
+  { id: 'buy', label: 'Buy' },
+  { id: 'expand', label: 'Expand' },
+];
+
+const PAGE_STAGES = {
+  '/': 'discover',
+  '/index-stardust': 'discover',
+  '/start/linkedin': 'discover',
+  '/start/ai-search': 'discover',
+  '/bd-breakaway': 'engage',
+  '/enterprise-ria': 'engage',
+  '/asset-managers': 'engage',
+  '/pathfinder': 'try',
+  '/etfs': 'try',
+  '/pathfinder-specialist': 'buy',
+  '/portfolio-evaluator': 'buy',
+  '/partner-match': 'expand',
+  '/portfolio-evaluator-results': 'expand',
+};
+
+/** Campaigns (utm_campaign) and the persona their audience targets. */
+const CAMPAIGNS = {
+  'bd-breakaway': 'advisor',
+  'enterprise-ria': 'ria',
+  ims: 'asset-manager',
+};
 
 const local = window.location.pathname.startsWith('/content/');
 
@@ -87,7 +122,15 @@ export function pageHref(path) {
 
 function blankProfile() {
   return {
-    persona: null, personaSource: null, steps: {}, booking: null, contact: {}, views: {},
+    persona: null,
+    personaSource: null,
+    steps: {},
+    booking: null,
+    contact: {},
+    views: {},
+    campaign: null,
+    firstCampaign: null,
+    answers: {},
   };
 }
 
@@ -110,14 +153,18 @@ export function track(event, data = {}) {
   window.adobeDataLayer = window.adobeDataLayer || [];
   window.adobeDataLayer.push({
     event,
-    page: { path: currentPath() },
+    page: { path: currentPath(), stage: PAGE_STAGES[currentPath()] || null },
     visitor: {
       persona: profile.persona,
       personaSource: profile.personaSource,
       journey: persona?.journey || null,
       // eslint-disable-next-line no-use-before-define
       stage: journeyStatus(profile)?.current?.id || null,
+      // eslint-disable-next-line no-use-before-define
+      lifecycleStage: lifecycleStage(profile)?.id || null,
       booked: Boolean(profile.booking),
+      campaign: profile.campaign
+        ? { source: profile.campaign.source, campaign: profile.campaign.campaign } : null,
     },
     ...data,
   });
@@ -150,6 +197,49 @@ export function journeyStatus(profile = getProfile()) {
   };
 }
 
+/**
+ * The furthest lifecycle stage the visitor has reached: the stages of the pages they have
+ * seen, and at least "Buy" once a call is booked.
+ */
+export function lifecycleStage(profile = getProfile()) {
+  const reached = Object.keys(profile.views || {})
+    .map((path) => STAGES.findIndex((stage) => stage.id === PAGE_STAGES[path]))
+    .concat(profile.booking ? [3] : []);
+  const index = Math.max(-1, ...reached);
+  return index < 0 ? null : { ...STAGES[index], index };
+}
+
+/** The lifecycle stage of a page. */
+export function pageStage(path = currentPath()) {
+  return STAGES.find((stage) => stage.id === PAGE_STAGES[path]) || null;
+}
+
+/**
+ * Reads campaign parameters (utm_*) from the landing URL. A campaign for a known audience
+ * sets the persona, unless the visitor picked one themselves.
+ */
+function readCampaign(profile) {
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('utm_source');
+  if (!source) return null;
+  const campaign = {
+    source,
+    medium: params.get('utm_medium'),
+    campaign: params.get('utm_campaign'),
+    content: params.get('utm_content'),
+    landing: currentPath(),
+    at: new Date().toISOString(),
+  };
+  profile.campaign = campaign;
+  profile.firstCampaign = profile.firstCampaign || campaign;
+  const persona = CAMPAIGNS[campaign.campaign];
+  if (persona && profile.personaSource !== 'selected') {
+    profile.persona = persona;
+    profile.personaSource = 'campaign';
+  }
+  return campaign;
+}
+
 /** The SEI specialist a visitor should book with. */
 export function specialistFor(profile = getProfile()) {
   return PERSONAS[profile.persona]?.specialist || DEFAULT_SPECIALIST;
@@ -170,6 +260,14 @@ export function setPersona(id, source = 'selected') {
   return profile;
 }
 
+/** Stores what the visitor told an interactive tool, e.g. the readiness check. */
+export function saveAnswers(key, value) {
+  const profile = getProfile();
+  profile.answers = { ...profile.answers, [key]: { ...value, at: new Date().toISOString() } };
+  save(profile, 'answers');
+  return profile;
+}
+
 function markStep(profile, journeyId, stepId) {
   const done = new Set(profile.steps[journeyId] || []);
   done.add(stepId);
@@ -183,6 +281,7 @@ function markStep(profile, journeyId, stepId) {
 export function recordView(path = currentPath()) {
   const profile = getProfile();
   profile.views[path] = (profile.views[path] || 0) + 1;
+  const campaign = readCampaign(profile);
   Object.entries(JOURNEYS).forEach(([journeyId, journey]) => {
     const step = journey.steps.find((s) => s.href === path);
     if (!step) return;
@@ -196,6 +295,7 @@ export function recordView(path = currentPath()) {
     }
   });
   save(profile, 'view');
+  if (campaign) track('campaign-landing', { campaign });
   track('page-view');
   return profile;
 }
@@ -218,6 +318,31 @@ function setBooking(booking, contact = {}) {
   track('booking-confirmed', {
     booking: { advisor: booking.advisor, time: booking.label, channel: booking.channel || 'scheduler' },
   });
+  return profile;
+}
+
+/**
+ * Presenter shortcut: marks the visitor's journey as visited up to a lifecycle stage, as if they
+ * had walked it (pages viewed and journey steps done; booking-only steps stay open).
+ * @param {string} stageId One of STAGES
+ */
+export function simulateStage(stageId) {
+  const profile = getProfile();
+  const persona = PERSONAS[profile.persona];
+  if (!persona) return profile;
+  const target = STAGES.findIndex((s) => s.id === stageId);
+  const journey = JOURNEYS[persona.journey];
+  profile.views = {};
+  profile.steps[persona.journey] = [];
+  journey.steps.forEach((step) => {
+    const index = STAGES.findIndex((s) => s.id === PAGE_STAGES[step.href]);
+    if (step.href && index > -1 && index <= target) {
+      profile.views[step.href] = 1;
+      if (step.completeOn !== 'booking') markStep(profile, persona.journey, step.id);
+    }
+  });
+  save(profile, 'simulate');
+  track('presenter-stage', { presenter: { stage: stageId } });
   return profile;
 }
 

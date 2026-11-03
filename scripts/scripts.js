@@ -318,6 +318,16 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   import('./consent-check.js');
+  // presenter menu for live demos: ?presenter turns it on, Alt+Shift+P toggles it
+  const presenter = () => import('./presenter.js').then(({ default: show }) => show(true));
+  let presenterOn = new URLSearchParams(window.location.search).has('presenter');
+  try {
+    presenterOn = presenterOn || localStorage.getItem('sei-presenter') === 'on';
+  } catch { /* storage unavailable */ }
+  if (presenterOn) import('./presenter.js').then(({ default: show }) => show());
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.shiftKey && e.code === 'KeyP') presenter();
+  });
   // load anything that can be postponed to the latest here
 }
 

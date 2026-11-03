@@ -1,0 +1,147 @@
+/* presenter menu (scripts/presenter.js) — demo only */
+.presenter {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+.presenter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  margin: 0;
+  padding: 0 16px 0 14px;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 20px;
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgb(16 24 40 / 25%);
+  cursor: pointer;
+}
+
+.presenter-toggle-icon {
+  width: 16px;
+  height: 12px;
+  background:
+    linear-gradient(currentcolor, currentcolor) top / 100% 2px no-repeat,
+    linear-gradient(currentcolor, currentcolor) center / 100% 2px no-repeat,
+    linear-gradient(currentcolor, currentcolor) bottom / 100% 2px no-repeat;
+}
+
+.presenter-toggle[aria-expanded='true'] {
+  border-color: var(--color-cyan);
+}
+
+.presenter-panel {
+  box-sizing: border-box;
+  display: grid;
+  gap: 16px;
+  width: min(300px, calc(100vw - 48px));
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  box-shadow: 0 20px 50px rgb(16 24 40 / 28%);
+}
+
+.presenter-panel[hidden] {
+  display: none;
+}
+
+.presenter-panel p {
+  margin: 0;
+}
+
+.presenter-status {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-gray-200);
+  font-weight: 700;
+}
+
+.presenter-group {
+  display: grid;
+  gap: 8px;
+}
+
+.presenter-label {
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.presenter-journeys {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presenter-journey:any-link {
+  display: grid;
+  padding: 6px 0;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.presenter-journey:hover {
+  color: var(--color-red);
+}
+
+.presenter-note {
+  color: var(--color-gray-500);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+}
+
+.presenter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.presenter-chip {
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 14px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.presenter-chip:hover:not(:disabled) {
+  border-color: var(--color-ink);
+}
+
+.presenter-chip[aria-pressed='true'] {
+  border-color: var(--color-cyan);
+  background-color: var(--color-cyan);
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.presenter-chip:disabled {
+  color: var(--color-gray-400);
+  cursor: default;
+}
+
+.presenter :focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}

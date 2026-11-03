@@ -1,0 +1,102 @@
+/* adaptive: one version of the content, chosen for the visitor */
+.adaptive .adaptive-panel {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.adaptive .adaptive-media {
+  position: relative;
+  min-height: 220px;
+}
+
+.adaptive .adaptive-media picture,
+.adaptive .adaptive-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adaptive .adaptive-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px 24px;
+}
+
+.adaptive .adaptive-body > * {
+  margin: 0;
+}
+
+.adaptive .adaptive-body .eyebrow {
+  color: var(--color-green);
+}
+
+.adaptive .adaptive-body :is(h2, h3) {
+  color: inherit;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.adaptive .adaptive-body p:not(.eyebrow, .button-wrapper) {
+  max-width: 56ch;
+  color: rgb(255 255 255 / 80%);
+  font-size: var(--body-font-size-l);
+}
+
+.adaptive .adaptive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.adaptive .adaptive-actions .button-wrapper {
+  margin: 0;
+}
+
+/* outlined buttons read as white outlines on the dark panel */
+.adaptive .adaptive-body a.button.accent {
+  border: 2px solid var(--color-white);
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+}
+
+.adaptive .adaptive-body a.button.accent:hover,
+.adaptive .adaptive-body a.button.accent:focus-visible {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-ink);
+}
+
+.adaptive .adaptive-body .why-button {
+  margin-top: 8px;
+  color: rgb(255 255 255 / 70%);
+}
+
+.adaptive .adaptive-body .why-button:hover {
+  color: var(--color-white);
+}
+
+@media (width >= 900px) {
+  .adaptive.has-media .adaptive-panel {
+    grid-template-columns: 5fr 6fr;
+  }
+
+  .adaptive .adaptive-media {
+    min-height: 400px;
+  }
+
+  .adaptive .adaptive-body {
+    justify-content: center;
+    padding: 56px;
+  }
+}

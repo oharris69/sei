@@ -2,6 +2,7 @@ import {
   PERSONAS, getProfile, journeyStatus, onProfileChange, pageHref, currentPath,
   resetProfile, setPersona, specialistFor, calendarHref, track,
 } from '../../scripts/profile.js';
+import { whyButton } from '../../scripts/why.js';
 
 /*
  * Experience bar under the main nav: "I'm a…" persona chip, the visitor's journey progress
@@ -111,7 +112,9 @@ function renderAction(actionEl, profile) {
     return;
   }
   const specialist = specialistFor(profile);
-  const talk = el('a', 'experience-talk', 'Talk to an advisor');
+  const talk = el('a', 'experience-talk');
+  talk.append(el('span', 'experience-talk-label', 'Talk to an advisor'));
+  talk.setAttribute('aria-label', `Talk to an advisor (${specialist.name})`);
   talk.href = specialist.modal;
   talk.setAttribute('aria-haspopup', 'dialog');
   talk.addEventListener('click', () => track('talk-to-advisor-click', { specialist: specialist.name }));
@@ -182,7 +185,11 @@ export default function buildExperience() {
   onProfileChange((profile) => render(profile));
   render();
 
-  inner.append(persona, progress, actionEl);
+  const why = whyButton('header', 'Why?');
+  why.classList.add('experience-why');
+  why.setAttribute('aria-label', 'Why am I seeing this?');
+
+  inner.append(persona, progress, why, actionEl);
   bar.append(inner);
   return bar;
 }

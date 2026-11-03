@@ -577,6 +577,16 @@ header .experience-sr {
   white-space: nowrap;
 }
 
+header .experience-why {
+  flex: 0 0 auto;
+  color: var(--experience-muted);
+  white-space: nowrap;
+}
+
+header .experience-why:hover {
+  color: var(--color-white);
+}
+
 header .experience-action {
   display: flex;
   flex: 0 0 auto;
@@ -664,8 +674,25 @@ header .experience-booked-short {
     padding: 0 10px 0 12px;
   }
 
+  /* icon only */
+  header .experience-why {
+    gap: 0;
+    font-size: 0;
+  }
+
+  header .experience-why::before {
+    flex-basis: 18px;
+    height: 18px;
+  }
+
   header .experience-talk:any-link {
+    gap: 0;
     padding: 0 10px;
+  }
+
+  /* icon only; the link keeps its full name for screen readers */
+  header .experience-talk-label {
+    display: none;
   }
 }
 

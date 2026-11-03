@@ -1,0 +1,189 @@
+/* readiness: a short interactive check that ends in a tailored next step */
+.readiness {
+  --readiness-accent: var(--color-cyan);
+}
+
+.readiness .readiness-card {
+  box-sizing: border-box;
+  display: grid;
+  gap: 16px;
+  max-width: 440px;
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  box-shadow: 0 20px 50px rgb(16 24 40 / 22%);
+}
+
+.readiness .readiness-intro > * {
+  margin: 0;
+}
+
+.readiness .readiness-intro :is(h2, h3) {
+  font-size: var(--heading-font-size-s);
+  line-height: 1.15;
+}
+
+.readiness .readiness-intro p {
+  margin-top: 6px;
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-s);
+}
+
+.readiness .readiness-question {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.readiness .readiness-step {
+  margin: 0;
+  color: var(--color-gray-500);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+}
+
+.readiness .readiness-legend {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.readiness .readiness-options {
+  display: grid;
+  gap: 8px;
+  clear: both;
+}
+
+.readiness .readiness-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.readiness .readiness-option::after {
+  content: '';
+  flex: 0 0 16px;
+  height: 16px;
+  background-color: var(--color-gray-400);
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
+}
+
+.readiness .readiness-option:hover,
+.readiness .readiness-option[aria-pressed='true'] {
+  border-color: var(--readiness-accent);
+  background-color: #eefaff;
+}
+
+.readiness .readiness-option:hover::after {
+  background-color: var(--color-ink);
+}
+
+.readiness :is(.readiness-back, .readiness-again) {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-gray-600);
+  font: inherit;
+  font-size: var(--body-font-size-s);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.readiness .readiness-result {
+  display: grid;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.readiness .readiness-result > * {
+  margin: 0;
+}
+
+.readiness .readiness-result .eyebrow {
+  color: var(--color-gray-600);
+}
+
+.readiness .readiness-result :is(h2, h3) {
+  font-size: var(--heading-font-size-s);
+  line-height: 1.15;
+}
+
+.readiness .readiness-result :is(h2, h3):focus {
+  outline: none;
+}
+
+.readiness .readiness-result p:not(.eyebrow, .button-wrapper) {
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+}
+
+.readiness :focus-visible {
+  outline: 2px solid var(--readiness-accent);
+  outline-offset: 2px;
+}
+
+/* in a hero section: the card sits over the right of the hero art */
+main > .section.hero-container > .readiness-wrapper {
+  margin-top: -48px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (width >= 900px) {
+  main > .section.hero-container {
+    position: relative;
+  }
+
+  /* leave room for the card beside the hero headline */
+  main > .section.hero-container.has-readiness .hero-content {
+    padding-right: 440px;
+  }
+
+  main > .section.hero-container.has-readiness .hero-content h1 {
+    font-size: clamp(40px, 4vw, 58px);
+    text-wrap: balance;
+  }
+
+  main > .section.hero-container > .readiness-wrapper {
+    position: absolute;
+    top: 50%;
+    right: max(var(--content-padding), calc((100% - var(--content-max-width)) / 2 + var(--content-padding)));
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@media (width >= 900px) and (width < 1280px) {
+  main > .section.hero-container.has-readiness .hero-content h1 br {
+    display: none;
+  }
+}

@@ -211,3 +211,78 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* promo expand: Figma "Highlights" accordion on wide screens */
+@media (width >= 900px) {
+  .cards.promo.expand > ul {
+    display: flex;
+    gap: 27px;
+  }
+
+  .cards.promo.expand > ul > li {
+    flex: 250 1 0;
+    min-width: 0;
+    height: 433px;
+    min-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex-grow 450ms cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .cards.promo.expand > ul > li.is-active {
+    flex-grow: 675;
+    cursor: auto;
+  }
+
+  .cards.promo.expand .cards-card-body {
+    padding: 32px 24px 40px;
+    transition: padding 450ms cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .cards.promo.expand li.is-active .cards-card-body {
+    padding-inline: 40px;
+  }
+
+  /* the hidden copy keeps the narrow tile's width, so it can't push the tile taller */
+  .cards.promo.expand li:not(.is-active) .cards-card-body > :not(h2, h3) {
+    width: 595px;
+  }
+
+  .cards.promo.expand .cards-card-body :is(h2, h3) {
+    font-size: 34px;
+    line-height: 38px;
+    letter-spacing: -0.4px;
+    overflow-wrap: anywhere;
+  }
+
+  .cards.promo.expand li.is-active .cards-card-body :is(h2, h3) {
+    font-size: var(--heading-font-size-xl);
+    line-height: 54px;
+    letter-spacing: -0.3px;
+  }
+
+  .cards.promo.expand .cards-card-body > :not(h2, h3) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease-out;
+  }
+
+  .cards.promo.expand li.is-active .cards-card-body > :not(h2, h3) {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 300ms ease-out 200ms;
+  }
+
+  .cards.promo.expand li.is-active .cards-card-body p:has(> strong:only-child):not(.button-wrapper) {
+    max-width: 520px;
+    font-size: var(--heading-font-size-s);
+    line-height: 28px;
+  }
+}
+
+@media (width >= 900px) and (prefers-reduced-motion: reduce) {
+  .cards.promo.expand > ul > li,
+  .cards.promo.expand .cards-card-body > * {
+    transition: none;
+  }
+}
