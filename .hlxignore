@@ -12,3 +12,5 @@ stardust/
 DESIGN.json
 DESIGN-*.json
 exports/
+.claude-plugin/
+docs/
