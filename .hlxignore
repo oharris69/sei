@@ -11,3 +11,4 @@ migration-work/*
 stardust/
 DESIGN.json
 DESIGN-*.json
+exports/
