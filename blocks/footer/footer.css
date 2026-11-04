@@ -142,7 +142,10 @@ footer .footer-legal li + li::before {
   footer .footer-social {
     margin-left: auto;
   }
+}
 
+/* the legal row only fits on one line once there is room for all of it */
+@media (width >= 1200px) {
   footer .footer-legal .default-content-wrapper {
     flex-wrap: nowrap;
   }

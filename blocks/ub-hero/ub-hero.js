@@ -149,7 +149,12 @@ export default function decorate(block) {
   instance += 1;
   const { text, doors } = readSides(block);
   const parts = [buildText(text)];
-  if (doors.length) parts.push(buildDoors(doors));
-  else block.classList.add('no-doors');
+  if (doors.length) {
+    parts.push(buildDoors(doors));
+    // the doors are this page's role picker: the header bar's own picker steps aside
+    document.body.classList.add('ub-hero-roles');
+  } else {
+    block.classList.add('no-doors');
+  }
   block.replaceChildren(...parts);
 }

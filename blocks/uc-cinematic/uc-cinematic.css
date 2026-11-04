@@ -380,6 +380,43 @@ html.uc-motion main .uc-swap {
   animation: uc-bar-wipe 320ms var(--uc-expo) both;
 }
 
+/* cards: a cyan rule draws along the bottom edge on hover / keyboard focus */
+main:has(.uc-cinematic.block) :is(.ua-promo, .ua-leader, .ua-role-card) {
+  position: relative;
+}
+
+main:has(.uc-cinematic.block) :is(.ua-promo, .ua-leader, .ua-role-card)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  height: 4px;
+  background: var(--uc-hairline, var(--color-cyan));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms var(--uc-expo, cubic-bezier(0.16, 1, 0.3, 1));
+  pointer-events: none;
+}
+
+main:has(.uc-cinematic.block) :is(.ua-promo, .ua-leader, .ua-role-card):focus-within::after,
+main:has(.uc-cinematic.block) .ua-role-card:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) {
+  main:has(.uc-cinematic.block) :is(.ua-promo, .ua-leader, .ua-role-card):hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main:has(.uc-cinematic.block) :is(.ua-promo, .ua-leader, .ua-role-card)::after {
+    transition: none;
+  }
+}
+
 /* Lenis: native smooth-scroll CSS must not fight the lerp */
 html.lenis.lenis-smooth {
   scroll-behavior: auto !important;

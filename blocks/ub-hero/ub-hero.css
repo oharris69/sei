@@ -270,3 +270,13 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
     max-width: 520px;
   }
 }
+
+/* until a role is chosen, the hero doors are the only role picker on the page:
+   the header bar keeps "Why?" and "Talk to an advisor" but hides its own picker and prompt */
+body.ub-hero-roles header .nav-experience[data-persona=''] :is(.experience-persona, .experience-stage) {
+  display: none;
+}
+
+body.ub-hero-roles header .nav-experience[data-persona=''] .experience-progress {
+  visibility: hidden;
+}

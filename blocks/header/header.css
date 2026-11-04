@@ -267,6 +267,17 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
   }
 }
 
+/* small desktops: tighten the bar so the tools fit beside the menu */
+@media (width >= 900px) and (width < 1100px) {
+  header nav {
+    gap: 0 24px;
+  }
+
+  header nav .nav-sections ul {
+    gap: 24px;
+  }
+}
+
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
