@@ -1,5 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { track } from '../../scripts/profile.js';
+import { videoSource, buildPlayer } from '../../scripts/video.js';
 
 /*
  * Video: a poster that turns into a player when clicked.
@@ -13,65 +14,9 @@ import { track } from '../../scripts/profile.js';
  *    - an .mp4
  *  - other text → caption under the player
  * Brightcove and AEM Assets links play in their own players (adaptive streaming, captions,
- * their analytics); .mp4 links play in the browser's player. Without a usable link the poster
- * shows on its own.
+ * their analytics); .mp4 links play in the browser's player (see scripts/video.js). Without a
+ * usable link the poster shows on its own.
  */
-
-const AEM_ASSETS = /^delivery-p\d+-e\d+\.adobeaemcloud\.com$/;
-const BRIGHTCOVE = /^\/\d+\/[\w-]+_[\w-]+\/index\.html$/;
-
-/**
- * Works out how to play a video link.
- * @param {string} href The authored link
- * @returns {{type: string, src: string}|null} The player type and source
- */
-export function videoSource(href) {
-  let url;
-  try {
-    url = new URL(href, window.location);
-  } catch {
-    return null;
-  }
-  if (AEM_ASSETS.test(url.hostname) && url.pathname.startsWith('/adobe/assets/')) {
-    // the asset's own player page: /adobe/assets/<id>/play
-    const [, , , id] = url.pathname.split('/');
-    const play = new URL(`/adobe/assets/${id}/play`, url.origin);
-    url.searchParams.forEach((value, key) => play.searchParams.set(key, value));
-    if (!play.searchParams.has('autoplay')) play.searchParams.set('autoplay', '1');
-    return { type: 'aem-assets', src: play.href };
-  }
-  if (url.hostname === 'players.brightcove.net' && BRIGHTCOVE.test(url.pathname)
-    && url.searchParams.get('videoId')) {
-    const player = new URL(url.href);
-    player.protocol = 'https:';
-    if (!player.searchParams.has('autoplay')) player.searchParams.set('autoplay', 'true');
-    return { type: 'brightcove', src: player.href };
-  }
-  if (/\.mp4$/i.test(url.pathname)) return { type: 'mp4', src: url.href };
-  return null;
-}
-
-function buildPlayer(source, title) {
-  if (source.type === 'mp4') {
-    const video = document.createElement('video');
-    video.className = 'video-player';
-    video.controls = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.preload = 'metadata';
-    video.src = source.src;
-    video.setAttribute('aria-label', title);
-    return video;
-  }
-  const frame = document.createElement('iframe');
-  frame.className = 'video-player';
-  frame.src = source.src;
-  frame.title = title;
-  frame.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
-  frame.allowFullscreen = true;
-  frame.loading = 'lazy';
-  return frame;
-}
 
 /**
  * @param {Element} block The video block
