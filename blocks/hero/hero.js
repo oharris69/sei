@@ -30,7 +30,9 @@ export default function decorate(block) {
       const heading = content.querySelector('h1, h2');
       if (heading) {
         const lines = heading.innerHTML.split(/<br\s*\/?>/i).filter((l) => l.trim());
-        heading.innerHTML = lines.map((line) => `<span class="hero-line">${line.trim()}</span>`).join('');
+        heading.innerHTML = lines
+          .map((line) => `<span class="hero-line"><span class="hero-line-text">${line.trim()}</span></span>`)
+          .join('');
       }
     }
     block.append(content);

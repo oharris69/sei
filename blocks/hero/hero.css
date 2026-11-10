@@ -87,6 +87,13 @@ main > .section.hero-container > .hero-wrapper {
   .hero .hero-content p {
     font-size: 24px;
   }
+
+  /* Figma: audience hero subheading, CircularXX Medium 32/33, -0.45px */
+  .hero:not(.home, .short) .hero-content p:not(.eyebrow, .button-wrapper) {
+    font-size: 32px;
+    line-height: 33px;
+    letter-spacing: -0.45px;
+  }
 }
 
 /* short: compact image banner with the copy vertically centred */
@@ -174,6 +181,13 @@ main > .section.hero-container > .hero-wrapper {
 .hero.home .hero-line:last-child {
   border-bottom: 2px solid var(--color-cyan);
   color: var(--color-cyan);
+}
+
+/* Figma: the last line fades from cyan to green */
+.hero.home .hero-line:last-child .hero-line-text {
+  background: var(--gradient-brand-horizontal);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero.home .hero-content p {

@@ -49,13 +49,14 @@
   list-style: none;
 }
 
+/* Figma: each number sits centred over its label; the connector runs from the label column to the next step */
 .scheduler .scheduler-step {
   position: relative;
-  display: flex;
+  display: grid;
   flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  justify-items: center;
+  row-gap: 6px;
   color: var(--scheduler-muted);
   font-size: var(--body-font-size-xs);
   line-height: 16px;
@@ -63,15 +64,21 @@
 
 .scheduler .scheduler-step:last-child {
   flex: 0 0 auto;
+  grid-template-columns: max-content;
+}
+
+.scheduler .scheduler-step-label {
+  grid-column: 1;
+  white-space: nowrap;
 }
 
 .scheduler .scheduler-step:not(:last-child)::after {
   content: '';
-  position: absolute;
-  top: 14px;
-  left: 44px;
-  right: 16px;
+  grid-column: 2;
+  grid-row: 1;
+  place-self: center stretch;
   height: 1px;
+  margin: 0 8px;
   background-color: var(--color-gray-200);
 }
 
@@ -86,7 +93,8 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  margin-left: 8px;
+  grid-column: 1;
+  grid-row: 1;
   box-sizing: border-box;
   border: 1px solid var(--color-gray-200);
   border-radius: 50%;

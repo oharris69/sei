@@ -55,6 +55,8 @@ export default function decorate(block) {
       if (values.size) url.searchParams.set(key, [...values].join(','));
     });
     cta.href = url.origin === window.location.origin ? `${url.pathname}${url.search}` : url.href;
+    // Figma: the results button turns dark once anything is picked
+    cta.classList.toggle('is-ready', [...selections.values()].some((values) => values.size));
   };
 
   groupRows.forEach((row, index) => {
@@ -105,6 +107,8 @@ export default function decorate(block) {
         const values = selections.get(key);
         if (pressed) values.add(toSlug(label));
         else values.delete(toSlug(label));
+        // Figma: once a group has a pick, its other tiles fade back
+        group.classList.toggle('has-selection', values.size > 0);
         updateCta();
       });
       tiles.append(button);

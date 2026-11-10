@@ -54,16 +54,9 @@ function renderPanel(panel) {
   const stage = lifecycleStage(profile);
   panel.textContent = '';
 
-  const status = el('p', 'presenter-status');
-  status.textContent = [
-    PERSONAS[profile.persona]?.label || 'No role',
-    stage?.label || 'No stage',
-    profile.booking ? `Booked with ${profile.booking.advisor}` : 'Not booked',
-  ].join(' · ');
-  panel.append(status);
-
-  const journeys = group('Demo journeys');
+  // Figma "Menu": the journey links lead the drawer
   const list = el('ul', 'presenter-journeys');
+  list.setAttribute('aria-label', 'Demo journeys');
   JOURNEYS.forEach((j) => {
     const li = el('li');
     const a = el('a', 'presenter-journey', j.label);
@@ -72,8 +65,18 @@ function renderPanel(panel) {
     li.append(a);
     list.append(li);
   });
-  journeys.append(list);
-  panel.append(journeys);
+  panel.append(list);
+
+  // demo controls (not in Figma) sit below the links
+  const extras = el('div', 'presenter-extras');
+  const status = el('p', 'presenter-status');
+  status.textContent = [
+    PERSONAS[profile.persona]?.label || 'No role',
+    stage?.label || 'No stage',
+    profile.booking ? `Booked with ${profile.booking.advisor}` : 'Not booked',
+  ].join(' · ');
+  extras.append(status);
+  panel.append(extras);
 
   const roles = group('Role');
   const roleRow = el('div', 'presenter-chips');
@@ -82,7 +85,7 @@ function renderPanel(panel) {
   });
   roleRow.append(chip('Unknown', () => setPersona(null), !profile.persona));
   roles.append(roleRow);
-  panel.append(roles);
+  extras.append(roles);
 
   const stages = group('Lifecycle stage');
   const stageRow = el('div', 'presenter-chips');
@@ -93,7 +96,7 @@ function renderPanel(panel) {
   });
   stages.append(stageRow);
   if (!profile.persona) stages.append(el('p', 'presenter-note', 'Pick a role first.'));
-  panel.append(stages);
+  extras.append(stages);
 
   const actions = group('Actions');
   const actionRow = el('div', 'presenter-chips');
@@ -120,7 +123,7 @@ function renderPanel(panel) {
   });
   actionRow.append(bookNow, reset, hide);
   actions.append(actionRow);
-  panel.append(actions);
+  extras.append(actions);
 }
 
 function build() {
@@ -129,25 +132,28 @@ function build() {
   toggle.type = 'button';
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-controls', 'presenter-panel');
-  toggle.append(el('span', 'presenter-toggle-icon'), el('span', '', 'Demo'));
-  const panel = el('div', 'presenter-panel');
+  toggle.setAttribute('aria-label', 'Demo menu');
+  toggle.append(el('span', 'presenter-toggle-icon'));
+  // Figma "Menu": a dark drawer down the left edge, hamburger at the top
+  const panel = el('nav', 'presenter-panel');
   panel.id = 'presenter-panel';
+  panel.setAttribute('aria-label', 'Demo menu');
   panel.hidden = true;
-  toggle.addEventListener('click', () => {
-    const open = panel.hidden;
+  const setOpen = (open) => {
     if (open) renderPanel(panel);
     panel.hidden = !open;
+    root.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', open);
-  });
+  };
+  toggle.addEventListener('click', () => setOpen(panel.hidden));
   root.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !panel.hidden) {
-      panel.hidden = true;
-      toggle.setAttribute('aria-expanded', 'false');
+      setOpen(false);
       toggle.focus();
     }
   });
   onProfileChange(() => { if (!panel.hidden) renderPanel(panel); });
-  root.append(panel, toggle);
+  root.append(toggle, panel);
   document.body.append(root);
   return { toggle, panel };
 }

@@ -1,32 +1,39 @@
-/* presenter menu (scripts/presenter.js) — demo only */
+/* presenter menu (scripts/presenter.js) — demo only. Figma "Menu": dark left drawer, 216px */
 .presenter {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 30;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  font-family: var(--body-font-family);
+  --presenter-bg: #131517;
+  --presenter-muted: rgb(255 255 255 / 60%);
+  --presenter-line: rgb(255 255 255 / 15%);
+
+  font-family: Inter, var(--body-font-family);
   font-size: var(--body-font-size-s);
 }
 
 .presenter-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 41;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
   margin: 0;
-  padding: 0 16px 0 14px;
+  padding: 0;
   border: 1px solid rgb(255 255 255 / 25%);
-  border-radius: 20px;
-  background-color: var(--color-ink);
+  border-radius: 4px;
+  background-color: var(--presenter-bg);
   color: var(--color-white);
-  font: inherit;
-  font-weight: 700;
   box-shadow: 0 8px 24px rgb(16 24 40 / 25%);
   cursor: pointer;
+}
+
+/* open: the hamburger sits at the top of the drawer, as in Figma */
+.presenter.is-open .presenter-toggle {
+  top: 18px;
+  bottom: auto;
+  left: 17px;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .presenter-toggle-icon {
@@ -38,22 +45,20 @@
     linear-gradient(currentcolor, currentcolor) bottom / 100% 2px no-repeat;
 }
 
-.presenter-toggle[aria-expanded='true'] {
-  border-color: var(--color-cyan);
-}
-
 .presenter-panel {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
   box-sizing: border-box;
   display: grid;
-  gap: 16px;
-  width: min(300px, calc(100vw - 48px));
-  max-height: calc(100dvh - 120px);
+  align-content: start;
+  gap: 32px;
+  width: 216px;
   overflow-y: auto;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: var(--color-white);
-  color: var(--color-ink);
-  box-shadow: 0 20px 50px rgb(16 24 40 / 28%);
+  padding: 84px 20px 32px 31px;
+  background-color: var(--presenter-bg);
+  color: var(--color-white);
+  box-shadow: 8px 0 32px rgb(0 0 0 / 30%);
 }
 
 .presenter-panel[hidden] {
@@ -64,10 +69,48 @@
   margin: 0;
 }
 
+/* journey links: Figma Inter 16/19, white, 17px apart */
+.presenter-journeys {
+  display: grid;
+  gap: 17px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presenter-journey:any-link {
+  display: grid;
+  gap: 2px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-decoration: none;
+}
+
+.presenter-journey:hover {
+  color: var(--color-cyan);
+}
+
+.presenter-note {
+  color: var(--presenter-muted);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* demo controls below the links */
+.presenter-extras {
+  display: grid;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--presenter-line);
+}
+
 .presenter-status {
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--color-gray-200);
-  font-weight: 700;
+  color: var(--presenter-muted);
+  font-size: var(--body-font-size-xs);
+  line-height: 16px;
 }
 
 .presenter-group {
@@ -76,34 +119,11 @@
 }
 
 .presenter-label {
-  color: var(--color-gray-600);
+  color: var(--presenter-muted);
   font-size: var(--body-font-size-xs);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.presenter-journeys {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.presenter-journey:any-link {
-  display: grid;
-  padding: 6px 0;
-  color: var(--color-ink);
-  font-weight: 500;
-}
-
-.presenter-journey:hover {
-  color: var(--color-red);
-}
-
-.presenter-note {
-  color: var(--color-gray-500);
-  font-size: var(--body-font-size-xs);
-  font-weight: 400;
 }
 
 .presenter-chips {
@@ -115,10 +135,10 @@
 .presenter-chip {
   margin: 0;
   padding: 5px 10px;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid rgb(255 255 255 / 30%);
   border-radius: 14px;
-  background-color: var(--color-white);
-  color: var(--color-ink);
+  background-color: transparent;
+  color: var(--color-white);
   font: inherit;
   font-size: var(--body-font-size-xs);
   font-weight: 500;
@@ -126,18 +146,18 @@
 }
 
 .presenter-chip:hover:not(:disabled) {
-  border-color: var(--color-ink);
+  border-color: var(--color-white);
 }
 
 .presenter-chip[aria-pressed='true'] {
   border-color: var(--color-cyan);
   background-color: var(--color-cyan);
-  color: var(--color-ink);
+  color: var(--presenter-bg);
   font-weight: 700;
 }
 
 .presenter-chip:disabled {
-  color: var(--color-gray-400);
+  color: rgb(255 255 255 / 35%);
   cursor: default;
 }
 
