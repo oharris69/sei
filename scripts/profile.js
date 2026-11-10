@@ -85,7 +85,6 @@ export const STAGES = [
 
 const PAGE_STAGES = {
   '/': 'discover',
-  '/index-stardust': 'discover',
   '/start/linkedin': 'discover',
   '/start/ai-search': 'discover',
   '/bd-breakaway': 'engage',
