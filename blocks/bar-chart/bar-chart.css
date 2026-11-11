@@ -41,6 +41,10 @@ main .section.bar-chart-container > .default-content-wrapper + div {
   line-height: 20px;
 }
 
+.bar-chart .bar-chart-legend p {
+  margin: 0;
+}
+
 .bar-chart .bar-chart-legend li::before {
   content: '';
   flex: 0 0 20px;

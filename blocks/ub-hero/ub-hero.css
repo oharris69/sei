@@ -107,19 +107,22 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
   width: 100%;
 }
 
-.ub-hero-doors-inner > :is(p, h2, h3) {
+.ub-hero-doors-inner :is(p, h2, h3) {
   margin: 0;
 }
 
-.ub-hero-doors-inner p.ub-hero-doors-label {
+.ub-hero-doors-label p {
   font-size: 14px;
   font-weight: 900;
   line-height: 1.55;
   letter-spacing: 0.02em;
 }
 
-.ub-hero-doors-inner :is(h2, h3) {
+.ub-hero-doors-heading {
   margin-top: 10px;
+}
+
+.ub-hero-doors-inner :is(h2, h3) {
   color: var(--color-ink);
   font-size: 26px;
   font-weight: 950;
@@ -132,13 +135,20 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
   margin-top: 0;
 }
 
-.ub-hero-doors-inner p.ub-hero-doors-lede {
-  max-width: 44ch;
+.ub-hero-doors-lede {
   margin-top: 12px;
+}
+
+.ub-hero-doors-lede p {
+  max-width: 44ch;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.45;
   text-wrap: pretty;
+}
+
+.ub-hero-door-list p {
+  margin: 0;
 }
 
 .ub-hero-door-list {
@@ -149,7 +159,7 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
   list-style: none;
 }
 
-.ub-hero a.ub-hero-door:any-link {
+.ub-hero .ub-hero-door-list a:any-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -167,19 +177,20 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
   transition: background-color 0.16s var(--ub-ease), color 0.16s var(--ub-ease);
 }
 
-.ub-hero a.ub-hero-door:hover {
+.ub-hero .ub-hero-door-list a:hover {
   background: var(--color-white);
   color: var(--color-ink);
   text-decoration: none;
 }
 
-.ub-hero a.ub-hero-door:focus-visible {
+.ub-hero .ub-hero-door-list a:focus-visible {
   outline: 3px solid var(--color-white);
   outline-offset: 2px;
   box-shadow: 0 0 0 6px var(--color-ink);
 }
 
-.ub-hero-door-arrow {
+.ub-hero-door-list a::after {
+  content: '';
   flex: none;
   width: 22px;
   height: 22px;
@@ -188,13 +199,13 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
   transition: transform 0.16s var(--ub-ease);
 }
 
-.ub-hero-door:hover .ub-hero-door-arrow {
+.ub-hero-door-list a:hover::after {
   transform: translateX(4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ub-hero a.ub-hero-door:any-link,
-  .ub-hero-door-arrow {
+  .ub-hero .ub-hero-door-list a:any-link,
+  .ub-hero-door-list a::after {
     transition: none;
   }
 }
@@ -228,7 +239,7 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
     font-size: 30px;
   }
 
-  .ub-hero-doors-inner p.ub-hero-doors-lede {
+  .ub-hero-doors-lede p {
     font-size: 16px;
   }
 
@@ -236,7 +247,7 @@ main > .section.ub-hero-container > .ub-hero-wrapper {
     margin-top: 24px;
   }
 
-  .ub-hero a.ub-hero-door:any-link {
+  .ub-hero .ub-hero-door-list a:any-link {
     min-height: 72px;
     padding: 0 24px;
     font-size: 20px;

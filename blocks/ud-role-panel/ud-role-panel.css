@@ -110,7 +110,11 @@ main > .section.ud-role-panel-container {
   list-style: none;
 }
 
-.ud-role-panel-doors li p {
+.ud-role-panel-doors li {
+  position: relative;
+}
+
+.ud-role-panel-doors li :is(p, .prosemirror-editor, .prosemirror-editor > div) {
   height: 100%;
   margin: 0;
 }
@@ -122,7 +126,9 @@ main > .section.ud-role-panel-container {
   gap: 24px;
   height: 100%;
   min-height: 128px;
-  padding: 20px;
+
+  /* the arrow (a sibling of the authored paragraph) sits in the bottom-right: 24px gap + 24px icon */
+  padding: 20px 20px 68px;
   border-radius: 2px;
   background: var(--ud-ink);
   color: var(--ud-paper);
@@ -135,9 +141,10 @@ main > .section.ud-role-panel-container {
   transition: background-color 0.16s var(--ud-ease);
 }
 
-.ud-role-panel-doors a:any-link .ud-icon {
-  flex: none;
-  align-self: flex-end;
+.ud-role-panel-doors li .ud-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
   width: 24px;
   height: 24px;
   fill: none;
@@ -145,6 +152,8 @@ main > .section.ud-role-panel-container {
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+  color: var(--ud-paper);
+  pointer-events: none;
   transition: transform 0.16s var(--ud-ease);
 }
 
@@ -153,7 +162,7 @@ main > .section.ud-role-panel-container {
   color: var(--ud-paper);
 }
 
-.ud-role-panel-doors a:hover .ud-icon {
+.ud-role-panel-doors li:hover .ud-icon {
   transform: translateX(3px);
 }
 
@@ -165,11 +174,11 @@ main > .section.ud-role-panel-container {
 
 @media (prefers-reduced-motion: reduce) {
   .ud-role-panel-doors a:any-link,
-  .ud-role-panel-doors a:any-link .ud-icon {
+  .ud-role-panel-doors li .ud-icon {
     transition: none;
   }
 
-  .ud-role-panel-doors a:hover .ud-icon {
+  .ud-role-panel-doors li:hover .ud-icon {
     transform: none;
   }
 }
@@ -204,14 +213,27 @@ main > .section.ud-role-panel-container {
     flex-direction: row;
     align-items: center;
     min-height: 64px;
-    padding: 16px 18px;
+    padding: 16px 66px 16px 18px;
   }
 
-  .ud-role-panel-doors a:any-link .ud-icon {
-    align-self: center;
+  .ud-role-panel-doors li .ud-icon {
+    top: 50%;
+    right: 18px;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .ud-role-panel-doors li:hover .ud-icon {
+    transform: translate(3px, -50%);
   }
 
   .ud-role-panel-intro .why-button {
     min-height: 44px;
+  }
+}
+
+@media (width <= 640px) and (prefers-reduced-motion: reduce) {
+  .ud-role-panel-doors li:hover .ud-icon {
+    transform: translateY(-50%);
   }
 }

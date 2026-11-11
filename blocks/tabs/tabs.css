@@ -90,7 +90,8 @@ main > .section.gradient.ink.tabs-container .default-content-wrapper :is(h2, h3)
   display: none;
 }
 
-.tabs .tabs-panel-col > :first-child {
+.tabs .tabs-panel-col > :first-child,
+.tabs .tabs-panel-col .tabs-col-lead :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
   margin-top: 0;
 }
 
@@ -144,7 +145,7 @@ main > .section.gradient.ink.tabs-container .default-content-wrapper :is(h2, h3)
   line-height: 1.3;
 }
 
-.tabs .tabs-media .tabs-caption p:first-child {
+.tabs .tabs-media .tabs-caption .tabs-caption-name p {
   font-size: var(--heading-font-size-xs);
   font-weight: 500;
 }
@@ -169,23 +170,22 @@ main > .section.gradient.ink.tabs-container .default-content-wrapper :is(h2, h3)
 }
 
 /* case study: copy + two stat columns separated by rules */
-.tabs.case-study .tabs-panel-col:not(:first-child) p:first-child,
-.tabs.case-study .tabs-panel-col:not(:first-child) :is(h3, h4):first-child {
+.tabs.case-study .tabs-panel-col:not(:first-child) .tabs-col-lead :is(p, h3, h4) {
   margin: 0;
   color: var(--color-green);
   font-weight: 900;
   line-height: 1.1;
 }
 
-.tabs.case-study .tabs-panel-col:nth-child(2) > :first-child {
+.tabs.case-study .tabs-panel-col:nth-child(2) .tabs-col-lead :is(h1, h2, h3, h4, h5, h6, p) {
   font-size: 48px;
 }
 
-.tabs.case-study .tabs-panel-col:nth-child(3) > :first-child {
+.tabs.case-study .tabs-panel-col:nth-child(3) .tabs-col-lead :is(h1, h2, h3, h4, h5, h6, p) {
   font-size: var(--heading-font-size-m);
 }
 
-.tabs.case-study .tabs-panel-col:not(:first-child) p + p {
+.tabs.case-study .tabs-panel-col:not(:first-child) .tabs-col-follow p {
   margin-top: 8px;
   font-weight: 500;
   line-height: 22px;
@@ -225,9 +225,13 @@ main > .section.gradient.ink.tabs-container .default-content-wrapper :is(h2, h3)
     padding: 40px 0 24px;
   }
 
-  .tabs .tabs-panel:has(.tabs-media) .tabs-panel-col:first-child p:last-child {
+  .tabs .tabs-panel:has(.tabs-media) .tabs-panel-col:first-child .tabs-col-end {
     margin-top: auto;
     padding-top: 24px;
+  }
+
+  .tabs .tabs-panel:has(.tabs-media) .tabs-panel-col:first-child .tabs-col-end p {
+    margin-top: 0;
   }
 
   .tabs .tabs-panel-col :is(h2, h3) {
@@ -254,11 +258,11 @@ main > .section.gradient.ink.tabs-container .default-content-wrapper :is(h2, h3)
     align-self: start;
   }
 
-  .tabs.case-study .tabs-panel-col:nth-child(2) > :first-child {
+  .tabs.case-study .tabs-panel-col:nth-child(2) .tabs-col-lead :is(h1, h2, h3, h4, h5, h6, p) {
     font-size: 60px;
   }
 
-  .tabs.case-study .tabs-panel-col:nth-child(3) > :first-child {
+  .tabs.case-study .tabs-panel-col:nth-child(3) .tabs-col-lead :is(h1, h2, h3, h4, h5, h6, p) {
     font-size: var(--heading-font-size-m);
   }
 }

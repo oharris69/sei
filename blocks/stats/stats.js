@@ -1,4 +1,10 @@
 /**
+ * Stats — Experience Workspace: the authored value / label paragraphs are MOVED into the
+ * `.stats-value` / `.stats-label` wrappers (which carry the type), so both stay editable.
+ * @ew-exempt <p> `featured` flag (cell 3) — variant selector, never displayed (metadata)
+ */
+
+/**
  * Stats: key figures over an optional background picture.
  * Rows: [picture] (optional background), then one row per stat:
  * [value] [label] [optional `featured`]
@@ -20,12 +26,13 @@ export default function decorate(block) {
     const [value, label, flag] = cells;
     const item = document.createElement('li');
     item.className = 'stats-item';
-    const v = document.createElement('p');
+    // move the authored cell content into the styled wrappers (EW1)
+    const v = document.createElement('div');
     v.className = 'stats-value';
-    v.textContent = value?.textContent.trim() || '';
-    const l = document.createElement('p');
+    if (value) v.append(...value.childNodes);
+    const l = document.createElement('div');
     l.className = 'stats-label';
-    l.innerHTML = label?.innerHTML.replace(/<\/?p>/g, '') || '';
+    if (label) l.append(...label.childNodes);
     item.append(v, l);
     if (flag && flag.textContent.trim().toLowerCase() === 'featured') {
       featured = document.createElement('div');

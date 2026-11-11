@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> category labels + values (data rows) — derived: drawn as SVG bars and text
+ * @ew-exempt <p> header first cell (e.g. Metric) — derived: shown only in the screen-reader table
+ */
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const COLORS = ['#faa519', '#a6ce39', '#00c0f3', '#131517'];
 const BAR = 30;
@@ -103,14 +107,18 @@ function render(width, series, categories, max) {
  * @param {Element} block The bar-chart block element
  */
 export default function decorate(block) {
-  const rows = [...block.children].map((row) => [...row.children].map((c) => c.textContent.trim()));
+  const rowEls = [...block.children];
+  const rows = rowEls.map((row) => [...row.children].map((c) => c.textContent.trim()));
   const isNum = (t) => t !== '' && !Number.isNaN(parseFloat(t));
   const headerIndex = rows.findIndex((cells) => cells.slice(1).some((t) => t && !isNum(t)));
   const header = headerIndex >= 0 ? rows[headerIndex] : [];
   const dataRows = rows.filter((cells, i) => i !== headerIndex && cells.slice(1).some(isNum));
   const seriesCount = Math.max(0, ...dataRows.map((cells) => cells.length - 1));
+  const headerCells = headerIndex >= 0 ? [...rowEls[headerIndex].children] : [];
   const series = Array.from({ length: seriesCount }, (_, i) => ({
     name: header[i + 1] || `Series ${i + 1}`,
+    // the authored series-name paragraph MOVES into the legend (EW1)
+    nameEl: headerCells[i + 1]?.querySelector('p') || null,
     color: COLORS[i % COLORS.length],
   }));
   const categories = dataRows.map((cells) => ({
@@ -125,7 +133,8 @@ export default function decorate(block) {
   [...series].reverse().forEach((s) => {
     const li = document.createElement('li');
     li.style.setProperty('--series-color', s.color);
-    li.textContent = s.name;
+    if (s.nameEl) li.append(s.nameEl);
+    else li.textContent = s.name;
     legend.append(li);
   });
 

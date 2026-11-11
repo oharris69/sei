@@ -169,7 +169,7 @@ main .section.strategy-cards-container > .default-content-wrapper + div {
   gap: 16px;
 }
 
-.strategy-cards .strategy-cards-title {
+.strategy-cards .strategy-cards-title :is(h2, h3, h4) {
   margin: 0;
   color: var(--color-ink-soft);
   font-size: var(--body-font-size-l);
@@ -189,7 +189,15 @@ main .section.strategy-cards-container > .default-content-wrapper + div {
   line-height: 16px;
 }
 
-.strategy-cards .strategy-cards-meta span + span::before {
+.strategy-cards .strategy-cards-meta p {
+  margin: 0;
+}
+
+.strategy-cards .strategy-cards-tag {
+  display: flex;
+}
+
+.strategy-cards .strategy-cards-tag + .strategy-cards-tag::before {
   content: '•';
   margin-right: 12px;
   color: #d1d5dc;
@@ -228,12 +236,12 @@ main .section.strategy-cards-container > .default-content-wrapper + div {
   letter-spacing: -0.15px;
 }
 
-.strategy-cards .strategy-cards-body p.strategy-cards-link-wrapper {
+.strategy-cards .strategy-cards-body .strategy-cards-link-wrapper {
   margin-top: auto;
   padding-top: 16px;
 }
 
-.strategy-cards a.strategy-cards-link:any-link {
+.strategy-cards .strategy-cards-link-wrapper a:any-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -243,7 +251,7 @@ main .section.strategy-cards-container > .default-content-wrapper + div {
   line-height: 20px;
 }
 
-.strategy-cards a.strategy-cards-link::after {
+.strategy-cards .strategy-cards-link-wrapper a::after {
   content: '';
   order: 2;
   width: 16px;

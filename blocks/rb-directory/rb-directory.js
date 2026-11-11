@@ -44,15 +44,34 @@ export default function decorate(block) {
   list.className = 'rb-directory-list';
   let plate = null;
 
+  // A paragraph link becomes a generated row anchor; the authored <p> moves into the row's
+  // name slot and its inner anchor is unwrapped after reading the href (EW3/EW6).
   const addRow = (link) => {
+    const par = link.closest('p, h3, h4');
+    const row = document.createElement('a');
+    [...link.attributes].forEach((attr) => {
+      if (attr.name !== 'class') row.setAttribute(attr.name, attr.value);
+    });
+    row.className = 'rb-directory-row';
+    const name = document.createElement('div');
+    name.className = 'rb-directory-name';
+    if (par.matches('p.button-wrapper')) par.classList.remove('button-wrapper');
+    name.append(par);
+    link.replaceWith(...link.childNodes);
+    row.append(name, decorative('rb-directory-leader'), decorative('rb-directory-arrow', '→'));
+    const item = document.createElement('li');
+    item.append(row);
+    list.append(item);
+  };
+  // An authored list of links stays the authored <ul>/<ol> (one editable unit); its
+  // anchors become rows in place (inner restructuring only).
+  const lists = [];
+  const decorateListRow = (link) => {
     const name = document.createElement('span');
     name.className = 'rb-directory-name';
     name.append(...link.childNodes);
     link.className = 'rb-directory-row';
     link.append(name, decorative('rb-directory-leader'), decorative('rb-directory-arrow', '→'));
-    const item = document.createElement('li');
-    item.append(link);
-    list.append(item);
   };
 
   [...block.querySelectorAll(':scope > div > div')]
@@ -63,27 +82,30 @@ export default function decorate(block) {
       if (link) {
         addRow(link);
       } else if (items.length && items.every(Boolean)) {
-        items.forEach(addRow);
+        items.forEach(decorateListRow);
+        lists.push(el);
       } else if (!plate && isEyebrow(el)) {
-        plate = el;
+        plate = document.createElement('div');
+        plate.className = 'rb-directory-plate';
+        plate.append(el);
       } else if (el.textContent.trim() || el.querySelector('picture')) {
         intro.append(el);
       }
     });
 
   const children = [intro];
-  if (list.children.length || plate) {
+  if (list.children.length || lists.length || plate) {
     const board = document.createElement('nav');
     board.className = 'rb-directory-board';
     if (plate) {
-      plate.className = 'rb-directory-plate';
       plate.id = `rb-directory-plate-${instance}`;
       board.setAttribute('aria-labelledby', plate.id);
       board.append(plate);
     } else {
       board.setAttribute('aria-label', 'Choose your role');
     }
-    board.append(list);
+    if (list.children.length || !lists.length) board.append(list);
+    board.append(...lists);
     children.push(board);
   }
   block.replaceChildren(...children);

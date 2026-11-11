@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> italic data-column headers + their values — metadata: data-* filter attributes
+ * @ew-exempt <p> sortable first header (Fund name) — EW7: its text is the sort <button> label
+ */
 import { toClassName } from '../../scripts/aem.js';
 
 /**
@@ -13,13 +17,16 @@ import { toClassName } from '../../scripts/aem.js';
  * @param {Element} block The fund-table block element
  */
 /**
- * Returns a cell's content, dropping a lone wrapping paragraph.
+ * Returns a cell's content to MOVE into the table cell. The authored paragraph moves whole
+ * (it carries the editor index, EW1); CSS takes its margin off. `unwrap` drops a lone wrapping
+ * paragraph instead (for a <button> label, which cannot host the editor — EW7).
  * @param {Element} cell The authored cell
+ * @param {boolean} [unwrap] Return the lone paragraph's child nodes
  * @returns {Node[]} The nodes to move into the table cell
  */
-function cellContent(cell) {
+function cellContent(cell, unwrap = false) {
   const only = cell.children.length === 1 ? cell.firstElementChild : null;
-  if (only?.tagName === 'P' && only.textContent.trim() === cell.textContent.trim()) {
+  if (unwrap && only?.tagName === 'P' && only.textContent.trim() === cell.textContent.trim()) {
     return [...only.childNodes];
   }
   return [...cell.childNodes];
@@ -42,11 +49,12 @@ export default function decorate(block) {
   const thead = document.createElement('thead');
   const headTr = document.createElement('tr');
   const headLabels = [];
+  const sortable = bodyRows.length > 1;
   headCells.forEach((cell, i) => {
     if (dataCols.has(i)) return;
     const th = document.createElement('th');
     th.scope = 'col';
-    th.append(...cellContent(cell));
+    th.append(...cellContent(cell, sortable && !headTr.children.length));
     headLabels[i] = th.textContent.trim();
     headTr.append(th);
   });
@@ -94,7 +102,7 @@ export default function decorate(block) {
 
   // sortable fund name column
   const sortTh = headTr.firstElementChild;
-  if (sortTh && rows.length > 1) {
+  if (sortTh && sortable) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'fund-table-sort';

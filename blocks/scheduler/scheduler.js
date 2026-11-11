@@ -1,3 +1,6 @@
+/**
+ * @ew-exempt <p>/<ul> key/value config rows (Advisor, Times, Timezone, Days) — config: slot data
+ */
 import { toClassName } from '../../scripts/aem.js';
 import { book, calendarHref, getProfile } from '../../scripts/profile.js';
 
@@ -41,6 +44,7 @@ function readConfig(block) {
     const heading = row.querySelector('h1, h2, h3');
     if (heading && !config.title) {
       config.title = heading.textContent.trim();
+      config.titleEl = heading;
       return;
     }
     if (!key || !value) return;
@@ -98,10 +102,13 @@ export default function decorate(block) {
   const uid = Math.random().toString(36).slice(2, 8);
 
   const header = el('div', 'scheduler-header');
-  const title = el('h2', 'scheduler-title');
+  // the authored heading MOVES into the title wrapper (EW1); the text is only a fallback
+  const titleWrap = el('div', 'scheduler-title');
+  const title = config.titleEl || el('h2');
   title.id = `scheduler-title-${uid}`;
-  title.textContent = config.title || `Connect with ${config.advisor}`;
-  header.append(title);
+  if (!config.titleEl) title.textContent = `Connect with ${config.advisor}`;
+  titleWrap.append(title);
+  header.append(titleWrap);
 
   const stepper = el('ol', 'scheduler-steps');
   STEPS.forEach((label, i) => {

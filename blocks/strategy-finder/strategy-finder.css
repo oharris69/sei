@@ -11,7 +11,8 @@ main > .section.strategy-finder-container {
   padding: 32px 0;
 }
 
-.strategy-finder .strategy-finder-intro > * {
+.strategy-finder .strategy-finder-intro > *,
+.strategy-finder .strategy-finder-intro :is(h1, h2, h3, p, ul, ol) {
   margin: 0;
 }
 
@@ -43,6 +44,10 @@ main > .section.strategy-finder-container {
   line-height: 16px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+}
+
+.strategy-finder .strategy-finder-label p {
+  margin: 0;
 }
 
 .strategy-finder .strategy-finder-tiles {
@@ -169,12 +174,13 @@ main > .section.strategy-finder-container {
   object-fit: cover;
 }
 
-.strategy-finder .strategy-finder-media > :not(picture) {
+.strategy-finder .strategy-finder-media > :not(picture),
+.strategy-finder .strategy-finder-cta-wrapper p {
   position: relative;
   margin: 0;
 }
 
-.strategy-finder a.strategy-finder-cta:any-link {
+.strategy-finder .strategy-finder-cta-wrapper a:any-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -190,9 +196,9 @@ main > .section.strategy-finder-container {
   transition: background-color 0.2s, color 0.2s;
 }
 
-.strategy-finder a.strategy-finder-cta.is-ready,
-.strategy-finder a.strategy-finder-cta:hover,
-.strategy-finder a.strategy-finder-cta:focus-visible {
+.strategy-finder .strategy-finder-cta-wrapper a.is-ready,
+.strategy-finder .strategy-finder-cta-wrapper a:hover,
+.strategy-finder .strategy-finder-cta-wrapper a:focus-visible {
   background-color: var(--color-ink);
   color: var(--color-white);
 }

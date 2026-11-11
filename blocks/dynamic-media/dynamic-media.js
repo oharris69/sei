@@ -1,3 +1,10 @@
+/**
+ * Dynamic Media — Experience Workspace: caption content is MOVED into the <figcaption>; every
+ * other row is configuration consumed into attributes and URLs.
+ * @ew-exempt <p> asset URL row — config: rendered as picture/player URLs (metadata)
+ * @ew-exempt <p> `Alt` / `Caption` / `Crop` / `Ratio` / `Type` label cells — row keys (metadata)
+ * @ew-exempt <p> Alt, Crop, Ratio, Type values — rendered as img alt / URL params (metadata)
+ */
 import { videoSource, buildPlayer } from '../../scripts/video.js';
 
 /*

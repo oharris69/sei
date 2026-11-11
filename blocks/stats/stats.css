@@ -75,6 +75,10 @@ main > .section.stats-container .default-content-wrapper p {
   line-height: 1.17;
 }
 
+.stats :is(.stats-value, .stats-label) p {
+  margin: 0;
+}
+
 .stats .stats-featured {
   position: relative;
   display: flex;

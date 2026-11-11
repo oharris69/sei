@@ -1,3 +1,6 @@
+/**
+ * @ew-exempt <p> row key cell (default / persona / stages) — metadata, never displayed
+ */
 import {
   PERSONAS, getProfile, lifecycleStage, onProfileChange, track,
 } from '../../scripts/profile.js';
@@ -78,20 +81,18 @@ function buildPanel(version, index) {
       panel.prepend(media);
       panel.classList.add('has-media');
     } else if (link && el.textContent.trim() === link.textContent.trim()) {
+      // the card moves as its authored <p> (EW3); the arrow is the anchor's ::before
       link.classList.remove('button', 'primary', 'secondary', 'accent');
       link.classList.add('ua-role-card');
-      const arrow = document.createElement('span');
-      arrow.className = 'ua-role-card-arrow';
-      arrow.setAttribute('aria-hidden', 'true');
-      link.append(arrow);
+      el.classList.remove('button-wrapper');
       const item = document.createElement('li');
-      item.append(link);
-      el.remove();
+      item.append(el);
       list.append(item);
     } else if (!label && isLabel(el)) {
-      label = el;
+      label = document.createElement('div');
       label.className = 'ua-role-panel-label';
       label.id = `${id}-label`;
+      label.append(el);
     } else {
       intro.append(el);
     }

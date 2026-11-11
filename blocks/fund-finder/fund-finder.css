@@ -33,6 +33,12 @@ main > .section.fund-finder-container > .default-content-wrapper h2 {
   text-transform: uppercase;
 }
 
+.fund-finder .fund-finder-label p {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
 .fund-finder .fund-finder-field {
   display: flex;
   max-width: 571px;
@@ -155,11 +161,12 @@ main > .section.fund-finder-container > .default-content-wrapper h2 {
   border-left: 1px solid #faa519;
 }
 
-.fund-finder .fund-finder-aside > * {
+.fund-finder .fund-finder-aside > *,
+.fund-finder .fund-finder-aside :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
   margin: 0;
 }
 
-.fund-finder .fund-finder-aside .fund-finder-aside-title {
+.fund-finder .fund-finder-aside :is(h1, h2, h3, h4, h5, h6) {
   color: #faa519;
   font-size: var(--body-font-size-m);
   font-weight: 900;
@@ -178,7 +185,7 @@ main > .section.fund-finder-container > .default-content-wrapper h2 {
   margin-top: 24px;
 }
 
-.fund-finder a.fund-finder-aside-link:any-link {
+.fund-finder .fund-finder-aside a:any-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -188,7 +195,7 @@ main > .section.fund-finder-container > .default-content-wrapper h2 {
   line-height: 20px;
 }
 
-.fund-finder a.fund-finder-aside-link::after {
+.fund-finder .fund-finder-aside a::after {
   content: '';
   width: 16px;
   height: 16px;
@@ -196,7 +203,7 @@ main > .section.fund-finder-container > .default-content-wrapper h2 {
   mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
 }
 
-.fund-finder a.fund-finder-aside-link:hover {
+.fund-finder .fund-finder-aside a:hover {
   color: var(--color-red);
 }
 

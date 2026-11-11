@@ -117,23 +117,20 @@ function buildDoors(nodes) {
     const link = linkOnly(el);
     if (el.querySelector('picture, img') && !el.textContent.trim()) return;
     if (link) {
+      // the door moves as its authored <p> (EW3); the arrow is the anchor's ::after
       link.classList.remove('button', 'primary', 'secondary', 'accent');
-      link.classList.add('ub-hero-door');
-      const arrow = document.createElement('span');
-      arrow.className = 'ub-hero-door-arrow';
-      arrow.setAttribute('aria-hidden', 'true');
-      link.append(arrow);
+      if (el.matches('p.button-wrapper')) el.classList.remove('button-wrapper');
       const item = document.createElement('li');
-      item.append(link);
+      item.append(el);
       list.append(item);
     } else if (!label && !inner.children.length && isLabel(el)) {
-      label = el;
-      label.className = 'ub-hero-doors-label';
+      label = wrap('ub-hero-doors-label', [el]);
       label.id = `${id}-label`;
       inner.append(label);
+    } else if (el.matches('h2, h3')) {
+      inner.append(wrap('ub-hero-doors-heading', [el]));
     } else {
-      if (el.matches('p')) el.classList.add('ub-hero-doors-lede');
-      inner.append(el);
+      inner.append(el.matches('p') ? wrap('ub-hero-doors-lede', [el]) : el);
     }
   });
 

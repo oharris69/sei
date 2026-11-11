@@ -1,3 +1,6 @@
+/**
+ * @ew-exempt <p> icon-only action labels — metadata: the link's aria-label/title, never displayed
+ */
 const TONES = [
   { tone: 'orange', match: /growth|aggressive|equity|high/i },
   { tone: 'blue', match: /conservative|income|preserv|low/i },
@@ -6,6 +9,15 @@ const TONES = [
 
 function toneFor(text) {
   return TONES.find(({ match }) => match.test(text))?.tone || 'orange';
+}
+
+/** Wraps an authored element in place in a generated wrapper that carries the class (EW1). */
+function wrapInPlace(el, className) {
+  const wrap = document.createElement('div');
+  wrap.className = className;
+  el.before(wrap);
+  wrap.append(el);
+  return wrap;
 }
 
 /**
@@ -27,47 +39,53 @@ export default function decorate(block) {
     li.className = 'result-cards-card';
 
     mainCell.className = 'result-cards-main';
+    // authored elements stay in place inside class-carrying wrappers (EW1/EW2)
     const heading = mainCell.querySelector('h2, h3, h4');
-    if (heading) heading.classList.add('result-cards-title');
     const paragraphs = [...mainCell.querySelectorAll(':scope > p')];
     const tagsP = paragraphs.find((p) => p.querySelector('code'));
     const textPs = paragraphs.filter((p) => p !== tagsP);
-    const headingIndex = heading ? [...mainCell.children].indexOf(heading) : -1;
-    textPs.forEach((p) => {
-      const isTeam = headingIndex >= 0 && p.previousElementSibling === heading;
-      p.classList.add(isTeam ? 'result-cards-team' : 'result-cards-description');
-    });
+    const roles = textPs.map((p) => (heading && p.previousElementSibling === heading
+      ? 'result-cards-team' : 'result-cards-description'));
+    if (heading) wrapInPlace(heading, 'result-cards-title');
+    textPs.forEach((p, i) => wrapInPlace(p, roles[i]));
     if (tagsP) {
-      const tags = document.createElement('ul');
-      tags.className = 'result-cards-tags';
+      // the tags paragraph stays one editable unit: its <code> chips are tinted in place
       [...tagsP.querySelectorAll('code')].forEach((code, i) => {
-        const tag = document.createElement('li');
-        tag.textContent = code.textContent.trim();
-        if (i > 0) tag.className = `tone-${toneFor(tag.textContent)}`;
-        tags.append(tag);
+        if (i > 0) code.className = `tone-${toneFor(code.textContent)}`;
       });
-      tagsP.replaceWith(tags);
+      wrapInPlace(tagsP, 'result-cards-tags');
     }
     li.append(mainCell);
 
     const footer = document.createElement('div');
     footer.className = 'result-cards-footer';
     if (statsCell) {
-      const stats = document.createElement('dl');
+      const stats = document.createElement('div');
       stats.className = 'result-cards-stats';
       [...statsCell.querySelectorAll('p, li')].forEach((item) => {
         const valueEl = item.querySelector('strong, b');
+        if (valueEl && item.matches('p')) {
+          // "Label <strong>value</strong>": the authored paragraph moves whole (EW1); CSS
+          // stacks the label above the value
+          const group = document.createElement('div');
+          group.className = 'result-cards-stat';
+          group.append(item);
+          stats.append(group);
+          return;
+        }
+        // fallback for "Label: value" text (no <strong>): rebuilt, not editable in place
         const value = valueEl ? valueEl.textContent.trim() : '';
         const label = valueEl
           ? item.textContent.replace(valueEl.textContent, '').replace(/[:\s]+$/, '').trim()
           : item.textContent.split(':')[0].trim();
         if (!label && !value) return;
         const group = document.createElement('div');
-        const dt = document.createElement('dt');
-        dt.textContent = label;
-        const dd = document.createElement('dd');
-        dd.textContent = value || item.textContent.split(':').slice(1).join(':').trim();
-        group.append(dt, dd);
+        group.className = 'result-cards-stat';
+        const par = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = value || item.textContent.split(':').slice(1).join(':').trim();
+        par.append(label, strong);
+        group.append(par);
         stats.append(group);
       });
       footer.append(stats);

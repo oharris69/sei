@@ -1,4 +1,11 @@
 /**
+ * Newsletter — Experience Workspace: the eyebrow, field label and disclaimer paragraphs are
+ * MOVED into generated wrappers (`.eyebrow-wrap`, the <label>, `.newsletter-disclaimer`).
+ * @ew-exempt <p> placeholder (form cell, line 2) — rendered as the input's placeholder attribute
+ * @ew-exempt <p> button text (form cell, line 3) — rendered in the submit <button> (EW7)
+ */
+
+/**
  * Newsletter sign-up band.
  * Row cells: [eyebrow, heading, copy]
  * [field label, placeholder, button text (or link to the form action), disclaimer]
@@ -10,6 +17,13 @@ export default function decorate(block) {
 
   if (content) {
     content.className = 'newsletter-content';
+    // the eyebrow class dies in the editor; the wrapper keeps the paint (EW2)
+    content.querySelectorAll(':scope > p.eyebrow').forEach((p) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'eyebrow-wrap';
+      p.replaceWith(wrap);
+      wrap.append(p);
+    });
     block.append(content);
   }
 
@@ -26,7 +40,16 @@ export default function decorate(block) {
   const id = `newsletter-email-${Math.random().toString(36).slice(2, 8)}`;
   const label = document.createElement('label');
   label.htmlFor = id;
-  label.textContent = labelText?.textContent.trim() || 'Business Email';
+  if (labelText) {
+    // move the authored paragraph (EW1); while it is being edited, a click on it
+    // must place the caret instead of focusing the input
+    label.append(labelText);
+    label.addEventListener('click', (e) => {
+      if (e.target.closest('.prosemirror-editor')) e.preventDefault();
+    });
+  } else {
+    label.textContent = 'Business Email';
+  }
 
   const input = document.createElement('input');
   input.type = 'email';
@@ -47,8 +70,10 @@ export default function decorate(block) {
 
   form.append(label, input, button);
   disclaimer.forEach((p) => {
-    p.classList.add('newsletter-disclaimer');
-    form.append(p);
+    const wrap = document.createElement('div');
+    wrap.className = 'newsletter-disclaimer';
+    wrap.append(p);
+    form.append(wrap);
   });
   form.append(status);
 

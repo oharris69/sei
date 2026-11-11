@@ -1,3 +1,6 @@
+/**
+ * @ew-exempt <p> register name cell (kinetic-display) — config, never displayed
+ */
 import { loadCSS, loadScript } from '../../scripts/aem.js';
 
 /**

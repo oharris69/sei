@@ -26,6 +26,11 @@ main > .section.fund-table-container {
   text-align: left;
 }
 
+/* authored cell paragraphs move into the cells whole (editable in place) */
+.fund-table :is(td, th) p {
+  margin: 0;
+}
+
 .fund-table th,
 .fund-table td {
   padding: 16px 15px;

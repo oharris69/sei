@@ -1,4 +1,17 @@
+/**
+ * Feature video — Experience Workspace: the presenter lines and feature titles are MOVED
+ * into generated wrappers (`.feature-video-name` / `-role`, the `.feature-video-title`
+ * heading); CSS styles them through the wrapper.
+ * @ew-exempt <p> video link (row 1) — source link, the icon-only play button href/label (metadata)
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
+
+// Optimized copy of an authored picture that keeps the workspace image index (EW1).
+function optimizedPicture(img, alt, width) {
+  const picture = createOptimizedPicture(img.src, alt, false, [{ width }]);
+  if (img.dataset.imageIndex) picture.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
+  return picture;
+}
 
 /**
  * Feature video: a video thumbnail with presenter caption beside a list of icon features.
@@ -17,7 +30,7 @@ export default function decorate(block) {
     const media = document.createElement('div');
     media.className = 'feature-video-media';
     const img = cell.querySelector('img');
-    if (img) media.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '1400' }]));
+    if (img) media.append(optimizedPicture(img, img.alt, '1400'));
 
     const link = cell.querySelector('a');
     const play = document.createElement(link ? 'a' : 'span');
@@ -36,8 +49,10 @@ export default function decorate(block) {
       const caption = document.createElement('div');
       caption.className = 'feature-video-caption';
       lines.forEach((p, i) => {
-        p.className = i === 0 ? 'feature-video-name' : 'feature-video-role';
-        caption.append(p);
+        const wrap = document.createElement('div');
+        wrap.className = i === 0 ? 'feature-video-name' : 'feature-video-role';
+        wrap.append(p);
+        caption.append(wrap);
       });
       media.append(caption);
     }
@@ -60,14 +75,21 @@ export default function decorate(block) {
       if (pic) {
         const img = pic.querySelector('img');
         if (pic.tagName === 'PICTURE' && img) {
-          icon.append(createOptimizedPicture(img.src, '', false, [{ width: '128' }]));
+          icon.append(optimizedPicture(img, '', '128'));
         } else {
           icon.append(pic);
         }
       }
-      const title = document.createElement('h3');
+      // move the authored title (EW1): a paragraph goes inside the generated <h3>; an
+      // authored heading keeps its own tag inside a styled wrapper
+      const source = textCell || iconCell;
+      const authored = [...source.children].filter((el) => !el.querySelector('picture, .icon')
+        && el.tagName !== 'PICTURE' && el.textContent.trim());
+      const isHeading = authored.length === 1 && /^H[1-6]$/.test(authored[0].tagName);
+      const title = document.createElement(isHeading ? 'div' : 'h3');
       title.className = 'feature-video-title';
-      title.textContent = (textCell || iconCell).textContent.trim();
+      if (authored.length) title.append(...authored);
+      else title.append(...[...source.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE));
       li.append(icon, title);
       list.append(li);
     });

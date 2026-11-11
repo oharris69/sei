@@ -1,5 +1,19 @@
+/**
+ * Specialist — Experience Workspace: every authored paragraph (name, role, location,
+ * availability, booking link, reasons label) is MOVED into a generated wrapper that carries
+ * the class (`.specialist-name`, `.specialist-next`, `.specialist-book`, …); CSS styles the
+ * authored element through it.
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { getProfile } from '../../scripts/profile.js';
+
+// Wrap an AUTHORED element in a generated wrapper that carries the class (EW1/EW2).
+function wrapNode(node, className) {
+  const w = document.createElement('div');
+  w.className = className;
+  w.append(node);
+  return w;
+}
 
 /**
  * Specialist: the SEI person a visitor has been matched with.
@@ -20,6 +34,8 @@ export default function decorate(block) {
     const img = personCell.querySelector('img');
     if (img) {
       const pic = createOptimizedPicture(img.src, img.alt, false, [{ width: '160' }]);
+      // keep the workspace image index on the visible <img> (EW1)
+      if (img.dataset.imageIndex) pic.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
       pic.classList.add('specialist-photo');
       profile.append(pic);
     }
@@ -27,8 +43,8 @@ export default function decorate(block) {
     details.className = 'specialist-details';
     [...personCell.children].filter((el) => !el.querySelector('picture') && el.tagName !== 'PICTURE')
       .forEach((el, i) => {
-        el.classList.add(['specialist-name', 'specialist-role', 'specialist-location'][i] || 'specialist-meta');
-        details.append(el);
+        const role = ['specialist-name', 'specialist-role', 'specialist-location'][i] || 'specialist-meta';
+        details.append(wrapNode(el, role));
       });
     profile.append(details);
     person.append(profile);
@@ -38,15 +54,15 @@ export default function decorate(block) {
     const [textCell, linkCell] = [...availabilityRow.children];
     const availability = document.createElement('div');
     availability.className = 'specialist-availability';
-    const text = document.createElement('p');
-    text.className = 'specialist-next';
-    text.innerHTML = textCell?.textContent.trim() ? textCell.querySelector('p')?.innerHTML || textCell.innerHTML : '';
-    availability.append(text);
-    const link = (linkCell || textCell)?.querySelector('a');
-    if (link) {
-      link.className = 'specialist-book';
-      availability.append(link);
+    // move the authored availability paragraph (a bare-text cell gets a <p> around its nodes)
+    let text = textCell?.querySelector('p');
+    if (!text) {
+      text = document.createElement('p');
+      if (textCell?.textContent.trim()) text.append(...textCell.childNodes);
     }
+    availability.append(wrapNode(text, 'specialist-next'));
+    const link = linkCell?.querySelector('a');
+    if (link) availability.append(wrapNode(link.closest('p') || link, 'specialist-book'));
     person.append(availability);
   }
   block.append(person);
@@ -54,7 +70,12 @@ export default function decorate(block) {
   if (reasonsCell) {
     reasonsCell.className = 'specialist-reasons';
     const label = reasonsCell.querySelector('p, h3, h4');
-    if (label) label.classList.add('specialist-label');
+    if (label) {
+      const wrap = document.createElement('div');
+      wrap.className = 'specialist-label';
+      label.replaceWith(wrap);
+      wrap.append(label);
+    }
     block.append(reasonsCell);
   }
 

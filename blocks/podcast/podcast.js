@@ -1,3 +1,9 @@
+/**
+ * Podcast — Experience Workspace: the show name and episode title are MOVED into the
+ * `.podcast-show` / `.podcast-title` wrappers and styled through them.
+ * @ew-exempt <p> episode / audio / RSS links — source links behind the icon-only player (metadata)
+ * @ew-exempt <p> duration (e.g. "32:15") — derived: re-rendered as the remaining-time counter
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 /**
@@ -47,6 +53,13 @@ function waveformHeights(count, seedText) {
   });
 }
 
+// Optimized copy of an authored picture that keeps the workspace image index (EW1).
+function optimizedPicture(img, width) {
+  const picture = createOptimizedPicture(img.src, img.alt, false, [{ width }]);
+  if (img.dataset.imageIndex) picture.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
+  return picture;
+}
+
 function iconLink(name, label, href) {
   const el = document.createElement(href ? 'a' : 'button');
   el.className = `podcast-action podcast-action-${name}`;
@@ -90,7 +103,7 @@ export default function decorate(block) {
     const img = coverCell.querySelector('img');
     const cover = document.createElement('div');
     cover.className = 'podcast-cover';
-    cover.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '450' }]));
+    cover.append(optimizedPicture(img, '450'));
     block.append(cover);
   }
 
@@ -102,15 +115,18 @@ export default function decorate(block) {
   header.className = 'podcast-header';
   const meta = document.createElement('div');
   meta.className = 'podcast-meta';
+  // move the authored show line and title into styled wrappers (EW1/EW2)
   if (showP) {
-    const show = document.createElement('p');
+    const show = document.createElement('div');
     show.className = 'podcast-show';
-    show.textContent = showP.textContent.trim();
+    show.append(showP);
     meta.append(show);
   }
   if (heading) {
-    heading.className = 'podcast-title';
-    meta.append(heading);
+    const titleWrap = document.createElement('div');
+    titleWrap.className = 'podcast-title';
+    titleWrap.append(heading);
+    meta.append(titleWrap);
   }
   header.append(meta);
 
@@ -118,7 +134,7 @@ export default function decorate(block) {
   tools.className = 'podcast-tools';
   if (logoCell) {
     const img = logoCell.querySelector('img');
-    const logo = createOptimizedPicture(img.src, img.alt, false, [{ width: '240' }]);
+    const logo = optimizedPicture(img, '240');
     logo.classList.add('podcast-logo');
     tools.append(logo);
   }

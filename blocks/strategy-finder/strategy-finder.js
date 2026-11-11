@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <ul> group options — structure: each option is a toggle <button> label (EW7)
+ * @ew-exempt <p> group tone cell (green / orange / cyan) — config, never displayed
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const TONES = ['green', 'orange', 'cyan'];
@@ -75,10 +79,14 @@ export default function decorate(block) {
     group.className = `strategy-finder-group tone-${tone}`;
     group.setAttribute('role', 'group');
 
-    const heading = document.createElement('p');
+    // the authored label paragraph MOVES into the label wrapper (EW1); the text fallback is
+    // only for a cell without a paragraph (off-pipeline content)
+    const heading = document.createElement('div');
     heading.className = 'strategy-finder-label';
     heading.id = `strategy-finder-${key}`;
-    heading.textContent = labelText;
+    const labelPar = labelCell.querySelector('p');
+    if (labelPar) heading.append(labelPar);
+    else heading.textContent = labelText;
     group.setAttribute('aria-labelledby', heading.id);
     group.append(heading);
 
@@ -122,19 +130,31 @@ export default function decorate(block) {
     mediaCell.className = 'strategy-finder-media';
     const img = mediaCell.querySelector('img');
     if (img) {
-      const picture = createOptimizedPicture(img.src, img.alt, true, [{ media: '(width >= 900px)', width: '800' }, { width: '750' }]);
+      const optimized = createOptimizedPicture(img.src, img.alt, true, [{ media: '(width >= 900px)', width: '800' }, { width: '750' }]);
+      // keep the AUTHORED img (it carries the editor's image index): take the optimized
+      // sources and attributes, then move it into a picture at the top of the cell
       const holder = img.closest('picture') || img;
       const wrapper = holder.parentElement !== mediaCell ? holder.closest('p') : null;
+      const fresh = optimized.querySelector('img');
+      [...fresh.attributes].forEach(({ name, value }) => img.setAttribute(name, value));
+      const picture = holder.matches('picture') ? holder : document.createElement('picture');
+      picture.querySelectorAll('source').forEach((source) => source.remove());
+      picture.prepend(...optimized.querySelectorAll('source'));
+      picture.append(img);
       mediaCell.prepend(picture);
-      holder.remove();
       if (wrapper && !wrapper.textContent.trim() && !wrapper.querySelector('img')) wrapper.remove();
     }
     cta = mediaCell.querySelector('a');
     if (cta) {
       cta.className = 'strategy-finder-cta';
       cta.dataset.baseHref = cta.getAttribute('href');
-      const wrapper = cta.closest('p');
-      if (wrapper) wrapper.className = 'strategy-finder-cta-wrapper';
+      // the CTA moves as its authored <p> into a wrapper that carries the class (EW3)
+      const ctaWrap = document.createElement('div');
+      ctaWrap.className = 'strategy-finder-cta-wrapper';
+      const par = cta.closest('p');
+      if (par) par.removeAttribute('class');
+      (par || cta).before(ctaWrap);
+      ctaWrap.append(par || cta);
     }
     block.append(mediaCell);
   }

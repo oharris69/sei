@@ -64,6 +64,10 @@
   margin: 12px 0 0;
 }
 
+.accordion .accordion-item-body .accordion-item-lead :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+  margin-top: 0;
+}
+
 .accordion .accordion-item-body strong {
   font-weight: 900;
 }

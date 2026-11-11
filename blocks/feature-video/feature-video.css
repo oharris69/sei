@@ -123,11 +123,19 @@ main > .section.light + .section.feature-video-container {
 
 .feature-video .feature-video-title {
   margin: 0;
+  font-family: var(--heading-font-family);
   color: var(--color-ink);
   font-size: var(--body-font-size-l);
   font-weight: 500;
   line-height: 28px;
   letter-spacing: -0.45px;
+}
+
+.feature-video .feature-video-title :is(h1, h2, h3, h4, h5, h6, p) {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 @media (width >= 900px) {

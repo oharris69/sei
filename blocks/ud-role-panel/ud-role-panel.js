@@ -1,3 +1,6 @@
+/**
+ * @ew-exempt <p> row key cell (default / persona / stages) — metadata, never displayed
+ */
 import {
   PERSONAS, getProfile, lifecycleStage, onProfileChange, track,
 } from '../../scripts/profile.js';
@@ -18,7 +21,6 @@ import { whyButton } from '../../scripts/why.js';
  * Best match wins: persona + current stage, then persona, then default. Every version is
  * decorated once (authored nodes moved, never cloned) and the others are hidden.
  * Persona versions get a "Why am I seeing this?" button.
- * @ew-exempt row key cell (`default`, persona, stages) — text-as-metadata, never displayed
  * Decode tier: reconstructive (one panel per authored version).
  *
  * @param {Element} block The block element
@@ -43,7 +45,10 @@ function icon(name) {
   return svg;
 }
 
-/** Appends the trailing arrow once (idempotent: re-decoration never doubles it). */
+/**
+ * Appends the door's trailing arrow to its list item, beside (not inside) the authored
+ * paragraph so the editor's re-render of the paragraph never carries it (idempotent).
+ */
 function addArrow(el) {
   if (el && !el.querySelector(':scope > .ud-icon-arrow')) el.append(icon('arrow'));
 }
@@ -111,9 +116,9 @@ function buildPanel(version, index) {
       // every path is the same ink door, whatever emphasis the author used
       link.classList.remove('button', 'primary', 'secondary', 'accent');
       el.classList.remove('button-wrapper');
-      addArrow(link);
       const item = document.createElement('li');
       item.append(el);
+      addArrow(item);
       list.append(item);
     } else if (!label && isLabel(el)) {
       label = div('ud-role-panel-label');

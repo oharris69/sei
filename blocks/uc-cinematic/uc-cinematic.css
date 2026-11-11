@@ -75,10 +75,10 @@ main:has(.uc-cinematic.block) > .section.ua-promos-container {
 
 /* section heads: every h2 on its own bar with cyan hairlines, hanging from the left edge.
    Ink bar on paper grounds; paper bar on the field (proof), ink (stats) and panels. */
-main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2,
-main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
-main:has(.uc-cinematic.block) .ua-statement-text > h2,
-main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper h2,
+main:has(.uc-cinematic.block) .ua-role-panel-intro h2,
+main:has(.uc-cinematic.block) .ua-statement-text h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy h2 {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -89,10 +89,10 @@ main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
   isolation: isolate;
 }
 
-main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2::before,
-main:has(.uc-cinematic.block) .ua-role-panel-intro > h2::before,
-main:has(.uc-cinematic.block) .ua-statement-text > h2::before,
-main:has(.uc-cinematic.block) .ua-newsletter-copy > h2::before {
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper h2::before,
+main:has(.uc-cinematic.block) .ua-role-panel-intro h2::before,
+main:has(.uc-cinematic.block) .ua-statement-text h2::before,
+main:has(.uc-cinematic.block) .ua-newsletter-copy h2::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -101,17 +101,17 @@ main:has(.uc-cinematic.block) .ua-newsletter-copy > h2::before {
   transform-origin: left center;
 }
 
-main:has(.uc-cinematic.block) > .section.ua-case-tabs-container > .default-content-wrapper > h2,
-main:has(.uc-cinematic.block) > .section.ua-stats-container > .default-content-wrapper > h2,
-main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
-main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+main:has(.uc-cinematic.block) > .section.ua-case-tabs-container > .default-content-wrapper h2,
+main:has(.uc-cinematic.block) > .section.ua-stats-container > .default-content-wrapper h2,
+main:has(.uc-cinematic.block) .ua-role-panel-intro h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy h2 {
   --uc-bar-bg: var(--color-white);
   --uc-bar-fg: var(--color-ink);
 }
 
 /* inset bars: inside a panel/card they reach only just past the panel's text edge */
-main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
-main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+main:has(.uc-cinematic.block) .ua-role-panel-intro h2,
+main:has(.uc-cinematic.block) .ua-newsletter-copy h2 {
   margin-left: -12px;
   padding-right: 20px;
   padding-left: 12px;
@@ -119,21 +119,25 @@ main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
 }
 
 /* the newsletter card's bar runs the card's full text width */
-main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+main:has(.uc-cinematic.block) .ua-newsletter-copy h2 {
   display: block;
 }
 
-main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2 + p,
-main:has(.uc-cinematic.block) .ua-statement-text > h2 + p {
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper h2 + p,
+main:has(.uc-cinematic.block) .ua-statement-text h2 + p,
+main:has(.uc-cinematic.block) > .section > .default-content-wrapper .prosemirror-editor:has(h2)
+  + .prosemirror-editor p,
+main:has(.uc-cinematic.block) .ua-statement-text .prosemirror-editor:has(h2)
+  + .prosemirror-editor p {
   margin-top: 18px;
 }
 
-main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+main:has(.uc-cinematic.block) .ua-statement-text h2 {
   font-size: 28px;
 }
 
 /* "connective tissue" in green on the ink bar (no highlighter) */
-main:has(.uc-cinematic.block) .ua-statement-text > h2 em {
+main:has(.uc-cinematic.block) .ua-statement-text h2 em {
   padding-inline: 0;
   background: none;
   color: var(--color-green);
@@ -214,19 +218,19 @@ main:has(.uc-cinematic.block) .ua-stat .ua-stat-label {
     font-size: 24px;
   }
 
-  main:has(.uc-cinematic.block) > .section > .default-content-wrapper > h2,
-  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+  main:has(.uc-cinematic.block) > .section > .default-content-wrapper h2,
+  main:has(.uc-cinematic.block) .ua-statement-text h2 {
     padding: 12px 28px 14px var(--uc-edge);
   }
 
-  main:has(.uc-cinematic.block) .ua-role-panel-intro > h2,
-  main:has(.uc-cinematic.block) .ua-newsletter-copy > h2 {
+  main:has(.uc-cinematic.block) .ua-role-panel-intro h2,
+  main:has(.uc-cinematic.block) .ua-newsletter-copy h2 {
     margin-left: -16px;
     padding: 12px 20px 14px 16px;
     font-size: 30px;
   }
 
-  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+  main:has(.uc-cinematic.block) .ua-statement-text h2 {
     font-size: 34px;
   }
 
@@ -254,7 +258,7 @@ main:has(.uc-cinematic.block) .ua-stat .ua-stat-label {
     margin-left: calc(80px - var(--uc-edge));
   }
 
-  main:has(.uc-cinematic.block) .ua-statement-text > h2 {
+  main:has(.uc-cinematic.block) .ua-statement-text h2 {
     font-size: 44px;
   }
 

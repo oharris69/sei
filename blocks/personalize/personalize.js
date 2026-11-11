@@ -1,4 +1,10 @@
 /**
+ * Personalize — Experience Workspace: the label pill, the question and link options are MOVED
+ * (the label into `.personalize-label`, a link option as its <p> into the option list).
+ * @ew-exempt <p> plain-text options — rendered as choice <button>s (EW7)
+ */
+
+/**
  * Personalize: a "choose your path" question card.
  * Rows: [label pill] [question | optional logo picture] [option] [option] ...
  * Options may be links (the journey continues there) or plain text.
@@ -19,9 +25,10 @@ export default function decorate(block) {
   block.textContent = '';
 
   if (labelRow) {
-    const label = document.createElement('p');
+    const label = document.createElement('div');
     label.className = 'personalize-label';
-    label.textContent = labelRow.textContent.trim();
+    const cell = labelRow.firstElementChild || labelRow;
+    label.append(...cell.childNodes);
     block.append(label);
   }
 
@@ -35,10 +42,14 @@ export default function decorate(block) {
     if (picture && !cell.textContent.trim()) {
       picture.classList.add('personalize-logo');
       header.append(picture);
-    } else {
-      const q = document.createElement('p');
+    } else if (cell.textContent.trim()) {
+      // move the authored question paragraph (a bare-text cell gets a <p> around its nodes)
+      let q = cell.querySelector('p');
+      if (!q) {
+        q = document.createElement('p');
+        q.append(...cell.childNodes);
+      }
       q.id = `personalize-q-${Math.random().toString(36).slice(2, 8)}`;
-      q.textContent = cell.textContent.trim();
       header.prepend(q);
     }
   });
@@ -54,17 +65,26 @@ export default function decorate(block) {
   optionRows.forEach((row) => {
     const li = document.createElement('li');
     const link = row.querySelector('a');
-    const option = document.createElement(link ? 'a' : 'button');
-    option.className = 'personalize-option';
-    option.textContent = row.textContent.trim();
-    if (link) option.href = link.href;
-    else option.type = 'button';
-    if (row.querySelector('strong, a.button.primary')) option.classList.add('selected');
+    const selected = !!row.querySelector('strong, a.button.primary');
+    let option;
+    if (link) {
+      // a link option is the authored anchor, moved with its paragraph (EW3)
+      option = link;
+      if (option.title === option.textContent) option.removeAttribute('title');
+      option.className = 'personalize-option';
+      li.append(link.closest('p') || link);
+    } else {
+      option = document.createElement('button');
+      option.className = 'personalize-option';
+      option.textContent = row.textContent.trim();
+      option.type = 'button';
+      li.append(option);
+    }
+    if (selected) option.classList.add('selected');
     option.addEventListener('click', () => {
       options.querySelectorAll('.personalize-option').forEach((o) => o.classList.remove('selected'));
       option.classList.add('selected');
     });
-    li.append(option);
     options.append(li);
   });
   card.append(options);

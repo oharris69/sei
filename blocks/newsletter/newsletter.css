@@ -16,7 +16,7 @@ main > .section.newsletter-container {
   margin-top: 0;
 }
 
-.newsletter .newsletter-content p.eyebrow {
+.newsletter .newsletter-content .eyebrow-wrap p {
   margin-bottom: 8px;
 }
 
@@ -27,7 +27,7 @@ main > .section.newsletter-container {
   line-height: 1.25;
 }
 
-.newsletter .newsletter-content p:not(.eyebrow) {
+.newsletter .newsletter-content p:not(.eyebrow-wrap p) {
   max-width: 560px;
   margin: 16px 0 0;
   font-weight: 500;
@@ -44,6 +44,10 @@ main > .section.newsletter-container {
   font-size: var(--body-font-size-s);
   font-weight: 500;
   line-height: 20px;
+}
+
+.newsletter .newsletter-form label p {
+  margin: 0;
 }
 
 .newsletter .newsletter-form input {
@@ -90,7 +94,7 @@ main > .section.newsletter-container {
   background-color: var(--color-slate);
 }
 
-.newsletter .newsletter-disclaimer {
+.newsletter .newsletter-disclaimer p {
   margin: 8px 0 0;
   font-size: var(--body-font-size-xs);
   font-weight: 500;

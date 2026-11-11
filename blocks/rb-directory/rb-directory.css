@@ -75,6 +75,12 @@ main > .section.rb-directory-container > .rb-directory-wrapper {
   background: var(--rb-verde);
 }
 
+.rb-directory .rb-directory-plate p {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
 .rb-directory .rb-directory-plate {
   display: block;
   margin: 0;
@@ -90,7 +96,7 @@ main > .section.rb-directory-container > .rb-directory-wrapper {
   text-transform: uppercase;
 }
 
-.rb-directory-list {
+.rb-directory-board :is(ul, ol) {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -107,7 +113,7 @@ main > .section.rb-directory-container > .rb-directory-wrapper {
   transition: color var(--rb-state), background-color var(--rb-state);
 }
 
-.rb-directory-list li:last-child .rb-directory-row {
+.rb-directory-board li:last-child .rb-directory-row {
   border-bottom: 0;
 }
 
@@ -119,6 +125,18 @@ main > .section.rb-directory-container > .rb-directory-wrapper {
   font-stretch: 112%;
   line-height: 1.15;
   letter-spacing: -0.01em;
+}
+
+.rb-directory-name :is(p, h3, h4) {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+/* edit mode: the editor re-renders the unwrapped inner link inside the row anchor */
+.rb-directory-name a:any-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .rb-directory-leader {

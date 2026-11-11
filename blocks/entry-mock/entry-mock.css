@@ -176,6 +176,15 @@ body.entry-mock-page main > .section > div {
   font-size: 12px;
 }
 
+/* generated suffixes after authored lines (the line itself stays editable) */
+.entry-mock .entry-mock-meta.is-promoted p::after {
+  content: ' · Promoted';
+}
+
+.entry-mock .entry-mock-site.is-product p::after {
+  content: ' (simulated)';
+}
+
 .entry-mock .entry-mock-text {
   margin-bottom: 12px;
 }
@@ -217,7 +226,14 @@ body.entry-mock-page main > .section > div {
   letter-spacing: -0.02em;
 }
 
-.entry-mock .entry-mock-ad-headline::after {
+.entry-mock .entry-mock-ad-headline :is(h2, h3) {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.entry-mock .entry-mock-ad-headline :is(h2, h3)::after {
   content: '.';
   color: var(--color-orange);
 }
@@ -309,7 +325,7 @@ body.entry-mock-page main > .section > div {
   padding-left: 22px;
 }
 
-.entry-mock a.entry-mock-source:any-link {
+.entry-mock .entry-mock-answer a:any-link {
   display: inline-block;
   padding: 1px 10px;
   border-radius: 12px;
@@ -319,11 +335,11 @@ body.entry-mock-page main > .section > div {
   text-decoration: none;
 }
 
-.entry-mock a.entry-mock-source:hover {
+.entry-mock .entry-mock-answer a:hover {
   background-color: #dcdcdc;
 }
 
-.entry-mock a.entry-mock-source:focus-visible {
+.entry-mock .entry-mock-answer a:focus-visible {
   outline: 2px solid var(--mock-blue);
   outline-offset: 2px;
 }

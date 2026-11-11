@@ -21,7 +21,7 @@
 }
 
 /* default cards: a lead paragraph that is only a link reads as the card title */
-.cards:not(.promo, .leadership) .cards-card-body > p:first-child:has(> a:only-child) {
+.cards:not(.promo, .leadership) .cards-card-body .cards-card-title p {
   margin-top: 0;
   font-size: var(--body-font-size-l);
   font-weight: 900;
@@ -89,7 +89,7 @@
 }
 
 /* a short line straight after the title reads as a subtitle */
-.cards.promo .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+.cards.promo .cards-card-body .cards-card-subtitle p {
   font-size: var(--body-font-size-xs);
 }
 
@@ -97,14 +97,18 @@
   font-weight: 900;
 }
 
-.cards.promo .cards-card-body p:has(> strong:only-child):not(.button-wrapper) {
+.cards.promo .cards-card-body p:has(> strong:only-child):where(:not(.cards-card-cta p)) {
   font-size: var(--heading-font-size-xs);
   line-height: 1.2;
 }
 
-.cards.promo .cards-card-body p.button-wrapper {
+.cards.promo .cards-card-body .cards-card-cta {
   margin-top: auto;
   padding-top: 24px;
+}
+
+.cards.promo .cards-card-body .cards-card-cta p {
+  margin-top: 0;
 }
 
 .cards.promo .cards-card-inverse {
@@ -127,7 +131,7 @@
     font-size: 34px;
   }
 
-  .cards.promo .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+  .cards.promo .cards-card-body .cards-card-subtitle p {
     font-size: var(--body-font-size-m);
   }
 }
@@ -153,7 +157,7 @@
   padding: 24px 24px 32px;
 }
 
-.cards.promo.stacked .cards-card-body > p:first-child:not(:only-child) {
+.cards.promo.stacked .cards-card-body .cards-card-date p {
   margin: 0 0 12px;
   color: var(--color-gray-600);
   font-size: var(--body-font-size-xs);
@@ -167,7 +171,7 @@
   line-height: 1.2;
 }
 
-.cards.promo.stacked .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+.cards.promo.stacked .cards-card-body .cards-card-subtitle p {
   color: var(--color-slate);
   font-size: var(--body-font-size-m);
   line-height: 1.4;
@@ -245,7 +249,7 @@
   padding: 20px 16px;
 }
 
-.cards.leadership .cards-card-person > :first-child {
+.cards.leadership .cards-card-person .cards-card-name :is(h1, h2, h3, h4, h5, h6, p) {
   margin: 0;
   font-size: var(--heading-font-size-s);
   font-weight: 500;
@@ -336,7 +340,7 @@
   }
 
   /* the hidden copy keeps the narrow tile's width, so it can't push the tile taller */
-  .cards.promo.expand li:not(.is-active) .cards-card-body > :not(h2, h3) {
+  .cards.promo.expand li:not(.is-active) .cards-card-body > :not(.cards-card-heading) {
     width: 595px;
   }
 
@@ -353,19 +357,19 @@
     letter-spacing: -0.3px;
   }
 
-  .cards.promo.expand .cards-card-body > :not(h2, h3) {
+  .cards.promo.expand .cards-card-body > :not(.cards-card-heading) {
     opacity: 0;
     pointer-events: none;
     transition: opacity 200ms ease-out;
   }
 
-  .cards.promo.expand li.is-active .cards-card-body > :not(h2, h3) {
+  .cards.promo.expand li.is-active .cards-card-body > :not(.cards-card-heading) {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 300ms ease-out 200ms;
   }
 
-  .cards.promo.expand li.is-active .cards-card-body p:has(> strong:only-child):not(.button-wrapper) {
+  .cards.promo.expand li.is-active .cards-card-body p:has(> strong:only-child):where(:not(.cards-card-cta p)) {
     max-width: 520px;
     font-size: var(--heading-font-size-s);
     line-height: 28px;

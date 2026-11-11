@@ -1,6 +1,22 @@
+/**
+ * Tabs — Experience Workspace: panel copy is MOVED into role wrappers
+ * (`.tabs-col-lead`, `.tabs-col-follow`, `.tabs-col-end`, `.tabs-caption-name`) and
+ * styled through them, so it stays editable and looks the same while edited.
+ * @ew-exempt <p> tab label text (cell 1) — rendered in the tab <button> (EW7)
+ * @ew-exempt <p> media video link — source link, icon-only play button href/label (metadata)
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 let tabsIdx = 0;
+
+// Wrap an AUTHORED element in place in a generated wrapper that carries the class (EW1).
+function wrapNode(node, className) {
+  const w = document.createElement('div');
+  w.className = className;
+  node.replaceWith(w);
+  w.append(node);
+  return w;
+}
 
 /**
  * Decorates a panel cell that holds a picture and an optional caption / video link.
@@ -9,7 +25,12 @@ let tabsIdx = 0;
 function decorateMediaCell(cell) {
   cell.classList.add('tabs-media');
   const img = cell.querySelector('img');
-  if (img) img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '1000' }]));
+  if (img) {
+    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '1000' }]);
+    // keep the workspace image index on the visible <img> (EW1)
+    if (img.dataset.imageIndex) optimized.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
+    img.closest('picture').replaceWith(optimized);
+  }
   const link = cell.querySelector('a');
   if (link) {
     const play = document.createElement('a');
@@ -27,7 +48,25 @@ function decorateMediaCell(cell) {
     wrap.className = 'tabs-caption';
     caption.forEach((el) => wrap.append(el));
     cell.append(wrap);
+    if (caption[0]) wrapNode(caption[0], 'tabs-caption-name');
   }
+}
+
+/**
+ * Wraps a text column's authored elements by role (lead / follow-on paragraph / closing
+ * paragraph) so the styles never depend on a positional selector on an authored element.
+ * @param {Element} cell The panel column
+ * @param {boolean} isFirst Whether this is the panel's first column
+ */
+function wrapColumnRoles(cell, isFirst) {
+  const kids = [...cell.children];
+  const last = kids[kids.length - 1];
+  kids.forEach((el, i) => {
+    if (!el.textContent.trim()) return;
+    if (i === 0) wrapNode(el, 'tabs-col-lead');
+    else if (isFirst && el === last && el.tagName === 'P') wrapNode(el, 'tabs-col-end');
+    else if (el.tagName === 'P' && kids[i - 1].tagName === 'P') wrapNode(el, 'tabs-col-follow');
+  });
 }
 
 /**
@@ -86,9 +125,10 @@ export default function decorate(block) {
     panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('aria-labelledby', tabId);
     panel.hidden = i !== initial;
-    panelCells.forEach((cell) => {
+    panelCells.forEach((cell, c) => {
       cell.className = 'tabs-panel-col';
       if (cell.querySelector('picture')) decorateMediaCell(cell);
+      else wrapColumnRoles(cell, c === 0);
       panel.append(cell);
     });
     panel.style.setProperty('--tabs-cols', panelCells.length || 1);

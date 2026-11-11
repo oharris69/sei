@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> search placeholder (row 1, cell 2) — config: the input's placeholder attribute
+ * @ew-exempt <p>/<ul> dropdown name + options — structure: native <select>/<option> (EW7)
+ */
 import { toClassName } from '../../scripts/aem.js';
 
 /**
@@ -21,10 +25,14 @@ export default function decorate(block) {
   let aside;
   const selects = [];
 
-  const makeLabel = (text, tag = 'p') => {
-    const label = document.createElement(tag);
+  // Label: the authored <p> MOVES into a generated wrapper (EW1). The fallback text is
+  // only for a cell with no paragraph (off-pipeline content).
+  const makeLabel = (cell, fallback) => {
+    const label = document.createElement('div');
     label.className = 'fund-finder-label';
-    label.textContent = text;
+    const par = cell?.querySelector('p');
+    if (par) label.append(par);
+    else label.textContent = cell?.textContent.trim() || fallback;
     return label;
   };
 
@@ -33,8 +41,8 @@ export default function decorate(block) {
     const id = 'fund-finder-search';
     const group = document.createElement('div');
     group.className = 'fund-finder-search';
-    const label = makeLabel(labelCell?.textContent.trim() || 'Search funds', 'label');
-    label.htmlFor = id;
+    const label = makeLabel(labelCell, 'Search funds');
+    label.id = `${id}-label`;
     const field = document.createElement('div');
     field.className = 'fund-finder-field';
     input = document.createElement('input');
@@ -43,6 +51,11 @@ export default function decorate(block) {
     input.name = 'query';
     input.autocomplete = 'off';
     input.placeholder = placeholderCell?.textContent.trim() || '';
+    input.setAttribute('aria-labelledby', label.id);
+    // like a <label for>: a click on the label focuses the field (not while editing it)
+    label.addEventListener('click', (e) => {
+      if (!e.target.closest('.prosemirror-editor')) input.focus();
+    });
     const button = document.createElement('button');
     button.type = 'submit';
     button.className = 'fund-finder-submit';
@@ -58,7 +71,7 @@ export default function decorate(block) {
     const labelCell = cells.find((cell) => !cell.querySelector('ul, ol'));
     const labelId = 'fund-finder-filters-label';
     if (labelCell?.textContent.trim()) {
-      const label = makeLabel(labelCell.textContent.trim());
+      const label = makeLabel(labelCell);
       label.id = labelId;
       group.append(label);
       group.setAttribute('role', 'group');
@@ -95,9 +108,8 @@ export default function decorate(block) {
     } else if (row.querySelector('a, h1, h2, h3, h4, h5, h6') || (input && !aside)) {
       aside = document.createElement('aside');
       aside.className = 'fund-finder-aside';
+      // authored nodes move as they are; styled by element through the aside (EW2)
       cells.forEach((cell) => aside.append(...cell.childNodes));
-      aside.querySelector('h1, h2, h3, h4, h5, h6')?.classList.add('fund-finder-aside-title');
-      aside.querySelectorAll('a').forEach((a) => a.classList.add('fund-finder-aside-link'));
     } else if (!input) {
       buildSearch(cells);
     }

@@ -7,6 +7,10 @@
   color: var(--color-white);
 }
 
+.adaptive .adaptive-panel[hidden] {
+  display: none;
+}
+
 .adaptive .adaptive-media {
   position: relative;
   min-height: 220px;
@@ -29,11 +33,17 @@
   padding: 32px 24px;
 }
 
-.adaptive .adaptive-body > * {
+.adaptive .adaptive-body > *,
+.adaptive .adaptive-body :where(h1, h2, h3, h4, h5, h6, p, ul, ol) {
   margin: 0;
 }
 
-.adaptive .adaptive-body .eyebrow {
+/* a picture-led cell the runtime folded into one paragraph: its content lays out as body children */
+.adaptive .adaptive-body p.adaptive-fold {
+  display: contents;
+}
+
+.adaptive .adaptive-body .eyebrow-wrap p {
   color: var(--color-green);
 }
 
@@ -44,7 +54,7 @@
   text-wrap: balance;
 }
 
-.adaptive .adaptive-body p:not(.eyebrow, .button-wrapper) {
+.adaptive .adaptive-body p:not(.eyebrow-wrap p, .adaptive-actions p, .adaptive-fold) {
   max-width: 56ch;
   color: rgb(255 255 255 / 80%);
   font-size: var(--body-font-size-l);
@@ -57,12 +67,14 @@
   margin-top: 8px;
 }
 
-.adaptive .adaptive-actions .button-wrapper {
+.adaptive .adaptive-actions .button-wrapper,
+.adaptive .adaptive-actions p {
   margin: 0;
 }
 
 /* outlined buttons read as white outlines on the dark panel */
-.adaptive .adaptive-body a.button.accent {
+.adaptive .adaptive-body a.button.accent,
+.adaptive .adaptive-body .prosemirror-editor p > :is(strong, em) > :is(strong, em) > a:any-link {
   border: 2px solid var(--color-white);
   background-color: transparent;
   color: var(--color-white);

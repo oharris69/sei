@@ -27,7 +27,7 @@
   border-bottom: 1px solid var(--color-gray-100);
 }
 
-.scheduler .scheduler-title {
+.scheduler .scheduler-title :is(h1, h2, h3) {
   margin: 0;
   font-size: var(--body-font-size-l);
   font-weight: 500;

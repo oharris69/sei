@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> video link label — metadata: the video thumbnail's aria-label, never displayed
+ * @ew-exempt <p> italic-only row — config: the message box's placeholder attribute
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import {
   PERSONAS, book, calendarHref, currentPath, getProfile, journeyStatus, onProfileChange,
@@ -21,9 +25,18 @@ function buildBubble(cell) {
 
   const img = bubble.querySelector('img');
   if (img) {
-    const picture = createOptimizedPicture(img.src, img.alt, false, [{ width: '600' }]);
+    // optimize the AUTHORED picture in place: its <img> keeps the editor's image index (EW1)
+    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '600' }]);
+    const holder = img.closest('p') || img.closest('picture') || img;
+    const picture = img.closest('picture') || document.createElement('picture');
     const link = [...bubble.querySelectorAll('a')].find((a) => !a.querySelector('img'));
     const media = document.createElement(link ? 'a' : 'div');
+    holder.replaceWith(media);
+    [...optimized.querySelector('img').attributes]
+      .forEach(({ name, value }) => img.setAttribute(name, value));
+    picture.querySelectorAll('source').forEach((source) => source.remove());
+    picture.prepend(...optimized.querySelectorAll('source'));
+    picture.append(img);
     media.className = 'assistant-video';
     if (link) {
       media.href = link.href;
@@ -33,8 +46,6 @@ function buildBubble(cell) {
       if (p && !p.textContent.trim()) p.remove();
     }
     media.append(picture);
-    const holder = img.closest('p') || img.closest('picture');
-    holder.replaceWith(media);
   }
   return bubble;
 }
@@ -51,7 +62,10 @@ function buildActions(links) {
   links.forEach((link) => {
     const li = document.createElement('li');
     link.className = 'assistant-action';
-    li.append(link);
+    // an authored link moves as its <p> (EW3); styled by element through the list (EW2)
+    const par = link.closest('p');
+    if (par) par.removeAttribute('class');
+    li.append(par || link);
     list.append(li);
   });
   return list;
@@ -329,10 +343,11 @@ export default function decorate(block) {
     if (!cell) return;
     const heading = cell.querySelector('h1, h2, h3');
     if (i === 0 && heading && !cell.querySelector('picture')) {
-      const title = document.createElement('p');
+      // the authored heading MOVES into the title wrapper (EW1)
+      const title = document.createElement('div');
       title.className = 'assistant-title';
-      title.id = heading.id || 'assistant-title';
-      title.textContent = heading.textContent.trim();
+      heading.id = heading.id || 'assistant-title';
+      title.append(heading);
       header.append(title);
       return;
     }

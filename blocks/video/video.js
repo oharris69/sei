@@ -1,3 +1,7 @@
+/**
+ * Video — Experience Workspace: caption paragraphs are MOVED into `.video-caption`.
+ * @ew-exempt <p> video link — source link, the poster button's player URL and label (metadata)
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { track } from '../../scripts/profile.js';
 import { videoSource, buildPlayer } from '../../scripts/video.js';
@@ -34,7 +38,12 @@ export default function decorate(block) {
   frame.className = 'video-frame';
   const poster = document.createElement(source ? 'button' : 'div');
   poster.className = 'video-poster';
-  if (img) poster.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '1600' }]));
+  if (img) {
+    const picture = createOptimizedPicture(img.src, img.alt, false, [{ width: '1600' }]);
+    // keep the workspace image index on the visible <img> (EW1)
+    if (img.dataset.imageIndex) picture.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
+    poster.append(picture);
+  }
   if (source) {
     poster.type = 'button';
     poster.setAttribute('aria-label', `Play video: ${title}`);

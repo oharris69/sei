@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> search placeholder row — config: the search input's placeholder attribute
+ * @ew-exempt <p> risk level cell (1–5) — derived: rendered as the five-dot risk meter
+ */
 const MAX_RISK = 5;
 
 /**
@@ -51,26 +55,28 @@ export default function decorate(block) {
     const header = document.createElement('div');
     header.className = 'strategy-cards-header';
     const titleWrap = document.createElement('div');
-    const title = titleCell.querySelector('h2, h3, h4');
-    let heading;
-    if (title) {
-      heading = document.createElement('h3');
-      heading.innerHTML = title.innerHTML;
-    } else {
+    // the authored heading and tag paragraphs MOVE into wrappers (EW1)
+    const tagPars = [...titleCell.querySelectorAll('p')].filter((par) => par.textContent.trim());
+    let heading = titleCell.querySelector('h2, h3, h4');
+    if (!heading) {
+      // harness-only fallback: a title cell without a heading element (never on DA content)
       heading = document.createElement('h3');
       heading.textContent = titleCell.textContent.trim();
     }
-    heading.className = 'strategy-cards-title';
-    titleWrap.append(heading);
+    const titleBox = document.createElement('div');
+    titleBox.className = 'strategy-cards-title';
+    titleBox.append(heading);
+    titleWrap.append(titleBox);
 
-    const tags = [...titleCell.querySelectorAll('p')].map((p) => p.textContent.trim()).filter(Boolean);
-    if (tags.length) {
-      const meta = document.createElement('p');
+    const tags = tagPars.map((par) => par.textContent.trim());
+    if (tagPars.length) {
+      const meta = document.createElement('div');
       meta.className = 'strategy-cards-meta';
-      tags.forEach((tag) => {
-        const span = document.createElement('span');
-        span.textContent = tag;
-        meta.append(span);
+      tagPars.forEach((par) => {
+        const tag = document.createElement('div');
+        tag.className = 'strategy-cards-tag';
+        tag.append(par);
+        meta.append(tag);
       });
       titleWrap.append(meta);
     }
@@ -86,19 +92,24 @@ export default function decorate(block) {
       bodyCell.className = 'strategy-cards-body';
       const link = bodyCell.querySelector('a');
       if (link) {
-        link.className = 'strategy-cards-link';
-        link.closest('p')?.classList.add('strategy-cards-link-wrapper');
-        const hidden = document.createElement('span');
-        hidden.className = 'strategy-cards-sr';
-        hidden.textContent = ` about ${heading.textContent}`;
-        link.append(hidden);
+        // the link moves as its authored <p> into a wrapper that carries the class (EW3);
+        // the card name goes in the accessible name, not in the authored text (EW1)
+        link.classList.remove('button', 'primary', 'secondary', 'accent');
+        link.setAttribute('aria-label', `${link.textContent.trim()} about ${heading.textContent.trim()}`);
+        const par = link.closest('p');
+        const linkWrap = document.createElement('div');
+        linkWrap.className = 'strategy-cards-link-wrapper';
+        if (par) par.classList.remove('button-wrapper');
+        (par || link).before(linkWrap);
+        linkWrap.append(par || link);
       }
       li.append(bodyCell);
     }
 
     const category = tags[0] || '';
     li.dataset.category = category.toLowerCase();
-    const description = bodyCell?.querySelector('p:not(.strategy-cards-link-wrapper)')?.textContent || '';
+    const description = [...(bodyCell?.querySelectorAll('p') || [])]
+      .find((par) => !par.querySelector('a'))?.textContent || '';
     li.dataset.search = [heading.textContent, ...tags, description].join(' ').toLowerCase();
     if (category && !categories.includes(category)) categories.push(category);
     list.append(li);

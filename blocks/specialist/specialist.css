@@ -42,7 +42,6 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-top: 2px;
   color: var(--color-gray-500);
   font-size: 11px;
   line-height: 17px;
@@ -83,11 +82,23 @@
   mask: url('../../icons/clock.svg') center / contain no-repeat;
 }
 
+.specialist .specialist-next p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
 .specialist .specialist-next strong {
   font-weight: 900;
 }
 
-.specialist a.specialist-book:any-link {
+.specialist .specialist-book p {
+  display: flex;
+  margin: 0;
+}
+
+.specialist .specialist-book a:any-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -99,7 +110,7 @@
   text-transform: uppercase;
 }
 
-.specialist a.specialist-book::after {
+.specialist .specialist-book a::after {
   content: '';
   width: 10px;
   height: 10px;
@@ -117,6 +128,10 @@
 
 .specialist .specialist-label {
   margin-bottom: 12px;
+}
+
+.specialist .specialist-label :is(p, h3, h4) {
+  margin: 0;
   font-size: 10px;
   font-weight: 900;
   line-height: 15px;
@@ -157,7 +172,8 @@
   margin: 0;
 }
 
-.specialist .specialist-cta a.button {
+.specialist .specialist-cta a.button,
+.specialist .specialist-cta .prosemirror-editor p > :is(strong, em) > a:any-link {
   min-width: 276px;
   min-height: 48px;
   border-radius: 2px;

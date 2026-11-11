@@ -1,3 +1,7 @@
+/**
+ * Image — Experience Workspace: caption content is MOVED into the <figcaption>.
+ * @ew-exempt <p> link-only row — the image's link target, rendered as the wrapping <a> (metadata)
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 /*
@@ -80,7 +84,7 @@ export default function decorate(block) {
   if (url.origin === window.location.origin && !/\.svg$/i.test(url.pathname)) {
     const optimized = createOptimizedPicture(img.src, img.alt, eager, breakpoints(block));
     const newImg = optimized.querySelector('img');
-    ['width', 'height'].forEach((attr) => {
+    ['width', 'height', 'data-image-index'].forEach((attr) => {
       if (img.hasAttribute(attr)) newImg.setAttribute(attr, img.getAttribute(attr));
     });
     picture = optimized;

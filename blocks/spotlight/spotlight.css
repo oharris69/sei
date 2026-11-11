@@ -117,6 +117,10 @@
   line-height: 16px;
 }
 
+.spotlight .spotlight-body :is(.spotlight-quote, .spotlight-name, .spotlight-role) p {
+  margin: 0;
+}
+
 @media (width >= 900px) {
   .spotlight {
     grid-template-columns: minmax(0, 582px) minmax(0, 457px);
@@ -138,4 +142,25 @@
 
 .spotlight .spotlight-body .spotlight-link {
   margin-top: 24px;
+}
+
+.spotlight .spotlight-body .spotlight-link p {
+  margin-top: 0;
+}
+
+/* Experience Workspace edit mode: the editor drops the arrow-link class */
+.spotlight .spotlight-link .prosemirror-editor a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+.spotlight .spotlight-link .prosemirror-editor a:any-link::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-cyan);
+  mask: url('../../icons/arrow-right.svg') center / contain no-repeat;
 }

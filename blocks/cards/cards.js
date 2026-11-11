@@ -1,3 +1,9 @@
+/**
+ * Cards — Experience Workspace: authored elements are MOVED into role wrappers
+ * (`.cards-card-heading`, `.cards-card-subtitle`, `.cards-card-date`, `.cards-card-title`,
+ * `.cards-card-cta`, `.cards-card-name`); CSS styles them through the wrapper.
+ * @ew-exempt <p> `inverse` theme cell — variant selector, never displayed (metadata)
+ */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const THEMES = ['inverse'];
@@ -13,9 +19,45 @@ const THEMES = ['inverse'];
  * and shows its copy, the others narrow to their title)
  * @param {Element} block The cards block element
  */
+
+// Wrap an AUTHORED element in a generated wrapper that carries the layout class (EW1).
+function wrapNode(node, className) {
+  const w = document.createElement('div');
+  w.className = className;
+  node.replaceWith(w);
+  w.append(node);
+  return w;
+}
+
+/**
+ * Wraps the authored children of a text cell by role, so the styles survive the
+ * editor swap (no class, child combinator or sibling combinator on authored elements).
+ * @param {Element} cell The text cell
+ * @param {object} opts Variant flags
+ */
+function wrapRoles(cell, { isPromo, isStacked, isPlain }) {
+  const kids = [...cell.children];
+  kids.forEach((el, i) => {
+    const isCta = el.matches('p.button-wrapper');
+    if (/^H[1-6]$/.test(el.tagName)) {
+      wrapNode(el, 'cards-card-heading');
+    } else if (isPromo && isCta) {
+      wrapNode(el, 'cards-card-cta');
+    } else if (isStacked && i === 0 && kids.length > 1 && el.tagName === 'P') {
+      wrapNode(el, 'cards-card-date');
+    } else if (isPromo && el.tagName === 'P' && !isCta && /^H[23]$/.test(kids[i - 1]?.tagName)) {
+      wrapNode(el, 'cards-card-subtitle');
+    } else if (isPlain && i === 0 && el.tagName === 'P' && el.querySelector(':scope > a:only-child')) {
+      wrapNode(el, 'cards-card-title');
+    }
+  });
+}
+
 export default function decorate(block) {
   const isLeadership = block.classList.contains('leadership');
   const isStacked = block.classList.contains('stacked');
+  const isPromo = block.classList.contains('promo');
+  const isPlain = !isPromo && !isLeadership;
   const ul = document.createElement('ul');
 
   [...block.children].forEach((row) => {
@@ -33,9 +75,13 @@ export default function decorate(block) {
         cell.className = 'cards-card-image';
       } else {
         textCells += 1;
-        cell.className = isLeadership && textCells === 1 && cells.length > 2
-          ? 'cards-card-person'
-          : 'cards-card-body';
+        const isPerson = isLeadership && textCells === 1 && cells.length > 2;
+        cell.className = isPerson ? 'cards-card-person' : 'cards-card-body';
+        if (isPerson) {
+          if (cell.firstElementChild) wrapNode(cell.firstElementChild, 'cards-card-name');
+        } else {
+          wrapRoles(cell, { isPromo, isStacked, isPlain });
+        }
       }
       li.append(cell);
     });
@@ -51,8 +97,11 @@ export default function decorate(block) {
   });
 
   ul.querySelectorAll('picture > img').forEach((img) => {
-    const width = block.classList.contains('promo') ? '800' : '600';
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width }]));
+    const width = isPromo ? '800' : '600';
+    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width }]);
+    // keep the workspace image index on the visible <img> (EW1)
+    if (img.dataset.imageIndex) optimized.querySelector('img').dataset.imageIndex = img.dataset.imageIndex;
+    img.closest('picture').replaceWith(optimized);
   });
 
   block.replaceChildren(ul);

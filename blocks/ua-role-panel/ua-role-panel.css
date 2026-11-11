@@ -55,7 +55,8 @@ main > .section.ua-role-panel-container {
   background: linear-gradient(100deg, var(--color-ink) 30%, rgb(19 21 23 / 60%) 100%);
 }
 
-.ua-role-panel-intro > * {
+.ua-role-panel-intro > *,
+.ua-role-panel-intro :is(h1, h2, h3, h4, p, ul, ol) {
   margin: 0;
 }
 
@@ -88,7 +89,7 @@ main > .section.ua-role-panel-container {
   gap: 12px;
 }
 
-.ua-role-panel-choices p.ua-role-panel-label {
+.ua-role-panel-choices .ua-role-panel-label p {
   margin: 0;
   color: var(--color-green);
   font-size: 14px;
@@ -104,7 +105,12 @@ main > .section.ua-role-panel-container {
   list-style: none;
 }
 
-.ua-role-panel a.ua-role-card:any-link {
+.ua-role-panel-choices li :is(p, .prosemirror-editor, .prosemirror-editor > div) {
+  height: 100%;
+  margin: 0;
+}
+
+.ua-role-panel .ua-role-panel-choices a:any-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,20 +129,24 @@ main > .section.ua-role-panel-container {
     border-color 0.16s var(--ua-ease);
 }
 
-.ua-role-panel a.ua-role-card:hover {
+.ua-role-panel .ua-role-panel-choices a:hover {
   border-color: var(--color-white);
   background: var(--color-white);
   color: var(--color-ink);
 }
 
-.ua-role-panel a.ua-role-card:focus-visible {
+.ua-role-panel .ua-role-panel-choices a:focus-visible {
   outline: 3px solid var(--color-white);
   outline-offset: 3px;
 }
 
-.ua-role-card-arrow {
+/* the arrow: a pseudo-element, so it survives the editor's re-render of the authored link
+   (::after is the cinematic layer's hover rule); order puts it after the label */
+.ua-role-panel .ua-role-panel-choices a::before {
+  content: '';
   flex: none;
   align-self: center;
+  order: 1;
   width: 20px;
   height: 20px;
   background-color: currentcolor;
@@ -144,13 +154,13 @@ main > .section.ua-role-panel-container {
   transition: transform 0.16s var(--ua-ease);
 }
 
-.ua-role-card:hover .ua-role-card-arrow {
+.ua-role-panel .ua-role-panel-choices a:hover::before {
   transform: translateX(4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ua-role-panel a.ua-role-card:any-link,
-  .ua-role-card-arrow {
+  .ua-role-panel .ua-role-panel-choices a:any-link,
+  .ua-role-panel .ua-role-panel-choices a::before {
     transition: none;
   }
 }
@@ -170,13 +180,13 @@ main > .section.ua-role-panel-container {
     grid-auto-flow: column;
   }
 
-  .ua-role-panel a.ua-role-card:any-link {
+  .ua-role-panel .ua-role-panel-choices a:any-link {
     flex-direction: column;
     align-items: stretch;
     min-height: 132px;
   }
 
-  .ua-role-card-arrow {
+  .ua-role-panel .ua-role-panel-choices a::before {
     align-self: flex-end;
   }
 }

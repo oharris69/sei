@@ -694,3 +694,95 @@ main code {
   background-color: currentcolor;
   mask: url('../icons/info.svg') center / contain no-repeat;
 }
+
+/* ── Experience Workspace edit mode (da.live quick-edit) ──
+   The inline editor re-renders an authored element as
+   div.prosemirror-editor > div.ProseMirror > <tag> with no classes, so class-based
+   paint (buttons, arrow links, eyebrows) is restored from the authored marks or a
+   generated wrapper. `.prosemirror-editor` exists only inside the editor: zero
+   effect on published pages. */
+
+/* (a) repaint CTAs from their authored marks (strong = primary, em = secondary, both = accent) */
+.prosemirror-editor p:where(:has(> :is(strong, em) > a:any-link:only-child)),
+.prosemirror-editor p:where(:has(> :is(strong, em) > :is(strong, em) > a:any-link:only-child)),
+.prosemirror-editor p:where(:has(> a:any-link:only-child > :is(strong, em):only-child)) {
+  margin: 16px 0 0;
+}
+
+.prosemirror-editor p > :is(strong, em) > a:any-link,
+.prosemirror-editor p > :is(strong, em) > :is(strong, em) > a:any-link,
+.prosemirror-editor p > a:any-link:has(> :is(strong, em):only-child) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 0;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prosemirror-editor p > a:any-link :is(strong, em) {
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+.prosemirror-editor p > strong > a:any-link,
+.prosemirror-editor p > a:any-link:has(> strong:only-child) {
+  border-color: var(--color-red);
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.prosemirror-editor p > em > a:any-link,
+.prosemirror-editor p > a:any-link:has(> em:only-child) {
+  border-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.prosemirror-editor p > :is(strong, em) > :is(strong, em) > a:any-link,
+.prosemirror-editor p > a:any-link:has(> strong > em:only-child, > em > strong:only-child) {
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+/* (b) card-as-link: a CTA paragraph moved into a card <a> reads like the card text */
+a .prosemirror-editor a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* (c) class-based text utilities, repeated as wrapper variants at equal specificity */
+main .eyebrow-wrap :where(p) {
+  margin: 0 0 4px;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* on-dark variants of the CTA repaint go last: nothing may follow them */
+main .section:is(.gradient, .dark) .prosemirror-editor p > :is(strong, em) > a:any-link,
+main .section:is(.gradient, .dark) .prosemirror-editor p > a:any-link:has(> :is(strong, em):only-child) {
+  color: var(--color-white);
+}
+
+main .section:is(.gradient, .dark) .prosemirror-editor p > :is(strong, em) > :is(strong, em) > a:any-link {
+  color: var(--color-slate);
+}

@@ -1,3 +1,7 @@
+/**
+ * @ew-exempt <p> axis names, scores and #hex colour cells — derived: drawn into the SVG radar
+ * @ew-exempt <p> axis row first cell (e.g. Fund) — derived: shown only in the screen-reader table
+ */
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const COLORS = ['#be0000', '#667085', '#98a2b3', '#00c0f3', '#a6ce39'];
 const SIZE = 445;
@@ -128,12 +132,15 @@ export default function decorate(block) {
     const [infoCell, ...valueCells] = cellsOf(row);
     const colorCell = valueCells.find((c) => /^#[0-9a-f]{3,8}$/i.test(c.textContent.trim()));
     const values = valueCells.filter((c) => c !== colorCell).map((c) => parseFloat(c.textContent));
-    const lines = [...infoCell.querySelectorAll('p')].map((p) => p.textContent.trim()).filter(Boolean);
+    const pars = [...infoCell.querySelectorAll('p')].filter((p) => p.textContent.trim());
+    const lines = pars.map((p) => p.textContent.trim());
     if (!lines.length) lines.push(infoCell.textContent.trim());
     return {
       ticker: lines[0],
       name: lines[1] || '',
       details: lines.slice(2),
+      // the authored paragraphs MOVE into the fund card (EW1)
+      pars,
       values,
       color: colorCell ? colorCell.textContent.trim() : COLORS[index % COLORS.length],
     };
@@ -156,14 +163,19 @@ export default function decorate(block) {
     const [titleCell, pillCell] = cellsOf(headerRow);
     const header = document.createElement('div');
     header.className = 'fund-compare-header';
+    // harness-only fallback: a title cell without a heading element (never on DA content)
     const heading = titleCell?.querySelector('h1, h2, h3, h4') || document.createElement('h2');
     if (!heading.textContent.trim()) heading.textContent = titleCell?.textContent.trim() || '';
-    heading.className = 'fund-compare-title';
-    header.append(heading);
+    const title = document.createElement('div');
+    title.className = 'fund-compare-title';
+    title.append(heading);
+    header.append(title);
     if (pillCell?.textContent.trim()) {
-      const pill = document.createElement('span');
+      const pill = document.createElement('div');
       pill.className = 'fund-compare-pill';
-      pill.textContent = pillCell.textContent.trim();
+      const pillPar = pillCell.querySelector('p');
+      if (pillPar) pill.append(pillPar);
+      else pill.textContent = pillCell.textContent.trim();
       header.append(pill);
     }
     panel.append(header);
@@ -178,26 +190,16 @@ export default function decorate(block) {
     swatch.className = 'fund-compare-swatch';
     swatch.setAttribute('aria-hidden', 'true');
     const body = document.createElement('div');
-    const ticker = document.createElement('p');
-    ticker.className = 'fund-compare-ticker';
-    ticker.textContent = fund.ticker;
-    body.append(ticker);
-    if (fund.name) {
-      const name = document.createElement('p');
-      name.className = 'fund-compare-name';
-      name.textContent = fund.name;
-      body.append(name);
-    }
-    if (fund.details.length) {
-      const details = document.createElement('p');
-      details.className = 'fund-compare-details';
-      fund.details.forEach((d) => {
-        const span = document.createElement('span');
-        span.textContent = d;
-        details.append(span);
-      });
-      body.append(details);
-    }
+    const slot = (className, nodes) => {
+      const el = document.createElement('div');
+      el.className = className;
+      el.append(...nodes);
+      body.append(el);
+    };
+    const [tickerPar, namePar, ...detailPars] = fund.pars;
+    slot('fund-compare-ticker', [tickerPar || fund.ticker]);
+    if (namePar) slot('fund-compare-name', [namePar]);
+    if (detailPars.length) slot('fund-compare-details', detailPars);
     li.append(swatch, body);
 
     const highlight = (on) => {
