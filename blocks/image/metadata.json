@@ -1,0 +1,33 @@
+{
+  "variantName": "image",
+  "baseBlock": "image",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-11T00:00:00.000Z",
+  "visualCharacteristics": [
+    "One image in a <figure>, centred in the content column at its natural size (never wider than the column)",
+    "Optional caption under the image: small slate text (body-font-size-s), links and emphasis kept",
+    "Optional link around the image, cyan focus ring",
+    "Wide fills the content column; narrow is a ~720px reading column; full bleeds edge to edge with the caption kept in the content column",
+    "Left / right float the image (~42%, max 520px) beside the text that follows it on desktop (>= 900px) and stack on mobile",
+    "Rounded uses the site card radius (15px); bordered adds a 1px light-grey hairline"
+  ],
+  "contentPattern": [
+    "Rows in any order; empty rows are ignored",
+    "Picture row (required): a single picture; without one the block renders nothing",
+    "Optional link row: a row holding only a link makes the image link there (a link wrapped around the picture also works)",
+    "Optional caption row: any other text (paragraphs, links, emphasis) becomes the figcaption"
+  ],
+  "options": [
+    { "class": "wide", "label": "Wide" },
+    { "class": "full", "label": "Full width" },
+    { "class": "narrow", "label": "Narrow" },
+    { "class": "left", "label": "Left" },
+    { "class": "right", "label": "Right" },
+    { "class": "rounded", "label": "Rounded" },
+    { "class": "bordered", "label": "Bordered" }
+  ],
+  "memberVariantIds": [],
+  "usage": "Ad-hoc content updates in Document Authoring: drop a single image into any page, with an optional caption and link.",
+  "reuseGuidance": "Use for one standalone image. For an image with heading and CTA use teaser; for a picture behind copy use hero; for several images use cards or columns; for Dynamic Media assets by URL use dynamic-media."
+}

@@ -1,7 +1,7 @@
 {
-  "total": 63,
+  "total": 65,
   "offset": 0,
-  "limit": 63,
+  "limit": 65,
   "data": [
     {
       "name": "Accordion",
@@ -40,6 +40,10 @@
       "path": "https://content.da.live/oharris69/sei/library/blocks/columns"
     },
     {
+      "name": "Dynamic Media",
+      "path": "https://content.da.live/oharris69/sei/library/blocks/dynamic-media"
+    },
+    {
       "name": "Entry Mock",
       "path": "https://content.da.live/oharris69/sei/library/blocks/entry-mock"
     },
@@ -70,6 +74,10 @@
     {
       "name": "Hero",
       "path": "https://content.da.live/oharris69/sei/library/blocks/hero"
+    },
+    {
+      "name": "Image",
+      "path": "https://content.da.live/oharris69/sei/library/blocks/image"
     },
     {
       "name": "Match Header",

@@ -1,0 +1,138 @@
+/* dynamic-media: an Adobe Dynamic Media image or video by URL */
+.dynamic-media .dynamic-media-figure {
+  margin: 0;
+}
+
+.dynamic-media .dynamic-media-media {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dynamic-media picture {
+  display: block;
+  max-width: 100%;
+}
+
+.dynamic-media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* space is reserved (Ratio row) so the image fills it */
+.dynamic-media .dynamic-media-media[style*='aspect-ratio'] picture,
+.dynamic-media .dynamic-media-media[style*='aspect-ratio'] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* video: a 16:9 frame unless a Ratio row says otherwise */
+.dynamic-media.is-video .dynamic-media-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-ink);
+}
+
+.dynamic-media .dynamic-media-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: var(--color-ink);
+}
+
+/* unrecognised or unreachable asset: a plain link */
+.dynamic-media.is-fallback .dynamic-media-media {
+  justify-content: flex-start;
+}
+
+.dynamic-media .dynamic-media-fallback {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.dynamic-media .dynamic-media-caption {
+  margin-top: 12px;
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.dynamic-media .dynamic-media-caption > :first-child {
+  margin-top: 0;
+}
+
+.dynamic-media .dynamic-media-caption > :last-child {
+  margin-bottom: 0;
+}
+
+/* wide: fill the content column */
+.dynamic-media.wide img {
+  width: 100%;
+}
+
+/* narrow: a reading-width column */
+.dynamic-media.narrow {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.dynamic-media.narrow img {
+  width: 100%;
+}
+
+/* full: edge to edge */
+main > .section > .dynamic-media-wrapper:has(> .dynamic-media.full) {
+  max-width: unset;
+  padding: 0;
+}
+
+.dynamic-media.full img {
+  width: 100%;
+}
+
+.dynamic-media.full .dynamic-media-caption,
+.dynamic-media.full.is-fallback .dynamic-media-media {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: 0 var(--content-padding);
+  box-sizing: border-box;
+}
+
+/* rounded: the site's card radius */
+.dynamic-media.rounded img,
+.dynamic-media.rounded.is-video .dynamic-media-media {
+  border-radius: var(--radius-card);
+}
+
+/* left / right: stacked on mobile, beside the text that follows on desktop */
+.dynamic-media:is(.left, .right) img {
+  width: 100%;
+}
+
+@media (width >= 900px) {
+  main > .section > .dynamic-media-wrapper:has(> .dynamic-media.left) {
+    float: left;
+    width: min(42%, 520px);
+    margin: 0 40px 24px max(var(--content-padding), calc((100% - var(--content-max-width)) / 2 + var(--content-padding)));
+    padding: 0;
+  }
+
+  main > .section > .dynamic-media-wrapper:has(> .dynamic-media.right) {
+    float: right;
+    width: min(42%, 520px);
+    margin: 0 max(var(--content-padding), calc((100% - var(--content-max-width)) / 2 + var(--content-padding))) 24px 40px;
+    padding: 0;
+  }
+
+  main > .section:has(> .dynamic-media-wrapper > .dynamic-media:is(.left, .right))::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

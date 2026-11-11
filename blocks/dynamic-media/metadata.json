@@ -1,0 +1,32 @@
+{
+  "variantName": "dynamic-media",
+  "baseBlock": "dynamic-media",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-11T00:00:00.000Z",
+  "visualCharacteristics": [
+    "One Dynamic Media image or video in a <figure>, centred in the content column",
+    "Images render as a responsive picture (webp source plus jpg/png fallback at 750/1200/2000px, quality 85) with a sizes attribute",
+    "Videos render inline in a 16:9 ink frame (AEM Assets player iframe or the browser's video player), never autoplaying",
+    "Optional caption under the media: small slate text",
+    "An unrecognised URL, or an image that fails to load, shows as a plain link instead of a broken image",
+    "Same layout options as image: wide, full, narrow, left, right (float beside text on desktop), rounded"
+  ],
+  "contentPattern": [
+    "URL row (required): a Dynamic Media URL as a link or plain text (optionally labelled URL | ...)",
+    "Optional labelled two-cell rows in any order: Alt | text, Caption | text, Crop | name or $preset$, Ratio | 16:9 or 1600x900, Type | video",
+    "Unlabelled single-cell rows after the URL: alt text, then caption; a row starting with $ or : is the crop / preset",
+    "Supported URLs: Dynamic Media with OpenAPI delivery (delivery-pXXXX-eYYYY.adobeaemcloud.com/adobe/assets/urn:aaid:aem:...), Scene7 /is/image/ and /is/content/ (video), any .mp4 or Brightcove link"
+  ],
+  "options": [
+    { "class": "wide", "label": "Wide" },
+    { "class": "full", "label": "Full width" },
+    { "class": "narrow", "label": "Narrow" },
+    { "class": "left", "label": "Left" },
+    { "class": "right", "label": "Right" },
+    { "class": "rounded", "label": "Rounded" }
+  ],
+  "memberVariantIds": [],
+  "usage": "Ad-hoc content updates in Document Authoring: place an AEM Assets (Dynamic Media with OpenAPI, environment p7954-e2285674) or classic Scene7 image or video on any page by pasting its URL.",
+  "reuseGuidance": "Use when the asset lives in AEM Assets / Dynamic Media and should be delivered (and cropped) by Dynamic Media. For an image uploaded into the DA document use image; for a poster that turns into a player on click use video."
+}

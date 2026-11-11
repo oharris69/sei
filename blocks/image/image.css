@@ -1,0 +1,118 @@
+/* image: one picture with an optional caption and link */
+.image .image-figure {
+  margin: 0;
+}
+
+.image .image-media {
+  display: flex;
+  justify-content: center;
+}
+
+.image .image-link {
+  display: block;
+  max-width: 100%;
+  border-radius: inherit;
+}
+
+.image .image-link:focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+.image picture {
+  display: block;
+  max-width: 100%;
+}
+
+.image img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.image .image-caption {
+  margin-top: 12px;
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.image .image-caption > :first-child {
+  margin-top: 0;
+}
+
+.image .image-caption > :last-child {
+  margin-bottom: 0;
+}
+
+/* wide: fill the content column */
+.image.wide img {
+  width: 100%;
+}
+
+/* narrow: a reading-width column */
+.image.narrow {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.image.narrow img {
+  width: 100%;
+}
+
+/* full: edge to edge */
+main > .section > .image-wrapper:has(> .image.full) {
+  max-width: unset;
+  padding: 0;
+}
+
+.image.full img {
+  width: 100%;
+}
+
+.image.full .image-caption {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: 0 var(--content-padding);
+  box-sizing: border-box;
+}
+
+/* rounded: the site's card radius */
+.image.rounded img {
+  border-radius: var(--radius-card);
+}
+
+/* bordered: hairline frame */
+.image.bordered img {
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+}
+
+/* left / right: stacked on mobile, beside the text that follows on desktop */
+.image:is(.left, .right) img {
+  width: 100%;
+}
+
+@media (width >= 900px) {
+  main > .section > .image-wrapper:has(> .image.left) {
+    float: left;
+    width: min(42%, 520px);
+    margin: 0 40px 24px max(var(--content-padding), calc((100% - var(--content-max-width)) / 2 + var(--content-padding)));
+    padding: 0;
+  }
+
+  main > .section > .image-wrapper:has(> .image.right) {
+    float: right;
+    width: min(42%, 520px);
+    margin: 0 max(var(--content-padding), calc((100% - var(--content-max-width)) / 2 + var(--content-padding))) 24px 40px;
+    padding: 0;
+  }
+
+  main > .section:has(> .image-wrapper > .image:is(.left, .right))::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
