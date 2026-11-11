@@ -4,6 +4,7 @@
  *  - a row/cell holding only a picture → background image
  *  - a row/cell with text → eyebrow, heading, copy and CTAs
  * Variants: (default) full-bleed image, `short`, `home`
+ * Options: `scrim` (ink gradient over bright photography, so the white copy stays readable)
  * @param {Element} block The hero block element
  */
 export default function decorate(block) {

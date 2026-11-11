@@ -15,6 +15,7 @@ const THEMES = ['inverse'];
  */
 export default function decorate(block) {
   const isLeadership = block.classList.contains('leadership');
+  const isStacked = block.classList.contains('stacked');
   const ul = document.createElement('ul');
 
   [...block.children].forEach((row) => {
@@ -41,7 +42,7 @@ export default function decorate(block) {
 
     // a card with a single link becomes clickable as a whole
     const links = li.querySelectorAll('a');
-    if (isLeadership && links.length === 1) {
+    if ((isLeadership || isStacked) && links.length === 1) {
       li.classList.add('cards-card-linked');
       links[0].classList.add('cards-card-link');
     }

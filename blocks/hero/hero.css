@@ -32,6 +32,20 @@ main > .section.hero-container > .hero-wrapper {
   object-fit: cover;
 }
 
+/* scrim: ink gradient over bright photography so the white copy stays readable */
+.hero.scrim .hero-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(19 21 23 / 72%) 0%, rgb(19 21 23 / 45%) 60%, rgb(19 21 23 / 20%) 100%);
+}
+
+@media (width >= 900px) {
+  .hero.scrim .hero-media::after {
+    background: linear-gradient(90deg, rgb(19 21 23 / 78%) 0%, rgb(19 21 23 / 50%) 45%, rgb(19 21 23 / 0%) 80%);
+  }
+}
+
 .hero .hero-content {
   position: relative;
   z-index: 1;

@@ -12,11 +12,20 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-card);
   background-color: var(--background-color);
+  color: var(--text-color);
   overflow: hidden;
 }
 
 .cards .cards-card-body {
   margin: 16px;
+}
+
+/* default cards: a lead paragraph that is only a link reads as the card title */
+.cards:not(.promo, .leadership) .cards-card-body > p:first-child:has(> a:only-child) {
+  margin-top: 0;
+  font-size: var(--body-font-size-l);
+  font-weight: 900;
+  line-height: 1.3;
 }
 
 .cards .cards-card-image {
@@ -123,6 +132,84 @@
   }
 }
 
+/* promo stacked: photo on top, date / linked title / summary below; the card is the link */
+.cards.promo.stacked > ul > li {
+  min-height: 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--color-white);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards.promo.stacked .cards-card-image {
+  position: static;
+}
+
+.cards.promo.stacked > ul > li img {
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+.cards.promo.stacked .cards-card-body {
+  padding: 24px 24px 32px;
+}
+
+.cards.promo.stacked .cards-card-body > p:first-child:not(:only-child) {
+  margin: 0 0 12px;
+  color: var(--color-gray-600);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.cards.promo.stacked .cards-card-body :is(h2, h3) {
+  font-size: var(--heading-font-size-s);
+  line-height: 1.2;
+}
+
+.cards.promo.stacked .cards-card-body :is(h2, h3) + p:not(.button-wrapper) {
+  color: var(--color-slate);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+}
+
+.cards.promo.stacked .cards-card-body a:any-link {
+  color: inherit;
+}
+
+.cards.promo.stacked .cards-card-linked .cards-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards.promo.stacked .cards-card-linked:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgb(16 24 40 / 18%);
+}
+
+.cards.promo.stacked .cards-card-linked:hover .cards-card-link {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
+.cards.promo.stacked .cards-card-linked:focus-within {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+@media (width >= 900px) {
+  .cards.promo.stacked .cards-card-body :is(h2, h3) {
+    font-size: var(--heading-font-size-s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards.promo.stacked > ul > li {
+    transition: none;
+  }
+}
+
 /* leadership: portrait with name overlay, cyan topic panel below */
 .cards.leadership > ul {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -184,6 +271,11 @@
   font-size: var(--heading-font-size-s);
   line-height: 32px;
   letter-spacing: -0.01em;
+}
+
+/* a people card without the person overlay (portrait | name, role): ink copy on the cyan panel */
+.cards.leadership li:not(:has(.cards-card-person)) .cards-card-body :is(h3, h4) {
+  color: var(--color-ink);
 }
 
 .cards.leadership .cards-card-body p {
