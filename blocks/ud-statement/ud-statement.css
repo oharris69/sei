@@ -1,0 +1,171 @@
+/* ud-statement — uplift variant D "what SEI does" (Pink band). Tokens scoped to the container. */
+main > .section.ud-statement-container {
+  --ud-ink: #131517;
+  --ud-paper: #fff;
+  --ud-pink: #f287b7;
+  --ud-gap: 8px;
+  --ud-display: 80px;
+
+  margin: 0;
+  padding: 64px 0;
+  background: var(--ud-pink);
+  color: var(--ud-ink);
+}
+
+.ud-statement,
+.ud-statement *,
+.ud-statement *::before,
+.ud-statement *::after {
+  box-sizing: border-box;
+}
+
+/* columns sized to content: the mark plate sits a fixed 64px from the capability stack */
+.ud-statement-grid {
+  display: grid;
+  grid-template-columns: max-content 320px 1fr;
+  gap: 40px 64px;
+  align-items: end;
+}
+
+.ud-statement-copy {
+  grid-column: 1 / -1;
+  contain: inline-size;
+}
+
+.ud-statement-copy :is(h1, h2, h3) {
+  margin: 0;
+  color: var(--ud-ink);
+  font-size: 48px;
+  font-weight: 950;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ud-statement-copy p {
+  max-width: 60ch;
+  margin: 18px 0 0;
+  font-size: 20px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* the capabilities as the stacked mark's ink blocks with paper letters */
+.ud-statement-caps :is(ul, ol) {
+  margin: 0;
+  padding: calc(var(--ud-gap) / 2) 0;
+  list-style: none;
+  font-family: var(--heading-font-family);
+  font-size: var(--ud-display);
+  font-weight: 950;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+/* bar = the face's 1.2em content area; the paper gap sits between bars */
+.ud-statement-caps li {
+  display: block;
+  width: fit-content;
+  padding: 0 0.2em;
+  background: var(--ud-ink);
+  color: var(--ud-paper);
+}
+
+.ud-statement-caps li + li {
+  margin-top: var(--ud-gap);
+  margin-left: 0.9em;
+}
+
+.ud-statement-caps li + li + li {
+  margin-left: 1.8em;
+}
+
+/* the plate is the mark's own clear space; the crop cuts the captured image down to the mark */
+.ud-statement-mark {
+  display: grid;
+  place-items: center;
+  justify-self: start;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  background: var(--ud-paper);
+}
+
+.ud-statement-crop {
+  position: relative;
+  width: 52%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--ud-paper);
+}
+
+.ud-statement-crop p {
+  margin: 0;
+}
+
+.ud-statement-crop img {
+  position: absolute;
+  top: -91.25%;
+  left: -264.1%;
+  width: 625%;
+  max-width: none;
+  height: auto;
+}
+
+.ud-statement-purpose {
+  grid-column: 1 / -1;
+  padding-top: 28px;
+  border-top: 1.5px solid var(--ud-ink);
+  contain: inline-size;
+}
+
+.ud-statement-purpose p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--ud-display);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+@media (width <= 1024px) {
+  main > .section.ud-statement-container {
+    --ud-display: 64px;
+  }
+}
+
+@media (width <= 900px) {
+  .ud-statement-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ud-statement-mark {
+    width: 260px;
+  }
+}
+
+@media (width <= 640px) {
+  main > .section.ud-statement-container {
+    --ud-gap: 6px;
+    --ud-display: 40px;
+
+    padding: 48px 0;
+  }
+
+  .ud-statement-copy :is(h1, h2, h3) {
+    font-size: 32px;
+  }
+
+  .ud-statement-copy p {
+    font-size: 18px;
+  }
+
+  .ud-statement-mark {
+    width: 200px;
+  }
+
+  .ud-statement-purpose {
+    padding-top: 20px;
+  }
+}

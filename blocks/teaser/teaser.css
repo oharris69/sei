@@ -5,10 +5,47 @@ main > .section.teaser-container > .teaser-wrapper {
 }
 
 .teaser {
+  --teaser-background: var(--color-ink);
+  --teaser-color: var(--color-white);
+  --teaser-accent: var(--color-cyan);
+  --teaser-icon-filter: brightness(0) invert(1);
+
   display: flex;
   flex-direction: column-reverse;
+  background-color: var(--teaser-background);
+  color: var(--teaser-color);
+}
+
+/* a section style colours the copy panel: brand fills behind ink text, red behind white */
+main > .section.red .teaser {
+  --teaser-background: var(--color-red);
+  --teaser-accent: var(--color-white);
+}
+
+main > .section.cyan .teaser,
+main > .section.green .teaser,
+main > .section.orange .teaser,
+main > .section.light-grey .teaser {
+  --teaser-color: var(--color-ink);
+  --teaser-accent: var(--color-ink);
+  --teaser-icon-filter: brightness(0);
+}
+
+main > .section.cyan .teaser { --teaser-background: var(--color-cyan); }
+main > .section.green .teaser { --teaser-background: var(--color-green); }
+main > .section.orange .teaser { --teaser-background: var(--color-orange); }
+main > .section.light-grey .teaser { --teaser-background: var(--color-gray-100); }
+
+/* the red primary button would vanish on a brand fill: use the ink button there */
+main > .section:is(.red, .cyan, .green, .orange) .teaser a.button.primary {
+  border-color: var(--color-ink);
   background-color: var(--color-ink);
   color: var(--color-white);
+}
+
+main > .section:is(.red, .cyan, .green, .orange) .teaser a.button.primary:is(:hover, :focus-visible) {
+  border-color: var(--color-slate);
+  background-color: var(--color-slate);
 }
 
 .teaser .teaser-content {
@@ -18,7 +55,19 @@ main > .section.teaser-container > .teaser-wrapper {
   padding: 32px var(--content-padding) 32px;
 }
 
-.teaser .teaser-content :is(h2, h3) {
+.teaser .teaser-content .teaser-icon {
+  margin: 0 0 20px;
+  line-height: 0;
+}
+
+.teaser .teaser-content .teaser-icon :is(img, .icon) {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: var(--teaser-icon-filter);
+}
+
+.teaser .teaser-content :is(h1, h2, h3) {
   margin: 0;
   color: inherit;
   font-size: var(--heading-font-size-l);
@@ -31,7 +80,7 @@ main > .section.teaser-container > .teaser-wrapper {
 }
 
 .teaser .teaser-content .teaser-subline {
-  color: var(--color-cyan);
+  color: var(--teaser-accent);
   font-size: var(--heading-font-size-xs);
   font-weight: 900;
   line-height: 1.45;
@@ -68,6 +117,56 @@ main > .section.teaser-container > .teaser-wrapper {
   object-position: center top;
 }
 
+/* portrait: profile band — circular headshot centred in its half, cyan name,
+   then job title, small uppercase label and its value (all from the same cells) */
+.teaser.portrait .teaser-content :is(h1, h2, h3) {
+  color: var(--color-cyan);
+}
+
+.teaser.portrait .teaser-content .teaser-subline {
+  margin-top: 4px;
+  color: var(--teaser-color);
+  font-size: var(--body-font-size-l);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
+.teaser.portrait .teaser-content :is(h1, h2, h3) + .teaser-subline {
+  margin-top: 24px;
+  font-size: var(--heading-font-size-xs);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.teaser.portrait .teaser-content :is(h1, h2, h3) + .teaser-subline + .teaser-subline {
+  margin-top: 32px;
+  color: var(--color-gray-400);
+  font-size: var(--body-font-size-s);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.teaser.portrait .teaser-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px var(--content-padding) 0;
+}
+
+.teaser.portrait .teaser-media picture {
+  width: 200px;
+  height: 200px;
+}
+
+.teaser.portrait .teaser-media img {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 @media (width >= 900px) {
   .teaser {
     display: grid;
@@ -80,7 +179,7 @@ main > .section.teaser-container > .teaser-wrapper {
     padding: 38px 16px 22px 54px;
   }
 
-  .teaser .teaser-content :is(h2, h3) {
+  .teaser .teaser-content :is(h1, h2, h3) {
     line-height: 40px;
   }
 
@@ -106,5 +205,40 @@ main > .section.teaser-container > .teaser-wrapper {
 
   .teaser .teaser-media img {
     aspect-ratio: auto;
+  }
+
+  .teaser.image-left .teaser-media {
+    order: 0;
+  }
+
+  .teaser.image-left .teaser-content {
+    order: 1;
+  }
+
+  .teaser.portrait {
+    min-height: 426px;
+  }
+
+  .teaser.portrait .teaser-content {
+    padding: 52px 24px 52px 128px;
+  }
+
+  .teaser.portrait .teaser-content :is(h1, h2, h3) {
+    font-size: var(--heading-font-size-xl);
+    line-height: 1.2;
+  }
+
+  .teaser.portrait .teaser-media {
+    padding: 48px 24px;
+  }
+
+  .teaser.portrait .teaser-media picture {
+    position: static;
+    width: 250px;
+    height: 250px;
+  }
+
+  .teaser.portrait .teaser-media img {
+    aspect-ratio: 1;
   }
 }

@@ -1,0 +1,134 @@
+/* ud-hero — uplift variant D fold: Blue bar · gap · offset Green block. Tokens scoped to the container. */
+main > .section.ud-hero-container {
+  --ud-ink: #131517;
+  --ud-blue: #00c0f3;
+  --ud-green: #a6ce39;
+  --ud-gap: 8px;
+  --ud-display: 96px;
+  --ud-hoff: 120px;
+  --ud-lede: 24px;
+
+  /* content edge of the site's section wrapper (1280 max, 24px padding) */
+  --ud-inset: max(
+    var(--content-padding),
+    calc((100% - var(--content-max-width)) / 2 + var(--content-padding))
+  );
+
+  margin: 0;
+  padding: var(--ud-gap) 0 0;
+  background: var(--color-white);
+}
+
+main > .section.ud-hero-container > div {
+  max-width: none;
+  padding: 0;
+}
+
+.ud-hero,
+.ud-hero *,
+.ud-hero *::before,
+.ud-hero *::after {
+  box-sizing: border-box;
+}
+
+.ud-hero-headline {
+  color: var(--ud-ink);
+  font-family: var(--heading-font-family);
+  font-size: var(--ud-display);
+  font-weight: 950;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+.ud-hero-headline :is(h1, h2) {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.ud-hero-bar {
+  display: block;
+  text-wrap: balance;
+}
+
+.ud-hero-bar.is-upper {
+  padding: 26px var(--ud-inset) 22px;
+  background: var(--ud-blue);
+}
+
+.ud-hero-bar.is-lower {
+  margin-top: var(--ud-gap);
+  margin-left: calc(var(--ud-inset) + var(--ud-hoff));
+  padding: 22px var(--ud-inset) 4px 28px;
+  background: var(--ud-green);
+}
+
+.ud-hero-bar.is-lower + .ud-hero-bar.is-lower {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* a single-line headline: the lede opens its own offset block below the gap */
+.ud-hero-headline:has(.is-upper:only-child) + .ud-hero-tail {
+  margin-top: var(--ud-gap);
+  padding-top: 22px;
+}
+
+.ud-hero-tail {
+  margin-left: calc(var(--ud-inset) + var(--ud-hoff));
+  padding: 10px var(--ud-inset) 30px 28px;
+  background: var(--ud-green);
+  color: var(--ud-ink);
+}
+
+.ud-hero-lede p {
+  max-width: 60ch;
+  margin: 0;
+  font-size: var(--ud-lede);
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.ud-hero-lede p + p {
+  margin-top: 8px;
+}
+
+.ud-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ud-hero-actions p.button-wrapper {
+  margin: 0;
+}
+
+@media (width <= 1024px) {
+  main > .section.ud-hero-container {
+    --ud-display: 72px;
+    --ud-hoff: 72px;
+  }
+}
+
+@media (width <= 640px) {
+  main > .section.ud-hero-container {
+    --ud-gap: 6px;
+    --ud-display: 48px;
+    --ud-hoff: 24px;
+    --ud-lede: 18px;
+  }
+
+  .ud-hero-bar.is-upper {
+    padding: 16px var(--ud-inset) 14px;
+  }
+
+  .ud-hero-bar.is-lower {
+    padding: 14px var(--ud-inset) 2px 16px;
+  }
+
+  .ud-hero-tail {
+    padding: 8px var(--ud-inset) 22px 16px;
+  }
+}

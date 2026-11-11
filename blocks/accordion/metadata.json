@@ -1,0 +1,19 @@
+{
+  "variantName": "accordion",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": [
+    "Stack of collapsible items separated by light grey hairlines",
+    "Heavy-weight label on the left, plus sign on the right that turns into a minus when open",
+    "Items closed by default; body is plain rich text"
+  ],
+  "contentPattern": [
+    "One row per item",
+    "First cell: the label (short text)",
+    "Second cell: the body (paragraphs, bold lead-ins, lists, links)"
+  ],
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Disclosures that hide secondary detail on a page, e.g. 'View transcript' under a video, 'More on our values' and 'Our groups' on About SEI.",
+  "reuseGuidance": "Use for optional detail a reader opens on demand. Each row is one disclosure; place several rows in one block for a list. For switching between peer panels use tabs."
+}

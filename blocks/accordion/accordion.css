@@ -1,0 +1,76 @@
+.accordion {
+  border-top: 1px solid var(--color-gray-300);
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.accordion .accordion-item-label {
+  position: relative;
+  display: block;
+  padding: 16px 40px 16px 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* plus sign drawn from two bars; the vertical bar folds flat into a minus when open */
+.accordion .accordion-item-label::before,
+.accordion .accordion-item-label::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 4px;
+  width: 16px;
+  height: 2px;
+  background-color: currentcolor;
+  transition: transform 0.2s ease;
+}
+
+.accordion .accordion-item-label::after {
+  transform: rotate(90deg);
+}
+
+.accordion .accordion-item[open] > .accordion-item-label::after {
+  transform: rotate(0deg);
+}
+
+.accordion .accordion-item-label:hover {
+  color: var(--link-hover-color);
+}
+
+.accordion .accordion-item-label:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+.accordion .accordion-item-body {
+  padding: 0 0 24px;
+}
+
+.accordion .accordion-item-body > :first-child {
+  margin-top: 0;
+}
+
+.accordion .accordion-item-body p {
+  margin: 12px 0 0;
+}
+
+.accordion .accordion-item-body strong {
+  font-weight: 900;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion .accordion-item-label::before,
+  .accordion .accordion-item-label::after {
+    transition: none;
+  }
+}

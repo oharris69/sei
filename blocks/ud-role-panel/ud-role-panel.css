@@ -1,0 +1,217 @@
+/* ud-role-panel — uplift variant D chooser: the mark's Yellow base block. Tokens scoped to the container. */
+main > .section.ud-role-panel-container {
+  --ud-ink: #131517;
+  --ud-slate: #364153;
+  --ud-paper: #fff;
+  --ud-yellow: #fd0;
+  --ud-gap: 8px;
+  --ud-title: 36px;
+  --ud-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  margin: var(--ud-gap) 0 0;
+  padding: 40px 0 44px;
+  background: var(--ud-yellow);
+  color: var(--ud-ink);
+}
+
+.ud-role-panel,
+.ud-role-panel *,
+.ud-role-panel *::before,
+.ud-role-panel *::after {
+  box-sizing: border-box;
+}
+
+.ud-role-panel-panel {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.ud-role-panel-panel[hidden] {
+  display: none;
+}
+
+.ud-role-panel-panel.has-media {
+  grid-template-columns: 200px 5fr 7fr;
+}
+
+.ud-role-panel-media {
+  align-self: stretch;
+  min-height: 160px;
+  overflow: hidden;
+  background: var(--ud-paper);
+}
+
+.ud-role-panel-media p {
+  height: 100%;
+  margin: 0;
+  line-height: 0;
+}
+
+.ud-role-panel-media picture {
+  display: block;
+  height: 100%;
+}
+
+.ud-role-panel-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ud-role-panel-intro :is(h1, h2, h3) {
+  margin: 0;
+  color: var(--ud-ink);
+  font-size: var(--ud-title);
+  font-weight: 950;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ud-role-panel-intro p {
+  max-width: 46ch;
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.ud-role-panel-intro .why-button {
+  margin-top: 14px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ud-ink);
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.ud-role-panel-label p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 950;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ud-role-panel-doors ul {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: var(--ud-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ud-role-panel-doors li p {
+  height: 100%;
+  margin: 0;
+}
+
+.ud-role-panel-doors a:any-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+  min-height: 128px;
+  padding: 20px;
+  border-radius: 2px;
+  background: var(--ud-ink);
+  color: var(--ud-paper);
+  font-family: var(--heading-font-family);
+  font-size: 17px;
+  font-weight: 950;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background-color 0.16s var(--ud-ease);
+}
+
+.ud-role-panel-doors a:any-link .ud-icon {
+  flex: none;
+  align-self: flex-end;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.16s var(--ud-ease);
+}
+
+.ud-role-panel-doors a:hover {
+  background: var(--ud-slate);
+  color: var(--ud-paper);
+}
+
+.ud-role-panel-doors a:hover .ud-icon {
+  transform: translateX(3px);
+}
+
+.ud-role-panel-doors a:focus-visible,
+.ud-role-panel-intro .why-button:focus-visible {
+  outline: 3px solid var(--ud-ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ud-role-panel-doors a:any-link,
+  .ud-role-panel-doors a:any-link .ud-icon {
+    transition: none;
+  }
+
+  .ud-role-panel-doors a:hover .ud-icon {
+    transform: none;
+  }
+}
+
+@media (width <= 1024px) {
+  .ud-role-panel-panel,
+  .ud-role-panel-panel.has-media {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ud-role-panel-media {
+    min-height: 0;
+    aspect-ratio: 16 / 5;
+  }
+}
+
+@media (width <= 640px) {
+  main > .section.ud-role-panel-container {
+    --ud-gap: 6px;
+    --ud-title: 32px;
+
+    padding: 28px 0 32px;
+  }
+
+  .ud-role-panel-doors ul {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+
+  .ud-role-panel-doors a:any-link {
+    flex-direction: row;
+    align-items: center;
+    min-height: 64px;
+    padding: 16px 18px;
+  }
+
+  .ud-role-panel-doors a:any-link .ud-icon {
+    align-self: center;
+  }
+
+  .ud-role-panel-intro .why-button {
+    min-height: 44px;
+  }
+}

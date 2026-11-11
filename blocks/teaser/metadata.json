@@ -1,0 +1,32 @@
+{
+  "variantName": "teaser",
+  "baseBlock": "teaser",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": [
+    "Full-bleed split band: copy panel in one half, image filling the other half edge to edge",
+    "Copy panel is ink (#131517) with white text by default; a section style (red, cyan, green, orange, light-grey) recolours it",
+    "Large heavy title (h1, h2 or h3 all styled the same), cyan subline on ink, CTA pinned to the bottom of the panel",
+    "Optional small mono icon above the title",
+    "Mobile: image stacked above the copy",
+    "Portrait option: profile band — circular ~250px headshot centred in its half, cyan name heading, white bold job title, small grey uppercase label and its white value"
+  ],
+  "contentPattern": [
+    "One row with two cells in any order",
+    "Image cell: a single picture and no text",
+    "Copy cell: optional icon paragraph (picture or :icon:) before the heading, a heading (h1/h2/h3), optional subline paragraph(s), an optional CTA paragraph (bold link becomes a button)",
+    "Portrait option uses the same cells: picture cell holds the headshot; copy cell holds the name heading, then paragraphs for job title, label (e.g. \"Area of expertise\") and value"
+  ],
+  "options": [
+    {
+      "class": "image-left",
+      "label": "Image left"
+    },
+    {
+      "class": "portrait",
+      "label": "Portrait"
+    }
+  ],
+  "memberVariantIds": [],
+  "usage": "Promotional band that pairs one message and one call to action with a large image, e.g. the SEI Data Cloud teaser on /asset-managers, the About SEI page hero and the red 'Our history' band. With the portrait option it is the leader profile band on /about-sei/<leader> pages (e.g. Brad Burke).",
+  "reuseGuidance": "Use for a single split image-and-copy band. Colour it with the section style rather than a new block; put the image on the left with the image-left option. For a picture behind the copy use hero; for several items use cards."
+}
