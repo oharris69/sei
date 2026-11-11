@@ -1,0 +1,19 @@
+{
+  "variantName": "fund-finder",
+  "baseBlock": "fund-finder",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "filter"
+  },
+  "contentPattern": {
+    "structure": "search-filters-aside"
+  },
+  "usage": {
+    "pagesUsing": [
+      "etfs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

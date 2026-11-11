@@ -1,0 +1,19 @@
+{
+  "variantName": "ub-hero",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "hero"
+  },
+  "contentPattern": {
+    "structure": "heading-then-role-doors"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-uplift-b"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

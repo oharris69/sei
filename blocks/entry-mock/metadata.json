@@ -1,0 +1,26 @@
+{
+  "variantName": "entry-mock",
+  "baseBlock": "entry-mock",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "demo-simulation"
+  },
+  "contentPattern": {
+    "structure": "key-value-rows"
+  },
+  "options": [
+    {
+      "class": "ai-answer",
+      "label": "AI answer"
+    }
+  ],
+  "usage": {
+    "pagesUsing": [
+      "start/ai-search",
+      "start/linkedin"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

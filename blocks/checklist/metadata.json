@@ -1,0 +1,19 @@
+{
+  "variantName": "checklist",
+  "baseBlock": "checklist",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "checklist"
+  },
+  "contentPattern": {
+    "structure": "intro-then-icon-columns"
+  },
+  "usage": {
+    "pagesUsing": [
+      "partner-match"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

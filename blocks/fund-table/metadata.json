@@ -1,0 +1,19 @@
+{
+  "variantName": "fund-table",
+  "baseBlock": "fund-table",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "data-table"
+  },
+  "contentPattern": {
+    "structure": "header-row-data-rows"
+  },
+  "usage": {
+    "pagesUsing": [
+      "etfs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

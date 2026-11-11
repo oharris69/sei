@@ -1,0 +1,21 @@
+{
+  "variantName": "ua-statement",
+  "baseBlock": "ua-statement",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "positioning-statement"
+  },
+  "contentPattern": {
+    "structure": "copy-image-split"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-uplift-a",
+      "index-uplift-b",
+      "index-uplift-c"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variantName": "rb-spec-sheet",
+  "baseBlock": "stats",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "stats"
+  },
+  "contentPattern": {
+    "structure": "intro-then-value-label-rows"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-rebrand"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

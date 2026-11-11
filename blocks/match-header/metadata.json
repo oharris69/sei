@@ -1,0 +1,19 @@
+{
+  "variantName": "match-header",
+  "baseBlock": "match-header",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "personalised-header"
+  },
+  "contentPattern": {
+    "structure": "copy-logo-split"
+  },
+  "usage": {
+    "pagesUsing": [
+      "partner-match"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

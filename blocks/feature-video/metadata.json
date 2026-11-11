@@ -1,0 +1,19 @@
+{
+  "variantName": "feature-video",
+  "baseBlock": "feature-video",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "video-feature"
+  },
+  "contentPattern": {
+    "structure": "video-then-icon-features"
+  },
+  "usage": {
+    "pagesUsing": [
+      "portfolio-evaluator"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

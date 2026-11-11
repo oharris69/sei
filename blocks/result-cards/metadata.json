@@ -1,0 +1,19 @@
+{
+  "variantName": "result-cards",
+  "baseBlock": "result-cards",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "results"
+  },
+  "contentPattern": {
+    "structure": "card-figures-actions-repeating"
+  },
+  "usage": {
+    "pagesUsing": [
+      "portfolio-evaluator-results"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

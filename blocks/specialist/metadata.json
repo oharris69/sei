@@ -1,0 +1,26 @@
+{
+  "variantName": "specialist",
+  "baseBlock": "specialist",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "matched-specialist"
+  },
+  "contentPattern": {
+    "structure": "person-reasons-cta"
+  },
+  "options": [
+    {
+      "class": "muted",
+      "label": "Muted"
+    }
+  ],
+  "usage": {
+    "pagesUsing": [
+      "pathfinder-specialist",
+      "portfolio-evaluator-results"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

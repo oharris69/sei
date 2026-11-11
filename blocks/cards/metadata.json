@@ -1,0 +1,46 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "card-grid"
+  },
+  "contentPattern": {
+    "structure": "image-body-repeating"
+  },
+  "options": [
+    {
+      "class": "promo",
+      "label": "Promo"
+    },
+    {
+      "class": "leadership",
+      "label": "Leadership"
+    }
+  ],
+  "modifiers": [
+    "expand (with promo)",
+    "stacked (with promo)"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "about-sei/about-sei",
+      "about-sei/market-commentaries",
+      "about-sei/newsroom/sei-and-carlyle-advance-strategic-relationship-launch-sei-carlyle-private-markets-fund-prvtx",
+      "about-sei/our-leadership",
+      "about-sei/private-wealth-management",
+      "about-sei/thought-leadership",
+      "about-sei/thought-leadership/alt-evolution-how-private-markets-are-reshaping-wealth-management",
+      "about-sei/timeline",
+      "asset-managers",
+      "bd-breakaway",
+      "enterprise-ria",
+      "index",
+      "insights/videos/summit-wealth-partnering-with-purpose",
+      "partner-match"
+    ],
+    "reuseCount": 14,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

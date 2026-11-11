@@ -1,0 +1,19 @@
+{
+  "variantName": "top-choice",
+  "baseBlock": "top-choice",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "recommendation"
+  },
+  "contentPattern": {
+    "structure": "intro-card"
+  },
+  "usage": {
+    "pagesUsing": [
+      "etfs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

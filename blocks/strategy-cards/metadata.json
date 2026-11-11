@@ -1,0 +1,19 @@
+{
+  "variantName": "strategy-cards",
+  "baseBlock": "strategy-cards",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "filterable-cards"
+  },
+  "contentPattern": {
+    "structure": "search-then-card-rows"
+  },
+  "usage": {
+    "pagesUsing": [
+      "portfolio-evaluator"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

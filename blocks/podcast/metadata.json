@@ -1,0 +1,21 @@
+{
+  "variantName": "podcast",
+  "baseBlock": "podcast",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "audio-player"
+  },
+  "contentPattern": {
+    "structure": "cover-episode-logo"
+  },
+  "usage": {
+    "pagesUsing": [
+      "about-sei/thought-leadership/alt-evolution-how-private-markets-are-reshaping-wealth-management",
+      "asset-managers",
+      "enterprise-ria"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

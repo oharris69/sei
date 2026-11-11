@@ -1,0 +1,19 @@
+{
+  "variantName": "benefits",
+  "baseBlock": "benefits",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "feature-list"
+  },
+  "contentPattern": {
+    "structure": "two-column-items"
+  },
+  "usage": {
+    "pagesUsing": [
+      "etfs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

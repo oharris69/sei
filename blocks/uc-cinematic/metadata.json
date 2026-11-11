@@ -1,0 +1,19 @@
+{
+  "variantName": "uc-cinematic",
+  "baseBlock": "uc-cinematic",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "motion-layer"
+  },
+  "contentPattern": {
+    "structure": "single-cell-register"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-uplift-c"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

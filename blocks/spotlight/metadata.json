@@ -1,0 +1,21 @@
+{
+  "variantName": "spotlight",
+  "baseBlock": "spotlight",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "testimonial"
+  },
+  "contentPattern": {
+    "structure": "media-quote-split"
+  },
+  "usage": {
+    "pagesUsing": [
+      "asset-managers",
+      "bd-breakaway",
+      "enterprise-ria"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

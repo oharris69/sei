@@ -1,0 +1,19 @@
+{
+  "variantName": "rb-directory",
+  "baseBlock": "rb-directory",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "role-router"
+  },
+  "contentPattern": {
+    "structure": "intro-role-links"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-rebrand"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

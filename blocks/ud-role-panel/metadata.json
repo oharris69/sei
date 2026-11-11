@@ -1,0 +1,19 @@
+{
+  "variantName": "ud-role-panel",
+  "baseBlock": "adaptive",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "path-chooser"
+  },
+  "contentPattern": {
+    "structure": "audience-content-repeating"
+  },
+  "usage": {
+    "pagesUsing": [
+      "index-uplift-d"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}

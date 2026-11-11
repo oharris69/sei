@@ -1,0 +1,23 @@
+{
+  "variantName": "video",
+  "baseBlock": "video",
+  "version": "1.0.0",
+  "created": "2026-11-11T13:16:11.780Z",
+  "visualCharacteristics": {
+    "purpose": "video"
+  },
+  "contentPattern": {
+    "structure": "poster-link-caption"
+  },
+  "usage": {
+    "pagesUsing": [
+      "about-sei/about-sei",
+      "about-sei/alternative-investments",
+      "about-sei/private-wealth-management",
+      "about-sei/timeline",
+      "insights/videos/summit-wealth-partnering-with-purpose"
+    ],
+    "reuseCount": 5,
+    "lastUsed": "2026-11-11T13:16:11.780Z"
+  }
+}
