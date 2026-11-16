@@ -1,0 +1,87 @@
+/* everviz: one Everviz chart, layout or table, with an optional caption */
+.everviz {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.everviz.is-empty {
+  display: none;
+}
+
+.everviz .everviz-figure {
+  position: relative;
+  margin: 0;
+}
+
+.everviz .everviz-frame {
+  width: 100%;
+  min-width: 0;
+}
+
+.everviz .everviz-chart {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* reserve the chart's space while the inject script loads (no layout shift) */
+.everviz.is-loading .everviz-chart {
+  min-height: var(--everviz-height, 400px);
+  border-radius: var(--radius-card);
+  background: var(--color-gray-50);
+}
+
+.everviz .everviz-fallback {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+.everviz .everviz-fallback a {
+  font-weight: 600;
+}
+
+.everviz .everviz-fallback a:focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+.everviz iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
+
+.everviz .everviz-caption {
+  margin-top: 12px;
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.everviz .everviz-caption :is(p, h2, h3, h4, h5, h6, ul, ol) {
+  margin-block: 0 8px;
+}
+
+/* the accessible description: read by assistive tech, not shown */
+.everviz .everviz-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* wide: fill the content column */
+.everviz.wide {
+  max-width: none;
+}
+
+/* narrow: a reading-width column */
+.everviz.narrow {
+  max-width: 720px;
+}

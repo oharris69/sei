@@ -1,7 +1,7 @@
 {
-  "total": 65,
+  "total": 66,
   "offset": 0,
-  "limit": 65,
+  "limit": 66,
   "data": [
     {
       "name": "Accordion",
@@ -46,6 +46,10 @@
     {
       "name": "Entry Mock",
       "path": "https://content.da.live/oharris69/sei/library/blocks/entry-mock"
+    },
+    {
+      "name": "Everviz",
+      "path": "https://content.da.live/oharris69/sei/library/blocks/everviz"
     },
     {
       "name": "Feature Video",

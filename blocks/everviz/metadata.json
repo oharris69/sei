@@ -1,0 +1,32 @@
+{
+  "variantName": "everviz",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-16T00:00:00.000Z",
+  "visualCharacteristics": [
+    "One Everviz chart, chart layout or table (formerly Highcharts Cloud) in a <figure>, in a ~960px column centred in the content column",
+    "Default renders inline with the Everviz inject script, like seic.com; the chart sizes itself to the column and reflows on mobile",
+    "While the script loads, the chart's space is reserved (400px or the Height row) on a light-grey panel so the page does not shift",
+    "Optional caption under the chart: small slate text (body-font-size-s), links and emphasis kept",
+    "If the chart cannot load (deleted chart, blocked script, nothing rendered in 10s) a bordered box with a 'View chart' link to the Everviz embed page replaces it; the caption stays",
+    "iframe option embeds the Everviz embed page in a lazy, borderless, full-width iframe (500px tall or the Height row)",
+    "wide fills the content column (1280px max); narrow is a ~720px reading column"
+  ],
+  "contentPattern": [
+    "Rows in any order; empty rows are ignored",
+    "Chart row (required, normally row 1): an Everviz URL in any form (https://app.everviz.com/inject/<id>/, /embed/<id>/, a share link, a pasted seic.com embed snippet), as a link or plain text; a bare chart id (e.g. r9SKBTsZ_) is accepted in the first row. A `Chart | <url or id>` labelled row also works",
+    "Optional `Caption | text` row, or any other unlabelled text: the figcaption (the authored paragraph is moved, so it stays editable)",
+    "Optional `Alt | text` (or `Description | text`) row: accessible description of the chart, read by screen readers (aria-describedby), not shown",
+    "Optional `Height | 600` row: chart height in px (iframe height; reserved space while the inject script loads)",
+    "Without a recognisable chart URL or id the block renders nothing"
+  ],
+  "options": [
+    { "class": "iframe", "label": "Iframe" },
+    { "class": "wide", "label": "Wide" },
+    { "class": "narrow", "label": "Narrow" }
+  ],
+  "memberVariantIds": [],
+  "usage": "Embed Everviz charts, chart layouts and tables in Document Authoring pages, matching how seic.com embeds them in article rich text (46 seic.com insight and factor-sheet pages, 77 chart ids; see migration-work/everviz-inventory.json).",
+  "reuseGuidance": "Use for any chart built in Everviz (app.everviz.com). Default inject mode matches seic.com and lets the chart use the page width; use iframe when the inline script conflicts with something on the page or the same chart appears twice. For a chart drawn from a table authored in the document use bar-chart; for a static chart image use image."
+}
