@@ -3,15 +3,68 @@ import {
   resetProfile, setPersona, specialistFor, calendarHref, track,
 } from '../../scripts/profile.js';
 import { whyButton } from '../../scripts/why.js';
+import { getLocale } from '../../scripts/locale.js';
 
 /*
  * Experience bar under the main nav: "I'm a…" persona chip, the visitor's journey progress
  * and the next step (talk to an advisor, or the call they have booked). Everything renders
- * from the visitor profile and re-renders whenever it changes.
+ * from the visitor profile and re-renders whenever it changes. On locale pages (e.g. /es-us)
+ * the bar's own text is translated and journey steps link to that locale's pages.
  */
 
-const fmtShort = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-const fmtDay = new Intl.DateTimeFormat('en-US', { weekday: 'short' });
+const locale = getLocale();
+const LANG = locale.lang === 'en' ? 'en-US' : locale.lang;
+
+/** The bar's built-in text in Spanish (US); persona/journey labels come from scripts/profile.js. */
+const ES = {
+  'I’m a': 'Soy',
+  'Choose your role': 'Elija su perfil',
+  'Change role': 'Cambiar perfil',
+  'Tell us who you are and we’ll map your path.': 'Díganos quién es y trazaremos su camino.',
+  'Talk to an advisor': 'Hable con un asesor',
+  'Why?': '¿Por qué?',
+  'Why am I seeing this?': '¿Por qué veo esto?',
+  'Start over (clear demo profile)': 'Empezar de nuevo (borrar el perfil de la demo)',
+  'Your call with': 'Su llamada con',
+  'Add to calendar': 'Añadir al calendario',
+  'Your journey': 'Su recorrido',
+  complete: 'completado',
+  '(done)': '(completado)',
+  // personas
+  'Financial advisor': 'Asesor financiero',
+  'Enterprise RIA': 'RIA empresarial',
+  'Asset manager': 'Gestor de activos',
+  'Considering independence from a broker-dealer': 'Evalúa independizarse de un broker-dealer',
+  'Scaling an RIA with SEI ETFs and portfolios': 'Hace crecer un RIA con los ETFs y portafolios de SEI',
+  'Looking for one fund administration partner': 'Busca un único socio de administración de fondos',
+  // journeys and steps
+  'Breakaway to independence': 'Camino a la independencia',
+  'ETF partnership': 'Alianza en ETFs',
+  'Fund administration': 'Administración de fondos',
+  Explore: 'Explorar',
+  'Meet SEI': 'Conozca SEI',
+  'Partner match': 'Socio ideal',
+  'SEI ETFs': 'ETFs de SEI',
+  Evaluate: 'Evaluar',
+  Results: 'Resultados',
+  'Client stories': 'Casos de clientes',
+  'Talk to SEI': 'Hable con SEI',
+};
+const t = (text) => (locale.lang.startsWith('es') && ES[text]) || text;
+
+/** A journey step's site path inside the current locale (journey pages exist in /es-us). */
+const localeHref = (path) => {
+  if (!locale.prefix || !path || !path.startsWith('/')) return path;
+  return path === '/' ? `${locale.prefix}/` : `${locale.prefix}${path}`;
+};
+/** The current path without the locale folder, to match journey steps. */
+const barePath = () => {
+  const path = currentPath();
+  return locale.prefix && path.startsWith(locale.prefix) ? path.slice(locale.prefix.length) || '/' : path;
+};
+
+const fmtShort = new Intl.DateTimeFormat(LANG, { weekday: 'short', month: 'short', day: 'numeric' });
+const fmtDay = new Intl.DateTimeFormat(LANG, { weekday: 'short' });
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -35,7 +88,7 @@ function buildMenu(menu, toggle) {
     const option = el('button', 'experience-option');
     option.type = 'button';
     option.setAttribute('aria-pressed', profile.persona === id);
-    option.append(el('span', 'experience-option-label', persona.label), el('span', 'experience-option-detail', persona.detail));
+    option.append(el('span', 'experience-option-label', t(persona.label)), el('span', 'experience-option-detail', t(persona.detail)));
     option.addEventListener('click', () => {
       // stay on the page: the journey strip appears and links to the next step
       setPersona(id);
@@ -48,7 +101,7 @@ function buildMenu(menu, toggle) {
   });
   menu.append(list);
   if (profile.persona || profile.booking) {
-    const reset = el('button', 'experience-reset', 'Start over (clear demo profile)');
+    const reset = el('button', 'experience-reset', t('Start over (clear demo profile)'));
     reset.type = 'button';
     reset.addEventListener('click', () => {
       resetProfile();
@@ -63,26 +116,26 @@ function renderJourney(journeyEl, stageEl, profile) {
   const status = journeyStatus(profile);
   if (!status) {
     journeyEl.hidden = true;
-    stageEl.textContent = 'Tell us who you are and we’ll map your path.';
+    stageEl.textContent = t('Tell us who you are and we’ll map your path.');
     return;
   }
   journeyEl.hidden = false;
-  journeyEl.setAttribute('aria-label', `Your journey: ${status.journey.name}`);
+  journeyEl.setAttribute('aria-label', `${t('Your journey')}: ${t(status.journey.name)}`);
   status.steps.forEach((step, i) => {
     const li = el('li', 'experience-step');
     li.classList.toggle('done', step.done);
     const isCurrent = i === status.index && !step.done;
     li.classList.toggle('current', isCurrent);
     const specialist = specialistFor(profile);
-    const href = step.href ? pageHref(step.href) : specialist.modal;
+    const href = step.href ? pageHref(localeHref(step.href)) : specialist.modal;
     const link = el('a', 'experience-step-link');
     link.href = href;
     if (isCurrent) link.setAttribute('aria-current', 'step');
-    if (step.href === currentPath()) li.classList.add('here');
+    if (step.href === barePath()) li.classList.add('here');
     const marker = el('span', 'experience-step-marker', step.done ? '' : String(i + 1));
     marker.setAttribute('aria-hidden', 'true');
-    link.append(marker, el('span', 'experience-step-label', step.label));
-    if (step.done) link.append(el('span', 'experience-sr', ' (done)'));
+    link.append(marker, el('span', 'experience-step-label', t(step.label)));
+    if (step.done) link.append(el('span', 'experience-sr', ` ${t('(done)')}`));
     link.addEventListener('click', () => track('journey-step-click', { journeyStep: { id: step.id, index: i + 1 } }));
     li.append(link);
     journeyEl.append(li);
@@ -90,8 +143,8 @@ function renderJourney(journeyEl, stageEl, profile) {
   const all = status.steps.every((s) => s.done);
   // shown instead of the strip on small screens
   stageEl.textContent = all
-    ? `${status.journey.name}: complete`
-    : `${status.index + 1}/${status.steps.length} · ${status.current.label}`;
+    ? `${t(status.journey.name)}: ${t('complete')}`
+    : `${status.index + 1}/${status.steps.length} · ${t(status.current.label)}`;
 }
 
 function renderAction(actionEl, profile) {
@@ -102,9 +155,9 @@ function renderAction(actionEl, profile) {
     const when = el('strong', '', bookingWhen(booking));
     const date = new Date(booking.date);
     const short = el('strong', 'experience-booked-short', `${Number.isNaN(date.getTime()) ? '' : fmtDay.format(date)} ${booking.time}`.trim());
-    pill.append(el('span', 'experience-booked-label', `Your call with ${booking.advisor}`), when, short);
-    pill.setAttribute('aria-label', `Your call with ${booking.advisor}, ${bookingWhen(booking)}`);
-    const ics = el('a', 'experience-ics', 'Add to calendar');
+    pill.append(el('span', 'experience-booked-label', `${t('Your call with')} ${booking.advisor}`), when, short);
+    pill.setAttribute('aria-label', `${t('Your call with')} ${booking.advisor}, ${bookingWhen(booking)}`);
+    const ics = el('a', 'experience-ics', t('Add to calendar'));
     ics.href = calendarHref(booking);
     ics.download = 'sei-call.ics';
     ics.addEventListener('click', () => track('calendar-download', { booking: { advisor: booking.advisor } }));
@@ -113,8 +166,8 @@ function renderAction(actionEl, profile) {
   }
   const specialist = specialistFor(profile);
   const talk = el('a', 'experience-talk');
-  talk.append(el('span', 'experience-talk-label', 'Talk to an advisor'));
-  talk.setAttribute('aria-label', `Talk to an advisor (${specialist.name})`);
+  talk.append(el('span', 'experience-talk-label', t('Talk to an advisor')));
+  talk.setAttribute('aria-label', `${t('Talk to an advisor')} (${specialist.name})`);
   talk.href = specialist.modal;
   talk.setAttribute('aria-haspopup', 'dialog');
   talk.addEventListener('click', () => track('talk-to-advisor-click', { specialist: specialist.name }));
@@ -135,7 +188,7 @@ export default function buildExperience() {
   toggle.setAttribute('aria-expanded', 'false');
   const menuId = 'experience-menu';
   toggle.setAttribute('aria-controls', menuId);
-  const kicker = el('span', 'experience-kicker', 'I’m a');
+  const kicker = el('span', 'experience-kicker', t('I’m a'));
   const current = el('span', 'experience-persona-label');
   toggle.append(kicker, current);
   const menu = el('div', 'experience-menu');
@@ -174,8 +227,8 @@ export default function buildExperience() {
 
   const render = (profile = getProfile()) => {
     const p = PERSONAS[profile.persona];
-    current.textContent = p ? p.label : 'Choose your role';
-    toggle.setAttribute('aria-label', p ? `I’m a ${p.label}. Change role` : 'Choose your role');
+    current.textContent = p ? t(p.label) : t('Choose your role');
+    toggle.setAttribute('aria-label', p ? `${t('I’m a')} ${t(p.label)}. ${t('Change role')}` : t('Choose your role'));
     bar.dataset.persona = profile.persona || '';
     bar.dataset.journey = p ? p.journey : '';
     bar.classList.toggle('booked', Boolean(profile.booking));
@@ -185,9 +238,9 @@ export default function buildExperience() {
   onProfileChange((profile) => render(profile));
   render();
 
-  const why = whyButton('header', 'Why?');
+  const why = whyButton('header', t('Why?'));
   why.classList.add('experience-why');
-  why.setAttribute('aria-label', 'Why am I seeing this?');
+  why.setAttribute('aria-label', t('Why am I seeing this?'));
 
   inner.append(persona, progress, why, actionEl);
   bar.append(inner);

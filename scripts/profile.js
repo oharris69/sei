@@ -108,9 +108,13 @@ const CAMPAIGNS = {
 
 const local = window.location.pathname.startsWith('/content/');
 
-/** Path of the current page without the local /content preview prefix. */
+/**
+ * Path of the current page without the local /content preview prefix or a locale folder
+ * (/es-us/bd-breakaway → /bd-breakaway), so journeys and stages work on every locale's pages.
+ */
 export function currentPath(pathname = window.location.pathname) {
-  const path = pathname.replace(/^\/content(?=\/)/, '').replace(/\.html$/, '').replace(/\/index$/, '/');
+  const path = pathname.replace(/^\/content(?=\/)/, '').replace(/\.html$/, '').replace(/\/index$/, '/')
+    .replace(/^\/es-us(?=\/|$)/, '');
   return path || '/';
 }
 
