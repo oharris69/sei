@@ -144,6 +144,13 @@ footer .footer-legal li + li::before {
   }
 }
 
+/* Spanish column headings run longer: narrow the column gap on small desktops */
+@media (width >= 900px) and (width < 1200px) {
+  footer:lang(es) .footer-columns {
+    column-gap: 48px;
+  }
+}
+
 /* the legal row only fits on one line once there is room for all of it */
 @media (width >= 1200px) {
   footer .footer-legal .default-content-wrapper {
