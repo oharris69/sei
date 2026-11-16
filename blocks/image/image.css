@@ -8,6 +8,16 @@
   justify-content: center;
 }
 
+/*
+ * The link and picture span the media row, so an image without a set size (an SVG with
+ * only a viewBox, or an external image pasted without width/height) gets the column width
+ * instead of collapsing to 0 inside the centring flex row. Sized images keep their natural
+ * width (img width: auto, capped at 100%) and stay centred.
+ */
+.image .image-media > :is(.image-link, picture) {
+  width: 100%;
+}
+
 .image .image-link {
   display: block;
   max-width: 100%;
@@ -21,6 +31,7 @@
 
 .image picture {
   display: block;
+  width: 100%;
   max-width: 100%;
 }
 
