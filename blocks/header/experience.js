@@ -3,7 +3,7 @@ import {
   resetProfile, setPersona, specialistFor, calendarHref, track,
 } from '../../scripts/profile.js';
 import { whyButton } from '../../scripts/why.js';
-import { getLocale } from '../../scripts/locale.js';
+import { getLocale, isLocalized } from '../../scripts/locale.js';
 
 /*
  * Experience bar under the main nav: "I'm a…" persona chip, the visitor's journey progress
@@ -52,9 +52,9 @@ const ES = {
 };
 const t = (text) => (locale.lang.startsWith('es') && ES[text]) || text;
 
-/** A journey step's site path inside the current locale (journey pages exist in /es-us). */
+/** A journey step's site path in the current locale when that page is published there. */
 const localeHref = (path) => {
-  if (!locale.prefix || !path || !path.startsWith('/')) return path;
+  if (!locale.prefix || !path || !path.startsWith('/') || !isLocalized(path)) return path;
   return path === '/' ? `${locale.prefix}/` : `${locale.prefix}${path}`;
 };
 /** The current path without the locale folder, to match journey steps. */

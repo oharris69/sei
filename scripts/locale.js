@@ -13,6 +13,16 @@ const LOCALES = [
   },
 ];
 
+/**
+ * Pages (site paths without the locale folder) that are published in Spanish. The English/Español
+ * switch links straight to the counterpart for these and to the other language's home page for the
+ * rest, without probing the server (a probe logs a 404 on every page that has no counterpart).
+ * Add a path here when its /es-us version goes live.
+ */
+const LOCALIZED_PATHS = new Set([
+  '/', '/about-sei/about-sei', '/asset-managers', '/bd-breakaway', '/enterprise-ria', '/etfs',
+]);
+
 /** The local dev server serves content under /content; keep that prefix out of locale maths. */
 function splitPreviewPrefix(pathname) {
   const match = pathname.match(/^\/content(?=\/)/);
@@ -30,6 +40,15 @@ export function getLocale(pathname = window.location.pathname) {
 }
 
 /**
+ * Whether a site path (without locale folder) is published in the other locales.
+ * @param {string} path
+ * @returns {boolean}
+ */
+export function isLocalized(path) {
+  return LOCALIZED_PATHS.has(path);
+}
+
+/**
  * A site path (e.g. '/nav') inside the current page's locale folder.
  * @param {string} path
  * @returns {string}
@@ -39,22 +58,15 @@ export function localizedPath(path) {
 }
 
 /**
- * The language to switch to from the current page, with its counterpart URL and a fallback
- * (that locale's home page) to use when the counterpart doesn't exist.
- * @returns {{locale: object, href: string, fallback: string, probe: string}}
+ * The language to switch to from the current page: the same page in the other language when it is
+ * published there (LOCALIZED_PATHS), otherwise that language's home page.
+ * @returns {{locale: object, href: string}}
  */
 export function getLanguageSwitch(pathname = window.location.pathname) {
   const [preview, path] = splitPreviewPrefix(pathname);
   const current = getLocale(pathname);
   const target = current.prefix ? DEFAULT_LOCALE : LOCALES[0];
-  const bare = current.prefix ? path.slice(current.prefix.length) || '/' : path;
-  const href = `${target.prefix}${bare}` || '/';
-  const fallback = `${target.prefix}/`;
-  const probePath = href.endsWith('/') ? `${href}index` : href;
-  return {
-    locale: target,
-    href: `${preview}${href}`,
-    fallback: `${preview}${fallback}`,
-    probe: `${preview}${probePath}.plain.html`,
-  };
+  const bare = (current.prefix ? path.slice(current.prefix.length) : path).replace(/\/index$/, '/') || '/';
+  const href = LOCALIZED_PATHS.has(bare) ? `${target.prefix}${bare}` : `${target.prefix}/`;
+  return { locale: target, href: `${preview}${href === '/' && preview ? '/index' : href}` };
 }

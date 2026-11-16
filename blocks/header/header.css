@@ -320,6 +320,56 @@ header nav .nav-tools .nav-language a:hover {
   color: var(--color-ink);
 }
 
+header nav .nav-tools .nav-language-short {
+  display: none;
+}
+
+/* Spanish labels run longer: tighten the bar and shorten the switch until it all fits on one row */
+@media (width >= 900px) and (width < 1280px) {
+  header nav:lang(es) {
+    gap: 0 16px;
+  }
+
+  header nav:lang(es) .nav-sections ul {
+    gap: 16px;
+  }
+
+  header nav:lang(es) .nav-tools .default-content-wrapper {
+    gap: 6px;
+  }
+
+  header nav:lang(es) .nav-tools a.button:any-link {
+    padding: 8px 10px;
+  }
+
+  header nav:lang(es) .nav-tools .nav-language-full {
+    display: none;
+  }
+
+  header nav:lang(es) .nav-tools .nav-language-short {
+    display: inline;
+  }
+}
+
+@media (width >= 900px) and (width < 1024px) {
+  header nav:lang(es) {
+    gap: 0 12px;
+  }
+
+  header nav:lang(es) .nav-sections ul {
+    gap: 12px;
+  }
+
+  header nav:lang(es) .nav-sections .default-content-wrapper > ul > li > button {
+    font-size: var(--body-font-size-xs);
+  }
+
+  header nav:lang(es) .nav-tools a.button:any-link {
+    padding: 6px 8px;
+    font-size: var(--body-font-size-xs);
+  }
+}
+
 header nav .nav-tools .icon {
   width: 20px;
   height: 20px;

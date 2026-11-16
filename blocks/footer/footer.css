@@ -154,4 +154,11 @@ footer .footer-legal li + li::before {
     flex-wrap: nowrap;
     white-space: nowrap;
   }
+
+  /* Spanish legal links run longer: let them wrap rather than overflow */
+  footer:lang(es) .footer-legal .default-content-wrapper,
+  footer:lang(es) .footer-legal ul {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
 }

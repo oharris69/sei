@@ -90,28 +90,30 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
 /**
  * Adds an English / Español switch to the nav tools. It links to the same page in the other
- * language when that page exists, otherwise to that language's home page.
+ * language when that page is published there, otherwise to that language's home page.
  * @param {Element} nav The nav element
  */
 function addLanguageSwitch(nav) {
   const tools = nav.querySelector('.nav-tools .default-content-wrapper') || nav.querySelector('.nav-tools');
   if (!tools) return;
-  const {
-    locale, href, fallback, probe,
-  } = getLanguageSwitch();
+  const { locale, href } = getLanguageSwitch();
   const p = document.createElement('p');
   p.className = 'nav-language';
   const a = document.createElement('a');
-  a.href = fallback;
+  a.href = href;
   a.lang = locale.lang;
   a.hreflang = locale.lang;
-  a.textContent = locale.switchLabel;
+  const full = document.createElement('span');
+  full.className = 'nav-language-full';
+  full.textContent = locale.switchLabel;
+  const short = document.createElement('span');
+  short.className = 'nav-language-short';
+  short.setAttribute('aria-hidden', 'true');
+  short.textContent = locale.lang.slice(0, 2).toUpperCase();
+  a.append(full, short);
   a.setAttribute('aria-label', `${locale.switchLabel} (${locale.lang})`);
   p.append(a);
   tools.prepend(p);
-  fetch(probe, { method: 'HEAD' })
-    .then((resp) => { if (resp.ok) a.href = href; })
-    .catch(() => { /* keep the locale home */ });
 }
 
 /**
