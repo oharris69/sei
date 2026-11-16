@@ -1,4 +1,5 @@
 import { getMetadata } from '../../scripts/aem.js';
+import { getLanguageSwitch, localizedPath } from '../../scripts/locale.js';
 import { loadFragment } from '../fragment/fragment.js';
 import buildExperience from './experience.js';
 
@@ -88,13 +89,39 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Adds an English / Español switch to the nav tools. It links to the same page in the other
+ * language when that page exists, otherwise to that language's home page.
+ * @param {Element} nav The nav element
+ */
+function addLanguageSwitch(nav) {
+  const tools = nav.querySelector('.nav-tools .default-content-wrapper') || nav.querySelector('.nav-tools');
+  if (!tools) return;
+  const {
+    locale, href, fallback, probe,
+  } = getLanguageSwitch();
+  const p = document.createElement('p');
+  p.className = 'nav-language';
+  const a = document.createElement('a');
+  a.href = fallback;
+  a.lang = locale.lang;
+  a.hreflang = locale.lang;
+  a.textContent = locale.switchLabel;
+  a.setAttribute('aria-label', `${locale.switchLabel} (${locale.lang})`);
+  p.append(a);
+  tools.prepend(p);
+  fetch(probe, { method: 'HEAD' })
+    .then((resp) => { if (resp.ok) a.href = href; })
+    .catch(() => { /* keep the locale home */ });
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : localizedPath('/nav');
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -118,6 +145,7 @@ export default async function decorate(block) {
   nav.querySelectorAll('.nav-tools a:has(.icon)').forEach((link) => {
     if (!link.getAttribute('aria-label')) link.setAttribute('aria-label', link.title || 'Search');
   });
+  addLanguageSwitch(nav);
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {

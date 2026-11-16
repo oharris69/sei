@@ -304,6 +304,22 @@ header nav .nav-tools a:has(.icon) {
   padding: 8px;
 }
 
+/* language switch (English / Español) */
+header nav .nav-tools .nav-language a:any-link {
+  display: inline-flex;
+  padding: 8px 4px;
+  color: var(--color-slate);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+header nav .nav-tools .nav-language a:hover {
+  color: var(--color-ink);
+}
+
 header nav .nav-tools .icon {
   width: 20px;
   height: 20px;

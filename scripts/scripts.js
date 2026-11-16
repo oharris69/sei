@@ -12,6 +12,7 @@ import {
   buildBlock,
   getMetadata,
 } from './aem.js';
+import { getLocale } from './locale.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -262,7 +263,7 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = getLocale().lang;
   handleSpecialLinks(doc);
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
