@@ -1,7 +1,8 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { getLanguageSwitch, localizedPath } from '../../scripts/locale.js';
 import { loadFragment } from '../fragment/fragment.js';
-import buildExperience from './experience.js';
+import buildExperience, { setPlaceholders } from './experience.js';
+import fetchPlaceholders from '../../scripts/placeholders.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -93,7 +94,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * language when that page is published there, otherwise to that language's home page.
  * @param {Element} nav The nav element
  */
-function addLanguageSwitch(nav) {
+function addLanguageSwitch(nav, labels = {}) {
   const tools = nav.querySelector('.nav-tools .default-content-wrapper') || nav.querySelector('.nav-tools');
   if (!tools) return;
   const { locale, href } = getLanguageSwitch();
@@ -105,13 +106,14 @@ function addLanguageSwitch(nav) {
   a.hreflang = locale.lang;
   const full = document.createElement('span');
   full.className = 'nav-language-full';
-  full.textContent = locale.switchLabel;
+  const label = labels['language-switch'] || locale.switchLabel;
+  full.textContent = label;
   const short = document.createElement('span');
   short.className = 'nav-language-short';
   short.setAttribute('aria-hidden', 'true');
   short.textContent = locale.lang.slice(0, 2).toUpperCase();
   a.append(full, short);
-  a.setAttribute('aria-label', `${locale.switchLabel} (${locale.lang})`);
+  a.setAttribute('aria-label', `${label} (${locale.lang})`);
   p.append(a);
   tools.prepend(p);
 }
@@ -124,7 +126,9 @@ export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : localizedPath('/nav');
-  const fragment = await loadFragment(navPath);
+  // the locale's placeholders sheet (DA) feeds the role bar, language switch and search label
+  const [fragment, labels] = await Promise.all([loadFragment(navPath), fetchPlaceholders()]);
+  setPlaceholders(labels);
 
   // decorate nav DOM
   block.textContent = '';
@@ -145,9 +149,9 @@ export default async function decorate(block) {
   });
   nav.querySelectorAll('.nav-sections a.arrow-link, .nav-tools a.arrow-link').forEach((link) => link.classList.remove('arrow-link'));
   nav.querySelectorAll('.nav-tools a:has(.icon)').forEach((link) => {
-    if (!link.getAttribute('aria-label')) link.setAttribute('aria-label', link.title || 'Search');
+    if (!link.getAttribute('aria-label')) link.setAttribute('aria-label', labels.search || link.title || 'Search');
   });
-  addLanguageSwitch(nav);
+  addLanguageSwitch(nav, labels);
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {

@@ -15,42 +15,63 @@ import { getLocale, isLocalized } from '../../scripts/locale.js';
 const locale = getLocale();
 const LANG = locale.lang === 'en' ? 'en-US' : locale.lang;
 
-/** The bar's built-in text in Spanish (US); persona/journey labels come from scripts/profile.js. */
-const ES = {
-  'I’m a': 'Soy',
-  'Choose your role': 'Elija su perfil',
-  'Change role': 'Cambiar perfil',
-  'Tell us who you are and we’ll map your path.': 'Díganos quién es y trazaremos su camino.',
-  'Talk to an advisor': 'Hable con un asesor',
-  'Why?': '¿Por qué?',
-  'Why am I seeing this?': '¿Por qué veo esto?',
-  'Start over (clear demo profile)': 'Empezar de nuevo (borrar el perfil de la demo)',
-  'Your call with': 'Su llamada con',
-  'Add to calendar': 'Añadir al calendario',
-  'Your journey': 'Su recorrido',
-  complete: 'completado',
-  '(done)': '(completado)',
-  // personas
-  'Financial advisor': 'Asesor financiero',
-  'Enterprise RIA': 'RIA empresarial',
-  'Asset manager': 'Gestor de activos',
-  'Considering independence from a broker-dealer': 'Evalúa independizarse de un broker-dealer',
-  'Scaling an RIA with SEI ETFs and portfolios': 'Hace crecer un RIA con los ETFs y portafolios de SEI',
-  'Looking for one fund administration partner': 'Busca un único socio de administración de fondos',
-  // journeys and steps
-  'Breakaway to independence': 'Camino a la independencia',
-  'ETF partnership': 'Alianza en ETFs',
-  'Fund administration': 'Administración de fondos',
-  Explore: 'Explorar',
-  'Meet SEI': 'Conozca SEI',
-  'Partner match': 'Socio ideal',
-  'SEI ETFs': 'ETFs de SEI',
-  Evaluate: 'Evaluar',
-  Results: 'Resultados',
-  'Client stories': 'Casos de clientes',
-  'Talk to SEI': 'Hable con SEI',
+/*
+ * The bar's text on locale pages comes from the locale's placeholders sheet (e.g.
+ * /es-us/placeholders.json, editable in DA), looked up by key. Built-in Spanish is the fallback
+ * when a key is missing or the sheet isn't published, then the English text.
+ * Persona and journey labels come from scripts/profile.js.
+ */
+const LABELS = [
+  // [placeholder key, English, built-in Spanish fallback]
+  ['i-am', 'I’m a', 'Soy'],
+  ['choose-your-role', 'Choose your role', 'Elija su perfil'],
+  ['change-role', 'Change role', 'Cambiar perfil'],
+  ['tell-us-who-you-are', 'Tell us who you are and we’ll map your path.', 'Díganos quién es y trazaremos su camino.'],
+  ['talk-to-an-advisor', 'Talk to an advisor', 'Hable con un asesor'],
+  ['why', 'Why?', '¿Por qué?'],
+  ['why-am-i-seeing-this', 'Why am I seeing this?', '¿Por qué veo esto?'],
+  ['start-over', 'Start over (clear demo profile)', 'Empezar de nuevo (borrar el perfil de la demo)'],
+  ['your-call-with', 'Your call with', 'Su llamada con'],
+  ['add-to-calendar', 'Add to calendar', 'Añadir al calendario'],
+  ['your-journey', 'Your journey', 'Su recorrido'],
+  ['journey-complete', 'complete', 'completado'],
+  ['step-done', '(done)', '(completado)'],
+  ['persona-financial-advisor', 'Financial advisor', 'Asesor financiero'],
+  ['persona-enterprise-ria', 'Enterprise RIA', 'RIA empresarial'],
+  ['persona-asset-manager', 'Asset manager', 'Gestor de activos'],
+  ['persona-financial-advisor-detail', 'Considering independence from a broker-dealer', 'Evalúa independizarse de un broker-dealer'],
+  ['persona-enterprise-ria-detail', 'Scaling an RIA with SEI ETFs and portfolios', 'Hace crecer un RIA con los ETFs y portafolios de SEI'],
+  ['persona-asset-manager-detail', 'Looking for one fund administration partner', 'Busca un único socio de administración de fondos'],
+  ['journey-breakaway', 'Breakaway to independence', 'Camino a la independencia'],
+  ['journey-etf', 'ETF partnership', 'Alianza en ETFs'],
+  ['journey-fund-administration', 'Fund administration', 'Administración de fondos'],
+  ['step-explore', 'Explore', 'Explorar'],
+  ['step-pathfinder', 'Pathfinder', 'Pathfinder'],
+  ['step-meet-sei', 'Meet SEI', 'Conozca SEI'],
+  ['step-partner-match', 'Partner match', 'Socio ideal'],
+  ['step-sei-etfs', 'SEI ETFs', 'ETFs de SEI'],
+  ['step-evaluate', 'Evaluate', 'Evaluar'],
+  ['step-results', 'Results', 'Resultados'],
+  ['step-client-stories', 'Client stories', 'Casos de clientes'],
+  ['step-talk-to-sei', 'Talk to SEI', 'Hable con SEI'],
+];
+const BY_TEXT = new Map(LABELS.map(([key, en, es]) => [en, { key, es }]));
+let placeholders = {};
+
+/**
+ * Sets the locale's placeholders (loaded by the header before the bar is built).
+ * @param {Object<string, string>} values key → label
+ */
+export function setPlaceholders(values) {
+  placeholders = values || {};
+}
+
+const t = (text) => {
+  if (!locale.prefix) return text;
+  const entry = BY_TEXT.get(text);
+  if (!entry) return text;
+  return placeholders[entry.key] || (locale.lang.startsWith('es') ? entry.es : '') || text;
 };
-const t = (text) => (locale.lang.startsWith('es') && ES[text]) || text;
 
 /** A journey step's site path in the current locale when that page is published there. */
 const localeHref = (path) => {
